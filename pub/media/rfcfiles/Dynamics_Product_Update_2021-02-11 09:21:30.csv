@@ -1,0 +1,45 @@
+SKU,"ERP Product Ref","Created Date",Status,Message
+HD-RHBATNS40(ZL),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATDIN55,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATNS60(L),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATDIN66,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATDIN88,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATDIN100,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATN120L,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT115D31(L),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT105D31(L),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT55D23(L),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT80D26(L),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT105D31R,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT55D231R,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBAT80D26R,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+YT-SM-G1700235ST1L,REF-ITEM000000003399,"2021/02/11 09:20: AM",Sucess,Updated
+YT-SM-G1500225ST3L,REF-ITEM000000003400,"2021/02/11 09:20: AM",Sucess,Updated
+YT-SUMS18514SL720,REF-ITEM000000003401,"2021/02/11 09:20: AM",Sucess,Updated
+YT-ROA1200035683,REF-ITEM000000003402,"2021/02/11 09:20: AM",Sucess,Updated
+YT-ROA1200036698,REF-ITEM000000003403,"2021/02/11 09:20: AM",Sucess,Updated
+YT-ROA1200033434,REF-ITEM000000003404,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR-P3153021PZ4N09,N/A,"2021/02/11 09:20: AM",Failed,"The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09"
+YT-PIR-P3153021PZ4N09-20,N/A,"2021/02/11 09:20: AM",Failed,"The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09-20"
+YT-PIR1200031593-20,REF-ITEM000000003405,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR-3184-2020,REF-ITEM000000003406,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR1200038540-2020,N/A,"2021/02/11 09:20: AM",Failed,"The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200038540-2020"
+YT-PIR-1196,REF-ITEM000000003407,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR1200011941-20,REF-ITEM000000003408,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR1200023592-2020,N/A,"2021/02/11 09:20: AM",Failed,"The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200023592-2020"
+YT-PIR1200011943-ZNQ,REF-ITEM000000003409,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR-19801,REF-ITEM000000003410,"2021/02/11 09:20: AM",Sucess,Updated
+YT-PIR1200024105-20,REF-ITEM000000003411,"2021/02/11 09:20: AM",Sucess,Updated
+YT-MIC651885,REF-ITEM000000003412,"2021/02/11 09:20: AM",Sucess,Updated
+YT-MIC-M2853020CUP29,REF-ITEM000000003413,"2021/02/11 09:20: AM",Sucess,Updated
+YT-ZEE1200045687-2019,N/A,"2021/02/11 09:20: AM",Failed,"The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045687-2019"
+YT-ZEE1200045694-2019,N/A,"2021/02/11 09:20: AM",Failed,"The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045694-2019"
+YT-YOK-1335LT315/70R17-G015TL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335LT315/70R17-G015TL"
+YT-YOK-1335315/30ZR22-V105ETL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335315/30ZR22-V105ETL"
+YT-YOK-1335295/30ZR19-V105STL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335295/30ZR19-V105STL"
+YT-YOK-1335LT285/70R17-G015TL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335LT285/70R17-G015TL"
+YT-YOK-1335285/65R17-G015TL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G015TL"
+YT-YOK-1335285/65R17-G056TL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G056TL"
+YT-YOK-1335285/65R17-G94BTL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G94BTL"
+YT-YOK-1335285/60R18-G056TL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/60R18-G056TL"
+YT-YOK-1335285/35ZR22-V105TL,N/A,"2021/02/11 09:21: AM",Failed,"The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/35ZR22-V105TL"

@@ -1,0 +1,2 @@
+[2019-02-21 08:15:27] main.WARNING: Broken reference: The element with the "footer-container" ID wasn't found. Verify the ID and try again. [] []
+[2019-02-21 08:15:27] main.CRITICAL: Notice: Undefined offset: 1 in /home/cosemp/cosemporium.com/app/code/MGS/Mpanel/Helper/Data.php on line 1117 [] []

@@ -1,0 +1,4284 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Shopbybrand
+ * @copyright   Copyright (c) 2017 Mageplaza (http://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+<script type="text/javascript">
+    require([
+            'jquery'
+        ],
+        function ($) {
+            $(".navigation li.mpbrand-top-link").addClass("active");
+        }
+    );
+</script>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$patternDetail = $block->getPattern();
+$patternProducts = $block->getPatternProducts();
+//echo '<pre>';print_r($patternProducts->getData());
+$patternName = $patternDetail->getPattern();
+$brandName = $patternDetail->getBrand();
+$description = $patternDetail->getDescription();
+$dry = $patternDetail->getDry();
+$wet = $patternDetail->getWet();
+$sport = $patternDetail->getSport();
+$comfort = $patternDetail->getComfort();
+$mileage = $patternDetail->getMileage();
+$patternImage = $patternDetail->getImage();
+
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+$_attributehelper = $this->helper('Hdweb\Addattribute\Helper\Productdetails');
+$_brandImagehelper = $this->helper('Mageplaza\Shopbybrand\Helper\Data');
+$currentStore = $_attributehelper->getStoreManager();
+$mediaUrl = $currentStore->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$getBaseUrl=$storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+$currencysymbol = $objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currency = $currencysymbol->getStore()->getCurrentCurrencyCode();
+$ratio_width = 365;
+$ratio_height = 500;
+$emihelper = $this->helper('Hdweb\Emi\Helper\Data');
+//$emidetail=$emihelper->getEmiDetail();
+$productsearchhelper = $this->helper('Hdweb\Productsearch\Helper\Data');
+$Httprequest = $objectManager->get('\Magento\Framework\App\Request\Http');
+$param_fw=$Httprequest->getParam('fw');
+$param_fp=$Httprequest->getParam('fp');
+$param_fd=$Httprequest->getParam('fd');
+$page=$Httprequest->getParam('p');
+$emiminimumtotal=10000;//$emihelper->getEmiminimumtotal();
+$currencySymbol = $_attributehelper->getCurrencySymbol(); 
+$easy_pay_box = 0;
+
+$tabbyinstallmentmaxvalue = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('productsearch/general/tabbyinstallment');
+$infoTabcontent = 'Info Tab content goes here!..';
+$infoSummercontent = 'Summer Tab content goes here!..';
+$infoPlaycontent = '';
+$infoOrigincontent = 'Origin content goes here!..';
+$infoFuelcontent = 'Fuel content goes here!..';
+$infoWetcontent = 'Wet content goes here!..';
+$infoNoisecontent = 'Noise content goes here!..';
+$infoOffercontent = '';
+$listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+?>
+<div class="container">
+	<div class="patten-view-page">
+		<section class="sec_one">
+		   <div class="carrier_left">
+			  <img src="<?php echo $block->getBrandImage() ?>" alt="" class="pirelli_logo"/>
+			  <h2 class="pattern_title"><?php echo $patternName;?></h2>
+			  <p><?php echo $description;?></p>
+		   </div>
+		   <figure class="right_img">
+			  <img src="<?php echo $mediaUrl.$patternImage;?>" alt="" />
+		   </figure>
+		</section>
+		<section class="sec_two">
+		   <div class="stylishTitle">SEARCH YOUR FIT </div>
+		   <h2 class="pattern_title">PERFORMANCE</h2>
+		   <ul>
+		   <li>
+			  <div class="p_icon"><img src="<?php echo $mediaUrl.'wysiwyg/dry_icon.svg';?>" alt="" /> Dry </div>
+			  <img src="<?php echo $mediaUrl.'wysiwyg/eight-star.svg';?>" alt="" class="rating" />
+		   </li>
+		   <li>
+			  <div class="p_icon"><img src="<?php echo $mediaUrl.'wysiwyg/comfort_icon.svg';?>" alt="" /> COMFORT</div>
+			  <img src="<?php echo $mediaUrl.'wysiwyg/eight-star.svg';?>" alt="" class="rating" />
+		   </li>
+		   <li>
+			  <div class="p_icon"><img src="<?php echo $mediaUrl.'wysiwyg/wet_icon.svg';?>" alt="" /> WET</div>
+			  <img src="<?php echo $mediaUrl.'wysiwyg/eight-star.svg';?>" alt="" class="rating" />
+		   </li>
+		   <li>
+			  <div class="p_icon"><img src="<?php echo $mediaUrl.'wysiwyg/mileage_icon.svg';?>" alt="" /> MILEAGE</div>
+			  <img src="<?php echo $mediaUrl.'wysiwyg/eight-star.svg';?>" alt="" class="rating" />
+		   </li>
+		   <li>
+			  <div class="p_icon"><img src="<?php echo $mediaUrl.'wysiwyg/load_icon.svg';?>" alt="" /> LOAD INDEX</div>
+			  <img src="<?php echo $mediaUrl.'wysiwyg/eight-star.svg';?>" alt="" class="rating" />
+		   </li>
+		</section>
+		<section class="sec_three">
+		   <h2 class="pattern_title"><?php echo __('All Sizes Available For ').$brandName.' Tyres '.$patternName; ?></h2>
+		   <?php
+			$collectionArray = array();
+			//echo '<pre>';print_r($patternProducts->getData());die;
+			$groupByRim = $block->group_by("diameter_value", $patternProducts->getData());
+			//echo '<pre>';print_r($byGroup);die;
+			ksort($groupByRim);
+			if(count($groupByRim) > 0){?>
+				<?php foreach($groupByRim as $diameter => $productData){?>
+					<div class="tabTitle"><?php echo $diameter;?></div>
+					<ol class="tyres-items list_in_web hidden-xs tyo_list onlyproduct regular-web-list">
+					<?php foreach($productData as $_productCollection){?>
+							<?php 
+							$productId = $_productCollection['entity_id'];
+							$_product = $objectManager->create('Magento\Catalog\Model\Product')->load($productId);
+							$productRuleLabel = $_attributehelper->checkRuleId($_product);
+							$manufacturer = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getEntityId())->getBrand();
+							$brandDetails = $_attributehelper->getBrandDetails($manufacturer); 
+							$custom_rate  = $_attributehelper->getCustomRating($_product);
+
+							//brand image
+							$branimage=$_brandImagehelper->getBrandImageUrl($brandDetails); 
+							$brand_title=$brandDetails->getValue();
+							$brand_value=$brandDetails->getValue();
+
+							//product image
+							$productImage = $_imagehelper->init($_product, 'category_page_list');
+							$productImageUrl = $_product->getImage();
+							//$productImageUrl = $productImage->getUrl();
+							$productImageUrl =  $getBaseUrl.'media/catalog/product'.$_product->getSmallImage();
+							
+							//display name
+							$product_name = $_product->getResource()->getAttribute("displayname")->getFrontend()->getValue($_product);
+							$product_url  = $_product->getProductUrl();
+
+							// tyres parma 185/65/15
+							$tyreShortParams = $_attributehelper->getTyreShortParams($_product, true);
+							$origin = $_product->getResource()->getAttribute("origin")->getFrontend()->getValue($_product);
+							$engineered = $_product->getResource()->getAttribute("engineered")->getFrontend()->getValue($_product);
+							$origin_engineered = "Origin: ".$origin ." & Manufactory: ". $engineered;
+							$runflat = $_product->getResource()->getAttribute("runflat")->getFrontend()->getValue($_product);
+							$performance = $_product->getResource()->getAttribute("performance")->getFrontend()->getValue($_product);
+							$treadwear = $_product->getResource()->getAttribute("treadwear")->getFrontend()->getValue($_product);
+							$traction = $_product->getResource()->getAttribute("traction")->getFrontend()->getValue($_product);
+							$temperature = $_product->getResource()->getAttribute("temperature")->getFrontend()->getValue($_product);
+							$fuel_efficiency = $_product->getResource()->getAttribute("fuel_efficiency")->getFrontend()->getValue($_product);
+							$wet_grip = $_product->getResource()->getAttribute("wet_grip")->getFrontend()->getValue($_product);
+							$noise_levels = $_product->getResource()->getAttribute("noise_levels")->getFrontend()->getValue($_product);
+
+							$rim_diameter = $_product->getResource()->getAttribute("diameter")->getFrontend()->getValue($_product);
+							$rim_width = $_product->getResource()->getAttribute("width")->getFrontend()->getValue($_product);
+							$rim_offset = $_product->getResource()->getAttribute("offset")->getFrontend()->getValue($_product);
+						   // $rim_cb = $_product->getResource()->getAttribute("cb_rim")->getFrontend()->getValue($_product);
+						   // $rim_bolt = $_product->getResource()->getAttribute("bolt_rim")->getFrontend()->getValue($_product);
+						   // $rim_pcd = $_product->getResource()->getAttribute("pcd_rim")->getFrontend()->getValue($_product);
+						   // $rim_model = $_product->getResource()->getAttribute("model_rim")->getFrontend()->getValue($_product);
+						   // $rim_color = $_product->getResource()->getAttribute("color_rim")->getFrontend()->getValue($_product);
+						   // $accessories_color = $_product->getResource()->getAttribute("accessories_color")->getFrontend()->getValue($_product);
+							
+							$youtubeLink = $_product->getResource()->getAttribute("youtube_link")->getFrontend()->getValue($_product);
+							
+							$origin_image = '';
+							$wet_grip_image = '';
+							$noise_levels = '';
+							$fuel_efficiency_image = '';
+							$youtube_image = '';
+							
+							$light_icons = '';
+							$light_icons_f = '';
+							$light_icons_n = '';                                        
+							$light_icons_w = '';
+							$light_icons_o = '';
+							$light_icons_y = '';
+
+
+							if(($origin!=null && $origin!='No') || ($engineered!=null && $engineered!='No') ) {
+								$origin_image = 'new-lists/origin-icon-d.svg';
+								$light_icons_o = '';   
+							}else{
+								$origin_image = 'new-lists/origin-icon-l.svg';   
+								$light_icons_o = 'background:transparent;border: #B5B5B5 solid 1.5px;';
+							}
+
+							if($wet_grip!=null && $wet_grip!='No') {
+								$wet_grip_image = 'new-lists/wet-grip-icon-d.svg'; 
+								$light_icons_w = '';  
+							}else{
+								$wet_grip_image = 'new-lists/wet-grip-icon-l.svg';   
+								$light_icons_w = 'background:transparent;border: #B5B5B5 solid 1.5px;';
+							}
+
+							if($noise_levels!=null && $noise_levels!='No') {
+								$noise_levels_image = 'new-lists/noise-icon-d.svg'; 
+								$light_icons_n = '';  
+							}else{
+								$noise_levels_image = 'new-lists/noise-icon-l.svg';  
+								$light_icons_n = 'background:transparent;border: #B5B5B5 solid 1.5px;'; 
+							}
+
+							if($fuel_efficiency!=null && $fuel_efficiency!='No') {
+								$fuel_efficiency_image = 'new-lists/fuel-efficiency-d.svg';   
+								$light_icons_f = '';
+							}else{
+								$fuel_efficiency_image = 'new-lists/fuel-efficiency-l.svg'; 
+								$light_icons_f = 'background:transparent;border: #B5B5B5 solid 1.5px;';  
+							}
+
+							if($youtubeLink!=null && $youtubeLink!='No') {
+								$youtube_image = 'new-lists/play-icon-d.svg';
+								$light_icons_y = '';   
+							}else{
+								$youtube_image = 'new-lists/play-icon-l.svg';   
+								$light_icons_y = 'background:transparent;border: #B5B5B5 solid 1.5px;';
+							}
+																																					
+							$accessories_note = $_product->getResource()->getAttribute("short_description")->getFrontend()->getValue($_product);
+							$article_number = $_product->getResource()->getAttribute("article_number")->getFrontend()->getValue($_product);
+
+							//tyre life gurantee
+							$warranty_workmanship_mat=$_product->getResource()->getAttribute("warranty_workmanship_mat")->getFrontend()->getValue($_product);
+							$warranty_period = $_product->getResource()->getAttribute("warranty_period")->getFrontend()->getValue($_product);
+
+							$fitment_balancing = "Tyre fitment &amp; wheel balancing included";
+
+							$autoparts_1 = '';
+							$autoparts_2 = '';
+							$autoparts_3 = '';
+							$autoparts_contact = '';
+							$autoparts_category = '';
+
+							$autoparts_1 = $_product->getResource()->getAttribute("auto_parts_warranty_1")->getFrontend()->getValue($_product);
+							$autoparts_2 = $_product->getResource()->getAttribute("auto_parts_warranty_2")->getFrontend()->getValue($_product);
+							$autoparts_3 = $_product->getResource()->getAttribute("auto_parts_warranty_terms")->getFrontend()->getValue($_product);
+							$autoparts_contact = $_product->getResource()->getAttribute("auto_parts_contact_us")->getFrontend()->getValue($_product);
+							$autoparts_category = $_product->getResource()->getAttribute("parts_category")->getFrontend()->getValue($_product);
+							$auto_parts_inc1 = $_product->getResource()->getAttribute("auto_parts_installation_1")->getFrontend()->getValue($_product);
+							$auto_parts_inc2 = $_product->getResource()->getAttribute("auto_parts_installation_2")->getFrontend()->getValue($_product);                                
+
+							//$warranty_period = "1 YEAR WARRANTY";
+							//year
+							$year= $_product->getResource()->getAttribute("dot")->getFrontend()->getValue($_product); 
+
+							//ford icon
+							$vehicleicon= $_product->getResource()->getAttribute("vehicle")->getFrontend()->getValue($_product); 
+							$vehicleiconurl=$mediaUrl.'cars/'.$vehicleicon.'.svg';
+							
+							//car type icon
+							$carTypeiconurl = '';
+							$carTypeicon= $_product->getResource()->getAttribute("car_type")->getFrontend()->getValue($_product);
+							
+							//price cal
+							$calculatedPrice=$_attributehelper->getcalculatedPrice($_product);
+							$offer_price=$calculatedPrice['offer_price'];
+							$actual_strike_price=$calculatedPrice['actual_strike_price'];
+							$finalPricewithtax_four_Qty=$calculatedPrice['finalPricewithtax_four_Qty'];   
+							$isoffetproduct=$calculatedPrice['isoffetproduct'];   
+							$discount_amount_qty=$calculatedPrice['discount_amount_qty']; 
+							$discount_step_qty=$calculatedPrice['discount_step_qty'];   
+							$finalPricewithtax=$calculatedPrice['finalPricewithtax'];
+
+							//emi option
+							if($isoffetproduct) 
+							{ 
+							$isemilsshow=($offer_price >= $emiminimumtotal ) ? 1 : 0; 
+							$priceforemi=$offer_price;
+							}else{
+							$isemilsshow=($finalPricewithtax_four_Qty >= $emiminimumtotal ) ? 1 : 0; 
+							$priceforemi=$finalPricewithtax_four_Qty;
+							}
+
+							//tabby installment
+							if($isoffetproduct) 
+							{ 
+							$istaddyinstallmentshow=($offer_price <= $tabbyinstallmentmaxvalue  ) ? 1 : 0; 
+							$notaabbyinstallerclass=($offer_price <= $tabbyinstallmentmaxvalue  ) ? '' : 'hidetabbyinstaller'; 
+
+							}else{
+							$istaddyinstallmentshow=($finalPricewithtax_four_Qty <= $tabbyinstallmentmaxvalue ) ? 1 : 0; 
+							 $notaabbyinstallerclass=($finalPricewithtax_four_Qty <= $tabbyinstallmentmaxvalue  ) ? '' : 'hidetabbyinstaller'; 
+							}
+
+							  if($istaddyinstallmentshow){
+									 $displaytabbyimage="display: block";
+							  }else{
+									 $displaytabbyimage="display: none";
+							  }
+							$displaytabbyimage="display: block";  
+
+							if($productsearchhelper->isEmioptiontrue() && $isemilsshow) { 
+								$displayemi="display: block";
+								$noemiclass="";
+							}else{
+								$displayemi="display: none";
+								$noemiclass="light-easy-pay";
+							}
+							
+							$postParams = $listBlock->getAddToCartPostParams($_product);
+							
+							$img_title = '';
+							$img_src =  '';
+
+							if(($productRuleLabel[5] != "" || $productRuleLabel[5] != null)): 
+								$img_title = $productRuleLabel[0];
+								$img_src = $mediaUrl.$productRuleLabel[5];
+							endif; 
+							
+							$tabOffer_title = '';
+							$tabOfferimg =  '';
+						  
+							if(($productRuleLabel[5] != "" || $productRuleLabel[5] != null)): 
+							$tabOffer_title = $productRuleLabel[0];
+							$tabOfferimg = $mediaUrl.$productRuleLabel[5];
+							endif;	
+							
+							//car type icon
+							$per_item = '';
+							$per_item= 'per '.$_product->getResource()->getAttribute("per_item")->getFrontend()->getValue($_product);
+							
+							$summerContent = '';
+						   $half_tyre_bg_w = '';
+						   $tyo_info_tyre_w = '';
+							?>
+							
+						<li class="hidden-xs">
+						   <div class="row no-gutters">
+						   <?php 
+							  if($img_src) { ?>
+						   <div class="col-sm-6 col-md-6 col-lg-6 ">
+							  <div class="row no-gutters w-100">
+								 <div class="col-lg-5 col-sm-5 col-md-5 with-side-logo">
+									<div class="circleLogo">
+									   <img src="<?php echo $mediaUrl.$productRuleLabel[1]; ?>" data-rule-id = "<?php echo $productRuleLabel[8];?>" title="<?php echo $img_title; ?>" alt="<?php echo $img_title; ?>" class="full-img web-list-offer">
+									</div>
+									<div class="half_tyre_bg auto_parts_logo">
+									   <img src="<?php echo $branimage ?>" title="<?php echo $brand_title ?>" alt="<?php echo $brand_value ?>" class="full-img tyre_list_logo_top">
+									   <div class="tyro_hlf_tyre_img">
+										  <img src="<?php echo $productImageUrl ?>" class="full-img tyre_list_tyre_btm">
+									   </div>    
+									</div>
+								 </div>
+								 <div class="col-lg-7 col-sm-7 col-md-7 ">
+									<div class="tyo_info_tyre">
+									   <a href="<?php echo $product_url ?>">
+										  <h3><?php echo $product_name ?></h3>
+									   </a>
+									   <a href="<?php echo $product_url;?>">
+										  <h5><?php echo $tyreShortParams ?></h5>
+									   </a>
+									   <div class="runFlatIcon">
+										  <?php if( $runflat!=null && $runflat!='No') { ?>
+										  <img src="<?php echo $mediaUrl.'new-lists/img-run-flat_tyre.png' ?>" alt="RunFlat Tyres" class="tyo_run_flat">
+										  <?php } ?>
+									   </div>
+									   <div class="tyre_name"><?php echo $warranty_workmanship_mat ?></div>
+									   <div class="tyre_label"><?php echo $warranty_period ?></div> 
+									</div>
+								 </div>
+							  </div>
+						   </div>
+						   <?php }else{ ?>
+						   <div class="col-sm-6 col-md-6 col-lg-6 ">
+						   <div class="row no-gutters w-100">
+							  <div class="col-sm-4 col-md-4 col-lg-4 flex-wrap">
+									<div class="half_tyre_bg half_tyre_style_2">      
+									   <img src="<?php echo $branimage ?>" title="<?php echo $brand_title ?>" alt="<?php echo $brand_value ?>" class="full-img tyre_list_logo_top web_brand_logo">
+									   <div class="tyro_hlf_tyre_img">
+										  <a href="<?php echo $product_url ?>"><img src="<?php echo $productImageUrl ?>" class="full-img tyre_list_tyre_btm"></a>
+									   </div>
+									</div>
+								 </div>
+								 <div class="col-sm-8 col-md-8 col-lg-8">
+									<div class="tyo_info_tyre">
+									   <a href="<?php echo $product_url ?>">
+										  <h3><?php echo $product_name ?></h3>
+									   </a>
+									   <h5><?php echo $tyreShortParams ?></h5>
+									   <div class="runFlatIcon">
+										  <?php if( $runflat!=null && $runflat!='No') { ?>
+										  <img src="<?php echo $mediaUrl.'new-lists/img-run-flat_tyre.png' ?>" alt="RunFlat Tyres" class="tyo_run_flat">
+										  <?php } ?>
+									   </div>
+									   <div class="tyre_name"><?php echo $warranty_workmanship_mat ?></div>
+									   <div class="tyre_label"><?php echo $warranty_period ?></div> 
+									</div>
+								 </div>
+							  </div>
+						   </div>
+						   <?php } ?>
+						   <div class="col-sm-6 col-md-6 col-lg-6 ">
+							  <div class="row no-gutters w-100">
+								 <div class="col-sm-4 col-md-4 ">   
+									<div class="action-list-box">
+									   <div class="tyro_year"><?php echo $year ?></div>
+									   <div class="tyro_car_logo">
+										  <?php  if($vehicleicon != "") { ?>
+										  <img src="<?php echo $vehicleiconurl ?>" class="car_logo">
+										  <?php } ?>
+										  <?php  if($carTypeicon != "") { ?>
+										  <?php
+											 if($carTypeicon == 'car'){
+											 $carTypeiconurl = $mediaUrl.'cars/car-type.png';
+											 }
+											 if($carTypeicon == 'suv'){
+											 $carTypeiconurl = $mediaUrl.'cars/suv-type.png';
+											 }
+											 if($carTypeicon == 'van'){
+											 $carTypeiconurl = $mediaUrl.'cars/van-type.png';
+											 }
+											 ?>
+										  <img src="<?php echo $carTypeiconurl ?>" class="car_type">
+										  <?php } ?>    
+									   </div>
+									   <div class="tyro_action_list">
+										  <div class="info_act_circle"><a href="<?php echo $product_url ?>">i</a></div>
+										  <div class="tyro_action_icon" style="<?php echo $light_icons_o ?>"><img src="<?php echo $mediaUrl.$origin_image?>" alt="<?php echo $origin_engineered ?>" title="<?php echo $origin_engineered ?>"></div>
+										  <div class="tyro_action_icon" style="<?php echo $light_icons_f ?>"><img src="<?php echo $mediaUrl.$fuel_efficiency_image?>" alt="<?php echo $fuel_efficiency ?>" title="<?php echo $fuel_efficiency ?>"></div>
+										  <div class="tyro_action_icon" style="<?php echo $light_icons_w ?>"><img src="<?php echo $mediaUrl.$wet_grip_image ?>" alt="<?php echo $wet_grip ?>" title="<?php echo $wet_grip ?>"></div>
+										  <div class="tyro_action_icon" style="<?php echo $light_icons_n ?>"><img src="<?php echo $mediaUrl.$noise_levels_image?>" alt="<?php echo $noise_levels ?>" title="<?php echo $noise_levels ?>"></div>
+									   </div>    
+									</div> 
+									<?php if($easy_pay_box==1){ ?>
+									<div class="easy-pay-box <?php echo $noemiclass; ?>">
+									   <a class="mobileemioption emioption" style="<?php echo $displayemi; ?>" data-emiid="<?php echo $_product->getId() ?>" href="javascript:void(0);" data-emiprice="<?php echo $priceforemi;?>" data-emiid="<?php echo $_product->getId() ?>">
+									   <span class="info_light">i</span></a>
+									</div>
+									<?php } ?>
+								 </div>
+								 <div class="col-sm-2 col-md-2">
+									<div data-taggyproductid="<?php echo $_product->getId() ?>" class="tabby-pay-later-list <?php echo $notaabbyinstallerclass; ?>">
+									   <a href="javascript:void(0);">
+									   <img class="tabbyimage" style="<?php echo $displaytabbyimage; ?>" src="<?php echo $mediaUrl.'new-lists/tabby-pay-later.png'?>">
+									   </a>
+									</div>
+								 </div>
+								 <div class="col-sm-6 col-md-6  flex-wrap tyres-productset4">
+									<div class="tyro_price_box">
+										<div class="tyro_price_list">
+											<div class="tyo_view_pr_center">
+												<?php if($isoffetproduct){?>
+													<?php if($discount_step_qty > 3) { ?>                                                                
+													<div class="price_one"><sub class="aed"><?php echo __($currency) ?></sub> <span class="chargebleprice"><?php echo number_format($offer_price, 2); ?></span> <sub class="set4"><?php echo __(' Set of 4') ?></sub></div>
+													<?php if(number_format($finalPricewithtax_four_Qty, 2) > number_format($offer_price, 2)):?>
+													<div class="price_two"><sub class="aed"><?php echo __($currency) ?></sub> <span class="stike-price"><?php echo number_format($finalPricewithtax_four_Qty, 2); ?></span>  <sub class="set4"><?php echo __(' Set of 4') ?></sub></div>
+													<?php endif;?>                                                                
+													<?php } else { ?>
+													<div class="price_one"><sub class="aed"><?php echo __($currency) ?></sub> <span class="chargebleprice"><?php echo number_format($offer_price/4, 2); ?></span> <sub class="set4"><?php echo __('per Tyre') ?></sub></div>
+													<?php if(number_format($finalPricewithtax_four_Qty, 2) > number_format($offer_price, 2)):?>
+													<div class="price_two"><sub class="aed"><?php echo __($currency) ?></sub> <span class="stike-price"><?php echo number_format($finalPricewithtax_four_Qty/4, 2); ?></span>  <sub class="set4"><?php echo __('per Tyre') ?></sub></div>
+													<?php endif;?>
+													<?php } ?>    
+													<?php if($discount_step_qty > 3) { ?>
+													<div class="price_three price_per_four" style="display: none;"><sub class="aed"><?php echo __($currency) ?></sub> <span><?php echo number_format($finalPricewithtax_four_Qty, 2); ?></span><sub class="s-set4"><?php echo __(' Set of 4') ?></sub></div>
+													<div class="price_three"><sub class="aed"><?php echo __($currency) ?></sub> <span><?php echo number_format($finalPricewithtax_four_Qty/4, 2); ?></span><sub class="s-set4"><?php echo " ".$per_item;?> </sub></div>                                                                
+													<?php } else { ?>
+													<div class="price_three price_per_four" style="display: block;"><sub class="aed"><?php echo __($currency) ?></sub> <span><?php echo number_format($offer_price, 2); ?></span><sub class="s-set4"><?php echo __(' Set of 4') ?></sub></div>
+													<?php }  ?>
+												<?php } else{?>
+														<!-- <div class="price_one"><sub class="aed"><?php echo __($currency) ?></sub> <span class="orignalprice"><?php echo number_format($finalPricewithtax_four_Qty/4, 2); ?></span> <sub class="set4"><?php echo __('Set of 4') ?></sub></div> -->
+														<div class="price_one"><sub class="aed"><?php echo __($currency) ?></sub> <span class="orignalprice"><?php echo number_format($finalPricewithtax_four_Qty/4, 2); ?></span> <sub class="set4"><?php echo " ".$per_item;?></sub></div>
+														<div class="price_three"><sub class="aed"><?php echo __($currency) ?></sub> <span><?php echo number_format($finalPricewithtax_four_Qty, 2); ?></span> <sub class="s-set4"><?php echo __('Set of 4') ?></sub></div>
+														<div class="price_per_tyre" style="display: none;"><sub class="aed"><?php echo __($currency) ?></sub> <span><?php echo number_format($finalPricewithtax_four_Qty/4, 2); ?></span> <sub class="s-set4"><?php echo " ".$per_item;?></sub></div>                                                   
+												<?php }?>
+											</div>
+										</div>
+									</div>
+									<form data-role="tocart-form" action="<?php echo $postParams['action']; ?>" method="post" class="tyro_cart_box">
+									   <?php 
+										  $no_stocks_avail = null;
+										  if ($_product->getIsSalable()==false) { ?>
+									   <div class="tyro_cart_count" style="display: none;">
+										  <?php }else{ ?>
+										  <div class="tyro_cart_count">
+											 <?php } ?>
+											 <?php  if($isoffetproduct) { ?>
+												<select name="qty" class="select_qty" data-discountqty="<?php echo $discount_amount_qty ?>" data-totalqty="<?php echo $discount_step_qty ?>" data-unitprice="<?php echo $finalPricewithtax ?>"  data-id="<?php echo $_product->getId() ?>" >
+												<?php  }else{ ?>
+											   <select name="qty" class="select_qty" data-id="<?php echo $_product->getId() ?>"  data-unitprice="<?php echo $finalPricewithtax ?>" >
+												 <?php  } 
+													  if($isoffetproduct && ($discount_step_qty > 3)){
+												 ?>
+													  <option value="1">1</option>
+													  <option value="2">2</option>
+													  <option value="3">3</option>
+													  <option value="4" selected="">4</option>
+													  <option value="5">5</option>
+													  <option value="6">6</option>
+													  <option value="7">7</option>
+													  <option value="8">8</option>
+												  <?php }else { ?>
+													  <option value="1" selected="">1</option>
+													  <option value="2">2</option>
+													  <option value="3">3</option>
+													  <option value="4">4</option>
+													  <option value="5">5</option>
+													  <option value="6">6</option>
+													  <option value="7">7</option>
+													  <option value="8">8</option>
+												  <?php } ?>  
+											  </select>
+										  </div>
+										  <div class="tyro_cart_icon_box">
+											 <?php if ($_product->getIsSalable()) { ?>
+											 <input type="hidden" name="product" value="<?php echo $postParams['data']['product']; ?>">
+											 <?php /*<input type="hidden" name="<?php echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>"> */ ?>
+											 <?php echo $block->getBlockHtml('formkey')?>
+											 <img src="<?php echo $mediaUrl.'new-lists/shopping-cart.svg'?>" class="cart_img_icon"> <button type="submit"
+												title="<?php echo $block->escapeHtml(__('Buy Now')); ?>"
+												><?php echo $block->escapeHtml(__('Buy Now')); ?>
+											 </button>
+											 <?php } ?>   
+											 <?php if ($_product->getIsSalable()) { ?>
+											 <span class="tyro_stock_status instock"><?php echo __('in stock')?></span>
+											 <?php }else{ ?>
+											 <a href="tel:80025589737"><img src="<?php echo $mediaUrl.'new-lists/call-us.svg' ?>" class="cart_img_icon"></a>
+											 <span class="tyro_stock_status outstock"><?php echo __('no stock')?></span>
+											 <?php } ?>  
+										  </div>
+									</form>
+									</div>
+								 </div>
+							  </div>
+						   </div>
+						</li>		
+					<?php } ?>
+					</ol>
+					<ol class="tyo_list_mob tyro_mobile_design list_in_mobile visible-xs regular-mobile-list" >
+					<?php foreach($productData as $_productCollection){?>
+						<?php 
+						$productId = $_productCollection['entity_id'];
+						$_product = $objectManager->create('Magento\Catalog\Model\Product')->load($productId);
+						$productRuleLabel = $_attributehelper->checkRuleId($_product);
+						$manufacturer = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getEntityId())->getBrand();
+						$brandDetails = $_attributehelper->getBrandDetails($manufacturer); 
+						$custom_rate  = $_attributehelper->getCustomRating($_product);
+
+						//brand image
+						$branimage=$_brandImagehelper->getBrandImageUrl($brandDetails); 
+						$brand_title=$brandDetails->getValue();
+						$brand_value=$brandDetails->getValue();
+
+						//product image
+						$productImage = $_imagehelper->init($_product, 'category_page_list');
+						$productImageUrl = $_product->getImage();
+						//$productImageUrl = $productImage->getUrl();
+						$productImageUrl =  $getBaseUrl.'media/catalog/product'.$_product->getSmallImage();
+						
+						//display name
+						$product_name = $_product->getResource()->getAttribute("displayname")->getFrontend()->getValue($_product);
+						$product_url  = $_product->getProductUrl();
+
+						// tyres parma 185/65/15
+						$tyreShortParams = $_attributehelper->getTyreShortParams($_product, true);
+						$origin = $_product->getResource()->getAttribute("origin")->getFrontend()->getValue($_product);
+						$engineered = $_product->getResource()->getAttribute("engineered")->getFrontend()->getValue($_product);
+						$origin_engineered = "Origin: ".$origin ." & Manufactory: ". $engineered;
+						$runflat = $_product->getResource()->getAttribute("runflat")->getFrontend()->getValue($_product);
+						$performance = $_product->getResource()->getAttribute("performance")->getFrontend()->getValue($_product);
+						$treadwear = $_product->getResource()->getAttribute("treadwear")->getFrontend()->getValue($_product);
+						$traction = $_product->getResource()->getAttribute("traction")->getFrontend()->getValue($_product);
+						$temperature = $_product->getResource()->getAttribute("temperature")->getFrontend()->getValue($_product);
+						$fuel_efficiency = $_product->getResource()->getAttribute("fuel_efficiency")->getFrontend()->getValue($_product);
+						$wet_grip = $_product->getResource()->getAttribute("wet_grip")->getFrontend()->getValue($_product);
+						$noise_levels = $_product->getResource()->getAttribute("noise_levels")->getFrontend()->getValue($_product);
+
+						$rim_diameter = $_product->getResource()->getAttribute("diameter")->getFrontend()->getValue($_product);
+						$rim_width = $_product->getResource()->getAttribute("width")->getFrontend()->getValue($_product);
+						$rim_offset = $_product->getResource()->getAttribute("offset")->getFrontend()->getValue($_product);
+					   // $rim_cb = $_product->getResource()->getAttribute("cb_rim")->getFrontend()->getValue($_product);
+					   // $rim_bolt = $_product->getResource()->getAttribute("bolt_rim")->getFrontend()->getValue($_product);
+					   // $rim_pcd = $_product->getResource()->getAttribute("pcd_rim")->getFrontend()->getValue($_product);
+					   // $rim_model = $_product->getResource()->getAttribute("model_rim")->getFrontend()->getValue($_product);
+					   // $rim_color = $_product->getResource()->getAttribute("color_rim")->getFrontend()->getValue($_product);
+					   // $accessories_color = $_product->getResource()->getAttribute("accessories_color")->getFrontend()->getValue($_product);
+						
+						$youtubeLink = $_product->getResource()->getAttribute("youtube_link")->getFrontend()->getValue($_product);
+						
+						$origin_image = '';
+						$wet_grip_image = '';
+						$noise_levels = '';
+						$fuel_efficiency_image = '';
+						$youtube_image = '';
+						
+						$light_icons = '';
+						$light_icons_f = '';
+						$light_icons_n = '';                                        
+						$light_icons_w = '';
+						$light_icons_o = '';
+						$light_icons_y = '';
+
+
+						if(($origin!=null && $origin!='No') || ($engineered!=null && $engineered!='No') ) {
+							$origin_image = 'new-lists/origin-icon-d.svg';
+							$light_icons_o = '';   
+						}else{
+							$origin_image = 'new-lists/origin-icon-l.svg';   
+							$light_icons_o = 'background:transparent;border: #B5B5B5 solid 1.5px;';
+						}
+
+						if($wet_grip!=null && $wet_grip!='No') {
+							$wet_grip_image = 'new-lists/wet-grip-icon-d.svg'; 
+							$light_icons_w = '';  
+						}else{
+							$wet_grip_image = 'new-lists/wet-grip-icon-l.svg';   
+							$light_icons_w = 'background:transparent;border: #B5B5B5 solid 1.5px;';
+						}
+
+						if($noise_levels!=null && $noise_levels!='No') {
+							$noise_levels_image = 'new-lists/noise-icon-d.svg'; 
+							$light_icons_n = '';  
+						}else{
+							$noise_levels_image = 'new-lists/noise-icon-l.svg';  
+							$light_icons_n = 'background:transparent;border: #B5B5B5 solid 1.5px;'; 
+						}
+
+						if($fuel_efficiency!=null && $fuel_efficiency!='No') {
+							$fuel_efficiency_image = 'new-lists/fuel-efficiency-d.svg';   
+							$light_icons_f = '';
+						}else{
+							$fuel_efficiency_image = 'new-lists/fuel-efficiency-l.svg'; 
+							$light_icons_f = 'background:transparent;border: #B5B5B5 solid 1.5px;';  
+						}
+
+						if($youtubeLink!=null && $youtubeLink!='No') {
+							$youtube_image = 'new-lists/play-icon-d.svg';
+							$light_icons_y = '';   
+						}else{
+							$youtube_image = 'new-lists/play-icon-l.svg';   
+							$light_icons_y = 'background:transparent;border: #B5B5B5 solid 1.5px;';
+						}
+																																				
+						$accessories_note = $_product->getResource()->getAttribute("short_description")->getFrontend()->getValue($_product);
+						$article_number = $_product->getResource()->getAttribute("article_number")->getFrontend()->getValue($_product);
+
+						//tyre life gurantee
+						$warranty_workmanship_mat=$_product->getResource()->getAttribute("warranty_workmanship_mat")->getFrontend()->getValue($_product);
+						$warranty_period = $_product->getResource()->getAttribute("warranty_period")->getFrontend()->getValue($_product);
+
+						$fitment_balancing = "Tyre fitment &amp; wheel balancing included";
+
+						$autoparts_1 = '';
+						$autoparts_2 = '';
+						$autoparts_3 = '';
+						$autoparts_contact = '';
+						$autoparts_category = '';
+
+						$autoparts_1 = $_product->getResource()->getAttribute("auto_parts_warranty_1")->getFrontend()->getValue($_product);
+						$autoparts_2 = $_product->getResource()->getAttribute("auto_parts_warranty_2")->getFrontend()->getValue($_product);
+						$autoparts_3 = $_product->getResource()->getAttribute("auto_parts_warranty_terms")->getFrontend()->getValue($_product);
+						$autoparts_contact = $_product->getResource()->getAttribute("auto_parts_contact_us")->getFrontend()->getValue($_product);
+						$autoparts_category = $_product->getResource()->getAttribute("parts_category")->getFrontend()->getValue($_product);
+						$auto_parts_inc1 = $_product->getResource()->getAttribute("auto_parts_installation_1")->getFrontend()->getValue($_product);
+						$auto_parts_inc2 = $_product->getResource()->getAttribute("auto_parts_installation_2")->getFrontend()->getValue($_product);                                
+
+						//$warranty_period = "1 YEAR WARRANTY";
+						//year
+						$year= $_product->getResource()->getAttribute("dot")->getFrontend()->getValue($_product); 
+
+						//ford icon
+						$vehicleicon= $_product->getResource()->getAttribute("vehicle")->getFrontend()->getValue($_product); 
+						$vehicleiconurl=$mediaUrl.'cars/'.$vehicleicon.'.svg';
+						
+						//car type icon
+						$carTypeiconurl = '';
+						$carTypeicon= $_product->getResource()->getAttribute("car_type")->getFrontend()->getValue($_product);
+						
+						//price cal
+						$calculatedPrice=$_attributehelper->getcalculatedPrice($_product);
+						$offer_price=$calculatedPrice['offer_price'];
+						$actual_strike_price=$calculatedPrice['actual_strike_price'];
+						$finalPricewithtax_four_Qty=$calculatedPrice['finalPricewithtax_four_Qty'];   
+						$isoffetproduct=$calculatedPrice['isoffetproduct'];   
+						$discount_amount_qty=$calculatedPrice['discount_amount_qty']; 
+						$discount_step_qty=$calculatedPrice['discount_step_qty'];   
+						$finalPricewithtax=$calculatedPrice['finalPricewithtax'];
+
+						//emi option
+						if($isoffetproduct) 
+						{ 
+						$isemilsshow=($offer_price >= $emiminimumtotal ) ? 1 : 0; 
+						$priceforemi=$offer_price;
+						}else{
+						$isemilsshow=($finalPricewithtax_four_Qty >= $emiminimumtotal ) ? 1 : 0; 
+						$priceforemi=$finalPricewithtax_four_Qty;
+						}
+
+						//tabby installment
+						if($isoffetproduct) 
+						{ 
+						$istaddyinstallmentshow=($offer_price <= $tabbyinstallmentmaxvalue  ) ? 1 : 0; 
+						$notaabbyinstallerclass=($offer_price <= $tabbyinstallmentmaxvalue  ) ? '' : 'hidetabbyinstaller'; 
+
+						}else{
+						$istaddyinstallmentshow=($finalPricewithtax_four_Qty <= $tabbyinstallmentmaxvalue ) ? 1 : 0; 
+						 $notaabbyinstallerclass=($finalPricewithtax_four_Qty <= $tabbyinstallmentmaxvalue  ) ? '' : 'hidetabbyinstaller'; 
+						}
+
+						  if($istaddyinstallmentshow){
+								 $displaytabbyimage="display: block";
+						  }else{
+								 $displaytabbyimage="display: none";
+						  }
+						$displaytabbyimage="display: block";  
+
+						if($productsearchhelper->isEmioptiontrue() && $isemilsshow) { 
+							$displayemi="display: block";
+							$noemiclass="";
+						}else{
+							$displayemi="display: none";
+							$noemiclass="light-easy-pay";
+						}
+
+						$postParams = $listBlock->getAddToCartPostParams($_product);
+						
+						$img_title = '';
+						$img_src =  '';
+
+						if(($productRuleLabel[5] != "" || $productRuleLabel[5] != null)): 
+							$img_title = $productRuleLabel[0];
+							$img_src = $mediaUrl.$productRuleLabel[5];
+						endif; 
+						
+						$tabOffer_title = '';
+						$tabOfferimg =  '';
+					  
+						if(($productRuleLabel[5] != "" || $productRuleLabel[5] != null)): 
+						$tabOffer_title = $productRuleLabel[0];
+						$tabOfferimg = $mediaUrl.$productRuleLabel[5];
+						endif;	
+						
+						//car type icon
+						$per_item = '';
+						$per_item= 'per '.$_product->getResource()->getAttribute("per_item")->getFrontend()->getValue($_product);
+						
+						$summerContent = '';
+					   $half_tyre_bg_w = '';
+					   $tyo_info_tyre_w = '';
+						?>
+					<?php /* Mobile view */ ?>
+						<li class="tyro_style_2_mob">
+						  <div class="row no-gutters">
+							 <div class="col-sm-12 col-xs-12 tyro_acc_content_ty">
+								<div class="row no-gutters ">
+								   <div class="col-sm-6 col-xs-12  flex-wrap">
+									  <div class="half_tyre_bg  flex-wrap align-items-center" <?php echo $half_tyre_bg_w ?>>
+										 <img src="<?php echo $branimage ?>" title="<?php echo $brand_title ?>" alt="<?php echo $brand_value ?>" class="full-img tyre_list_logo_top">
+										 <div class="tyro_hlf_tyre_img">
+											<a href="<?php echo $_product->getProductUrl(); ?>"><img src="<?php echo $productImageUrl ?>" class="full-img tyre_list_tyre_btm"></a>
+										 </div>
+									  </div>
+									  <div class="tyo_info_tyre" <?php echo $tyo_info_tyre_w ?>>
+										 <h3><?php echo $product_name ?></h3>
+										 <h5><?php echo $tyreShortParams ?></h5>
+										 <div class="tyro_action_rft">
+											<div class="dot-mob"><?php echo $year ?></div>
+											<div class="runflat-mob runFlatIcon">
+											   <?php if( $runflat!=null && $runflat!='No') { ?>
+											   <img src="<?php echo $mediaUrl.'new-lists/img-run-flat_tyre.png' ?>" alt="RunFlat Tyres" class="tyo_run_flat">
+											   <?php } ?>    
+											</div>
+										 </div>
+										 <div class="tyro_action_list nav nav-tabs" id="nav-tab" role="tablist">
+											<?php if($origin!=null && $origin!='No') { 
+											   $nodata = ' ';
+											   }else{
+											   $nodata = 'light-icons';
+											   } ?>                                                                         
+											<div class="tyro_action_icon <?php echo $nodata; ?>">
+											   <a class="nav-item nav-link" id="nav-info-tab" data-toggle="tab" href="javascript:void(0)" role="tab" aria-controls="nav-info-<?php echo $_product->getId() ?>" aria-selected="false">
+											   <img src="<?php echo $mediaUrl.'new-lists/info-icon-new.svg'?>" alt="" title="">
+											   </a>
+											</div>
+											<div class="tyro_action_icon <?php echo $nodata; ?>">
+											   <a class="nav-item nav-link" id="nav-summer-tab" data-toggle="tab" href="#nav-summer-<?php echo $_product->getId() ?>" role="tab" aria-controls="nav-summer-<?php echo $_product->getId() ?>" aria-selected="false">
+											   <img src="<?php echo $mediaUrl.'new-lists/summer-icon.svg'?>" alt="" title="">
+											   </a>
+											</div>
+											<?php $youtubeLink = $_product->getResource()->getAttribute("youtube_link")->getFrontend()->getValue($_product); ?>
+											<?php if($youtubeLink != ''):?>
+											<?php $infoPlaycontent = '<iframe src="'.$youtubeLink.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';?>
+											<div class="tyro_action_icon <?php echo $nodata; ?>">
+											   <a class="nav-item nav-link" id="nav-play-tab" data-toggle="tab" href="#nav-play-<?php echo $_product->getId() ?>" role="tab" aria-controls="nav-play-<?php echo $_product->getId() ?>" aria-selected="false">
+											   <img src="<?php echo $mediaUrl.'new-lists/play-icon-new.svg'?>" alt="" title="">
+											   </a>
+											</div>
+											<?php endif;?>
+											<?php if($tabOfferimg){?>
+											<div class="tyro_action_icon offer_action">
+											   <a class="nav-item nav-link" id="nav-offer-tab" data-toggle="tab" href="#nav-offer-<?php echo $_product->getId() ?>" role="tab" aria-controls="nav-offer-<?php echo $_product->getId() ?>" aria-selected="false">
+											   <img src="<?php echo $mediaUrl.'new-lists/offer.png'?>" alt="" title="">
+											   </a>
+											</div>
+											<?php } ?>
+											<?php
+											   if($origin!=null && $origin!='No') {
+												$imgUrl = $mediaUrl.'new-lists/earth-icon.svg';
+												$summerContent .= '<p class="summer_content">';
+												$summerContent .= '<img src='.$imgUrl.' alt='.$origin.'><span>Origin - '.$origin.'</span>';
+												$summerContent .= '</p>';
+												   } ?>
+											<?php
+											   if($fuel_efficiency!=null && $fuel_efficiency!='No') {
+												$imgUrl = $mediaUrl.'new-lists/petrol-icon.svg';
+												$summerContent .= '<p class="summer_content">';
+												$summerContent .= '<img src='.$imgUrl.' alt='.$fuel_efficiency.'><span>Fuel Efficiency - '.$fuel_efficiency.'</span>';
+												$summerContent .= '</p>';
+												   } ?>
+											<?php
+											   if($wet_grip!=null && $wet_grip!='No') {
+												$imgUrl = $mediaUrl.'new-lists/cloud-icon.svg';
+												$summerContent .= '<p class="summer_content">';
+												$summerContent .= '<img src='.$imgUrl.' alt='.$wet_grip.'><span>Wet Grip - '.$wet_grip.'</span>';
+												$summerContent .= '</p>';
+												   } ?>
+											<?php
+											   if($noise_levels!=null && $noise_levels!='No') {
+												$imgUrl = $mediaUrl.'new-lists/sound-icon.svg';
+												$summerContent .= '<p class="summer_content">';
+												$summerContent .= '<img src='.$imgUrl.' alt='.$noise_levels.'><span>Noise Levels - '.$noise_levels.'</span>';
+												$summerContent .= '</p>';
+												   } ?>
+										 </div> 
+									  </div>
+								   </div>     
+								   <div class="col-sm-6 col-xs-6 flex-wrap border-left-mob">
+									  <div class="tyro_price_box1 tyres-productset4">
+										 <div class="tyro_price_list">
+											<?php  if($isoffetproduct) { ?>
+											<span class="tyro_large_price">
+											<span class="aed_txt"><?php echo __($currency) ?></span>
+											<span class="tyre_amount chargebleprice"><?php echo number_format($actual_strike_price /4, 2); ?></span>
+											</span>
+											<?php  }else{ ?>
+											<span class="tyro_large_price">
+											<span class="aed_txt"><?php echo __($currency) ?></span>
+											<span class="tyre_amount orignalprice"><?php echo number_format($finalPricewithtax_four_Qty/4, 2); ?></span>
+											</span>
+											<?php } ?>
+										 </div>
+										 <?php
+											$stockStatus = '';
+											if ($_product->getIsSalable()) { 
+												$stockStatus = 'In Stock';
+											}else{
+												 $stockStatus = 'No Stock';
+											}
+											?>
+										 <div class="stock_status"><?php echo $stockStatus;?></div>
+										 <form class="tyro_cart_box1 test2" data-role="tocart-form" action="<?php echo $postParams['action']; ?>" method="post">
+											<div class="tyro_cart_count">
+											   <?php if ($_product->getIsSalable()) { ?>
+											   <?php  if($isoffetproduct) { ?>
+											   <select name="qty" class="select_qty" data-discountqty="<?php echo $discount_amount_qty ?>" data-totalqty="<?php echo $discount_step_qty ?>" data-unitprice="<?php echo $finalPricewithtax ?>"  data-id="<?php echo $_product->getId() ?>" >
+											   <?php  }else{ ?>
+											   <select name="qty" class="select_qty" data-id="<?php echo $_product->getId() ?>"  data-unitprice="<?php echo $finalPricewithtax ?>" >
+												  <?php  } ?>
+												  <option value="1" selected="">1</option>
+												  <option value="2">2</option>
+												  <option value="3">3</option>
+												  <option value="4">4</option>
+												  <option value="5">5</option>
+												  <option value="6">6</option>
+												  <option value="7">7</option>
+												  <option value="8">8</option>
+											   </select>
+											   <?php } ?>
+											</div>
+											<div class="tyro_cart_icon_box">
+											   <?php if ($_product->getIsSalable()) { ?>
+											   <input type="hidden" name="product" value="<?php echo $postParams['data']['product']; ?>">
+											  <?php /* <input type="hidden" name="<?php echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>"> */ ?>
+											   <?php echo $block->getBlockHtml('formkey')?>
+											   <button type="submit"
+												  title="<?php echo $block->escapeHtml(__('Buy Now')); ?>"
+												  ><?php echo $block->escapeHtml(__('Buy Now')); ?>
+											   </button>
+											   <?php }else{ ?>  
+											   <a href="tel:80025589737"><img src="<?php echo $mediaUrl.'new-lists/call-us.svg' ?>" class="cart_img_icon"></a>
+											   <span class="tyro_stock_status outstock"><?php echo __('No Stock');?></span>
+											   <?php } ?>
+											</div>
+										 </form>
+									  </div>
+								   </div>
+								</div>
+								<div class="tab-content" id="nav-tabContent">
+								   <?php $description = $_product->getResource()->getAttribute("description")->getFrontend()->getValue($_product); ?>
+								   <div class="tab-pane fade" id="nav-info-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-info-tab"><?php echo $description;?></div>
+								   <div class="tab-pane fade" id="nav-summer-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-summer-tab"><?php echo $summerContent;?></div>
+								   <div class="tab-pane fade" id="nav-play-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-play-tab"><?php echo $infoPlaycontent;?></div>
+								   <div class="tab-pane fade" id="nav-orig-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-orig-tab"><?php echo $infoOrigincontent;?></div>
+								   <div class="tab-pane fade" id="nav-fuel-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-fuel-tab"><?php echo $infoFuelcontent;?></div>
+								   <div class="tab-pane fade" id="nav-wet-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-wet-tab"><?php echo $infoWetcontent;?></div>
+								   <div class="tab-pane fade" id="nav-noise-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-noise-tab"><?php echo $infoNoisecontent;?></div>
+								   <div class="tab-pane fade" id="nav-offer-<?php echo $_product->getId() ?>" role="tabpanel" aria-labelledby="nav-offer-tab"><img src="<?php echo $tabOfferimg;?>" alt="<?php echo $tabOffer_title;?>" title="<?php echo $tabOffer_title;?>"></div>
+								</div>
+							 </div>
+						  </div>
+					   </li>	
+					<?php /* Mobile view end */ ?>
+					<?php } ?>
+					</ol>
+				<?php } ?>
+			<?php }else{ ?>
+				<div class="category-products"><p class="note-msg"><?php echo __('Sorry! Your search criteria did not search in our database. Have you searched the correct?') ?></p></div>
+			<?php } ?>
+			</div>
+		</section>
+</div>
+</div>
+<!-- emi jquery -->
+<?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Catalog::product/emijquery.phtml")->toHtml(); ?>
+
+<style type="text/css">
+.sec_one .pirelli_logo{width:310px; height:auto; margin-right:20%}
+.pattern_title{text-transform:uppercase; font-size:30px ;  font-weight:900; margin-bottom:30px;}
+p{color:#323232;}
+.mpbrand-index-patternview .container{padding : 0;}
+/*.sec_one,.sec_two,.sec_three{padding-left:15px; padding-right:15px;}*/
+.sec_two ul{list-style:none; padding:0; margin:20px 0 50px; display: flex; flex-wrap: wrap;}
+.sec_two ul li{width:50%; display: inline-flex;  align-items: center;}
+.sec_two ul li .p_icon{text-transform:uppercase; font-size:14px; color:#000000;  display: inline-flex; align-items: center;}
+.sec_two ul li .p_icon img{width:50px; margin-right:15px;}
+.sec_two ul li .rating{width: 55%;  margin-right: 10%;  margin-left: auto;}
+.sec_one{width:100%; display:flex; flex-wrap:wrap; padding-top:50px;}
+ .carrier_left{width:calc(100% - 350px);}
+ .carrier_left .pattern_title{ margin-bottom:10px;}
+ .right_img{width: 350px;  margin-right: 0;  margin-left: auto; margin-bottom:-50px}
+.sec_three .tabTitle{background:#646464; color:#ffffff; font-weight:600; padding: 5px 15px;  border-radius: 30px;}
+.stylishTitle{ display: inline-flex;  background: #d70000;  padding: 15px 30px;  color: #fff;  font-size: 24px;  box-shadow: 0.813px 1.827px 12px 0px rgba(46, 46, 46, 0.25);  border-radius: 0 0 30px 30px;}
+@media screen and (max-width:991px){
+.sec_two ul li .rating {  width: 45%;     margin-right: 5%;}
+.sec_two ul li .p_icon img {  width: 40px;}
+.right_img{margin-bottom:30px;}
+}
+@media screen and (max-width:768px){
+.right_img {  width: 250px;}
+.carrier_left {  width: calc(100% - 250px);}
+}
+@media screen and (max-width:767px){
+.carrier_left,.right_img { width: 100%;}
+.right_img{text-align:center;}
+.right_img img{width:300px; max-width:100%}
+.sec_two ul li{width:100%}
+.sec_two ul li .p_icon img { width: 30px;     margin-right: 10px;}
+.sec_two ul li .rating { width: 50%;  margin-right: 0;}
+.pattern_title{font-zie:24px;}
+.sec_one .pirelli_logo { width: 200px;}
+}
+</style>
+
+
+<style type="text/css">
+    @media (max-width: 600px) {
+        .brand-detail .product-item-photo{
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        .brand-detail .product-item-details{
+            float: left;
+        }
+    }
+
+.brand-product-list {
+    clear: both;
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.regular-web-list li {
+    float: left;
+    width: 100%;
+}
+</style>
+
+<style type="text/css">  
+/* In Line List Page CSS END */
+
+#mana_ajax_wrapper_category_products_list .products.products-grid .product-rule img {
+    height: 50px;
+    width: calc(100% - 0px) !important;
+    margin-left: 0px !important;
+    border-radius: 10px 10px 0 0;
+}
+
+@media(max-width: 767px) {
+    .list_in_mobile {
+        display: inline-block;
+        width: 100%;
+    }
+    .list_in_web {
+        display: none !important;
+    }
+    .tyres-type b {
+        font-weight: 600;
+    }
+}
+
+.list_in_mobile .tyres-price-box span.t-per {
+    width: 100%;
+}
+
+.list_in_mobile .tyres-price-box {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.list_in_mobile .tyres-item {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0px 5px !important;
+}
+
+.list_in_mobile {
+    display: none;
+    width: 100%;
+}
+
+.list_in_web {
+    display: inline-block;
+    width: 100%;
+}
+
+.list_in_mobile .tyres-info .tyres-img {
+    width: 100%;
+    float: none;
+    margin-top: 0;
+    display: inline-block;
+}
+
+.list_in_mobile .flip-card-front,
+.list_in_mobile .flip-card-back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    /* box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.list_in_mobile .product-image-photo.default_image {
+    position: relative;
+    z-index: 2;
+    width: 150px;
+}
+
+.list_in_mobile .flipsection {
+    display: inline-block;
+}
+
+.list_in_mobile .front .tyres-info {
+    min-height: auto;
+    display: inline-block;
+    padding: 0;
+}
+
+.list_in_mobile .section2 {
+    background: none;
+    padding-top: 5px;
+}
+
+.list_in_mobile .section2 .tyres-name-type {
+    max-height: 100px !important;
+    min-height: 50px;
+}
+
+.list_in_mobile .flip-card {
+    height: AUTO;
+}
+
+.list_in_mobile .offer_margin {
+    margin-top: 48px !important;
+}
+
+.list_in_mobile .flip-card-front .tyrescart,
+.list_in_mobile .flip-card-back .tyrescart {
+    position: relative;
+}
+
+.list_in_mobile .flip-card-back {
+    display: none;
+}
+
+.list_in_mobile .tyrescart span {
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.list_in_mobile .section3 form {
+    display: inline-block;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+}
+
+.list_in_mobile .section1 {
+    display: inline-block;
+    width: 37%;
+    vertical-align: top;
+    text-align: center;
+    max-height: 0;
+}
+
+.list_in_mobile .section3 .t-price {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 5px;
+    letter-spacing: 1px;
+}
+
+.list_in_mobile .section3 .selling_price .t-currency {
+    color: #d80000 !important;
+    font-size: 12px;
+}
+.list_in_mobile .section3 .t-cart button{
+        font-size: 12px;
+        font-weight: normal;
+}
+
+.list_in_mobile .section3 .t-currency {
+    font-weight: 600 !important;
+}
+
+.list_in_mobile .section3 span.t-per {
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.list_in_mobile .section2 {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+
+.list_in_mobile .section3 {
+    display: inline-block;
+    padding-top: 0px;
+    width: 36%;
+    vertical-align: text-bottom;
+    text-align: center;
+    padding-top: 4px;
+    position: relative;
+}
+
+.list_in_mobile .tyres-info {
+    background-color: transparent;
+}
+
+.list_in_mobile .flip-card-front {
+    
+}
+
+.list_in_mobile .section2 {
+    background: #ECECEC;
+}
+
+.list_in_mobile .tyres-type {
+    text-align: left;
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 1px 10px;
+}
+
+.list_in_mobile .tyres-name {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    padding: 0 10px;
+}
+
+.list_in_mobile .detail-btn {
+    border-radius: 10px !important;
+}
+
+.list_in_mobile .tyres-stock {
+    background-color: #37c800;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 15px;
+    border-radius: 0 0 5px 5px;
+    display: block;
+    vertical-align: middle;
+    margin-right: 0;
+    margin-left: 0;
+    display: block;
+    width: 76px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+.list_in_mobile .tyres-info .tyres-img {
+    width: 100%;
+}
+
+.list_in_mobile .tyres-info .tyres-img {
+    position: relative;
+    right: 0;
+    bottom: 0;
+}
+
+.list_in_mobile.tyres-items .tyres-item {
+    width: 100%;
+}
+
+.list_in_mobile {
+    display: none;
+}
+
+.list_in_mobile .tyres-item {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 0px 5px !important;
+}
+
+@media(max-width: 640px) {
+    .list_in_mobile .t-cart button:hover,
+    .list_in_mobile .t-cart button:focus,
+    .list_in_mobile .t-cart button {
+        padding: 0 20px;
+        font-size: 14px;
+        margin-bottom: 0px;
+        border-radius: 20px !important;
+    }
+}
+
+@media(max-width: 480px) {
+    .list_in_mobile .tyres-name {
+        text-align: left;
+        font-size: 15px;
+        font-weight: 700;
+        min-height: 50px;
+    }
+    .list_in_mobile.tyres-items .tyres-item {
+        width: 100%;
+    }
+    .list_in_mobile .w_tyres-name {
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+        min-height: 28px;
+        margin: 0;
+        margin-left: 10px;
+        padding-top: 10px;
+    }    
+    .detail-btn {
+        padding: 2px 30px;
+    }
+}
+
+span.stirkeout-parent {
+    position: relative;
+    /*left: -25px;*/
+    margin-top: 0;
+    color: black !important;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+span.stike-price,
+span.stike-price-currency {
+    text-decoration: line-through #d80000;
+}
+
+.sdelling_price {
+    display: inline-block;
+}
+
+.list_in_mobile .section3 .t-currency {
+    color: black !important;
+}
+
+.list_in_mobile .section3 span.stirkeout-parent {
+    position: relative;
+    left: 0;
+    margin-top: 0;
+}
+
+.section3 .t-qty .select_qty {
+    max-width: 45px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 13px;
+    padding: 0px 15px;
+    height: 28px;
+    border: 1.5px solid #ececec;
+    font-family: Rubik;
+    font-weight: 600;
+}
+
+.t-cart .callus {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+    background-color: #ececec;
+    border: 0;
+    border-radius: 25px;
+    height: 38px;
+    padding: 8px 14px;
+    margin-top: -3px;
+    display: inline;
+}
+
+.t-vat {
+    margin-bottom: 0;
+    margin-top: -1px !important;
+}
+
+span.rule-image-display {
+    background: white !important;
+}
+
+.emi_bank_logo {
+    width: 25%;
+    margin-bottom: 15px;
+}
+
+.modal-popup._inner-scroll .modal-content {
+    box-shadow: none;
+}
+
+.modal-popup._inner-scroll .modal-content,
+.modal-popup .modal-header {
+    border: none;
+}
+
+.modal-popup .modal-header {
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.emi-popup-modal div.bhoechie-tab-menu div.list-group>a.active {
+    background-image: unset;
+    border-color: #d80000;
+    background-color: #d80000;
+}
+
+.emi-popup-modal div.bhoechie-tab-menu div.list-group>a.active:after {
+    border-left: 10px solid #d80000;
+}
+
+div.bhoechie-tab-container {
+    z-index: 10;
+    background-color: #ffffff;
+    padding: 0 !important;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-clip: padding-box;
+    opacity: 0.97;
+    filter: alpha(opacity=97);
+}
+
+div.bhoechie-tab-menu {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+div.bhoechie-tab-menu div.list-group {
+    margin-bottom: 0;
+}
+
+div.bhoechie-tab-menu div.list-group>a {
+    margin-bottom: 0;
+}
+
+div.bhoechie-tab-menu div.list-group>a .glyphicon,
+div.bhoechie-tab-menu div.list-group>a .fa {
+    color: #5A55A3;
+}
+
+div.bhoechie-tab-menu div.list-group>a:first-child {
+    border-top-right-radius: 0;
+    -moz-border-top-right-radius: 0;
+}
+
+div.bhoechie-tab-menu div.list-group>a:last-child {
+    border-bottom-right-radius: 0;
+    -moz-border-bottom-right-radius: 0;
+}
+
+div.bhoechie-tab-menu div.list-group>a.active,
+div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+div.bhoechie-tab-menu div.list-group>a.active .fa {
+    background-color: #5A55A3;
+    background-image: #5A55A3;
+    color: #ffffff;
+}
+
+div.bhoechie-tab-menu div.list-group>a.active:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -13px;
+    border-left: 0;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
+    border-left: 10px solid #5A55A3;
+}
+
+div.bhoechie-tab-content {
+    background-color: #ffffff;
+    /* border: 1px solid #eeeeee; */
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+div.bhoechie-tab div.bhoechie-tab-content:not(.active) {
+    display: none;
+}
+
+.emi-popup-modal {
+    margin-top: 10px;
+}
+
+.panel-title>a:before {
+    float: right !important;
+    font-family: FontAwesome;
+    content: "\f068";
+    padding-right: 5px;
+}
+
+.panel-title>a.collapsed:before {
+    float: right !important;
+    content: "\f067";
+}
+
+.panel-title>a:hover,
+.panel-title>a:active,
+.panel-title>a:focus {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .modal-popup.modal-slide {
+        left: 0px;
+    }
+    .modal-popup .modal-content {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .mobileemi-popup-modal {
+        margin-top: 10px;
+    }
+    .mobileemi-popup-modal .panel-body {}
+
+}
+
+
+/* 2019-08-20   */
+
+.tyres-info .tyres-img {
+    position: relative;
+}
+
+.img_warranty,
+.img_warranty_front {
+    position: absolute;
+    top: 80px;
+    height: 100px;
+    width: 90%;
+    left: 5px;
+    z-index: 8;
+}
+
+.img_warranty_front {
+    top: 50px;
+}
+
+.img_warranty img,
+.img_warranty_front img {
+    width: 100%;
+}
+
+.run_flat_outer {
+    display: block;
+    position: relative;
+    background: #ccc;
+    margin: -45px -11px 5px;
+    padding: 8px 10px;
+    min-height: 42px;
+}
+
+.no_run_flat_outer {
+    display: block;
+    position: relative;
+    background: #fff;
+    margin: -45px -11px 5px;
+    padding: 8px 10px;
+    min-height: 42px;
+}
+
+.run_flat {
+    margin: 5px 0 0;
+}
+
+.run_flat_outer .run_flat {
+    margin: 0px 0 0;
+}
+
+.run_flat_outer img {
+    max-width: 90px;
+}
+
+.tyres-type img {
+    max-width: 60px;
+}
+
+img.bundle_rft {
+    width: 90px;
+}
+
+@media only screen and (min-width: 1700px) {
+    .img_warranty {
+        top: 70px
+    }
+    .img_warranty_front {
+        top: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .img_warranty {
+        top: 30px;
+        width: 100%;
+        left: 0px;
+    }
+    .img_warranty_front {
+        top: 70px;
+    }
+    .run_flat {
+        margin: 4px 0 5px -12px;
+    }
+    .flipsection .run_flat {
+        margin: 5px 0 4px 0px;
+    }
+    .mobile-price {
+        position: absolute;
+        text-align: left;
+        margin-left: -22px;
+        margin-top: 6px;
+        font-size: 12px;
+    }
+    .run_flat_outer_mobile {
+        display: block;
+        position: relative;
+        background: #ccc;
+        margin: 0px -10px 0px;
+        padding: 9px 10px;
+        min-height: 42px;
+    }
+    .mobile-year-origin {
+        padding: 0;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 12px;
+    }
+    .mobile-year {
+        padding: 0;
+        line-height: 2;
+        font-weight: 600;
+        font-size: 12px;
+    }
+    .list_in_mobile .tyrescart span {
+        padding-left: 5px;
+    }
+}
+
+.dot-origin {
+    margin: 0;
+    font-size: 14px;
+    font-family: Rubik;
+    font-weight: 400;
+    color: dimgray;
+}
+
+.warranty-list {
+    margin: 0;
+    font-size: 14px;
+    font-family: Rubik;
+    font-weight: 600;
+    color: black;
+}
+
+a#tncapply {
+    color: #8388A7;
+    font-size: 11px;
+}
+
+a#tncapply a:hover {
+    text-decoration: underline;
+}
+
+a.tcapply:hover,
+a.tcapply:active {
+    text-decoration: underline !important;
+}
+
+.tyo_list li {
+    border: #ddd solid 1px;
+    width: 100%;
+}
+.tyo_list li.flex-nav-prev,.tyo_list li.flex-nav-next{border: none !important;}
+.tyo_list .flex-control-nav.flex-control-paging{display: none;}
+.tyo_list .flexslider .slides{margin-bottom: 10px; margin-top: 10px;}
+.tyo_list li .tyo_info_tyre h3 {
+    font-size: 14px;
+    color: #323232;
+    font-weight: bold;
+    margin: :0;
+    letter-spacing: 1px;
+}
+.tyo_list li .tyo_info_tyre .originTxt,.tyo_list li .tyo_info_tyre .runFlatIcon{
+    width: 100%; 
+    display: inline-block; 
+    min-height: 25px; 
+    margin-top: 5px;
+    float: left
+}
+.tyo_list li .tyo_info_tyre .attriValue{width: 100%; display: inline-block; float: left; font-size: 13px;}
+.tyo_list li .tyo_info_tyre h5 {
+    color: #005096;
+    font-size: :14px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.tyo_list li .tyo_info_tyre {
+    padding-top: 10px;
+}
+
+.tyo_list li .half_tyre_bg {}
+
+.tyo_list li .half_tyre_bg .tyre_list_tyre_btm {
+    width: 15% !important;
+}
+
+
+/* In Line List Page CSS END */
+
+.tyo_list li {
+    border: #ddd solid 1px;
+    width: 100%;
+}
+
+
+/*.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}*/
+
+.page-products .products ol {
+    border-top: 0px solid #ccc !important;
+}
+
+.list_in_web {
+    display: inline-block;
+    width: 100%;
+}
+
+.tyres-items {
+    list-style: none;
+    margin-left: 0px;
+    /*padding: 10px 0px !important;*/
+    padding-right: 15px !important;
+}
+
+.tyo_list li {
+    border: #dddddd solid 1px;
+/*    border-bottom: none;*/
+    width: 100%;
+	margin: 15px 0;
+    border-radius: 15px;
+}
+
+.tyo_list li:last-child {
+    border-bottom: #dddddd solid 1px;
+}
+
+.tyo_list li .w-100 {
+    width: 100%
+}
+
+.tyo_list li.advBox {
+    margin: 20px auto !important;
+}
+
+
+/* .tyo_list li + li{border-top:#dddddd solid 1px;} */
+
+.tyo_list li .front-rear-box {
+    width: 100%;
+    border-radius: 0 0 40px 0;
+    min-height: 56px;
+    border-top: none;
+    background: #000000;
+    color: #fff;
+    align-items: center;
+    font-size: 24px;
+    padding: 11px 13px;
+    font-weight: 900;
+    font-family: Rubik;
+    font-style: italic;
+    letter-spacing: 2px;
+    border-left: #ffffff solid 1px;
+}
+
+
+/*latestchange edit*/
+
+.tyo_list li .border-width-bottom {
+    border-bottom: #dddddd solid 1px;
+}
+
+.tyo_list li.border-bottom-add {
+    border-bottom: #dddddd solid 1px;
+}
+
+.tyo_list li.tyro_list_style_3 {
+    border: none; margin-bottom: 15px !important
+}
+
+.tyo_list li.tyro_list_style_3 .border-width {
+    border: #dddddd solid 1px
+}
+.tyo_list li.tyro_list_style_3 .border-width-top-bottom{border-top: #dddddd solid 1px; border-bottom: #dddddd solid 1px}
+.tyo_list li.tyro_list_style_3 .border-width-top{border-top: #dddddd solid 1px}
+.tyo_list li.tyro_list_style_3 .border-width-bottom{border-bottom: #dddddd solid 1px}
+.tyo_list li.tyro_list_style_3 .border-width-left{border-left: #dddddd solid 1px}
+.tyo_list li.tyro_list_style_3 .border-width-right{border-right: #dddddd solid 1px}
+.tyo_list li.tyro_list_style_3 .action-list-box {
+    padding: 0;
+    flex-direction: initial;
+    align-items: stretch;
+}
+
+
+/*latestchange edit*/
+
+.tyo_list li.tyro_list_style_3 .action-list-box .tyro_action_list {
+    margin-bottom: 0;
+}
+
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list {
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+
+/*latestchange edit*/
+
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_stock_status {
+    position: absolute;
+    bottom: 0;
+    border-bottom: #dddddd solid 1px;
+}
+
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_cart_count {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.tyo_list li.tyro_list_style_3 .half_tyre_bg {
+    padding: 0;
+    justify-content: flex-end; align-items: center;
+}
+
+.tyo_list li.tyro_list_style_3 .half_tyre_bg.doubleTyre {
+    border-left: #dddddd solid 1px;
+    flex-direction: unset;
+}
+
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear {
+    min-width: 40px;
+    height: 34px;
+    background: url('../../media/new-lists/black-rectangle.svg') no-repeat;
+    background-position: top right;
+    background-size: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 24px;
+    font-style: italic;
+    font-family: Rubik;
+    padding-top: 3px;
+    padding-right: 18px;
+    padding-left: 8px;
+    text-transform: uppercase;
+    z-index: 1
+}
+
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear.tyre_typr_front_rear2 {
+    background: url('../../media/new-lists/black-rectangle-2.svg') no-repeat;
+    bottom: initial;
+    right: 0;
+    top: 0;
+    left: initial;
+    padding-left: 18px;
+    padding-right: 8px;
+    font-size: 16px;
+    min-width: 90px;
+    background-position: bottom left;
+}
+.tyo_list li.tyro_list_style_3 .tyre_fr_re_box{min-height:88px;}
+
+/*latestchange add*/
+
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear:before {
+    content: '';
+    width: calc(100% - 38px);
+    position: absolute;
+    height: 100%;
+    background: #000000;
+    left: 0;
+    top: 0;
+    z-index: -1
+}
+
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear.tyre_typr_front_rear2:before {
+    content: '';
+    width: calc(100% - 38px);
+    position: absolute;
+    height: 100%;
+    background: #000000;
+    left: initial;
+    right: 0;
+    top: 0;
+    z-index: -1
+}
+.tyo_list li.tyro_list_style_3  .tyres-productset4{height:50%}
+
+/*latestchange add*/
+.flex-row-reverse { -ms-flex-direction: row-reverse!important; flex-direction: row-reverse!important;}
+.tyo_list li .tyo_info_tyre {
+    padding: 10px 10px 0;
+    width: 100%;
+    border-left: #dddddd solid 1px;
+    border-right: #dddddd solid 1px;
+    text-align: left;
+}
+
+.tyo_list li .tyo_info_tyre h3 {
+    font-size: 14px;
+    color: #323232;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.tyo_list li .tyo_info_tyre .tyre_label {
+   
+    background: #ececec;
+    margin: 0;
+    border: #dddddd solid 1px;
+    border-bottom: none;
+    padding: 3px 10px;
+    font-family: Rubik;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    position: absolute; 
+    bottom: 0; left: 0; right: 0; width: 100%
+    letter-spacing: 0.5px;
+}
+.tyo_list li .tyo_info_tyre .tyre_label_1 {
+   
+    background: #005096;
+    color: #ffffff;
+    margin: 0;
+    border-top: #000 solid 1px;
+    padding: 3px 10px;
+    font-family: Rubik;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    position: absolute; 
+    bottom: 24px; left: 0; right: 0; width: 100%
+}
+.tyo_list li .tyo_info_tyre .tyre_label_2 {
+    background: #005096;
+    color: #ffffff;
+    margin: 0;
+    border-top: #000 solid 1px;
+    padding: 3px 10px;
+    font-family: Rubik;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    position: absolute; 
+    bottom: 0px; left: 0; right: 0; width: 100%
+}
+.tyo_list_view_s .tyre_label_1, .tyo_list_view_s .tyre_label_2 {
+    background: #005096;
+    color: #ffffff;
+    font-size: 10px;
+    border-bottom: #000 solid 1px;    
+    padding: 5px 0;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+.tyo_list_view_s .tyre_label {
+    padding: 0 10px;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.tyo_list li .tyo_info_tyre.border-width-bottom .tyre_label{bottom: 1px;}
+.tyo_list li .tyo_info_tyre .tyre_name {
+    margin: auto 0 0 0;
+    color: #323232;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: Rubik;
+    text-transform: uppercase;
+    letter-spacing: 0.5px
+}
+.tyo_list li img{width: auto;}
+.tyo_list li .circleLogo {
+    -webkit-width: calc(100% - 50%);
+    width: calc(100% - 50%);
+    float:left; /*11*/
+
+}
+.tyo_list li .with-side-logo .circleLogo + .half_tyre_bg {
+    width: 50% !important; position: relative; min-height: 110px;
+    float:left; /*11*/
+}
+.tyo_list li .half_tyre_bg,.tyo_list li .half_tyre_bg.half_tyre_style_2 {
+    width: 100%; text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-left: auto;
+    margin-right: auto; position: relative; min-height: 56px;
+}
+.tyo_list li .half_tyre_bg.half_tyre_style_2 {width: initial;}
+.auto_parts_logo {display: flex;align-items: center;justify-content: center;overflow: hidden;} 
+.tyo_list li .auto_parts_logo_ofrw {width: 82%;}
+.tyo_list li .with-side-logo .half_tyre_bg,.tyo_list li .with-side-logo .half_tyre_bg.half_tyre_style_2{width: 50%}
+.tyo_list li .half_tyre_bg .tyro_hlf_tyre_img,.tyo_list_mob li .half_tyre_bg .tyro_hlf_tyre_img{width: 100%; height: 70px; overflow: hidden; margin-bottom: 0; margin-top: auto; position: absolute; bottom: 0; left: 0; right: 0; }
+/*.tyo_list_mob li .half_tyre_bg .tyro_hlf_tyre_img{height:55px;}*/
+
+.tyo_list li .circleLogo {
+    position: relative;
+    height: 110px;
+    overflow: hidden;
+}
+
+.tyo_list li .circleLogo * {
+    position: relative;
+    z-index: 1;
+}
+
+.tyo_list li .circleLogo:before {
+    content: '';
+    background: url('../../media/new-lists/circle-angle.svg') no-repeat;
+    background-position: center right 1px;
+    background-size: auto 100%;
+    position: absolute;
+    width: 40px;
+    height: calc(100% + 2px);
+    right: 0;
+    margin: auto;
+}
+
+.tyo_list li .circleLogo:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: url('../../media/new-lists/shadow-logo-bg.png') no-repeat;
+    background-position: center;
+    z-index: 0;
+    background-size: cover;
+}
+
+.tyo_list li .circleLogo.logo_style_one:after,
+.circleLogo.logo_style_five:after,
+.circleLogo.logo_style_six:after {
+    content: '';
+    display: none;
+}
+
+.tyo_list li .circleLogo img {
+    max-width: 100%; height: 100%
+}
+
+.tyo_list li .half_tyre_bg .tyre_list_logo_top {
+    margin: 10px auto auto;
+    width: 65%
+}
+
+.tyo_list li .half_tyre_bg .tyre_list_tyre_btm,.tyo_list_mob li .half_tyre_bg .tyre_list_tyre_btm {
+    margin-bottom: 0;
+    margin-top: auto; 
+    width: auto !important; 
+    max-height: inherit;
+}
+
+.tyo_list li .half_tyre_bg .double-tyre-1 {
+    max-width: 45%
+}
+.tyo_list li .half_tyre_bg .tyro_double_tyre_box{height: 45px; margin-bottom: 0; margin-top: auto; overflow: hidden;  display: inline-block; padding-top: 5px; position: absolute; bottom: 0; right: 0; text-align: right; width: 80%}
+.tyo_list li .double-tyre-1+.double-tyre-1 {
+    margin-left: -15px
+}
+
+.tyo_list li .half_tyre_bg.half_tyre_style_2 .tyre_list_logo_top {
+    margin: 5px auto 5px; width: 68%;
+}
+
+.tyo_list li .half_tyre_bg img {
+    max-width: 100%
+}
+
+.tyo_list li .logo_style_one {
+    background: linear-gradient(to right, #000 99%, #fff 1%)
+}
+
+.tyo_list li .logo_style_two {
+    background: linear-gradient(to right, #ffc700 99%, #ffffff 1%)
+}
+
+.tyo_list li .logo_style_three {
+    background: linear-gradient(to right, #8eb5ba 99%, #fff 1%)
+}
+
+.tyo_list li .logo_style_four {
+    background: linear-gradient(to right, #0098cd 99%, #fff 1%)
+}
+
+.tyo_list li .logo_style_five {
+    background: linear-gradient(to right, #d80000 99%, #fff 1%)
+}
+
+.tyo_list li .logo_style_six {
+    background: linear-gradient(to right, #000000 99%, #fff 1%)
+}
+.tyo_list li.tyro_list_style_3 .tyro_top_logo_title{border-right: #dddddd solid 1px;}
+.tyo_list li.tyro_list_style_3 .logo_style_one {background: #000; padding-left: 5px;}
+.tyo_list li.tyro_list_style_3 .logo_style_two{ background:  #ffc700; }
+.tyo_list li.tyro_list_style_3 .logo_style_three { background:  #8eb5ba; padding-left: 5px;}
+.tyo_list li.tyro_list_style_3 .logo_style_four { background:  #8eb5ba;}
+.tyo_list li.tyro_list_style_3 .logo_style_five{background:  #d80000;}
+.tyo_list li.tyro_list_style_3 .logo_style_six{background:  #000000; }
+
+.tyo_list li.tyro_list_style_3 .tyro_top_logo_title img{max-height: 28px; margin: 3px 0}
+.tyo_list li .action-list-box {
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+    border-right: #dddddd solid 1px;
+}
+.tyo_list li .action-list-box .colorSelect{width: 60%; min-width: 100px; }
+.tyo_list li .action-list-box .colortxt{display: block;}
+.tyo_list li .action-list-box .tyro_year {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Rubik;
+    margin: 0px 0 auto;
+}
+
+.tyo_list li .action-list-box .tyro_car_logo {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding-top: 5px;
+}
+
+.tyo_list li .action-list-box .tyro_car_logo img {
+    width: auto; max-height: 25px; max-width: 50px;
+}
+
+.tyo_list li .action-list-box .tyro_action_list {
+    width: 100%;
+    position: absolute; left: 0; right: 0; bottom: 0; margin: auto; text-align: center;
+    margin: auto 0 5px;
+}
+
+.tyo_list li .action-list-box .tyro_action_list .info_act_circle {
+    width: 20px;
+    height: 20px;
+    border: #d60000 solid 1.5px;
+    border-radius: 100%;
+    display: inline-block;
+    margin: auto;
+    font-weight: 700;
+    font-family: Rubik;
+    font-size: 12px;
+    margin: 9px 3px 9px 0;
+    display: none;
+}
+
+.tyo_list li .action-list-box .tyro_action_list .tyro_action_icon {
+    width: 28px;
+    border: #d60000 solid 1.5px;
+    margin: 5px 2px;
+    border-radius: 7px;
+    cursor: pointer; display: inline-block; vertical-align: middle;
+}
+
+.tyo_list li .action-list-box .tyro_action_list .tyro_action_icon:hover {
+    border-color: #232C2B;
+}
+
+.tyo_list li .easy-pay-box {
+    width: 30%;
+    background: #005096 url('../../media/new-lists/easy-pay-logo.svg') no-repeat;
+    background-position: center;
+    background-size: 80% auto;
+    position: relative;
+}
+
+.tyo_list li .easy-pay-box.light-easy-pay {
+    background: #ececec url('../../media/new-lists/easy-pay-logo.svg') no-repeat;
+    background-position: center;
+    background-size: 80% auto;
+    border: #dddddd solid 1px;
+    border-top: none;
+    border-bottom: none;
+}
+
+.tyo_list li .easy-pay-box .info_light {
+    width: 25px;
+    height: 25px;
+    border: #ffffff solid 2px;
+    border-radius: 100%;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: inline-block;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+    font-family: Rubik;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tyo_list li .tyro_price_box {
+    width: 73%;
+   float: left; position: relative;
+}
+
+.tyo_list li .tyro_price_box .tyro_price_list {
+    width: 100%;
+    padding: 10px 15px 0;
+    margin-bottom: 5px;
+    margin-top: auto;
+    position: absolute; bottom: 0; left: 0; right: 0
+}
+.tyo_list li .tyro_price_box .tyro_price_list .aed_txt {
+    text-transform: uppercase;
+}
+
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: Rubik;
+    color: #d80000;
+}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price{margin-bottom: 0; margin-top: auto;}
+
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt {
+    font-size: 14px;
+    color: #323232;
+    font-weight: 600;
+    margin-left: 3px;
+}
+
+.tyo_list li .tyro_price_box .offer_Sec {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: Rubik;
+    position: relative;
+        padding-bottom: 7px;
+    justify-content: center;
+    height: 25px;
+}
+.tyo_list li .tyro_price_box .offer_Sec span{align-items: center;}
+.tyo_list li .tyro_price_box .tyro_price_list .vat_text {
+    font-size: 10px;
+    color: #323232;
+    font-weight: 600;
+    width: 100%;
+}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .vat_text{width:100%; display:inline-block;}
+.tyo_list li .tyro_price_box .tyro_price_list .vat_text.auto_parts_inc {
+    font-size: 14px;
+}
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_small_price {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    font-family: Rubik;
+    color: #005096; display: inline-block;
+}
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_small_price.strikePrice{text-decoration: line-through #d80000; color: #000000; display: inline-block; align-items: center;}
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 4px;
+}
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_small_price.strikePrice .aed_txt{font-size: 12px; margin-left: 0}
+
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_small_price .sml_dark_txt {
+    font-size: 14px;
+    color: #323232;
+    font-weight: 600;
+}
+
+.tyo_list li .tyro_price_box .offer_Sec span {
+    position: relative;
+    z-index: 1
+}
+
+.tyo_list li .tyro_price_box .offer_Sec img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 25px;
+}
+
+.tyo_list li .tyro_cart_box {
+    width: 27%;
+    text-align: center;
+    border-left: #dddddd solid 1px;
+    position: relative;
+    float:left;
+}
+
+.tyo_list li .tyro_cart_box .tyro_cart_count {
+    height: 50%; width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #323232;
+    font-family: Rubik;
+    border-bottom: #dddddd solid 1px;
+    position: absolute;
+    left: 0; right: 0; top: 0;padding: 15px 10px;
+}
+.tyo_list li .tyro_cart_box .tyro_cart_count select,.tyo_list_mob li .tyro_cart_box .tyro_cart_count select{background: none; text-align-last: center; border: none; padding: 0 5px}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    .tyo_list li .tyro_cart_box .tyro_cart_count select,.tyo_list_mob li .tyro_cart_box .tyro_cart_count select{padding: 0 40%; font-weight: 600;}
+    .tyo_list_mob li .tyro_cart_box .tyro_cart_count select{padding-left: 25px !important; padding-right: 25px !important;}
+} 
+.tyo_list li .tyro_cart_box .tyro_cart_count form{border:none; width:100%}
+.tyo_list li .tyro_cart_box .tyro_cart_count,
+.tyo_list li .tyro_cart_box .tyro_stock_status {
+    width: 100%;
+}
+
+.tyo_list li .tyro_cart_box .tyro_cart_icon_box {
+    width: 100%;
+    height: 50%;
+    background: #ececec;
+    margin: auto auto 0; position: absolute;
+    bottom: 0; left: 0; right: 0; padding-top: 2px;
+}
+
+.regular-web-list li .tyro_cart_box .tyro_cart_icon_box, 
+.regular-web-list li .tyro_cart_box .tyro_stock_status.instock,
+.quality-web-list li .tyro_cart_box .tyro_cart_icon_box, 
+.quality-web-list li .tyro_cart_box .tyro_stock_status.instock {
+    border-radius: 0 0 15px 0;
+}
+
+.tyo_list li .tyro_cart_box .tyro_cart_icon_box button,.tyo_list_mob li .tyro_cart_box .tyro_cart_icon_box button{position: absolute; top: 0; right: 0; left: 0; opacity: 0; width: 100%; height: calc(100% - 19px); bottom: 0; margin: auto; z-index: 99}
+.tyo_list li .tyro_cart_box .tyro_cart_icon_box button{bottom: 0; height: 100%; margin: auto;}
+.tyo_list li .tyro_cart_box .tyro_cart_icon_box .cart_img_icon {
+    width: 25px;
+    margin: 4px auto 0;
+}
+
+.tyo_list li .tyro_cart_box .tyro_stock_status {
+    background: #323232;
+    margin-bottom: 0;
+    margin-top: auto;
+    font-size: 9px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 3px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 14px;
+    border-top: #dddddd solid 1px;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+}
+
+.tyo_list li .tyro_cart_box .tyro_stock_status.instock {
+    background: #00cd00
+}
+
+.tyo_list li .tyro_cart_box .tyro_stock_status.outstock {
+    background: #d80000;
+    border-radius: 0 0 15px 0;
+}
+
+.tyo_list li .frontrearCartBox {
+    border: #dddddd solid 1px;
+    border-top: none;
+    border-left: none; border-bottom: none;
+    float: right !important; 
+}
+.tyo_list li .frontrearCartBox .tyro_price_box .tyro_price_list{min-height:50px;}
+
+/*new added css line*/
+
+.tyo_list li .frontrearCartBox:before {
+    content: '';
+    width: 100%;
+    height: calc(100% + 1px);
+    border-left: #dddddd solid 1px;
+    border-bottom: #dddddd solid 1px;
+    position: absolute;
+    right: 1px;
+    bottom: -1px;
+    border-radius: 0 0 0 40px
+}
+
+.tyo_list li .frontrearCartBox .tyro_cart_box .tyro_cart_icon_box {
+    height: 100%; 
+}
+
+.tyo_list li .half_tyre_bg.half_tyre_style_2:not(.doubleTyre),.tyo_list li .tyo_info_tyre,.tyo_list li .action-list-box,.tyo_list li .tyro_price_box,.tyo_list li .tyro_cart_box,.tyo_list li.tyro_list_style_3 .tyre_fr_re_box{min-height: 110px;}
+ .tyo_list li .frontrearCartBox .tyro_price_box,.tyo_list li .frontrearCartBox .tyro_cart_box{min-height: 60px;}
+.tyo_list li  .frontrearCartBox .tyro_cart_box .tyro_cart_icon_box .cart_img_icon{position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
+/*new added css line*/
+
+.tyo_list li .border-bottom-none {
+    border-bottom: none !important
+}
+
+.tyo_list li .frontrearCartBox .tyro_price_box .tyro_price_list {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+.tyo_list_mob li.tyro_style_3_mob .tyro_top_logo_title{margin-bottom: -2px; z-index: 1; width: 100%}
+.tyo_list_mob li.tyro_style_3_mob .tyro_top_logo_title img{width: auto;}
+.tyo_list_mob li.tyro_style_3_mob .tyro_acc_content .tyro_top_logo_title{border-top: #dddddd solid 1px;}
+
+@media screen and (max-width: 1919px) {
+    .tyo_list li .action-list-box .tyro_car_logo img {
+        max-height: 25px; 
+        max-width: 50px;
+    }
+}
+@media screen and (max-width: 1650px) {
+    .tyo_list li .tyro_price_box .tyro_price_list {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price {
+        font-size: 22px;
+    }
+    .tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt {
+        margin-right: 0
+    }
+    .tyo_list li.tyro_list_style_3 .tyre_typr_front_rear.tyre_typr_front_rear2 {
+        padding-left: 8px;
+        padding-right: 6px;
+        font-size: 12px;
+        min-width: 57px;
+    }
+    .tyo_list li .easy-pay-box .info_light {
+        width: 21px;
+        height: 21px;
+        font-size: 12px;
+    }
+    .tyo_list li.tyro_list_style_3 .tyre_typr_front_rear {
+        font-size: 16px;
+        padding-right: 12px;
+        padding-left: 5px;
+    }
+
+    .tyo_list li.tyro_list_style_3 .tyre_typr_front_rear {
+        height: 27px;
+    }
+    .tyo_list li .tyro_price_box .tyro_price_list .tyro_small_price {
+        font-size: 14px;
+    }
+    .tyo_list li .tyro_cart_box .tyro_stock_status {
+        font-size: 8px;
+    }
+    .tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt {
+        font-size: 13px;
+    }
+    .tyo_list li .front-rear-box {
+        font-size: 20px;
+    }
+    .tyo_list li .tyo_info_tyre {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 1450px) {
+    .tyo_list li .action-list-box {
+        padding: 0
+    }
+    .tyo_list li .action-list-box .tyro_action_list .tyro_action_icon {
+        width: 23px;
+        margin: 4px 0
+    }
+    .tyo_list li .action-list-box .tyro_action_list .info_act_circle {
+        margin:9px 2px 9px 0;
+        width: 18px;
+        height: 18px;
+    }
+    .tyo_list li .tyro_price_box .tyro_price_list {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.tyo_list_mob {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tyo_list_mob li {
+    border-top: #dddddd solid 0px;
+}
+
+.tyo_list_mob li.advMob {
+    padding: 20px 0;
+}
+
+.tyo_list_mob li .logo_style_two {
+    background: #ffc700 url('../../media/new-lists/mobile/shadow-logo-mob.png') no-repeat;
+    padding-left: 0
+}
+
+.tyo_list_mob li .logo_style_three {
+    background: #8eb5ba url('../../media/new-lists/mobile/shadow-logo-mob.png') no-repeat;
+}
+
+.tyo_list_mob li .logo_style_four {
+    background: #0098cd url('../../media/new-lists/mobile/shadow-logo-mob.png') no-repeat;
+}
+
+.tyo_list_mob li .logo_style_five {
+    background: #d80000;
+}
+
+.tyo_list_mob li .logo_style_six {
+    background: #000000;
+}
+
+.tyo_list_mob li .tyro_top_logo_title img {
+    max-width: 100%;
+}
+
+.tyo_list_mob li .tyro_top_logo_title .angle_icon_box {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    background: url('../../media/new-lists/mobile/angle-icon.svg') no-repeat;
+    background-position: center;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.tyo_list_mob li .active .tyro_top_logo_title .angle_icon_box {
+    transform: rotate(0deg);
+}
+.tyo_list_mob li .half_tyre_bg.half_tyre_style_2:not(.doubleTyre),.tyo_list_mob li .tyo_info_tyre,.tyo_list_mob li .action-list-box,.tyo_list_mob li .tyro_price_box,.tyo_list_mob li .tyro_cart_box,.tyo_list_mob li .half_tyre_bg{min-height: 100px;}
+.tyo_list_mob li .tyro_acc_content:nth-child(3) .tyro_price_box,.tyo_list_mob li .tyro_acc_content:nth-child(3) .tyro_cart_box,.tyo_list_mob li .tyro_acc_content .tyo_two_tyre_img,.tyo_list_mob li .tyro_acc_content .mob-fplus-r-leftbox,.tyo_list_mob li .tyro_large_front_rear{min-height: 45px; height: 50px;}
+.tyo_list_mob li .half_tyre_bg {
+    width: 90px;
+    padding: 0 5px;
+    border-top: #dddddd solid 1px; position: relative;
+}
+
+.tyo_list_mob li .half_tyre_bg img {
+    max-width: 100%
+}
+
+.tyo_list_mob li .half_tyre_bg .tyre_list_logo_top {
+    margin-top: 10px; max-width: 95%
+}
+
+.tyo_list_mob li .half_tyre_bg .tyre_list_tyre_btm {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.tyo_list_mob li .tyo_info_tyre {
+    width: calc(100% - 90px);
+    padding: 0 15px 5px;
+    border-top: #dddddd solid 1px;
+    position: relative;
+}
+
+.tyo_list_mob li .tyo_info_tyre h3 {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Rubik;
+    color: #323232;
+    margin: 5px 0 5px;
+    width: 100%;
+    min-height: 21px;
+}
+
+.tyo_list_mob li .tyo_info_tyre h5 {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Rubik;
+    color: #005096;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+.tyo_list_mob li.tyro_style_3_mob .tyo_info_tyre .tyre_name{   
+    font-weight: 400;
+    font-size: 11px; line-height: 12px;
+    font-family: Rubik;
+    color: #005096;
+    width: 100%; margin-bottom: 5px;
+}
+.tyo_list_mob li.tyro_style_3_mob .tyre_label{ width: 100%; background: #ececec; font-size: 11px; padding: 2px 5px; line-height: 13px;
+ align-items: center; border-top: #dddddd solid 1px;}
+.tyo_list_mob li .tyro_action_list {
+    width: 100%;
+    margin: 0; position: relative; left: 0; top: 5px; right: 0; bottom: 0px; padding-left: 0px; border:none;
+}
+
+.tyo_list_mob li .tyro_action_list .tyro_action_icon {
+    width: 32px;
+    border: #d60000 solid 1.5px;
+    margin: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.tyo_list_mob li .tyro_action_list .tyro_action_icon:nth-child(1) {
+    margin-left: 0
+}
+
+.tyo_list_mob li .tyro_price_box {
+    width: calc(100% - 110px); float: left;
+    border-left: #dddddd solid 1px;
+    border-right: #dddddd solid 1px
+}
+
+.tyo_list_mob li .easy-pay-box {
+    width: 100%;
+    background: #005096 url('../../media/new-lists/mobile/easy-pay-mob-icon.svg') no-repeat;
+    background-position: center left 15px;
+    background-size: auto 80%;
+    position: relative;
+    height: 40px;
+}
+
+.tyo_list_mob li .easy-pay-box.light-easy-pay {
+    background: #ececec url('../../media/new-lists/mobile/easy-pay-mob-icon.svg') no-repeat;
+    background-position: center left 15px;
+    background-size: auto 80%;
+    border-top: #dddddd solid 1px;
+}
+
+.tyo_list_mob li .easy-pay-box .info_light {
+    width: 25px;
+    height: 25px;
+    border: #ffffff solid 2px;
+    border-radius: 100%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+    font-family: Rubik;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list {
+    padding: 8px 15px 5px;
+    width: 100%; margin-bottom: auto; margin-top: auto;
+    position: absolute; left: 0; right: 0; bottom: 0;
+}
+
+.tyo_list_mob li .tyro_cart_box {
+    width: 110px;
+    position: relative; float: left;
+}
+.tyo_list_mob li .tyro_cart_box form{width: 100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0}
+.tyo_list_mob li .tyro_cart_box select{text-align-last: center; height: 100%; padding: 20% 0}
+.tyo_list_mob li .tyro_cart_box .tyro_cart_count select{
+    height: 100%; 
+    padding: 20% 0;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.tyo_list_mob li .tyro_cart_box .tyro_cart_count {
+    height: 50%; 
+	width: 100%;
+    display: grid;
+    font-size: 18px;
+    font-weight: 600;
+    color: #323232;
+    font-family: Rubik;
+    border-bottom: #dddddd solid 1px;
+    border-top: #dddddd solid 1px;
+    position: absolute; 
+	top: 0; 
+	left: 0; 
+	right: 0;
+}
+
+.tyo_list_mob li .tyro_cart_box .tyro_cart_icon_box {
+    width: 100%;
+    height: 49%;
+    background: #ececec;
+    margin: auto auto 0;
+    position: absolute;
+    bottom: 0; left: 0; right: 0; text-align: center;
+}
+/*.tyo_list_mob li .tyro_acc_content:last-child .tyro_cart_box .tyro_cart_icon_box{padding-bottom: 0}*/
+.tyo_list_mob li .tyro_cart_box .tyro_stock_status {
+    width: 100%;
+    display: block; text-align: center;
+    background: #323232;
+    margin-bottom: 0;
+    margin-top: auto;
+    font-size: 9px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 3px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 14px;
+    border-top: #dddddd solid 1px;
+    position: absolute;
+    bottom: 0;
+}
+
+.tyo_list_mob li .tyro_cart_box .tyro_stock_status.instock {
+    background: #00cd00;
+}
+
+.tyo_list_mob li .tyro_cart_box .tyro_stock_status.outstock {
+    background: #d80000;
+}
+
+.tyo_list_mob li .tyro_cart_box .tyro_cart_icon_box .cart_img_icon {
+    width: 20%;
+    margin: 4px auto 0;
+    position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: Rubik;
+    color: #d80000;
+    display: block;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt {
+    font-size: 10px;
+    color: #323232;
+    font-weight: 600;
+    margin-left: 3px;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    font-family: Rubik;
+    color: #005096;
+    display: block;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_old_price {
+    width: 48%;
+    display: inline-block;
+    color: #000;
+    text-decoration: line-through;
+    text-decoration-color: #ff0000;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price.tyro_old_price .aed_txt {
+    margin-left: 0
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price.tyro_old_price+.tyro_small_price {
+    width: 48%;
+    display: inline-block;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .sml_dark_txt {
+    font-size: 10px;
+    color: #323232;
+    font-weight: 600;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .vat_text {
+    font-size: 10px;
+    color: #323232;
+    font-weight: 600;
+    width: 100%;
+    display: block;
+    font-family: Rubik;
+}
+
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt {
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0 4px;
+    font-family: Rubik;
+    text-transform: uppercase;
+}
+
+.tyo_list_mob li.tyro_style_2_mob {
+    border: none;
+}
+.tyo_list_mob li.tyro_style_2_mob:last-child{border-bottom: #dddddd solid 1px;}
+.tyo_list_mob li.tyro_style_2_mob .half_tyre_bg {
+    padding-right: 0
+}
+
+.tyo_list_mob li.tyro_style_3_mob .tyro_cart_box .tyro_cart_count {
+    height: 100%; padding-bottom: 20px;
+}
+
+.tyo_list_mob li.tyro_style_3_mob .tyro_cart_box .tyro_stock_status {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+.tyo_list_mob li.tyro_style_3_mob .tyro_mob_front_or_rear {
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    padding: 3px 5px;
+    font-family: Rubik;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-size: 20px; margin-bottom: auto;
+}
+
+.tyo_list_mob li.tyro_style_3_mob {
+    border-radius: 0 0 45px 45px;
+    border-bottom: #dddddd solid 1px;margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.tyo_list_mob li.tyro_style_3_mob .tyro_cart_box .tyro_cart_icon_box {
+    border-radius: 0 0 45px 0;
+    height: 100%
+}
+
+.tyo_list_mob li .tyro_info_f_r_txt {
+    background: #000;
+    color: #ffffff;
+    font-family: Rubik;
+    font-size: 20px;
+    font-weight: 900;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    width: 45px;
+    font-style: italic;
+}
+
+.tyo_list_mob li.tyro_style_3_mob .tyo_info_tyre h3 {
+    padding-right: 35px;
+}
+
+.tyo_list_mob li .tyro_large_front_rear {
+    width: 105px;
+    background: #000000;
+    color: #ffffff;
+    font-family: Rubik;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    padding: 15px 35px;
+    border-top: #dddddd solid 1px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    border-radius: 0 0 0 45px
+}
+
+.tyo_list_mob li .tyo_two_tyre_img {
+    width: calc(100% - 105px);
+    border-top: #dddddd solid 1px;
+    padding-right: 10px; position: absolute; bottom: 0; right: 0
+}
+
+.tyo_list_mob li .tyo_two_tyre_img img {
+    max-width: 40%;
+    margin-top: 7px;
+}
+
+.tyo_list_mob li .tyo_two_tyre_img img+img {
+    margin-left: -25px;
+}
+
+.tyo_list_mob li .tyro_price_box .vat_text .setof4txt {
+    float: right;
+}
+@media screen and (max-width: 1650px){
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt{margin-right: 5px;}
+}
+@media screen and (max-width: 1280px){
+.tyo_list li.tyro_list_style_3 .tyre_fr_re_box {
+    min-height: 87px;}
+}
+@media screen and (max-width: 1024px){
+.tyo_list li .tyro_price_box .tyro_price_list{min-height: 111px;}
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+.tyo_list li .action-list-box .tyro_year{text-align: left; padding-left: 5px;}
+.tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price{font-size: 16px;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre{min-height: 111px;}
+.tyo_list li .action-list-box .tyro_car_logo img{max-height: 35px;}
+.tyo_list li .action-list-box .tyro_action_list .tyro_action_icon{margin: 4px 0;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt{margin-left: 0}
+}
+@media screen and (max-width: 767px){
+.category-products.list-view.bundle-product-list{padding-right: 0 !important}
+.tyo_info_tyre span {font-size: 10px;}
+.tyo_list_mob li .tyro_price_box{border-top: #dddddd solid 1px;}
+.tyo_list li.tyro_list_style_3 .tyre_fr_re_box{height:50%}
+.tyo_list li.tyro_list_style_3 .tyre_fr_re_box + div{height:50%}
+.tyo_list li.tyro_list_style_3 .col-sm-12{width:100%}
+.tyo_list li.tyro_list_style_3 .col-sm-6{width:50%}
+.tyo_list li.tyro_list_style_3 .col-sm-3{width:25%}
+.tyo_list li.tyro_list_style_3 .col-sm-9{width:75%}
+.tyo_list li.tyro_list_style_3 .col-sm-6.frontrearCartBox{width:100%}
+.tyo_list li.tyro_list_style_3 .col-md-12.tyro_top_logo_title{width:100%}
+.tyo_list_mob li .tyo_two_tyre_img span{width:auto; height:40px; overflow:hidden;text-align:right}
+.tyo_list_mob li .tyo_two_tyre_img span img{width: auto; height: auto; max-width: 40%; max-height: inherit; min-width: inherit;}
+.tyo_list_mob li .mob-fplus-r-leftbox .tyo_two_tyre_img span{position: absolute; bottom: 0; width: 100%; display: block;}
+.catalog-category-view .homesearchbar .tyrefinder-bg {background: #ececec;}
+ul.tyrefinder-tabs-title.clearfix{margin-top:-10px;}
+.listsearch .search-section .tyrefinder-content .tyrefinder-content-list .right-inner button.find {height: 35px !important;}
+.listsearch .search-section .tyrefinder-content .tyrefinder-content-list .right-inner button.find span {
+    color: #212121;
+    font-size: 16px;
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+}
+body:not(.cms-index-index) .search-section .tyrefinder-content .tyrefinder-content-list .right-inner button.find, .listsearch .search-section .tyrefinder-content .tyrefinder-content-list #search-vehicle .view_tyres_inner .submit-btn.Tyre_menu_fitting button.find {
+    width: 60% !important;
+    margin-left: 20% !important;
+}
+.listsearch .search-section .tyrefinder-content .tyrefinder-content-list{margin-bottom: 0px !important;}
+.catalog-category-view .homesearchbar-brand .view_tyres_container-home {margin-top: 0px !important;}
+.catalog-category-view .listsearch .search-section .tyrefinder-content .tyrefinder-content-list #search-vehicle .view_tyres_inner .Tyre_menu_fitting { 
+    margin: 0px 0px 0px 0px !important; 
+    }
+.detail-btn {
+    padding: 5px 13px;
+    font-size: 12px;
+} 
+.list_in_mobile .tyres-stock {padding: 2px 5px;width: 60px;} 
+.tyro_cart_icon_box {
+    float: left;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.tyro_cart_icon_box .tyro_stock_status.outstock {
+    background: #d80000;
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
+    border: none;
+    line-height: 30px;
+    padding: 0 12px;
+    height: 32px;
+}
+.tyro_cart_icon_box img.cart_img_icon {
+    width: 32px;
+    margin-bottom: 5px;
+}
+.tabby-buy-now-banner {display:none;}
+.regular-mobile-list-bundle .tyro_action_rft {
+    padding: 0;
+    margin: 0 auto;
+}
+.regular-mobile-list-bundle .tyro_action_rft .dot-mob {
+    font-size: 10px;
+    line-height: 20px;
+	margin-left: 3px;
+}
+}
+.regular-mobile-list-bundle .tyro_action_rft .runflat-mob {
+    margin: 0 3px 0 0;
+}
+.regular-mobile-list-bundle .tyro_action_rft .runflat-mob .tyo_run_flat {
+   width: 50px !important;
+}  
+}
+@media screen and (max-width: 600px){
+.tyo_list_mob li .easy-pay-box .info_light{top: 0; bottom: 0; margin: auto; width: 20px; height: 20px; font-weight: normal;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price {font-size: 20px;}
+.tyo_list_mob li .tyo_info_tyre h5{margin-bottom: 5px;}
+}
+@media screen and (max-width: 576px){
+.tyo_list_mob li .tyro_top_logo_title .angle_icon_box{background-size: 12px auto; right: 0}    
+.tyo_list_mob li .tyro_top_logo_title img {width: 100%}
+.tyo_list_mob li .half_tyre_bg { width: 75px; float: left;}
+.tyo_list_mob li .auto_parts_mobile_sec { width: 100%; float: left; border-top: 1px solid #ccc; height: 60px;}
+.tyo_list_mob li .tyo_info_tyre { width: calc(100% - 75px); padding: 0 0 5px 5px; float: left;}
+.tyo_list_mob li .tyo_info_tyre h3 { font-size: 0.7em; margin-top: 6px;}
+.tyo_list_mob li .tyo_info_tyre h5 { font-size: 0.7em;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon { width: 25px; display: inline-block;  align-items: center; justify-content: center;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon img{ max-width: 100% }
+.tyo_list_mob li .tyro_price_box { width: calc(100% - 45px);}
+.tyo_list_mob li .tyro_price_box .tyro_price_list { padding: 8px 7px 5px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price { font-size: 18px; line-height:14px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt { font-size: 10px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt { font-size: 10px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price { font-size: 14px; line-height:14px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .sml_dark_txt,.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt,.tyo_list_mob li .tyro_price_box .tyro_price_list .vat_text { font-size: 9px;}
+.tyo_list_mob li .tyro_cart_box{width: 45px;}
+.tyo_list_mob li .tyro_cart_box .tyro_cart_icon_box .cart_img_icon { width: 20px;}
+.tyo_list_mob li .tyro_cart_box .tyro_stock_status{letter-spacing: 0; font-size: 8px}
+.tyo_list_mob li.tyro_style_3_mob .tyro_mob_front_or_rear,.tyo_list_mob li .tyro_info_f_r_txt{font-size: 16px}
+.tyo_list_mob li .easy-pay-box .info_light { width: 21px; height: 21px; font-weight: 600; font-size: 14px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt{margin: 0 2px 0 2px;}
+.tyo_list_mob li .easy-pay-box{height:30px;}
+.tyo_list_mob li .tyro_cart_box .tyro_cart_count{font-size:14px;}
+.tyo_list_mob li .half_tyre_bg .tyre_list_logo_top { margin-top: 5px;}
+.tyo_list_mob li .tyo_two_tyre_img img{min-width: 50px;}
+.tyo_list_mob li .tyro_info_f_r_txt{width: 35px;}
+.tyo_list_mob li .tyro_large_front_rear{font-size: 16px;}
+.tyo_list_mob li.tyro_style_3_mob .tyro_top_logo_title{padding-top: 6px; padding-bottom: 6px;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre h5,.tyo_list li.tyro_list_style_3 .tyo_info_tyre h3{font-size:11px;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre{font-size:10px;}
+.tyo_list li.tyro_list_style_3 .tyo_run_flat { width: 55px !important;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre .tyre_name{font-size:10px; line-height:10px;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre .tyre_label{font-size:10px; line-height:10px;}
+.tyo_list li.tyro_list_style_3 .tyro_action_list .tyro_action_icon { font-size:9px; width: 16px; border-radius: 3px; margin: 0 1.5px 0;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price { font-size: 9px; line-height: 10px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt{font-size:9px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt{font-size:9px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_small_price{font-size:9px;}
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear.tyre_typr_front_rear2{font-size:8px;font-size: 8px; min-width: 47px;  height: 20px; line-height: 8px;}
+.tyo_list li.tyro_list_style_3 .action-list-box .tyro_year{font-size:10px; padding-right:25px;}
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear {font-size: 10px; padding-right: 7px; padding-left: 0px; min-width:20px; height:17px}
+.tyo_list li.tyro_list_style_3 .half_tyre_bg .tyro_hlf_tyre_img, .tyo_list_mob li.tyro_list_style_3 .half_tyre_bg .tyro_hlf_tyre_img{height:40px;}
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_stock_status { font-size: 5px; line-height: 5px;}
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_cart_count select{font-size:9px;}
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_cart_icon_box .cart_img_icon{width:15px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt{font-size:8px;}
+.tyo_info_tyre span {width: 100% !important;}
+}
+@media screen and (min-width: 360px) and (max-width: 767px){
+.tyro_acc_content .col-xs-12{width: 50%}
+.tyro_acc_content_ty .col-xs-12{width: 67%}
+.tyro_acc_content_ty .col-xs-6{width: 33%}
+.tyro_acc_content_ty .auto_parts_logo_mob {
+    width: 40%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding-top: 18px;
+}
+.tyro_acc_content_ty .auto_parts_logo_mob .tyre_list_logo_top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-left: 5px;
+}
+.tyro_acc_content_ty .auto_parts_img_mob {
+    width: 60%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+.tyro_acc_content_ty .auto_parts_img_mob .tyre_list_tyre_btm {
+    height: 59px;
+}
+.tyro_acc_content_ty .auto_parts_mobile_sec h3 {
+    padding-left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 2px;
+    margin-top: 3px;    
+}
+.tyro_acc_content_ty .auto_parts_mobile_sec h5 {
+    padding-left: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0;
+    color: #005096;
+}
+.tyro_acc_content_ty .auto_parts_mobile_sec h6 {
+    margin: 0;
+    padding-left: 15px;
+    font-weight: 600;
+    font-size: 10px;
+    float: left;
+    margin-top: 2px;    
+}
+.tyro_acc_content_ty .auto_parts_mobile_sec .auto_parts_no {
+    width: 80%;
+    float: left;
+    position: inherit;
+}
+.tyro_acc_content_ty .auto_parts_mobile_sec .tyro_action_list {
+    width: 18%;
+    float: right;
+    position: inherit;
+}
+.tyo_list_mob li {margin: 0;}
+}
+@media screen and (max-width: 414px){
+.tyo_list_mob li.tyro_style_3_mob .tyro_mob_front_or_rear,.tyo_list_mob li .tyro_info_f_r_txt{font-size: 11px}
+.tyo_list_mob li .tyro_info_f_r_txt{width: 25px;}
+.list_in_mobile .w_product-image-photo.default_image {width: 87%;top: 2px;}
+}
+@media screen and (min-width: 360px) and (max-width: 399px){
+.list_in_mobile .w_product-image-photo.default_image {width: 95%;top:2px;}
+.tyo_list_mob li .tyro_price_box { width: calc(100% - 60px);}
+.tyo_list_mob li .tyro_cart_box { width: 60px;}
+.tyo_list_mob li .half_tyre_bg { width: 80px;}
+.tyo_list_mob li .tyo_info_tyre { width: calc(100% - 80px);}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon{width:22px; border-radius:5px; margin: 0; margin-left: 0.5px;}
+.tyo_list_mob li .tyo_info_tyre h3 { font-size: 10px;}
+.tyo_list_mob li .tyo_info_tyre h5{font-size:9px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price { font-size: 18px; line-height:12px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price { font-size: 12px; line-height:12px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt { font-size: 8px; margin-right:0px;}
+.tyo_list_mob li .half_tyre_bg .tyre_list_tyre_btm{    margin-left: auto; margin-right: auto;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list { padding: 4px 5px 3px;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt { font-size: 7px;}
+.tyo_list_mob li .easy-pay-box{height:25px;}
+.tyo_list_mob li .tyro_cart_box .tyro_cart_icon_box .cart_img_icon { width: 25px;}
+.tyo_list_mob li .tyro_large_front_rear{width: 85px;}
+.tyo_list_mob li .tyo_two_tyre_img { width: calc(100% - 85px);}
+.tyo_list_mob li .tyo_two_tyre_img img{min-width: auto; max-width: 55%;  width: auto;}
+
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre h5,.tyo_list li.tyro_list_style_3 .tyo_info_tyre h3{font-size:9px;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre{font-size:9px;}
+.tyo_list li.tyro_list_style_3 .tyo_run_flat { width: 45px !important;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre .tyre_name{font-size:8px; line-height:10px;}
+.tyo_list li.tyro_list_style_3 .tyo_info_tyre .tyre_label{font-size:8px; line-height:10px;}
+.tyo_list li.tyro_list_style_3 .tyro_action_list .tyro_action_icon { font-size:8px; width: 14px; border-radius: 3px; margin: 0 1.5px 0;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price { font-size: 8px; line-height: 10px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt{font-size:8px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt{font-size:8px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_small_price{font-size:8px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .vat_text,.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_small_price .sml_dark_txt{font-size:8px}
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear.tyre_typr_front_rear2{font-size:8px;  min-width: 37px;  height: 17px; line-height: 8px;}
+.tyo_list li.tyro_list_style_3 .action-list-box .tyro_year{font-size:8px; padding-right:25px;}
+.tyo_list li.tyro_list_style_3 .tyre_typr_front_rear {font-size: 8px; padding-right: 7px; padding-left: 0px; min-width:20px; height:17px}
+.tyo_list li.tyro_list_style_3 .half_tyre_bg .tyro_hlf_tyre_img, .tyo_list_mob li.tyro_list_style_3 .half_tyre_bg .tyro_hlf_tyre_img{height:30px;}
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_stock_status { font-size: 5px; line-height: 5px;}
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_cart_count select{font-size:8px;}
+.tyo_list li.tyro_list_style_3 .tyro_cart_box .tyro_cart_icon_box .cart_img_icon{width:15px;}
+.tyo_list li.tyro_list_style_3 .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt{font-size:8px; margin:0 2px;}
+.tyo_list li.tyro_list_style_3 .action-list-box .tyro_action_list .info_act_circle{width:14px; height:14px;}
+}
+@media screen and (max-width: 359px){
+.tyo_list_mob li .half_tyre_bg img,.tyo_list_mob li .half_tyre_bg .tyre_list_tyre_btm { max-width: 85%;}
+.tyo_list_mob li .tyro_price_box { width: calc(100% - 80px);}
+.tyo_list_mob li .tyro_cart_box { width: 80px;}
+.tyo_list_mob li .half_tyre_bg { width: 90px;}
+.tyo_list_mob li .tyo_info_tyre { width: calc(100% - 90px);}
+.tyo_list_mob li .half_tyre_bg .tyre_list_tyre_btm{    margin-left: auto; margin-right: auto;}
+.tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .sml_dark_txt, .tyo_list_mob li .tyro_price_box .tyro_price_list .tyro_small_price .aed_txt, .tyo_list_mob li .tyro_price_box .tyro_price_list .vat_text{font-size:8px;}
+.tyo_list_mob li .tyro_large_front_rear { width: 65px;}
+.tyo_list_mob li .tyo_two_tyre_img { width: calc(100% - 65px);}
+.tyo_list_mob li .easy-pay-box{    background-position: center left 3px; background-size: auto 62%;}
+.tyo_list_mob li .easy-pay-box .info_light { width: 16px; height: 16px; font-weight: 600; font-size: 11px; border-width: 1px; right: 5px;}
+.tyo_list_mob li .frontrearLastsec .tyro_price_box .tyro_price_list .tyro_large_price{font-size: 11px; line-height: 12px;}
+.tyo_list_mob li .frontrearLastsec .tyro_price_box .tyro_price_list .tyro_large_price .aed_txt { font-size: 7px; margin-right: 3px;}
+.tyo_list_mob li .frontrearLastsec .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt{font-size: 7px; padding-left: 0; margin-left: 0; display: block;}
+.tyo_list_mob li .frontrearLastsec .tyro_price_box .tyro_price_list {  padding: 8px 3px 5px;}
+
+}
+.offer_prom{display: none;}
+
+.tyo_run_flat {
+    width: 60px !important  ;
+    padding-bottom: 0px;
+}
+select.select_qty {
+   /* background: linear-gradient(45deg, transparent 50%, black 50%), linear-gradient(135deg, black 50%, transparent 50%), linear-gradient(to right, white, white);*/
+    background-position: calc(100% - 10px) calc(1em + 0px),calc(100% - 3px) calc(1em + 0px), 100% 0;
+    background-size: 5px 5px,5px 5px,2.5em 2.5em;
+    background-repeat: no-repeat;
+    font: 300 1em/100% "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5em;
+    border-radius: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.light-icons {
+    background: #ccc !important; 
+    border: gray 1.5px solid !important;
+    cursor: unset !important;
+}
+@media screen and (min-width: 768px){
+.catalog-category-view .main_banner.sampletirewrap .tyres_banner_img{height:auto;}
+.catalog-category-view .main_banner.sampletirewrap .tyrewithsize{height:72px; overflow:hidden;}
+.car_tyre .tyrewithoutsize {top: 32%;}
+.truck_tyre .tyrewithoutsize {top: 65% !important;}
+.motercycle_tyre .tyrewithoutsize {top: 41%;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action{width: 30px; display: inline-block; margin-left: 10px;}
+.tyo_list li .action-list-box .tyro_car_logo img.car_logo {
+    margin-right: 10px;
+}
+span.toptoolbar {
+    width: 100%;
+    background-color: #ececec;
+}
+#mana_ajax_wrapper_category_products_list .toolbar {
+    background-color: #ececec !important;
+    clear: both;
+}
+#mana_ajax_wrapper_category_products_list .toolbar {
+    margin: 0 auto;
+    padding-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+.tabby-buy-now-banner {
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+.tabby-buy-now-banner img {
+    border-radius: 10px;
+}
+.quality-web-list .tyo_list li .action-list-box, .regular-web-list .tyo_list li .action-list-box {
+    border-right: none;
+}
+.tabby-pay-later-list {
+    float: left;
+    min-width: 110px;
+    border-right: #dddddd solid 1px;
+    padding: 0;
+    margin: 0 auto;
+    border-left: none;
+}
+.tyo_list li .tyro_price_box .tyro_price_list {
+    padding-left: 20px;
+    padding-right: 10px;
+	min-height: 75px;
+    line-height: 20px;
+}
+.page-products .toolbar .shorter_main select {
+    border: #8e8e8e solid 1px;
+    border-radius: 10px;
+}
+.page-products .toolbar .sorter {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 3.5px;
+}
+.tabby-pay-later-bundle-list {
+    height: 220px;
+    border-right: #dddddd solid 1px;
+    overflow: hidden;
+}
+.tabby-pay-later-bundle-list img {
+    width: 100% !important;
+}
+.toolbar-products .modes {
+    display: block !important;
+}
+}
+
+@media (min-width: 576px){
+.col-sm-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;}
+}
+.web-list-offer{
+    width: 100% !important;
+    height: 36px;
+}
+.web_brand_logo{width: 50% !important;}
+.mobile-list-offer {
+    height: auto;
+    width: 100% !important;
+}
+.web-fr-list-offer {
+    height: 38px;
+    width: 100% !important;
+}
+.mobile-fr-list-offer {
+    height: auto;
+    width: 100% !important;
+}
+/*
+.tyo_list .row,.tyo_list_mob .row {
+    display: flex;
+    flex-wrap:wrap;
+} */
+.product-image-photo.default_image{padding: 15px 0 5px 0; height: 275px;width: auto;}
+.wheels-product .t-price{font-size: 30px !important}
+.wheels-product .flip-card {height: 450px;}
+.wheels-product .tyres-name {font-size: 15px;}
+.wheels-product .tyres-name-type{padding-bottom: 10px;}
+.wheels-product .tyres-price-box{margin-top: 10px}
+.wheels-product .tyres-item {margin-bottom: 35px !important; margin-top: 50px !important;}
+.list_in_mobile .w_product-image-photo.default_image {
+    position: relative;
+    z-index: 2;
+    height: auto;
+}
+.m-wheels-product .product-logo {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.bike_tyre .hidden-xs {
+    width: 36% !important;
+}
+.bundle-front-list-offer {
+    height: 110px;
+    border-radius: 15px 0 0 0;
+}
+.bundle-rear-list-offer {
+    height: 110px;
+}
+.regular-web-list-bundle li.tyro_list_style_3 .border-width {
+    border-radius: 15px 15px 0 0;
+}
+
+.bottomtoolbar .toolbar-products .modes {
+    display: none !important;
+}
+
+ol.tyo_list_mob.tyro_mobile_design.list_in_mobile.visible-xs.quality-mobile-list{border-bottom: #dddddd solid 1px}
+ol.tyo_list_mob.tyro_mobile_design.list_in_mobile.visible-xs.regular-mobile-list { margin-top: 25px; }
+.m-wheels-product .wheel-image {max-height: 20px;}
+.m-wheels-product .list_in_mobile .tyres-price-box {margin-bottom: 0;}
+.m-wheels-product .tyres-detail{margin-top: 0;bottom: 5px;}
+.m-wheels-product .tyres-name-type {padding-bottom: 15px;}
+.m-wheels-product .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: none;
+    transform-style: preserve-3d;
+    box-shadow: none;
+    border: 1.5px solid #ECECEC;
+}
+.border-left-mob{border-left: 1px solid #A0A0A0}
+.tyro_acc_content_ty .select_qty {
+    background: #ececec !important;
+    max-width: 70px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 0px 25px !important;
+    height: 35px !important;
+    border: 2px solid #ececec !important;
+    margin: 0 auto !important;
+}
+.tyro_acc_content_ty .tyro_cart_box {
+    width: 100% !important;
+}
+.tyro_price_box1 {border-top: #dddddd solid 1px;}
+.tyro_price_box1 .tyro_cart_count{text-align: center;margin: 5px;}
+.tyro_price_box1 .tyro_cart_icon_box button {
+    width: 100%;
+    background: #37C800;
+    color: #FFF;
+    font-weight: 500; border:none;
+}
+.tyro_price_box1 .tyro_price_list {
+    text-align: center;
+}
+.tyro_price_box1 .tyro_large_price {
+    color: #d80000;
+}
+.tyro_price_box1 .aed_txt {
+    font-size: 12px;
+    font-weight: 500;
+}
+.tyro_price_box1 .tyre_amount {
+    font-size: 22px;
+    font-weight: 700;
+}
+.tyro_acc_content_ty .tyo_info_tyre, .tyro_acc_content_ty .half_tyre_bg {
+    min-height: 121px !important;
+}
+.tyro_acc_content_ty .tyro_hlf_tyre_img {
+    height: 80px !important;
+}
+.tyro_acc_content_ty .tyo_info_tyre h5 {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+.tyro_acc_content_ty .tyo_info_tyre h3 {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+.tyro_acc_content_ty  .tyro_action_icon {
+    width: 30px !important;
+}
+.tyro_action_rft {
+    width: 100%;
+    display: inline-block;
+    float: left; padding:1px;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px 0px 0px 10px; 
+    margin-bottom:5px;
+    margin-top: 5px;
+}
+.dot-mob {
+    float: left;
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 2px;
+}
+.runflat-mob {
+    float: right; margin:0 10px 0 0;
+}
+.tyro_cart_box1 {
+    margin-top: 5px;
+    position: relative;
+}
+.border-left-mob{border-left: #dddddd solid 1px;}
+#nav-tabContent .tab-pane.active{background: #d80000; padding: 10px; color: #fff; z-index: 1; position: relative;}
+#nav-tabContent .tab-pane iframe{width:100%; height:250px;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.active{background: #d80000; position:relative; border-color:#d80000}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.active:before{content: '';
+    background: #d80000; width: calc(100% + 3px); height: 100%; position: absolute; top: calc(100% - 4px); margin: auto;  left: -1.5px; z-index:1}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action.active{background:none; border:none;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action.active:before{ width:100%; left:0; top:35%}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action.active a{position:relative; z-index:12;}
+.tyo_list_mob li .stock_status{color:#37c800; text-transform:uppercase; letter-spacing: 1px; text-align: center; font-size: 10px; font-family: rubik; font-weight: 700; margin-bottom:0; margin-top:-3px;}
+.tyo_list_mob li .stock_status + form{margin-top:3px;}
+.tyo_list_mob li .stock_status + form .tyro_cart_count{margin-top:0; margin-bottom:7px;}
+#nav-tabContent .tab-panes{display:none;}
+.hidecolor {
+    background: none !important;
+}
+.hidecolor:before{
+    content: none !important; 
+}
+
+#nav-tabContent .tab-pane.selectetabcontent{background: #d80000; padding: 10px; color: #fff; z-index: 1; position: relative;}
+#nav-tabContent .tab-pane iframe{width:100%; height:250px;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.tabselected{background: #d80000; position:relative; border-color:#d80000}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.tabselected:before{content: '';
+    background: #d80000; width: calc(100% + 3px); height: 153%; position: absolute; top: calc(100% - 4px); margin: auto;  left: -1.5px; z-index:1}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action{border:none;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action.tabselected{background:none; border:none;}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action.tabselected:before{ width:100%; left:0; top:35%}
+.tyo_list_mob li .tyro_action_list .tyro_action_icon.offer_action.tabselected a{position:relative; z-index:12;}
+.tyro_action_icon.tabselected {
+    border-color: #d80000 !important;
+}
+.tab-pane .summer_content img {
+    background-color: #FFF;
+	width: 30px;
+}
+.tab-pane .summer_content span {
+    padding-left: 10px;
+}
+.page-layout-2columns-left .columns .sidebar-main #mana_ajax_wrapper_main_mana_layered_nav .filter {
+    border: 2px solid #dddddd !important;
+    border-radius: 10px;
+}
+.filter .block-subtitle {
+    border-bottom: none;
+}
+.filter-options dt.filter-options-title {
+    border-top: 1px solid #dddddd;
+}
+
+select#sorter {
+    margin-left: 0;
+}
+@media only screen and (max-width: 767px) {
+
+.accessories-img{
+    max-height: 110px !important;
+    width: auto !important;
+    margin-bottom: 0;
+    margin-top: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+}
+/* jignesh tabby*/
+.hidetabbyinstaller{
+    background: #80808012;
+    height: 100%;
+	opacity: 0.4;
+}
+.hidebundletabbyinstaller{
+    background: #80808012;
+    height: 220px;
+    opacity: 0.4;	
+}
+
+.tyo_list_view_s .tabby-pay-later-list, .tyo_list_view_s .bobleBundel .tabby-pay-later-list{
+	position: relative;
+    left: 0; margin: 0; display: inherit; min-width: 10px; border: none;
+	right: 0;
+}
+.tyo_list_view_s {
+    padding-top: 20px;
+}
+.tyo_list_view_s .hidetabbyinstaller, .tyo_list_view_s .bobleBundel .hidetabbyinstaller{
+	background: #80808012;
+    height: auto;
+	opacity: 0.4;
+}
+
+.tyo_list_view_s{text-align: center;}
+.tyo_list_view_s .offer {
+    max-height: 84px;
+    min-height: 10px;
+    display: flex;
+    margin-bottom: -25px;
+    position: relative;
+    z-index: -1;
+}
+.tyo_list_view_s .tyo_list_box_in{border: #757575 solid 1px; background: #ffffff; border-radius: 15px; margin-bottom: 20px; padding-top: 15px;}
+.tyo_list_view_s .tyo_list_box_in .tyo_list_top_logo{width: 100%; height: 40px;}
+.tyo_list_view_s .tyo_list_box_in .tyo_list_top_logo img{  width: auto;}
+.tyo_list_view_s .tyo_list_box_in h3{font-size:18px; color:#323232; font-family: 'Rubik'; font-weight: bold; margin: 0 auto;margin-top: 5px;}
+.tyo_list_view_s .tyo_list_box_in h5{font-size:18px; color:#005096; font-family: 'Rubik'; font-weight: bold; margin: 5px auto 0; letter-spacing: 1px;}
+.tyo_list_view_s .tyo_list_offer{max-height: 84px; min-height: 10px; display: flex; margin-bottom: -25px; position: relative; z-index: -1; align-items: flex-start;}
+.tyo_list_view_s .installmentBox{background: #abffe9; border-top: #757575 solid 1px; border-right: #757575 solid 1px; padding: 5px 12px;  width: 230px;
+    border-radius: 0 20px 0 0; text-align: left; font-size: 14px; color: #323232; padding-right: 80px; position: relative; line-height: 17px; font-family: 'noto sans display'; bottom: 0;}
+.tyo_list_view_s .tyre_list_box_in_tyrebottom{width: 100%; position: absolute; bottom: 0; left: 0; right: 0; text-align: left; display: flex; flex-wrap: wrap; flex-direction: column;}
+.tyo_list_view_s .installmentBox img{width: 55px; position: absolute; right: 15px; top: 7px;}
+.tyo_list_view_s .view_tyreBox{width: 100%; position: relative; display: flex; align-items: flex-start;  height: 155px; overflow: hidden; margin-top: 15px;}
+.tyo_list_view_s .view_tyreBox > img{ max-height: inherit; height: auto; width: 55%; margin-right: 10px; margin-left: auto;}
+.tyo_list_view_s .view_tyreBox .auto_parts_img { width: inherit; margin-top: -35px; }
+.tyo_list_view_s .runflatViewBox{ min-height: 50px; background: rgba(265,265,265,.80); display: flex; align-items: center; padding: 0 15px; border-top:#757575 solid 1px; border-bottom: #757575 solid 1px;}
+.tyo_list_offer { min-height: 60px; max-height: 60px;}
+.top_logo_icon { max-height: 40px;}
+.tyo_list_view_s .top_offer{width: 100%; margin:0;}
+.tyo_list_view_s .runflatViewBox img{max-height: 37px; width: auto; margin-right: 5.5%}
+.tyo_list_view_s .runflatViewBox img.car_icon_tyre{ max-height: 20px; }
+.tyo_list_view_s .runflatViewBox img.bmw_tyre{max-width: 60px;}
+.tyo_list_view_s .runflatViewBox img.run_flat_tyre{ max-height: 24px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 32px;}
+
+.tyo_list_view_s .runflatViewBox .yearname{margin-right: 10px; margin-left: auto; margin-bottom: 0; font-size: 16px; font-weight: bold;}
+.tyo_list_view_s .tyo_view_action{width: 100%; background:#ececec; padding: 15px 0 0; display: flex; flex-wrap: wrap; align-items: center; border-bottom: #4c4c4c solid 1px;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box{ padding: 4px 5px; border-radius: 0 25px 25px 0; background: #005096; color: #ffffff; border: #757575 solid 1px; border-left: none; min-height: auto;
+    width: 106px; line-height: 15px; font-family: 'Rubik'; font-weight: bold; font-size: 13px; margin-right: 2.5%; margin-bottom: 5px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon{ width: 38px; height: 38px; background: #ffffff; border: #d80000 solid 1.5px; border-radius: 8px; margin-right: 2.0%; margin-bottom: 5px;}
+.tyo_list_view_s .tyo_view_action .light-icons {border: 1px solid !important;}
+
+.tyo_list_view_s .tyo_view_action p{width: 100%; text-align: center; font-size: 14px; color: #323232; font-weight: 300; letter-spacing: 1px; margin-top: 10px; margin-bottom: 0}
+.tyo_list_view_s .deal_sec { width: 332px; margin:5px auto -20px; z-index: 1; display: flex; align-items: center; justify-content: center; position: relative;}
+.tyo_list_view_s .deal_sec label {background: #ffffff; box-shadow: 0.813px 1.827px 12px 0px rgba(46, 46, 46, 0.25); padding: 13px 30px; border-radius: 35px; text-transform: uppercase; font-size: 16px;
+    font-family: 'Rubik'; color: #323232; font-weight: 500; z-index: 1; letter-spacing: 2px; line-height: 10px; margin-bottom: 0; transition: all 0.3s ease; }
+.tyo_list_view_s .deal_sec label:hover, .tyo_list_view_s .deal_sec label a:hover{background: #d70000; color: #ffffff;}
+.tyo_list_view_s .deal_sec .stock_deal{ font-family: 'Rubik'; font-weight: bold; font-size: 12px; background: #000; color: #ffffff; text-transform: uppercase; border-radius: 0 15px 15px 0; box-shadow: 0.813px 1.827px 12px 0px rgba(46, 46, 46, 0.25); width: 90px; position: absolute; right: 18px; padding: 5px; margin: auto;line-height: 1;}
+.tyo_list_view_s .bobleBundel .deal_sec .stock_deal {right: 0px;} 
+.tyo_list_view_s .deal_sec .stock_in{background: #37c700;}
+.tyo_list_view_s .deal_sec .stock_out{background: #d80000;}
+.tyo_list_view_s .tyo_view_price{width: 100%; display: -webkit-inline-flex; display: -ms-inline-flexbox; display: inline-flex; justify-content: center; flex-wrap: wrap; padding-top: 35px; min-height: 133px;}
+.tyo_list_view_s .tyo_view_price .tyo_view_pr_center{text-align: right; margin: 0 auto;}
+.tyo_list_view_s .tyo_view_price .price_one,.tyo_list_view_s .tyo_view_price .price_two,.tyo_list_view_s .tyo_view_price .price_three{width: 100%;}
+.tyo_list_view_s .tyo_view_price .price_one{font-size: 36px; line-height: 36px; font-weight: bold; font-family: 'Rubik'; color: #d70000; margin: auto auto 0;}
+.tyo_list_view_s .tyo_view_price sub{bottom: 0;}
+.tyo_list_view_s .tyo_view_price .price_one sub.aed{font-size: 50%}
+.tyo_list_view_s .tyo_view_price sub.aed{font-size: 60%}
+.tyo_list_view_s .tyo_view_price sub:not(.aed){font-size: 16px; font-weight: 600; color: #333;}
+.tyo_list_view_s .tyo_view_price .price_two{margin: -3px auto;}
+.tyo_list_view_s .tyo_view_price .price_two,.tyo_list_view_s .tyo_view_price .price_three{font-size: 22px; font-weight: bold;}
+.tyo_list_view_s .tyo_view_price .price_three{margin: 0 auto auto;}
+.tyo_list_view_s .tyo_view_price .price_two span{text-decoration: line-through; text-decoration-color: #d80000;}
+.tyo_list_view_s .tyo_view_price .price_three span,.tyo_list_view_s .tyo_view_price .price_three .aed{color: #005096;}
+.tyo_list_view_s .tyo_view_price .installation_inlc {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+.tyo_list_view_s .tyo_view_add_cart_Sec{width: 100%; display: flex; flex-wrap: wrap; justify-content: center; padding: 10px 0 15px;}
+.tyo_list_view_s .bobleBundel .tyo_view_add_cart_Sec{width: 100%; display: flex; flex-wrap: wrap; justify-content: center; padding: 10px 0 10px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty{ display: inline-flex; align-items: center;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select{width: auto; text-align: center; justify-content: center; font-size: 24px; padding: 0 30px; border-radius: 40px; border: #7f7f7f solid 1px; margin:0 5px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button{font-size: 24px; border: #7f7f7f solid 1px; font-weight: 500; background: #ececec; color: #323232; text-transform: uppercase; padding: 0 30px; border-radius: 50px; margin:0 5px; letter-spacing: 0.5px; transition: all 0.3s ease;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button:hover,.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button:focus{background: #d70000; border-color: #d70000; color: #ffffff;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select,.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button{font-size: 20px; height: 50px;cursor: pointer;}
+.tyo_list_view_s .tyo_triangleBox{position: relative; width: 100%; margin-bottom: -35px;}
+.tyo_list_view_s .tyo_triangleBox label{color: #ffffff; text-transform: uppercase; position: absolute; top: 22px; left: 0; right: 0; text-align: center;font-size: 12px;}
+
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_one { font-size: 30px; line-height: 34px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_two, .tyo_list_view_s .bobleBundel .tyo_view_price .price_three { font-size: 20px;}
+.tyo_list_view_s .bobleBundel .tyo_view_add_cart_Sec .tyo_view_qty button{padding:0 20px; }
+.tyo_list_view_s .bobleBundel .deal_sec { width: 297px;}
+.tyo_list_view_s .bobleBundel .deal_sec label{font-size: 16px;padding: 13px 30px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in{width: 50%; display: inline-flex; flex-wrap: wrap; flex-direction: column; border-radius: 15px 0 0 0; margin-bottom: 0}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in + .tyo_list_box_in{border-left: none; border-radius: 0 15px 0 0;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in > img{margin: auto; width: inherit;max-height: 40px; min-height: 40px;}
+.tyo_list_view_s .bundleFinalPrice{width:100%; border-radius: 0 0 20px 20px; position: relative; border: #757575 solid 1px; border-top: none; display: flex; align-items: center; min-height: 90px;}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{ width: 50px; position: absolute; top:-70px; left: 0; right: 0; margin: auto;}
+.tyo_list_view_s .bobleBundel .bundleFinalPrice .tyo_view_price{min-height: 15px; padding: 0; width: 50%}
+.tyo_list_view_s .bobleBundel .bundleFinalPrice .tyo_view_qty{width: 50%}
+.tyo_list_view_s .bobleBundel .bundleFinalPrice.tyo_view_add_cart_Sec .tyo_view_qty button{ margin: auto; }
+.tyo_list_view_s .bobleBundel .bundleFinalPrice.tyo_view_add_cart_Sec .tyo_view_qty{margin: auto;}
+.tyo_list_view_s .bobleBundel .front_rearImg{width: 30%}
+.tyo_list_view_s .tabbyImg{width: 66%;}
+.tyo_list_view_s .line_border{width: 100%; display: inline-block;}
+.tyo_list_view_s .col-md-3.col-sm-3 {
+    padding: 0 10px;
+}
+@media screen and (max-width: 1750px){
+.tyo_list_view_s .runflatViewBox {min-height: 40px;}    
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon{ width: 34px; height: 34px; background: #ffffff; border-radius: 8px; margin-right: 1.0%; margin-bottom: 5px;}
+.tyo_list_view_s .bobleBundel .deal_sec { width: 290px;}
+.tyo_list_view_s .bobleBundel .deal_sec label { padding: 11px 25px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action p{line-height: 16px;}
+.tyo_list_view_s .col-md-3.col-sm-3 { padding: 0 5px;}
+.tyo_list_view_s .deal_sec {margin: 5px auto -17px;}
+.tyo_list_view_s .deal_sec label{ padding: 11px 25px; font-size: 16px;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box {line-height: 12px;}
+.tyo_list_view_s .deal_sec .stock_deal { width: 75px;  right: 18px; line-height: 10px; }
+.tyo_list_view_s .bobleBundel .deal_sec .stock_deal { right: 12px;}
+.tyo_list_view_s .offer, .tyo_list_view_s .tyo_list_offer { margin-bottom: -20px;}
+.tyo_list_view_s .tyo_triangleBox label {top: 17px;}
+}
+@media screen and (max-width: 1650px){
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon {
+    margin-right: 2.0%;
+    width: 32px;
+    height: 32px;
+}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box {
+    margin-right: 2%;
+    line-height: 12px;
+}
+.tyo_list_view_s .tyo_view_action p {
+    font-size: 12px;
+}
+.tyo_list_view_s .deal_sec .stock_deal {
+    width: 75px;
+    right: 8px;
+    line-height: 10px;
+}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select, .tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button {
+    font-size: 18px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.tyo_list_view_s .installmentBox{width: 230px; max-width: 100%;}
+.tyo_list_view_s .bobleBundel .deal_sec .stock_deal{right: 10px;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box { min-height: 32px; line-height: 11px; font-size: 11px; width: 86px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .warrenty_text_box { min-height: 32px; line-height: 11px; font-size: 11px; width: 86px;}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{width: 40px; top: -60px;}
+}
+@media screen and (max-width: 1550px){
+.tyo_list_view_s .tyo_list_offer{margin-bottom: -15px;}    
+.tyo_list_view_s .tyo_list_box_in { padding-top: 10px;}
+.tyo_list_view_s .tyo_list_box_in .top_logo_icon{max-width: 50%}
+.tyo_list_view_s .view_tyreBox{height: 120px; margin-top: 10px;}
+/*.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon{ width: 38px; height: 38px; margin-right: 1.5%;}    */
+.tyo_list_view_s .tyo_view_action .warrenty_text_box{ padding: 3px 5px; width: 95px; font-size: 12px; margin-right: 2.5%;}
+.tyo_list_view_s .tyo_view_add_cart_Sec{padding-bottom: 10px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon { margin-right: 2.0%; width: 26px; height: 26px;}
+.tyo_list_view_s .deal_sec .stock_deal{font-size: 10px;}
+.tyo_list_view_s .deal_sec{margin-bottom: -16px; width: 245px;}
+.tyo_list_view_s .deal_sec .stock_deal{right: 0}
+.tyo_list_view_s .deal_sec label { padding: 11px 21px; font-size: 15px;}
+.tyo_list_view_s .tyo_triangleBox label{font-size: 9px; top: 19px;}
+/*.tyo_list_view_s .deal_sec label{ padding: 8px 30px;  font-size: 16px;}*/
+.tyo_list_view_s .tyo_list_box_in h3 { font-size: 18px; margin-top: 8px;}
+.tyo_list_view_s .tyo_list_box_in h5 { font-size: 16px;}
+/*.tyo_list_view_s .deal_sec .stock_deal{ font-size: 11px; width: 80px; right: 35px; padding: 3px 5px;}*/
+.tyo_list_view_s .tyo_view_price .price_one { font-size: 30px; line-height: 30px;}
+.tyo_list_view_s .tyo_view_price .price_two, .tyo_list_view_s .tyo_view_price .price_three{font-size: 20px;}
+.tyo_list_view_s .tyo_view_price sub:not(.aed) { font-size: 13px;}
+.tyo_list_view_s .tyo_view_price{min-height: 120px;}
+.tyo_list_view_s .installmentBox { padding: 4px 80px 4px 8px; font-size: 12px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select, .tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button { font-size: 16px; height: 42px; padding: 0 20px;}
+.tyo_list_view_s .runflatViewBox { min-height: 40px;}
+.tyo_list_view_s .runflatViewBox img.car_icon_tyre { max-height: 20px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 24px;}
+.tyo_list_view_s .tyo_view_action p{margin-top: 5px;}
+.tyo_list_view_s .tyo_view_action { padding: 10px 0 0;}
+.tyo_list_view_s .bobleBundel .deal_sec label { margin-left: -40px;}
+.tyo_list_view_s .bobleBundel .deal_sec{width: 230px;}
+.tyo_list_view_s .bobleBundel .deal_sec .stock_deal { right: 0;}
+.tyo_list_view_s .bobleBundel .installmentBox { width: 205px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .warrenty_text_box { min-height: 30px; line-height: 11px; font-size: 10px; width: 76px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img.car_icon_tyre { max-height: 18px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img { max-height: 30px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img.run_flat_tyre { max-height: 22px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox .yearname { font-size: 12px;}
+.tyo_list_view_s .bundleFinalPrice{min-height: 90px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in h3 { font-size: 16px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in h5 { font-size: 14px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox{padding: 0 10px;}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{width: 35px; top: -55px;}
+
+}
+@media screen and (max-width: 1400px){
+.tyo_list_view_s .tyo_triangleBox label{top: 16px;}
+.tyo_list_view_s .tyo_view_price .price_one { font-size: 26px;}
+.tyo_list_view_s .installmentBox { width: 200px;}
+.tyo_list_view_s .installmentBox img { width: 50px;}
+.tyo_list_view_s .installmentBox{padding-right: 70px;}
+.tyo_list_view_s .runflatViewBox { min-height: 30px; padding: 0 5px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 32px; }
+.tyo_list_view_s .runflatViewBox img{max-height: 37px; width: auto; margin-right: 2.5%}
+.tyo_list_view_s .runflatViewBox img.car_icon_tyre{ max-height: 20px;}
+.tyo_list_view_s .runflatViewBox img.bmw_tyre{max-height: 20px;}
+.tyo_list_view_s .runflatViewBox .yearname { margin-right: 0px; font-size: 14px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon { width: 28px; height: 28px; margin-right: 2%;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .tyo_view_ac_icon { margin-right: 1.5%;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box { min-height: 28px; line-height: 10px; margin-right: 1.5%; font-size: 9px; width: 71px;}
+.tyo_list_view_s .tyo_view_action p{font-size: 12px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 26px;}
+.tyo_list_view_s .runflatViewBox img.run_flat_tyre { max-height: 20px;}
+.tyo_list_view_s .runflatViewBox .yearname { font-size: 13px; margin-right: 0px;}
+.tyo_list_view_s .deal_sec label { padding: 8px 20px; font-size: 12px; letter-spacing: 0;}
+.tyo_list_view_s .bobleBundel .deal_sec label { padding: 8px 20px; font-size: 12px; letter-spacing: 0;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_one { font-size: 26px; line-height: 30px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_two, .tyo_list_view_s .bobleBundel .tyo_view_price .price_three { font-size: 18px;}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{width: 30px; top: -40px;}
+.tyo_list_view_s .tyo_view_action p { font-size: 11px;}
+.tyo_list_view_s .deal_sec .stock_deal { width: 60px; font-size: 9px;}
+.tyo_list_view_s .bobleBundel .deal_sec{width: 168px;}
+.tyo_list_view_s .deal_sec{margin-bottom: -13px; line-height: 15px;}
+.tyo_list_view_s .deal_sec .stock_deal {right: 22px;}
+.tyo_list_view_s .bobleBundel .deal_sec .stock_deal {right: 5px;}
+}
+@media screen and (max-width: 1280px){
+.tyo_list_view_s .tyo_list_box_in h3 { font-size: 16px; margin-top: 5px;}
+.tyo_list_view_s .tyo_list_box_in h5 { font-size: 14px;}
+.tyo_list_view_s .view_tyreBox { margin-top: 5px;}
+.tyo_list_view_s .installmentBox { padding: 4px 55px 4px 8px; width: 190px; font-size: 11.5px;}
+.tyo_list_view_s .installmentBox img { width: 45px;}
+.tyo_list_view_s .runflatViewBox { min-height: 35px; padding: 0 10px;}
+.tyo_list_view_s .runflatViewBox img.car_icon_tyre { max-height: 19px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 31px;}
+.tyo_list_view_s .runflatViewBox .yearname { margin-right: 0px; font-size: 14px;}
+.tyo_list_view_s .tyo_view_action { padding: 10px 0 0;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box { padding: 3px 5px; min-height: 26px; width: 65px; font-size: 9px; margin-right: 1.5%; line-height: 9px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon { width: 24px; height: 24px; margin-right: 1%;}
+.tyo_list_view_s .tyo_view_action p { margin-top: 5px;     font-size: 12px;}
+.tyo_list_view_s .deal_sec { width: 210px;  margin: 5px auto -13px;}
+.tyo_list_view_s .tyo_triangleBox label { top: 13px;}
+.tyo_list_view_s .deal_sec label { padding: 6px 15px; font-size: 13px; line-height: 15px;}
+.tyo_list_view_s .deal_sec .stock_deal { font-size: 9px; width: 65px;  padding: 3px 5px;}
+.tyo_list_view_s .tyo_view_price .price_one { font-size: 22px; line-height: 28px;}
+.tyo_list_view_s .tyo_view_price .price_two, .tyo_list_view_s .tyo_view_price .price_three { font-size: 16px;}
+.tyo_list_view_s .tyo_view_price sub:not(.aed) { font-size: 12px;}
+.tyo_list_view_s .tyo_view_price { min-height: 101px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec{padding-top: 5px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select, .tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button { font-size: 14px; height: 35px; padding: 0 15px;}
+.tyo_list_view_s .bobleBundel .installmentBox img { width: 35px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_one { font-size: 20px; line-height: 28px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_two, .tyo_list_view_s .bobleBundel .tyo_view_price .price_three { font-size: 15px;}
+.tyo_list_view_s .bobleBundel .deal_sec { width: 176px;}
+.tyo_list_view_s .bobleBundel .deal_sec .stock_deal { right: 0;}
+.tyo_list_view_s .bundleFinalPrice { min-height: 85px; padding: 0}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{width: 25px; top: -35px;}
+.tyo_list_view_s .bobleBundel .deal_sec{margin-bottom: -15px;}
+}
+@media screen and (max-width: 1250px){
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon { margin-right: 1.3%;}
+.tyo_list_view_s .bobleBundel .installmentBox { width: 180px; padding-right: 45px; font-size: 10px; line-height: 13px; padding-left: 5px;}
+.tyo_list_view_s .bobleBundel .installmentBox img{width: 32px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .tyo_view_ac_icon { width: 25px;  height: 25px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .warrenty_text_box { min-height: 25px; width: 66px; line-height: 8px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price{padding-top: 25px}
+.tyo_list_view_s .bobleBundel .tyo_view_price { min-height: 60px;}
+}
+
+@media screen and (max-width: 1199px){
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon{margin-right: 1.5%}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in h3 { font-size: 14px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in h5 { font-size: 12px;}
+.tyo_list_view_s .bobleBundel .installmentBox { width: 135px; padding-right: 40px; font-size: 9px; line-height: 12px;}
+.tyo_list_view_s .bobleBundel .installmentBox img{width: 30px; right: 10px;}
+
+.tyo_list_view_s .bobleBundel .tyo_view_action p { font-size: 9px; line-height: 10px;}
+.tyo_list_view_s .bobleBundel .deal_sec label { padding: 6px 15px; font-size: 11px;}
+.tyo_list_view_s .bobleBundel .deal_sec { width: 145px;}
+.tyo_list_view_s .bundleFinalPrice { min-height: 65px;}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{width: 20px; top: -40px;}
+
+}
+@media screen and (min-width: 1025px) and (max-width: 1199px){
+.tyo_list_view_s .tyo_list_box_in h3 { font-size: 14px; margin-top: 5px;}
+.tyo_list_view_s .tyo_list_box_in h5 { font-size: 12px;}
+.tyo_list_view_s .view_tyreBox { height: 97px;}
+.tyo_list_view_s .installmentBox { padding: 4px 40px 4px 8px; width: 64%; font-size: 9.5px; line-height: 12px;}
+.tyo_list_view_s .installmentBox img { width: 29px;}
+.tyo_list_view_s .runflatViewBox { min-height: 30px; padding: 0 10px;}
+.tyo_list_view_s .runflatViewBox img.car_icon_tyre { max-height: 16px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 24px;}
+.tyo_list_view_s .runflatViewBox img.run_flat_tyre { max-height: 22px;}
+.tyo_list_view_s .runflatViewBox .yearname { margin-right: 0px; font-size: 11px;}
+.tyo_list_view_s .tyo_view_action { padding: 5px 0 0;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box { padding: 2px 5px; min-height: 22px; width: 60px; font-size: 8px;  margin-right: 2%; margin-bottom: 3px; line-height: 8px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon {  width: 22px; height: 22px; border-width: 1px; margin-right: 1.5%; border-radius: 5px; margin-bottom: 3px;}
+.tyo_list_view_s .tyo_view_action p { margin-top: 3px; font-size: 9px;}
+.tyo_list_view_s .deal_sec { width: 190px; margin: 5px auto -12px;}
+.tyo_list_view_s .deal_sec label { padding: 5px 14px; font-size: 11px; margin-bottom: 0; line-height: 13px;}
+.tyo_list_view_s .deal_sec .stock_deal { font-size: 8px; width: 58px; padding: 3px 5px; top: 5px;}
+.tyo_list_view_s .tyo_triangleBox label { font-size: 9px; top: 30%;}
+.tyo_list_view_s .tyo_view_price { min-height: 91px; padding-top: 30px;}
+.tyo_list_view_s .tyo_view_price .price_one { font-size: 18px; line-height: 22px;}
+.tyo_list_view_s .tyo_view_price .price_two, .tyo_list_view_s .tyo_view_price .price_three { font-size: 14px;}
+.tyo_list_view_s .tyo_view_price sub:not(.aed) { font-size: 10px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select, .tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button { font-size: 13px; height: 30px; padding: 0 15px; line-height: 28px;}
+
+.tyo_list_view_s .runflatViewBox img{margin-right: 3%;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img.car_icon_tyre { max-height: 14px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img { max-height: 21px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img.run_flat_tyre { max-height: 15px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox .yearname { font-size: 10px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .tyo_view_ac_icon { width: 22px; height: 22px; border-radius: 5px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .warrenty_text_box { min-height: 22px; width: 59px; line-height: 8px; font-size: 7px;}
+}
+@media screen and (max-width: 1024px){
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon{margin-right: 1%; width: 28px;  height: 28px;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box { min-height: 28px; width: 70px; font-size: 10px; margin-right: 1.5%; line-height: 9px;}
+.tyo_list_view_s .installmentBox img { width: 45px; right: 10px;}
+.tyo_list_view_s .deal_sec .stock_deal{right: 0}
+.tyo_list_view_s .deal_sec { width: 215px; margin-bottom: -15px;}
+.tyo_list_view_s .runflatViewBox { min-height: 40px;}
+.tyo_list_view_s .bobleBundel .deal_sec { width: 160px;}
+.tyo_list_view_s .bobleBundel .deal_sec{margin-bottom: -15px}
+.tyo_list_view_s .bobleBundel .tyo_view_action .tyo_view_ac_icon{margin-right: 1.5%}
+.tyo_list_view_s .bobleBundel .tyo_view_price { padding-top: 22px;}
+.tyo_list_view_s .bundleFinalPrice .plus_icon{width: 20px; top: -30px;}
+.tyo_list_view_s .deal_sec label{padding: 7px 16px;}
+}
+@media screen and (max-width: 991px){
+.tyo_list_view_s .tyo_list_box_in{margin-left: -4px; margin-right: -4px;}
+.tyo_list_view_s .tyo_list_box_in h3 { font-size: 14px; margin-top: 5px;}
+.tyo_list_view_s .tyo_list_box_in h5 { font-size: 12px;}
+.tyo_list_view_s .tyo_list_offer { margin-bottom: -12px;}
+.tyo_list_view_s .view_tyreBox { height: 97px;}
+.tyo_list_view_s .installmentBox { padding: 4px 40px 4px 8px; width: 64%; font-size: 9.5px; line-height: 12px;}
+.tyo_list_view_s .installmentBox img { width: 29px;}
+.tyo_list_view_s .runflatViewBox { min-height: 30px; padding: 0 10px;}
+.tyo_list_view_s .runflatViewBox img.car_icon_tyre { max-height: 11px;}
+.tyo_list_view_s .runflatViewBox img.bmw_tyre { max-height: 14px;}
+.tyo_list_view_s .runflatViewBox img { max-height: 24px;}
+.tyo_list_view_s .runflatViewBox img.run_flat_tyre { max-height: 14px;}
+.tyo_list_view_s .runflatViewBox .yearname { margin-right: 0px; font-size: 11px;}
+.tyo_list_view_s .tyo_view_action { padding: 5px 0 0;}
+.tyo_list_view_s .runflatViewBox img.bmw_tyre { max-height: 18px;}
+.tyo_list_view_s .tyo_list_box_in .tyo_list_top_logo{height: 30px;}
+.tyo_list_view_s .tyo_view_action .warrenty_text_box { padding: 2px 5px; min-height: 21px; width: 60px; font-size: 7px;  margin-right: 2%; margin-bottom: 3px; line-height: 7px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon {  width: 20px; height: 20px; border-width: 1px; margin-right: 1.5%; margin-bottom: 3px; border-radius: 4px;}
+.tyo_list_view_s .tyo_view_action p { margin-top: 3px; font-size: 9px;}
+.tyo_list_view_s .deal_sec { width: 160px; margin: 5px auto -10px;}
+.tyo_list_view_s .deal_sec label { padding: 5px 12px; font-size: 8px; margin-bottom: 0; line-height: 11px;}
+.tyo_list_view_s .deal_sec .stock_deal { font-size: 7px; width: 50px; right: 0; padding: 3px 5px; top: 4.5px;}
+.tyo_list_view_s .tyo_view_action .tyo_view_ac_icon img {margin-top: -4px;}
+.tyo_list_view_s .tyo_triangleBox label { font-size: 6px; top: 10px;}
+.tyo_list_view_s .tyo_view_price { min-height: 53px;}
+.tyo_list_view_s .tyo_view_price .price_one { font-size: 16px; line-height: 22px;}
+.tyo_list_view_s .tyo_view_price .price_two, .tyo_list_view_s .tyo_view_price .price_three { font-size: 13px;}
+.tyo_list_view_s .tyo_view_price sub:not(.aed) { font-size: 10px;}
+.tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty select, .tyo_list_view_s .tyo_view_add_cart_Sec .tyo_view_qty button { font-size: 10px; height: 30px; padding: 0 15px; line-height: 28px;}
+.tyo_list_view_s .top_offer{ width: calc(100% + 8px); max-width: initial; max-height: initial; margin-left: -4px;}
+.tyo_list_view_s .top_offer{border-radius: 15px 15px 0 0}
+.tyo_list_view_s .runflatViewBox img{margin-right: 4.5%;}
+.tyo_list_view_s .bobleBundel .deal_sec { width: 145px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in { margin-left: -8px; margin-right: 0;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in + .tyo_list_box_in{margin-left: 0; margin-right: -8px;} 
+.tyo_list_view_s .bundleFinalPrice{ margin-left: -8px; margin-right: -8px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_one { font-size: 18px; line-height: 26px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_two, .tyo_list_view_s .bobleBundel .tyo_view_price .price_three { font-size: 14px;}
+.tyo_list_view_s .bobleBundel .installmentBox { width: 120px; padding-right: 35px; font-size: 8px; line-height: 10px;}
+.tyo_list_view_s .bobleBundel .installmentBox img { width: 25px; right: 8px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img.car_icon_tyre { max-height: 13px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img { max-height: 19px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox img.run_flat_tyre { max-height: 16px;}
+.tyo_list_view_s .bobleBundel .runflatViewBox .yearname { font-size: 10px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .tyo_view_ac_icon { width: 20px; height: 20px;     margin-right: 1%; border-radius: 3px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .tyo_view_ac_icon img{width: 85%; margin-top: -2px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action .warrenty_text_box { min-height: 22px; width: 58px; line-height: 8px; font-size: 8px; margin-right: 1%;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_one { font-size: 16px; line-height: 24px;}
+.tyo_list_view_s .bobleBundel .tyo_view_price .price_two, .tyo_list_view_s .bobleBundel .tyo_view_price .price_three { font-size: 12px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in h3 { font-size: 12px;}
+.tyo_list_view_s .bobleBundel .tyo_list_box_in h5 { font-size: 10px;}
+.tyo_list_view_s .bobleBundel .tyo_view_add_cart_Sec .tyo_view_qty button { padding: 0 12px;}
+.tyo_list_view_s .bobleBundel .tyo_view_action p{letter-spacing: 0.5px;}
+.tyo_list_view_s .bobleBundel .deal_sec { margin-bottom: -13px;}
+
+.tyo_list_view_s .bobleBundel .offer { width: calc(100% - 16px);}
+}
+.page-products .toolbar {
+    background-color: #fff;
+}
+.modal-backdrop:nth-child(2n-1) {
+  opacity : 0;
+  z-index: -1;
+}
+#videoModal button.close {
+    position: absolute;
+    right: -8px;
+    top: -13px;
+    color: #d80000;
+    opacity: 1;
+}
+#videoModal.close:focus, .close:hover {
+    color: #d80000;
+    background: none;
+}
+#videoModal .close .fa.fa-times-circle {
+    font-size: 28px;
+}
+img.full-img.web-list-offer {
+    border-radius: 15px 0 0 15px;
+}
+
+@media screen and (min-width: 768px){
+    .catalog-category-view .after_header {
+        width: 100%;
+        float: left;
+        height: auto;
+        background: #ececec;
+    }
+
+    .catalog-category-view .tab-slider.col-md-12.col-lg-12.col-sm-12.dev {
+        width: 70%;
+        float: right;
+        background: none;
+    }
+
+    .catalog-category-view .main_banner.sampletirewrap .tyrewithsize {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .catalog-category-view  .homesearchbar {
+        padding-top: 65px;
+        padding-bottom: 0px;
+    }
+
+    .catalog-category-view .tab-content {
+        margin-top: 0px;
+        max-height: 160px;
+    }
+
+    .catalog-category-view .home-diff-rear-plus {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .catalog-category-view .tyres_banner_img {
+        text-align: center;
+        width: 30%;
+        float: left;
+        position: relative;
+    }
+    .catalog-category-view .home-rear-tyre .col-sm-3.col-xs-4 {
+        padding-bottom: 10px;
+    }
+    .catalog-category-view .car_tyre .tyrewithoutsize {
+        top: 26%;
+    }
+    .catalog-category-view .truck_tyre .tyrewithoutsize {
+        top: 50% !important;
+    }
+    .catalog-category-view .motercycle_tyre .tyrewithoutsize {
+        top: 32%;
+    }
+    .catalog-category-view .new-search-section ul.nav.nav-tabs li:first-child {
+        border-radius: 0 0 0 10px;
+        border: none;
+        border-left: 2px solid #D80000;
+        border-bottom: 2px solid #D80000;
+    }
+    .catalog-category-view .new-search-section .nav-tabs > li.active > a, .new-search-section .nav-tabs > li.active > a:focus, .new-search-section .nav-tabs > li.active > a:hover
+    {
+        border-radius: 0 !important;
+    }
+    .catalog-category-view .new-search-section .nav-tabs > li:first-child.active > a {
+        border-radius: 0 0 0 10px !important;
+    }
+    .catalog-category-view .new-search-section .nav-tabs > li:last-child.active > a {
+        border-radius: 0 0 10px 0 !important;
+    }        
+    .catalog-category-view .new-search-section .nav-tabs > li > a {
+        border-radius: 0;
+    }
+    .catalog-category-view .new-search-section ul.nav.nav-tabs li:last-child {
+        border-radius: 0 0 10px 0;
+        border-bottom: 2px solid #D80000;
+        border-top: none;
+    }
+    .catalog-category-view .new-search-section ul.nav.nav-tabs li.active {margin: 0px 0px !important;}
+    .catalog-category-view .new-search-section ul.nav.nav-tabs li.home-vehicle-tab.active {
+        border-radius: 0;
+    }
+    .catalog-category-view .new-search-section ul.nav.nav-tabs li:first-child.active {box-shadow: none;border-radius: 0 0 0 10px !important;}
+    .catalog-category-view .new-search-section ul.nav.nav-tabs li:last-child.active {box-shadow: none;border-radius: 0 0 10px 0 !important;}
+    .catalog-category-view .homesearchbar {
+        padding-top: 61px;
+        padding-bottom: 0px;
+    }    
+
+}
+@media only screen and (min-width: 1920px) {
+    .tyo_list li .circleLogo {
+        height: 124px;
+    }
+    .tyo_list li .with-side-logo .circleLogo + .half_tyre_bg {
+        height: 124px;
+    }    
+    .tyo_list li .half_tyre_bg.half_tyre_style_2:not(.doubleTyre), .tyo_list li .tyo_info_tyre, .tyo_list li .action-list-box, .tyo_list li .tyro_price_box, .tyo_list li .tyro_cart_box, .tyo_list li.tyro_list_style_3 .tyre_fr_re_box {
+        min-height: 124px;
+    }    
+    .tabby-pay-later-bundle-list {
+        height: 248px;
+    }
+    .bundle-front-list-offer {
+        height: 123px;
+        border-radius: 15px 0 0 0;
+    }
+    img.bundle-rear-list-offer {
+        min-height: 124px;
+    }
+}
+@media only screen and (max-width: 1920px) {
+    .wheels-product .flip-card {
+        height: 520px;
+    }
+    .block.filter.mana-filter-block {
+        background: white;
+    }
+    .tyo_list li .accessories-img{
+        max-height: 124px;
+        width: auto;
+        margin-bottom: 0;
+        margin-top: auto;
+    }
+}
+@media only screen and (max-width: 1680px) {
+    .wheels-product .flip-card {
+        height: 480px;
+    }
+    .tyo_list li .accessories-img, .tyo_list li .row.no-gutters{
+        max-height: 110px;
+    }    
+    .tyo_list li .tyo_info_tyre .tyre_label_2, .tyo_list li .tyo_info_tyre .tyre_label_1, .tyo_list li .tyo_info_tyre .tyre_label {
+        font-size: 10px;
+    }  
+    .tyo_list li .tyo_info_tyre .tyre_label_1 {bottom: 21px;}    
+    .tyo_list_view_s .tyre_label_1, .tyo_list_view_s .tyre_label_2, .tyo_list_view_s .tyre_label_3, .tyo_list_view_s .tyre_label {font-size: 9px;}
+    .tyo_list_view_s .tyo_view_price sub:not(.aed), .tyo_list_view_s .tyo_view_price .installation_inlc {
+        font-size: 14px;
+    }
+    .tyo_list_view_s .tyo_view_action {padding: 10px 0 0;}
+}
+@media only screen and (max-width: 1536px) {
+    .wheels-product .flip-card {
+        height: 460px;
+    }
+    .tyo_list li .tyo_info_tyre .tyre_label_2, .tyo_list li .tyo_info_tyre .tyre_label_1, .devendra-1366 {
+        font-size: 10px;
+    }
+    .tyo_list li .tyo_info_tyre .tyre_label_1 {bottom: 21px;}    
+    .tyo_list li .accessories-img, .tyo_list li .row.no-gutters{
+        max-height: 110px;
+    }
+    .tyo_list li .tyro_price_box .tyro_price_list .vat_text.auto_parts_inc, 
+    .tyo_list li .tyro_price_box .tyro_price_list .tyro_large_price .sml_dark_txt {
+        font-size: 12px;
+    }        
+    .tyo_list_view_s .tyre_label_1, .tyo_list_view_s .tyre_label_2, .tyo_list_view_s .tyre_label {
+        font-size: 8px;
+    }
+    .tyo_list_view_s .tyo_view_price .installation_inlc {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 1440px) {
+    .wheels-product .flip-card {
+        height: 420px;
+    }
+    .tyo_list li .tyo_info_tyre .tyre_label_2, .tyo_list li .tyo_info_tyre .tyre_label_1, .devendra-1366 {
+        font-size: 9px;
+    }
+    .tyo_list li .tyo_info_tyre .tyre_label_1 {bottom: 19px;}
+    .tyo_list li .tabbyimage {
+        min-height: 110px;
+    }
+    .tabby-pay-later-list {
+        min-width: auto;
+    }    
+}
+@media only screen and (max-width: 1365px) {
+    .wheels-product .flip-card {
+        height: 440px;
+    }
+    .tyo_list li .tyo_info_tyre .tyre_label_2, .tyo_list li .tyo_info_tyre .tyre_label_1, .devendra-1366 {
+        font-size: 8px;
+    }
+    .tyo_list li .tyo_info_tyre .tyre_label_1 {bottom: 18px;}    
+}
+@media only screen and (max-width: 1025) {
+    .tyres-items {
+        padding-left: 15px !important;
+    }
+}
+@media screen and (max-width: 767px){
+    .catalog-category-view .mobilesearch {
+        display: none !important;
+    }
+    .toolbar-products .modes {
+        display: none !important;
+    }
+    .catalog-category-view main#maincontent {
+        background: #fff;
+        width: 100%;
+    }
+}
+    .catalog-category-view .tyres_banner_img .home-battery-banner {
+        width: 33% !important;
+    }
+    .catalog-category-view .tyres_banner_img .home-oil-banner {
+        width: 34% !important;
+    }
+    .catalog-category-view .tyres_banner_img .home-oil-filter-banner {
+        width: 22% !important;
+    }
+    .catalog-category-view .tyres_banner_img .home-brakes-banner {
+        width: 40% !important;
+    }
+	.catalog-category-view .site-cache{
+		position:relative;
+	}
+.toolbar.toolbar-products .pagination_main .pages strong.page, 
+.toolbar.toolbar-products .pagination_main .pages a.page, 
+.toolbar.toolbar-products .pagination_main .pages .action, .toolbar.toolbar-products .pagination_main .pages .action:hover 
+    {
+        border-radius: 10px;
+    }
+	.pattern-diameter {
+		float: left;
+		width: 100%;
+		background: grey;
+		border-radius: 7px;
+	}
+	.pattern-diameter .rimsize {
+		color: #FFF;
+		margin-left: 20px;
+	}
+	.tyo_list li .tyo_view_pr_center .price_one {
+		width: 100%;
+		font-size: 20px;
+		font-weight: 700;
+		font-family: Rubik;
+		color: #d80000;
+	}
+	.tyo_list li .tyo_view_pr_center .price_one sub.aed {
+		font-size: 12px;
+		bottom: 0;
+	}
+	.tyo_list li .tyo_view_pr_center .price_one sub.set4 {
+		font-size: 12px;
+		color: #212121;
+		font-weight: normal;
+		bottom: 0;
+		line-height: 0;
+	}
+	.tyo_list li .tyo_view_pr_center .price_two {
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.tyo_list li .tyo_view_pr_center .price_two sub.aed {
+		font-size: 12px;
+		bottom: 0;
+		font-weight: 500;
+	}
+	.tyo_list li .tyo_view_pr_center .price_two .stike-price {
+		font-size: 18px;
+		font-weight: bold;
+	}
+	span.stike-price, span.stike-price-currency {
+		text-decoration: line-through #d80000;
+	}
+	.tyo_list li .tyo_view_pr_center .price_two sub.set4, .tyo_list li .tyo_view_pr_center .price_three sub.set4 {
+		font-size: 12px;
+		color: #212121;
+		font-weight: normal;
+		bottom: 0;
+		line-height: 0;
+	}
+	.tyo_list li .tyo_view_pr_center .price_three, .tyo_list li .tyo_view_pr_center .price_per_tyre {
+		font-size: 18px;
+		font-weight: bold;
+		color: #005096;
+	}
+	.tyo_list li .tyo_view_pr_center .price_three sub.aed, .tyo_list li .tyo_view_pr_center .price_per_tyre sub.aed {
+		font-size: 12px;
+		bottom: 0;
+		font-weight: 500;
+	}
+	.tyo_list li .tyo_view_pr_center .price_three sub.s-set4, .tyo_list li .tyo_view_pr_center .price_per_tyre sub.s-set4 {
+		font-size: 12px;
+		color: #212121;
+		font-weight: normal;
+		bottom: 0;
+		line-height: 0;
+	}
+</style>
+<script type="text/javascript">
+   
+    jQuery('.tyro_action_icon').click(function(){
+        var tabcontent=jQuery(this).find('.nav-item').attr('aria-controls');
+
+        jQuery('.tyro_action_icon').not(this).each(function(){
+                 jQuery(this).removeClass('tabselected');
+             });
+
+        jQuery('.tab-pane').not(jQuery('#'+tabcontent)).each(function(){
+             jQuery(this).removeClass('in selectetabcontent');
+             jQuery(this).hide();
+         });
+
+        jQuery(this).removeClass('active');
+
+        jQuery(this).toggleClass('tabselected');
+
+        jQuery('#'+tabcontent).toggleClass('in selectetabcontent');
+
+        if(jQuery('#'+tabcontent).is(':hidden') ){ console.log('yes');
+            jQuery('#'+tabcontent).show();
+        }else{
+            jQuery('#'+tabcontent).hide();
+        }
+  });
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery(".video-modal").click(function () {
+	  var theModal = jQuery(this).data("target"),
+		videoSRC = jQuery(this).attr("data-video"),
+		videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+		jQuery(theModal + ' iframe').attr('src', videoSRCauto);
+		jQuery(theModal).on('hide.bs.modal', function () {
+		jQuery(theModal + ' iframe').attr('src', '');
+	  });
+	});
+});
+</script>

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    require(['jquery', 'domReady!'], function ($) {
+        var queryString = new URLSearchParams(window.location.search.split('?')[1]);
+        var productId = queryString.get('mfpreselect');
+        if (productId) {
+            var pair, key, val;
+            var data = {};
+
+            for (pair of queryString.entries()) {
+                key = pair[0];
+                val =  pair[1];
+
+                if (!isNaN(key) && !isNaN(val)) {
+                    data[key] = val;
+                }
+            }
+
+            if (data) {
+                $('.product-info-main .swatch-opt').on("swatch.initialized", function () {
+                    var swatchWidget = $('.swatch-opt').data('mageSwatchRenderer') || $('.swatch-opt').data('mage-SwatchRenderer');
+                    if (!swatchWidget || !swatchWidget._EmulateSelectedByAttributeId) {
+                        return;
+                    }
+                    swatchWidget._EmulateSelectedByAttributeId(data);
+                });
+            }
+        }
+    });
+</script>

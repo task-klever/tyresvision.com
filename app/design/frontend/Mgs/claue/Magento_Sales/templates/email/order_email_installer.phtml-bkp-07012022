@@ -1,0 +1,96 @@
+<?php 
+$_order = $block->getOrder(); 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$installer_id = $_order->getPickupStore();
+
+if($installer_id != 0){
+	$installer_id = $installer_id;
+}else{
+	$storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
+}
+$installerobj = $objectManager->create('Ecomteck\StoreLocator\Model\Stores')->load($installer_id);
+//echo '<pre>';print_r($installerobj->getData());die;
+$installerName = '';
+$installerAddress = '';
+$installerCity = '';
+$installerCountry = '';
+$installerPhone = '';
+$installerEmail = '';
+$country = '';
+if(isset($installerobj['name']) || isset($installerobj['address']) || isset($installerobj['city']) || isset($installerobj['country']) || isset($installerobj['phone']) || isset($installerobj['email'])){
+	$installerName = $installerobj['name'];
+	$installerAddress = $installerobj['address'];
+	$installerCity = $installerobj['city'];
+	$installerCountry = $installerobj['country'];
+	$installerPhone = 'T: '.$installerobj['phone'];
+	$installerEmail = 'Email: '.$installerobj['email'];
+	$country = $objectManager->create('\Magento\Directory\Model\Country')->load($installerobj['country'])->getName();
+}
+
+?>
+<tr>
+	<td valign="top" >
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	        <tr style="background-color: white;">
+	            <td valign="top" style="width:50%;" >
+	                    <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+							<tr style="">
+	                          	<td width="50%" valign="top" id="templateBody" style="background-color: white; padding: 15px;font-family: 'Montserrat', sans-serif;font-weight: 100;font-size: 14px;">
+	                            	<div>
+										<p style="color: #4bcf2e;font-weight: 700;font-family: 'Montserrat', sans-serif;"><?php echo __('Installer Information')?></p>		
+										<p style="font-family: 'Montserrat', sans-serif;"><?php echo $installerName;?>
+										<br><?php echo $installerAddress.',';?>
+										<br><?php echo $installerCity.','; ?>
+										<br><?php echo $country;?>
+										<br><span style="color: #4bcf2e;font-weight: 700;"><?php echo __('Appointment Date/Time: ')?></span>
+										<br><?php 
+											$order_date = ''; 
+											$order_date = $_order->getDeliveryDate(); 
+											echo substr($order_date, 0, 10) ." ". $_order->getDeliveryComment();
+										?>
+										</p>
+									</div>	
+								</td>
+								<td width="50%" valign="top" id="templateBody" style="background-color: white; padding: 15px;font-family: 'Montserrat', sans-serif;font-weight: 100;font-size: 14px;">
+									<div>
+										<p style="color: #4bcf2e;font-weight: 700;font-family: 'Montserrat', sans-serif;"><?php echo __('Vehicle Information')?></p>
+										<p style="font-family: 'Montserrat', sans-serif;"><?php echo "Plate No: ".$_order->getPlate();?>
+										<br><?php echo "Make: ".$_order->getMake();?>
+										<br><?php echo "Model: ".$_order->getModel();?>
+										<br><?php echo "Year: ".$_order->getYear();?>
+										</p>
+									</div>	
+								</td>	
+							</tr>
+						</table>	
+				</td> 
+			</tr>
+		</table>
+	</td>
+</tr>	
+
+<tr>
+	<td valign="top" >
+	    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	        <tr style="background-color: white;">
+	            <td valign="top" style="width:50%;" >
+	                    <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+							<tr style="">
+								<td valign="top" id="templateBody" style="background-color: white; padding: 15px;font-family: 'Montserrat', sans-serif;font-weight: 100;font-size: 14px;">
+									<div>
+										<p style="color: #4bcf2e;font-weight: 700;font-family: 'Montserrat', sans-serif;">
+											<?php echo __('Order Comments')?></p>		
+										<p style="font-family: 'Montserrat', sans-serif;">
+											<?php echo $_order->getEcomteckOrderComment();?>
+										</p>	
+									</div>	
+								</td>	
+							</tr>
+						</table>	
+				</td> 
+			</tr>
+		</table>
+	</td>
+</tr>		  		

@@ -1,0 +1,238 @@
+SKU,"ERP Product Ref","Created Date",Status,Message
+HD-C04512140000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000-2019,N/A,"2021/02/06 10:45: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512140000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-RHBATNS40(ZL),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN55,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATNS60(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN66,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN88,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN100,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATN120L,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT115D31(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT105D31(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT55D23(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT80D26(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT105D31R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT55D231R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT80D26R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-SM-G1700235ST1L,REF-ITEM000000001945,"2021/02/06 10:49: AM",Sucess,Updated
+YT-SM-G1500225ST3L,REF-ITEM000000001946,"2021/02/06 10:49: AM",Sucess,Updated
+YT-SUMS18514SL720,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200035683,REF-ITEM000000001947,"2021/02/06 10:49: AM",Sucess,Updated
+YT-ROA1200036698,REF-ITEM000000001948,"2021/02/06 10:49: AM",Sucess,Updated
+YT-ROA1200033434,REF-ITEM000000001949,"2021/02/06 10:49: AM",Sucess,Updated
+YT-PIR-P3153021PZ4N09,N/A,"2021/02/06 10:49: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09",Failed
+YT-PIR-P3153021PZ4N09-20,N/A,"2021/02/06 10:49: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09-20",Failed
+YT-PIR1200031593-20,REF-ITEM000000001950,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR-3184-2020,REF-ITEM000000001951,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200038540-2020,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200038540-2020",Failed
+YT-PIR-1196,REF-ITEM000000001952,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200011941-20,REF-ITEM000000001953,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200023592-2020,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200023592-2020",Failed
+YT-PIR1200011943-ZNQ,REF-ITEM000000001954,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR-19801,REF-ITEM000000001955,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200024105-20,REF-ITEM000000001956,"2021/02/06 10:50: AM",Sucess,Updated
+YT-MIC651885,REF-ITEM000000001957,"2021/02/06 10:50: AM",Sucess,Updated
+YT-MIC-M2853020CUP29,REF-ITEM000000001958,"2021/02/06 10:50: AM",Sucess,Updated
+YT-ZEE1200045687-2019,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045687-2019",Failed
+YT-ZEE1200045694-2019,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045694-2019",Failed
+YT-YOK-1335LT315/70R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335LT315/70R17-G015TL",Failed
+YT-YOK-1335315/30ZR22-V105ETL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335315/30ZR22-V105ETL",Failed
+YT-YOK-1335295/30ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335295/30ZR19-V105STL",Failed
+YT-YOK-1335LT285/70R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335LT285/70R17-G015TL",Failed
+YT-YOK-1335285/65R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G015TL",Failed
+YT-YOK-1335285/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G056TL",Failed
+YT-YOK-1335285/65R17-G94BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G94BTL",Failed
+YT-YOK-1335285/60R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/60R18-G056TL",Failed
+YT-YOK-1335285/35ZR22-V105TL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/35ZR22-V105TL",Failed
+YT-YOK-1335275/70R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/70R16-G056TL",Failed
+YT-YOK-1335275/70R16-G015TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/70R16-G015TL-2019",Failed
+YT-YOK-1335275/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/65R17-G056TL",Failed
+YT-YOK-1335275/60R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/60R18-G056TL",Failed
+YT-YOK-1335275/50R20-V802TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/50R20-V802TL",Failed
+YT-YOK-1335275/45R20-V103HTL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 33, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/45R20-V103HTL-2019",Failed
+YT-YOK-1335275/45R19-V103BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/45R19-V103BTL",Failed
+YT-YOK-1335275/40R20-V103BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/40R20-V103BTL",Failed
+YT-YOK-1335275/40ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/40ZR19-V105STL",Failed
+YT-YOK-1335275/35ZR20-V105DTL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/35ZR20-V105DTL",Failed
+YT-YOK-1335275/35ZR20-V105DTL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/35ZR20-V105DTL-2019",Failed
+"YT-YOK-1335275/35ZR19-V105TL/AMG E43-BR213",N/A,"2021/02/06 10:51: AM","The length of the string is 42, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/35ZR19-V105TL/AMG E43-BR213",Failed
+YT-YOK-1335275/30ZR20-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/30ZR20-V105STL",Failed
+YT-YOK-1335265/75R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/75R16-G056TL",Failed
+YT-YOK-1335265/70R18-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/70R18-G015TL",Failed
+YT-YOK-1335265/70R16-G039TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/70R16-G039TL",Failed
+YT-YOK-1335265/70R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/70R16-G056TL",Failed
+YT-YOK-1335265/65R18-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R18-G015TL",Failed
+YT-YOK-1335265/65R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R17-G015TL",Failed
+YT-YOK-1335265/65R17-G015TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R17-G015TL-2019",Failed
+YT-YOK-1335265/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R17-G056TL",Failed
+YT-YOK-1335265/60R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/60R18-G056TL",Failed
+YT-YOK-1335265/60R18-G056TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/60R18-G056TL-2019",Failed
+YT-YOK-1335265/50R19-V103BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/50R19-V103BTL",Failed
+YT-YOK-1335265/35ZR20-V103STL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/35ZR20-V103STL-2019",Failed
+YT-YOK-1335255/70R18-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/70R18-G015TL",Failed
+YT-YOK-1335P255/70R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335P255/70R18-G056TL",Failed
+YT-YOK-1335P255/70R18-G056TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 33, but it must be less than or equal to 20 characters. Value: YT-YOK-1335P255/70R18-G056TL-2019",Failed
+YT-YOK-1335255/70R15-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/70R15-G056TL",Failed
+YT-YOK-1335255/70R15-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/70R15-G015TL",Failed
+YT-YOK-1335255/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/65R17-G056TL",Failed
+YT-YOK-1335255/65R17-G056TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/65R17-G056TL-2019",Failed
+YT-YOK-1335245/70R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/70R16-G056TL",Failed
+YT-YOK-1335245/65R17-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/65R17-G055TL",Failed
+YT-YOK-1335245/65R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/65R17-G015TL",Failed
+YT-YOK-1335245/60R18-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/60R18-G055TL",Failed
+YT-YOK-1335245/50R20-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/50R20-G055TL",Failed
+YT-YOK-1335245/45R18-S221TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/45R18-S221TL",Failed
+YT-YOK-1335245/35ZR20-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/35ZR20-V105STL",Failed
+YT-YOK-1335245/35ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/35ZR19-V105STL",Failed
+YT-YOK-1335245/35ZR19-V105STL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/35ZR19-V105STL-2019",Failed
+YT-YOK-1335235/70R16-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/70R16-G055TL",Failed
+YT-YOK-1335235/55R18-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/55R18-G055TL",Failed
+YT-YOK-1335235/35ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/35ZR19-V105STL",Failed
+YT-YOK-1335235/35ZR19-V105STL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/35ZR19-V105STL-2019",Failed
+YT-YOK-1335225/70R16-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/70R16-G055TL",Failed
+YT-YOK-1335225/65R17-G91ATL/SP,N/A,"2021/02/06 10:51: AM","The length of the string is 30, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/65R17-G91ATL/SP",Failed
+YT-YOK-1335225/60R16-ES32TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/60R16-ES32TL-2019",Failed
+YT-YOK-1335225/55R18-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/55R18-G055TL",Failed
+YT-YOK-1335225/55R17-S221TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/55R17-S221TL",Failed
+YT-YOK-1335225/55R17-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/55R17-G055TL",Failed
+YT-YOK-1335225/50R18-V103ETL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R18-V103ETL",Failed
+YT-YOK-1335225/50R18-V103ETL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 33, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R18-V103ETL-2019",Failed
+YT-YOK-1335225/50R17-AE51TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R17-AE51TL",Failed
+YT-YOK-1335225/50R17-ES32ATL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R17-ES32ATL",Failed
+YT-YOK-1335225/40ZR18-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/40ZR18-V105STL",Failed
+YT-YOK-1335225/40R18-V701TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/40R18-V701TL",Failed
+YT-YOK-1335215/70R16-G033VTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/70R16-G033VTL",Failed
+YT-YOK-1335215/70R15-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/70R15-G056TL",Failed
+YT-YOK-1335215/65R16-A349ATL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/65R16-A349ATL",Failed
+YT-YOK-1335215/60R16-E75TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 31, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/60R16-E75TL-2019",Failed
+YT-YOK-1335215/60R16-E70BTL/MT,N/A,"2021/02/06 10:51: AM","The length of the string is 30, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/60R16-E70BTL/MT",Failed
+YT-YOK-1335215/55R17-AE51BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/55R17-AE51BTL",Failed
+YT-YOK-1335215/55R17-E70BTL/PRV,N/A,"2021/02/06 10:51: AM","The length of the string is 31, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/55R17-E70BTL/PRV",Failed
+YT-YOK-1335215/55R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/55R16-ES32TL",Failed
+YT-YOK-1335215/45R17-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/45R17-ES32TL",Failed
+YT-YOK-1335205R16-G97ATL-2019,N/A,"2021/02/06 10:51: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-YOK-1335205/80R16-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/80R16-G015TL",Failed
+YT-YOK-1335205/70R15-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/70R15-G055TL",Failed
+YT-YOK-1335205/65R16-AE51ATL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R16-AE51ATL",Failed
+YT-YOK-1335205/65R16-E70BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R16-E70BTL",Failed
+YT-YOK-1335205/65R15-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R15-ES32TL",Failed
+YT-YOK-1335205/65R15-ES32TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R15-ES32TL-2019",Failed
+YT-YOK-1335205/65R15-AA01TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R15-AA01TL",Failed
+YT-YOK-1335205/60R16-AE61TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/60R16-AE61TL",Failed
+YT-YOK-1335205/60R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/60R16-ES32TL",Failed
+YT-YOK-1335205/55R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/55R16-ES32TL",Failed
+YT-YOK-1335205/55R16-E70JTL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/55R16-E70JTL",Failed
+YT-YOK-1335205/50R17-A10ETL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/50R17-A10ETL",Failed
+YT-YOK-1335195R15-6PR-Y356TL,N/A,"2021/02/06 10:51: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-YOK-1335195/65R15-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335195/65R15-ES32TL",Failed
+YT-YOK-1335195/60R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335195/60R16-ES32TL",Failed
+YT-YOK-1335185/70R14-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335185/70R14-ES32TL",Failed
+YT-YOK-1335185/65R15-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335185/65R15-ES32TL",Failed
+YT-YOK-1335185/65R14-ES32TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335185/65R14-ES32TL-2019",Failed
+YT-YOK-1335175/70R14-S207TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335175/70R14-S207TL",Failed
+YT-YOK-1335175/65R14-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335175/65R14-ES32TL",Failed
+YT-TY-285-65R17-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-285-65R17-TY0-OPUT",Failed
+YT-TY-285-60R18-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-285-60R18-TY0-OPUT",Failed
+YT-TY-285-50R20-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-285-50R20-TY0-OPUT",Failed
+YT-TY-275-70R16-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-275-70R16-TY0-OPUT",Failed
+YT-TY-275-60R20-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-275-60R20-TY0-OPUT",Failed
+YT-TY-265-70R17-TY0-OPAT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-70R17-TY0-OPAT",Failed
+YT-TY-265-70R17-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-70R17-TY0-OPUT",Failed
+YT-TY-265-70R16-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-70R16-TY0-OPUT",Failed
+YT-TY-265-50R20-TY0-PXPS,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-50R20-TY0-PXPS",Failed
+YT-TY-255-50R20-TY0-PXPS,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-255-50R20-TY0-PXPS",Failed
+YT-TY-245-75R16-TY0-OPUT,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-75R16-TY0-OPUT",Failed
+YT-TY-245-60R18-TY0-OPUT,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-60R18-TY0-OPUT",Failed
+YT-TY-245-45R19-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-45R19-TY0-PXSP",Failed
+YT-TY-245-45R18-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-45R18-TY0-PXSP",Failed
+YT-TY-245-40R20-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-40R20-TY0-PXSP",Failed
+YT-TY-245-40R19-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-40R19-TY0-PXSP",Failed
+YT-TY-245-40R18-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-40R18-TY0-PXSP",Failed
+YT-TY-235-60R18-PXTSS,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-235-60R18-PXTSS",Failed
+YT-TY-235-55R19-PXTSS,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-235-55R19-PXTSS",Failed
+YT-TY-235-45ZR18-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-235-45ZR18-PXSP",Failed
+YT-TY-225-60R18-TY0-CF2S,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-225-60R18-TY0-CF2S",Failed
+YT-TY-225-55R17-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-225-55R17-TY0-CF2",Failed
+YT-TY-225-55R17-PXTSB,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-225-55R17-PXTSB",Failed
+YT-TY-225-50R17-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-225-50R17-TY0-PXSP",Failed
+YT-TY-215-70R16-TY0-OPUT,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-215-70R16-TY0-OPUT",Failed
+YT-TY-215-60R16-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-215-60R16-TY0-CF2",Failed
+YT-TY-215-55R17-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-215-55R17-TY0-CF2",Failed
+YT-TY-205-65R15-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-205-65R15-TY0-CF2",Failed
+YT-TY-205-55R16-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-205-55R16-TY0-CF2",Failed
+YT-TY-195-65R15-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-195-65R15-TY0-CF2",Failed
+YT-TY-185-65R15-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-185-65R15-TY0-CF2",Failed
+YT-TY-175-70R14-TY0-NE03,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-175-70R14-TY0-NE03",Failed
+YT-SM-G1700285ST2L,REF-ITEM000000001959,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800285ST2L,REF-ITEM000000001960,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G2000285SH9L,REF-ITEM000000001961,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600275ST2L,REF-ITEM000000001962,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1900275SH3T,REF-ITEM000000001963,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F2000275SH3T,REF-ITEM000000001964,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1900275SH3L,REF-ITEM000000001965,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2C,REF-ITEM000000001966,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800265ST2C-2019",Failed
+YT-SM-G1700265ST2L,REF-ITEM000000001967,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600265ST2L,REF-ITEM000000001968,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2T,REF-ITEM000000001969,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700265ST1L,REF-ITEM000000001970,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2L,REF-ITEM000000001971,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800265ST2L-2019",Failed
+YT-SM-F1800265SH3L,REF-ITEM000000001972,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500255ST2L,REF-ITEM000000001973,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500255ST2L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1500255ST2L-2019",Failed
+YT-SM-F2000255SH3L,REF-ITEM000000001974,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600245ST2L,REF-ITEM000000001975,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600245ST2L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600245ST2L-2019",Failed
+YT-SM-G1700245ST1L,REF-ITEM000000001976,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800245ST1L,REF-ITEM000000001977,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700245ST3L,REF-ITEM000000001978,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700245ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700245ST3L-2019",Failed
+YT-SM-F1800245SH3T,REF-ITEM000000001979,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1800245SH3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-F1800245SH3T-2019",Failed
+YT-SM-G1800245ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800245ST3L-2019",Failed
+YT-SM-F2000245SH3L,REF-ITEM000000001980,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500235SC5L,REF-ITEM000000001981,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600235ST1C,REF-ITEM000000001982,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700235ST1L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700235ST1L-2019",Failed
+YT-SM-G1800235ST1C,REF-ITEM000000001983,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600235ST1L,REF-ITEM000000001984,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800235ST1L,REF-ITEM000000001985,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800235ST3C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800235ST3C-2019",Failed
+YT-SM-G1700235ST3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700235ST3T-2019",Failed
+YT-SM-F1800235SH3L,REF-ITEM000000001986,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800235ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800235ST3L-2019",Failed
+YT-SM-G1500225SH2L,REF-ITEM000000001987,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700225ST1C,REF-ITEM000000001988,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700225ST1T,REF-ITEM000000001989,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600225ST1L,REF-ITEM000000001990,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600225ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600225ST3L-2019",Failed
+YT-SM-G1800225ST3C,REF-ITEM000000001991,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800225ST3C-2019",Failed
+YT-SM-G1700225ST3T,REF-ITEM000000001992,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3T,REF-ITEM000000001993,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800225ST3T-2019",Failed
+YT-SM-G1700225ST3L,REF-ITEM000000001994,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1900225SH3T,REF-ITEM000000001995,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3,REF-ITEM000000001996,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST1L,REF-ITEM000000001997,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST1L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600215ST1L-2019",Failed
+YT-SM-G1600215ST1C,REF-ITEM000000001998,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST1C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600215ST1C-2019",Failed
+YT-SM-G1600215SH7C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600215SH7C-2019",Failed
+YT-SM-G1700215ST1L,REF-ITEM000000001999,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700215ST1L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700215ST1L-2019",Failed
+YT-SM-G1700215ST3C,REF-ITEM000000002000,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST3T,REF-ITEM000000002001,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700215ST3L,REF-ITEM000000002002,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500205ST3T,REF-ITEM000000002003,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600205ST3L,REF-ITEM000000002004,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500205ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1500205ST3L-2019",Failed
+YT-SM-G1500205SH7T,REF-ITEM000000002005,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600225ST3V-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600225ST3V-2019",Failed
+YT-SM-G1600205ST1T,REF-ITEM000000002006,"2021/02/06 10:52: AM",Sucess,Updated

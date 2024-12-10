@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- <tab id="hdweb" translate="label" sortOrder="300">
+            <label>Hdweb</label>
+        </tab>
+        -->
+            
+		
+        <section id="hdwebconfig" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Hdweb Configuration</label>
+            <tab>hdweb</tab>
+            <resource>Hdweb_Core::config_core</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                
+                <field id="tyre_size_cat_id" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tyre Size Category Id</label>
+                </field>
+                <field id="brand_cat_id" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brand Category Id</label>
+                </field>
+                
+            </group>
+        </section>
+    </system>
+</config>

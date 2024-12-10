@@ -1,0 +1,90 @@
+<?php
+/**
+ * @var $block \Hdweb\Rfc\Block\Adminhtml\OrderEdit\Tab\View
+ */
+?>
+<?php
+$ErpSalesHeaderRef = $block->getErpSalesHeaderRef();
+$ErpSalesOrderItem = $block->getErpSalesOrderItem();
+$orderId = $block->getOrderId();
+$orderIncrementId = $block->getOrderIncrementId();
+$erpProductRef = $block->getErpProductRef();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$inventoryLocation = $block->getErpInventoryLocation();
+$showGenerateErpButton = $block->showGenerateErpButton();
+?>
+<div class="fieldset-wrapper order-information">
+	<form class="action-element"
+		  action="<?= $block->escapeUrl($block->getUrl('rfc/rnr/createorder/order_id/'.$orderId)) ?>"
+		  method="post">
+		<input
+			name="form_key"
+			type="hidden"
+			value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+			
+			<div class="admin__field-control">
+                <label for="erp_inventory_location" class="admin__field-label">Inventory Location</label>
+                <div class="admin__field-control">
+                    <select name="erp_inventory_location" id="erp_inventory_location" class="admin__control-select">
+							<option value="">Select Inventory Location</option>
+							<option value="L001" <?php echo ( $inventoryLocation == 'L001' ? 'selected' : '' ); ?>>L001 (EUT - Dubai)</option>
+							<option value="L002" <?php echo ( $inventoryLocation == 'L002' ? 'selected' : '' ); ?>>L002 (EUT - AUH)</option>
+							<option value="L003" <?php echo ( $inventoryLocation == 'L003' ? 'selected' : '' ); ?>>L003 (EUT - Mobile VAN)</option>
+					</select>
+                </div>
+            </div>
+		<div class="admin__field-control">	
+			<button
+				class="action-primary"
+				type="submit"
+				title="<?= $block->escapeHtmlAttr(__('Save')) ?>">
+				<?= $block->escapeHtml(__('Save')) ?>
+			</button>
+		</div>
+	</form>
+	
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php /* @escapeNotVerified */
+            echo __('ERP Order Information') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+        <?php echo $block->getChildHtml(); ?>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('Inventory Location:') ?></th>
+			<td><?php echo $inventoryLocation; ?></td>
+		</tr>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('ERP Order No:') ?></th>
+			<td><?php echo $ErpSalesHeaderRef; ?></td>
+		</tr>
+		<?php $erpOrderItemRef = $block->getErpOrderItemRef();?>
+		<?php if(count($erpOrderItemRef) > 0):?>
+		<?php 
+		$erpOrderItemRefNo = implode(", ",$erpOrderItemRef);
+		?>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('Order Item Ref:') ?></th>
+			<td><?php echo $erpOrderItemRefNo; ?></td>
+		</tr>
+		<?php endif;?>
+        </tbody>
+    </table>
+	<br/>
+	<?php if($showGenerateErpButton == 0):?>
+	<form class="action-element"
+		  action="<?= $block->escapeUrl($block->getUrl('rfc/rnr/createorder/order_id/'.$orderId)) ?>"
+		  method="post">
+		<input
+			name="form_key"
+			type="hidden"
+			value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+		<button
+			class="action-primary"
+			type="submit"
+			title="<?= $block->escapeHtmlAttr(__('Generate ERP Order')) ?>">
+			<?= $block->escapeHtml(__('Generate ERP Order')) ?>
+		</button>
+	</form>
+	<?php endif;?>
+</div>

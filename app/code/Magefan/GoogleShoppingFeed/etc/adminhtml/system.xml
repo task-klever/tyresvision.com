@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+        <section id="mfgoogleshoppinfeed" sortOrder="10423249250" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
+            <label>Google Shopping Feed</label>
+            <tab>magefan</tab>
+            <resource>Magefan_GoogleShoppingFeed::mfgoogleshoppinfeed</resource>
+            <group id="general" sortOrder="10" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" >
+                <label>General</label>
+                <attribute type="expanded">1</attribute>
+                <field id="version" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Magefan\GoogleShoppingFeed\Block\Adminhtml\System\Config\Form\Info</frontend_model>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="key" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product Key</label>
+                    <frontend_model>Magefan\Community\Block\Adminhtml\System\Config\Form\ProductKeyField</frontend_model>
+                </field>
+                <field id="feed_title" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Feed Title</label>
+                </field>
+                <field id="feed_description" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Feed Description</label>
+                </field>
+                <field id="feed_for_categories" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Generate Feed For This Catrgories</label>
+                    <comment>Comma Separated Category Names. For example: Men,Women</comment>
+                </field>
+            </group>
+            <group id="attributes" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Attributes Mapping</label>
+                <field id="mapping" translate="label" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Attributes Mapping</label>
+                    <frontend_class>remove_label</frontend_class>
+                    <frontend_model>Magefan\GoogleShoppingFeed\Block\Adminhtml\System\Config\Form\DynamicRow</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment><![CDATA[
+                            Read more about product data specification in <a href="https://support.google.com/merchants/answer/7052112" target="_blank" rel="nofolow noopener">
+                                Google Merchant Center
+                            </a>.
+                        ]]></comment>
+                </field>
+            </group>
+            <group id="product_types" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Types</label>
+                <group id="configurable" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Configurable</label>
+                    <field id="include_configurable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Include Configurable Products</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="include_child" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Include Child Products</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+            <group id="conditions" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Product Filter</label>
+                <field id="price" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Include Products Only With Price Greater Than 0</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="stock_status" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Include Out Of Stock Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="google_analytics" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Google Analytics Setup</label>
+                <comment><![CDATA[<b>Note.</b> Make sure URL parameters: utm_campaign, utm_content, utm_source, utm_medium and utm_term are not blocked by your robots.txt.
+                    <br /><a href="https://support.google.com/analytics/answer/1033863?hl=en" target="_blank" rel="nofollow noopener">Read more</a>
+                    about collecting campaign data with custom URLs for Google Analytics.
+                ]]></comment>
+                <field id="utm_campaign" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Campaign (utm_campaign)</label>
+                    <comment><![CDATA[The individual campaign name, slogan, promo code, etc. for a product. E.g.: google_shopping_feed.]]></comment>
+                </field>
+                <field id="utm_content" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Content (utm_content)</label>
+                    <comment>Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link. E.g.: google_shopping_ad.</comment>
+                </field>
+                <field id="utm_source" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Source (utm_source)</label>
+                    <comment>Identify the advertiser, site, publication, etc. that is sending traffic to your property, e.g.: google.</comment>
+                </field>
+                <field id="utm_medium" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Medium (utm_medium)</label>
+                    <comment>Identifies what type of link was used, such as cost per click or email. E.g: cpc.</comment>
+                </field>
+                <field id="utm_term" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Term (utm_term)</label>
+                    <comment>Identify paid search keywords. If you're manually tagging paid keyword campaigns, you should also use utm_term to specify the keyword.</comment>
+                </field>
+            </group>
+            <group id="generate_feed" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Generated Feeds</label>
+                <attribute type="expanded">1</attribute>
+                <field id="multi_currency" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Feed generation by</label>
+                    <source_model>Magefan\GoogleShoppingFeed\Model\Config\Source\MultiCurrency</source_model>
+                </field>
+                <field id="regenerate" type="button" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Refresh Google Feed Data</label>
+                    <frontend_model>Magefan\GoogleShoppingFeed\Block\Adminhtml\System\Config\Form\Regenerate</frontend_model>
+                </field>
+            </group>
+        </section>
+	</system>
+</config>

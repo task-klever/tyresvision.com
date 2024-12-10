@@ -1,0 +1,21 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$mediapath=$storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+
+$helper = $this->helper('Mageplaza\Shopbybrand\Helper\Data');
+
+$brandCollection = $block->getCollection();
+
+?>
+<section class="sponser">
+    <div class="owl-carousel owl-theme sponser_slider">
+     <?php  foreach ($brandCollection as $brand) { ?>
+        <div class="item">
+             <a class="product-item-link" href="<?php echo $helper->getHomepageBrandUrl($brand) ?>">
+                <img class="brand-slider-home" src="<?php echo $helper->getBrandImageUrl($brand); ?>">
+             </a>   
+        </div>
+      <?php  } ?>   
+    </div>
+</section>

@@ -1,0 +1,261 @@
+<?php /* Start Fitment Installer Toggle */ ?> 
+<?php
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$checkoutSession = $objectManager->get('\Magento\Checkout\Model\Session');
+
+$hdWebInstallerHelper = $this->helper('Hdweb\Installer\Helper\Data');
+
+$isFitment = $hdWebInstallerHelper->checkIsFitment();
+if($isFitment){
+  $withFitClass = '';
+} else {
+  $withFitClass = 'no-with-fitment';
+}
+
+//$checkoutSession->unsIsFitmentData();
+$isEnablefitmentinstaller = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('carttostorepickup/general/no_fitment_installer');
+?>
+<?php if($isEnablefitmentinstaller != ''):?>
+    <div class="garage <?php echo $withFitClass; ?>">
+        <div class="garage_switch">
+            <div class="toggle">
+                   
+                    <input type="radio" class="switch-input" name="fitment_installer" value="1" id="fully-fitted" checked="">
+
+                    <label for="fully-fitted" id="fully-fitted_label"><?php echo __('With Fitting');?></label>
+            
+                    <input type="radio" class="switch-input" name="fitment_installer" value="0" id="mail-order">
+
+                    <label for="mail-order" id="mail-order_label"><?php echo __('Free Delivery');?></label>
+            </div>
+        </div>
+		<p style="display:none" class="free-delivery-note">Note: Free Delivery without Tyre Installation anywhere in UAE.</p>
+    </div>
+<script>
+require(['jquery', 'jquery/ui'], function($){
+	jQuery('input[type=radio][name=fitment_installer]').change(function() {
+		  if(this.value=="0"){
+			jQuery("#ship_to_address").show();
+			jQuery("#ship_to_installer").hide();
+			jQuery('.free-delivery-note').show();
+		  }
+		  else{   
+			jQuery("#ship_to_address").hide();
+			jQuery("#ship_to_installer").show();
+		    jQuery('.free-delivery-note').hide();
+		  }
+		  
+	   var  fitmentUrl= '<?php echo $block->getUrl('storepickup/index/setfitment/'); ?>';
+	   var pickup_store= '<?php echo $isEnablefitmentinstaller; ?>';
+		jQuery.ajax({
+			type: 'POST',
+			url: fitmentUrl,
+			data: {fitment_installer: this.value, pickup_store: pickup_store},
+			success: function (response) {
+				//response = response.responseText.evalJSON(true); 
+			}
+		});
+
+	});
+
+	jQuery('.container_switch.small input[type=radio]').change(function() {
+	 
+	 var l_id=jQuery(this).attr('id');
+	 jQuery('.container_switch.small .switch-label-small').removeClass('active');
+	 
+	 //jQuery('#'+l_id+'_label').addClass('active');
+	 
+	if(this.value=="0"){
+	  jQuery('.container_switch.small .switch-label-small.after').addClass('active');
+	}else{
+	  jQuery('.container_switch.small .switch-label-small.before').addClass('active');
+	}
+	 
+	});
+	
+	/* jQuery(window).load(function () {
+		console.log('page is loaded');
+		jQuery('#mail-order_label').trigger('click');
+	}); */
+	
+});
+      
+</script>
+<style>
+.garage {
+    margin: 40px 0 0;
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+.garage .garage-info {
+    width: calc(100% - 320px);
+    display: inline-block;
+    position: relative;
+    border-right: 3px solid #fff;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.garage .garage-info .img_td {
+    width: 70px;
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.garage .garage-info .img_td img {
+    max-width: 100%;
+    height: auto;
+}
+.garage .garage-info .not_selected {
+    width: calc(100% - 100px);
+    height: 70px;
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.garage .garage-info .not_selected a {
+    color: #eb2028;
+}
+.garage .garage_switch {
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.garage-info .not_selected p {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding-top: 8px;
+	text-align: center;
+}
+
+
+.toggle {
+  box-sizing: border-box;
+  font-size: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.toggle input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+.toggle input + label {
+  margin: 0;
+  padding: 0.660rem 1rem;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  background-color: #2a2a2a;
+  line-height: 140%;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+      font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.toggle input:checked + label {
+  background-color: #55d100;
+  color: #FFF;
+  border-color: #4B9DEA;
+  z-index: 1;
+}
+
+.toggle input + label:first-of-type {
+  border-radius: 0px 0 0 0px;
+  border-right: none;
+}
+.toggle input + label:last-of-type {
+  border-radius: 0 0px 0px 0;
+  border-left: none;
+}
+
+.toggle input:focus + label {
+  outline: none;
+}
+
+  .toggle input + label {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.status {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.status span {
+  font-weight: 600;
+  color: #B6985A;
+}
+.status span:first-of-type {
+  display: inline;
+}
+.status span:last-of-type {
+  display: none;
+}
+@media (max-width: 800px) {
+  .status span:first-of-type {
+    display: none;
+  }
+  .status span:last-of-type {
+    display: inline;
+  }
+}
+
+
+@media screen and (max-width: 1023px){
+.garage {
+    float: none;
+    display: block;
+}
+.garage .garage-info {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.garage .garage-info{border:none;}
+.garage-info .not_selected p{
+	font-size: 13px;
+}
+.garage .garage-info .not_selected{
+	padding-left: 5px;
+}
+
+.checkout-cart-index .cart-container .disscount-cart-summary .discount .fieldset .actions-toolbar .primary button.apply {
+    height: 37px;
+}
+}
+
+@media screen and (max-width: 1199px){
+    .garage{
+        margin: 15px 0 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .toggle input + label{padding: 0.660rem 0.5rem;}
+}
+
+.garage.no-with-fitment{
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+</style>	
+<?php endif;?>

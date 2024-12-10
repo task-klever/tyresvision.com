@@ -1,0 +1,3 @@
+SKU,"ERP Product Ref","Created Date",Status,Message
+HD-RHBATNS40(ZL),N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."
+HD-RHBATDIN55,N/A,"2021/02/11 09:20: AM",Failed,"The value """" can't be evaluated into type Integer."

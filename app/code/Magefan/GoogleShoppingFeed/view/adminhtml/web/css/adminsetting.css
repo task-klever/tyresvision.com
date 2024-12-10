@@ -1,0 +1,11 @@
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+
+#mfgoogleshoppinfeed_attributes table tbody tr td.label{
+    display: none;
+}
+#mfgoogleshoppinfeed_attributes table tbody tr td.value{
+    width: 100%;
+}

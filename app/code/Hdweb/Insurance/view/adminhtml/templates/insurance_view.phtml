@@ -1,0 +1,81 @@
+<?php
+$data = $block->getSingleData();
+?>
+<?php if($data->getRequestParameterQuote()): ?>
+	<div data-mage-init='{
+	    "collapsible":{
+	        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+	    }}' class="fieldset-wrapper admin__collapsible-block-wrapper">
+	    <div data-role="title" class="admin__collapsible-title">
+	        <div>Request Parameter Quote</div>
+	    </div>
+	    <div data-role="content">
+	        <?php echo "<pre>";print_r(json_decode($data->getRequestParameterQuote())); ?>
+	    </div>
+	</div>
+<?php endif; ?>
+<?php if($data->getResponseParameterQuote()): ?>
+	<div data-mage-init='{
+	    "collapsible":{
+	        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+	    }}' class="fieldset-wrapper admin__collapsible-block-wrapper">
+	    <div data-role="title" class="admin__collapsible-title">
+	        <div>Response Parameter Quote</div>
+	    </div>
+	    <div data-role="content">
+	        <?php echo "<pre>";print_r(json_decode($data->getResponseParameterQuote())); ?>
+	    </div>
+	</div>
+<?php endif; ?>
+<?php if($data->getRequestParameterApplication()): ?>
+	<div data-mage-init='{
+	    "collapsible":{
+	        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+	    }}' class="fieldset-wrapper admin__collapsible-block-wrapper">
+	    <div data-role="title" class="admin__collapsible-title">
+	        <div>Request Parameter Application</div>
+	    </div>
+	    <div data-role="content">
+	        <?php echo "<pre>";print_r(json_decode($data->getRequestParameterApplication())); ?>
+	    </div>
+	</div>
+<?php endif; ?>
+<?php if($data->getResponseParameterApplication()): ?>
+	<div data-mage-init='{
+	    "collapsible":{
+	        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+	    }}' class="fieldset-wrapper admin__collapsible-block-wrapper">
+	    <div data-role="title" class="admin__collapsible-title">
+	        <div>Response Parameter Application</div>
+	    </div>
+	    <div data-role="content">
+	        <?php echo "<pre>";print_r(json_decode($data->getResponseParameterApplication())); ?>
+	    </div>
+	</div>
+<?php endif; ?>
+<?php if($data->getRequestParameterPolicy()): ?>
+	<div data-mage-init='{
+	    "collapsible":{
+	        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+	    }}' class="fieldset-wrapper admin__collapsible-block-wrapper">
+	    <div data-role="title" class="admin__collapsible-title">
+	        <div>Request Parameter Policy</div>
+	    </div>
+	    <div data-role="content">
+	        <?php echo "<pre>";print_r(json_decode($data->getRequestParameterPolicy())); ?>
+	    </div>
+	</div>
+<?php endif; ?>
+<?php if($data->getResponseParameterPolicy()): ?>
+	<div data-mage-init='{
+	    "collapsible":{
+	        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+	    }}' class="fieldset-wrapper admin__collapsible-block-wrapper">
+	    <div data-role="title" class="admin__collapsible-title">
+	        <div>Response Parameter Application</div>
+	    </div>
+	    <div data-role="content">
+	        <?php echo "<pre>";print_r(json_decode($data->getResponseParameterPolicy())); ?>
+	    </div>
+	</div>
+<?php endif; ?>

@@ -1,0 +1,128 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var $block \Magento\Theme\Block\Html\Title
+ */
+
+ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+ $request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+ $coreRegistry = $objectManager->get('Magento\Framework\Registry');
+
+
+$cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
+$title = '';
+if (trim($block->getPageHeading())) {
+    $title = '<span class="base" data-ui-id="page-title-wrapper" ' .  $block->getAddBaseAttribute() . '>'
+        . $block->escapeHtml($block->getPageHeading()) . '</span>';
+}
+?>
+
+<?php if ($title): ?>
+<?php $themeHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<?php 
+	$image = "";
+	if($themeHelper->getStoreConfig('mpanel/breadcrumbs/bg_title_page')) {
+		$ObjectManagerMap = \Magento\Framework\App\ObjectManager::getInstance();
+		$storeManager = $ObjectManagerMap->get('Magento\Store\Model\StoreManagerInterface');
+		$currentStore = $storeManager->getStore();
+		$mediaUrl = $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+		$image = $mediaUrl.'bg_page_title/'.$themeHelper->getStoreConfig('mpanel/breadcrumbs/bg_title_page');
+	}
+?>
+
+<?php 
+
+if ($request->getFullActionName() == 'blog_post_view') {
+    $post = $coreRegistry->registry('current_post');
+    $h1String = $post->getTitle();
+ 
+	?>
+	
+	<div class="page-title-wrapper<?php /* @escapeNotVerified */ echo $cssClass; ?>" <?php if($image != ""): ?>style="background-image: url('<?php echo $image; ?>');"<?php endif ?>>
+		<div class="container">
+			
+				<h1 class="page-header"
+					<?php if ($block->getId()): ?> id="<?php /* @escapeNotVerified */ echo $block->getId();?>" <?php endif; ?>
+					<?php if ($block->getAddBaseAttributeAria()): ?>
+						aria-labelledby="<?php /* @escapeNotVerified */ echo $block->getAddBaseAttributeAria(); ?>"
+					<?php endif; ?>>
+					<?php /* @escapeNotVerified */ echo $h1String ?>
+				</h1>
+			
+			
+		</div>
+	</div>
+
+<?php
+
+} elseif ($request->getFullActionName() == 'catalog_category_view') {
+    $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+    if ($category->getCategoryPageTitle()) {
+        $h1firstText = $category->getCategoryPageTitle();
+    } else {
+        $h1firstText = $category->getName();
+    }
+ 
+	?>
+	
+	<div class="page-title-wrapper<?php /* @escapeNotVerified */ echo $cssClass; ?>" <?php if($image != ""): ?>style="background-image: url('<?php echo $image; ?>');"<?php endif ?>>
+		<div class="container">
+			
+				<h1 class="page-header"
+					<?php if ($block->getId()): ?> id="<?php /* @escapeNotVerified */ echo $block->getId();?>" <?php endif; ?>
+					<?php if ($block->getAddBaseAttributeAria()): ?>
+						aria-labelledby="<?php /* @escapeNotVerified */ echo $block->getAddBaseAttributeAria(); ?>"
+					<?php endif; ?>>
+					<?php /* @escapeNotVerified */ echo $h1firstText ?>
+				</h1>
+			
+			
+		</div>
+	</div>
+
+<?php
+
+}
+
+
+else {
+    
+
+?>
+
+	<div class="page-title-wrapper<?php /* @escapeNotVerified */ echo $cssClass; ?>" <?php if($image != ""): ?>style="background-image: url('<?php echo $image; ?>');"<?php endif ?>>
+		<div class="container">
+			<?php if($themeHelper->getStoreConfig('mpanel/product_details/show_product_name')): ?>
+				<span class="page-header h1"
+					<?php if ($block->getId()): ?> id="<?php /* @escapeNotVerified */ echo $block->getId();?>" <?php endif; ?>
+					<?php if ($block->getAddBaseAttributeAria()): ?>
+						aria-labelledby="<?php /* @escapeNotVerified */ echo $block->getAddBaseAttributeAria(); ?>"
+					<?php endif; ?>>
+					<?php /* @escapeNotVerified */ echo $title ?>
+				</span>
+			<?php else: ?>
+				<h1 class="page-header"
+					<?php if ($block->getId()): ?> id="<?php /* @escapeNotVerified */ echo $block->getId();?>" <?php endif; ?>
+					<?php if ($block->getAddBaseAttributeAria()): ?>
+						aria-labelledby="<?php /* @escapeNotVerified */ echo $block->getAddBaseAttributeAria(); ?>"
+					<?php endif; ?>>
+					<?php /* @escapeNotVerified */ echo $title ?>
+				</h1>
+			<?php endif; ?>
+			<?php echo $block->getChildHtml(); ?>
+		</div>
+	</div>
+
+	<?php
+
+}
+
+?>
+
+<?php endif; ?>

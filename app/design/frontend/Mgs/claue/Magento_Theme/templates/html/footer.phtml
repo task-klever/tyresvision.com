@@ -1,0 +1,624 @@
+<?php $helper = $this->helper('MGS\Mpanel\Helper\Data') ?>
+<?php $canUsePanel = $helper->acceptToUsePanel() ?>
+<?php $footer = $helper->getStoreConfig('mgstheme/general/footer') ?>
+<?php if($footer == '' || $footer == 'footer_1' || $footer == 'footer'): ?>
+    <div class="footer-container">
+        <div class="middle-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_contact_us -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_contact_us')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                        <?php echo $this->getLayout()->createBlock('Magento\Store\Block\Switcher')->setTemplate('switch/stores.phtml')->toHtml() ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                        <!-- Static block: footer_block_categories -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_categories')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                        <!-- Static block: footer_block_infomation -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_infomation')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_quick_link -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_quick_link')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_subscribe -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_subscribe')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 copyright">
+                        <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                        <!-- Static block: footer_block_menu_bottom -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_menu_bottom')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($footer == 'footer_2'): ?>
+    <div class="footer-container">
+        <div class="top-footer">
+            <div class="container">
+                <!-- Static block: footer_block_newsletter_top -->
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_newsletter_top')->setCanUsePanel($canUsePanel)->toHtml() ?>
+            </div>
+        </div>
+        <div class="middle-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_contact_us -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_contact_us')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                        <?php echo $this->getLayout()->createBlock('Magento\Store\Block\Switcher')->setTemplate('switch/stores.phtml')->toHtml() ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_categories -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_categories')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_infomation -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_infomation')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_quick_link -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_quick_link')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_instagram -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_instagram')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 copyright">
+                        <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                        <!-- Static block: footer_block_menu_bottom -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_menu_bottom')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($footer == 'footer_3'): ?>
+    <div class="footer-container">
+        <div class="bottom-footer">
+            <div class="container">
+                <!-- Static block: footer_logo_and_social -->
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_logo_and_social')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                
+                <!-- Static block: claue_footer3_custom_menu -->
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('claue_footer3_custom_menu')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                
+                <?php echo $this->getLayout()->createBlock('Magento\Store\Block\Switcher')->setTemplate('switch/stores.phtml')->toHtml() ?>
+                <div class="copyright">
+                    <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php elseif($footer == 'footer_4'): ?>
+    <div class="footer-container">
+        <div class="top-footer">
+            <div class="container">
+                <!-- Static block: footer_block_newsletter_top -->
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_newsletter_top')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                
+            </div>
+        </div>
+        <?php
+            // Background Image Left Footer
+            $backgroundImage = "";
+            $staticImage =  $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_background_image')->toHtml();
+            if($staticImage != null) {
+                preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $staticImage, $matches);
+                if(!empty($matches[1][0])){
+                    $backgroundImage = $matches[1][0];
+                }
+            }
+        ?>
+        <div class="middle-footer-container">
+            <div class="middle-col" <?php if($backgroundImage != ""): ?>style="background-image:url(<?php echo $backgroundImage ?>);"<?php endif ?>>
+                <div class="visible-builder text-center">
+                    <a class="btn btn-default btn-xs" href="javascript:void(0)" data-toggle="modal" data-target="#change_bg_footer">Change Background</a>
+                    <div id="change_bg_footer" class="modal fade" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content"><button class="close" type="button" data-dismiss="modal">x</button>
+                                <div class="modal-body">
+                                    To change background-image of this col, you can create a static block with identifier footer_background_image. Insert an image to content of this static block.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 margin-bottom40">
+                                <!-- Static block: footer4_contact_us -->
+                                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer4_contact_us')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                                
+                                
+                            </div>
+                            <div class="col-lg-4 col-sm-4 col-xs-12 margin-bottom40">
+                                <!-- Static block: footer_block_categories -->
+                                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_categories')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                                <?php echo $this->getLayout()->createBlock('Magento\Store\Block\Switcher')->setTemplate('switch/stores.phtml')->toHtml() ?>
+                            </div>
+                            <div class="col-lg-4 col-sm-4 col-xs-12 margin-bottom40">
+                                <!-- Static block: footer_block_infomation -->
+                                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_infomation')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                            </div>
+                            <div class="col-lg-4 col-sm-4 col-xs-12 margin-bottom40">
+                                <!-- Static block: footer_block_quick_link -->
+                                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_quick_link')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <div class="container">
+                        <div class="copyright">
+                            <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-map" class="footer-map">
+                <!-- Static block: footer_block_image_map -->
+                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_image_map')->setCanUsePanel($canUsePanel)->toHtml() ?>
+            </div>
+        </div>
+    </div>
+    
+<?php elseif($footer == 'footer_5'): ?>
+    <div class="footer-container">
+        <div class="middle-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_categories -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_categories')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_quick_link -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_quick_link')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_infomation -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_5_block_contact')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <!-- Static block: footer_block_subscribe -->
+                        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_5_block_subscribe')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 copyright">
+                        <div class="logo-address">
+                            <?php echo $this->getLayout()->createBlock("Magento\Theme\Block\Html\Header\Logo")->setTemplate("Magento_Theme::html/header/logo.phtml")->toHtml(); ?>
+                            <address><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></address>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                        <!-- Static block: footer_block_menu_bottom -->
+                        <div class="payment-footer">
+                            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_payment')->setCanUsePanel($canUsePanel)->toHtml() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+<a href="https://api.whatsapp.com/send?phone= +971800847466&amp;text=Hello%20TyresVision" class="whatsapp-float" target="_blank" title="WhatsApp +971 800 847 466">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
+<script type="text/javascript">require(['jquery','mgs/owlcarousel'],function(jQuery){(function($){var sliderHeight=$(window).height();var offset=0;$(".fullscreen-slider").height(sliderHeight-offset);$(window).resize(function(){$(".fullscreen-slider").height($(window).height()-offset);});$("#mgs-slider-").on('initialized.owl.carousel',function(event){setTimeout(function(){$("#page-header-sliders").addClass('loaded');},500);});$("#mgs-slider").owlCarousel({items:1,rtl:RTL,loop:false,nav:false,dots:false,autoplayTimeout:3000,autoplay:false,autoplayHoverPause:false,animateOut:'fadeOut',animateIn:'fadeIn',navText:["<i class='pe-7s-angle-left'></i>","<i class='pe-7s-angle-right'></i>"],responsive:{0:{nav:false,dots:true},992:{nav:false,dots:false}}});})(jQuery);});</script>
+
+<style type="text/css">
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 120px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+}    
+.whatsapp-float:hover {
+    color: #000 !important;
+}
+.whatsapp-float i {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:767px) {
+    .whatsapp-float {
+       bottom: 120px;
+       right: 22px;
+       left: auto;
+    }    
+    .whatsapp-float {
+       width: 60px;
+       height: 60px;
+       font-size: 34px;
+    }    
+}
+</style>
+<?php /* 
+<div class="preloader">
+      <div class="inner">
+        <img src="media/images/logo-color.png" alt="">   
+  </div>
+</div>
+ */ ?>
+
+<style>
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #fffffff2;
+}
+
+.preloader .inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader .inner img{
+    max-width: 120px;
+}
+</style>
+
+<div class="review-panel">
+  <span class="review-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M315.3 411.3c-6.253 6.253-16.37 6.253-22.63 0L160 278.6l-132.7 132.7c-6.253 6.253-16.37 6.253-22.63 0c-6.253-6.253-6.253-16.37 0-22.63L137.4 256L4.69 123.3c-6.253-6.253-6.253-16.37 0-22.63c6.253-6.253 16.37-6.253 22.63 0L160 233.4l132.7-132.7c6.253-6.253 16.37-6.253 22.63 0c6.253 6.253 6.253 16.37 0 22.63L182.6 256l132.7 132.7C321.6 394.9 321.6 405.1 315.3 411.3z"/></svg></span>
+  <div class="inner">
+    <iframe frameborder="0" class="review-panel-iframe" src=""></iframe>
+  </div>
+</div>
+
+<div class="review-panel-overflow"></div>
+
+<!-- Google Review Custom -->
+<div class="google-review">
+  <div class="d-flex align-items-center">
+  <div class="icon-container">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#2A84FC" d="M21.579 12.234c0-.677-.055-1.358-.172-2.025h-9.403v3.839h5.384a4.615 4.615 0 01-1.992 3.029v2.49h3.212c1.886-1.736 2.97-4.3 2.97-7.333z"></path><path fill="#00AC47" d="M12.004 21.974c2.688 0 4.956-.882 6.608-2.406l-3.213-2.491c-.893.608-2.047.952-3.392.952-2.6 0-4.806-1.754-5.597-4.113H3.095v2.567a9.97 9.97 0 008.909 5.491z"></path><path fill="#FFBA00" d="M6.407 13.916a5.971 5.971 0 010-3.817V7.53H3.095a9.977 9.977 0 000 8.952l3.312-2.567z"></path><path fill="#FC2C25" d="M12.004 5.982a5.417 5.417 0 013.824 1.494l2.846-2.846a9.581 9.581 0 00-6.67-2.593A9.967 9.967 0 003.095 7.53l3.312 2.57c.787-2.363 2.996-4.117 5.597-4.117z"></path></svg>
+  </div>
+  <div class="title">
+    <span>Google Reviews</span>
+  </div>
+  </div>
+  <div class="rating-container d-flex align-items-center">
+      <div class="rating"><span>4.8</span></div>
+      <div class="rating-bar">
+        <ul class="d-flex">
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="M6.826 10.743l-3.28 1.724a.5.5 0 0 1-.725-.528l.627-3.65a.5.5 0 0 0-.144-.443L.65 5.26a.5.5 0 0 1 .277-.853l3.666-.533a.5.5 0 0 0 .377-.273L6.61.279a.5.5 0 0 1 .896 0L9.147 3.6a.5.5 0 0 0 .376.273l3.666.533a.5.5 0 0 1 .277.853l-2.653 2.586a.5.5 0 0 0-.144.442l.627 3.651a.5.5 0 0 1-.726.528l-3.279-1.724a.5.5 0 0 0-.465 0z"></path></svg></li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="M6.826 10.743l-3.28 1.724a.5.5 0 0 1-.725-.528l.627-3.65a.5.5 0 0 0-.144-.443L.65 5.26a.5.5 0 0 1 .277-.853l3.666-.533a.5.5 0 0 0 .377-.273L6.61.279a.5.5 0 0 1 .896 0L9.147 3.6a.5.5 0 0 0 .376.273l3.666.533a.5.5 0 0 1 .277.853l-2.653 2.586a.5.5 0 0 0-.144.442l.627 3.651a.5.5 0 0 1-.726.528l-3.279-1.724a.5.5 0 0 0-.465 0z"></path></svg></li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="M6.826 10.743l-3.28 1.724a.5.5 0 0 1-.725-.528l.627-3.65a.5.5 0 0 0-.144-.443L.65 5.26a.5.5 0 0 1 .277-.853l3.666-.533a.5.5 0 0 0 .377-.273L6.61.279a.5.5 0 0 1 .896 0L9.147 3.6a.5.5 0 0 0 .376.273l3.666.533a.5.5 0 0 1 .277.853l-2.653 2.586a.5.5 0 0 0-.144.442l.627 3.651a.5.5 0 0 1-.726.528l-3.279-1.724a.5.5 0 0 0-.465 0z"></path></svg></li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="M6.826 10.743l-3.28 1.724a.5.5 0 0 1-.725-.528l.627-3.65a.5.5 0 0 0-.144-.443L.65 5.26a.5.5 0 0 1 .277-.853l3.666-.533a.5.5 0 0 0 .377-.273L6.61.279a.5.5 0 0 1 .896 0L9.147 3.6a.5.5 0 0 0 .376.273l3.666.533a.5.5 0 0 1 .277.853l-2.653 2.586a.5.5 0 0 0-.144.442l.627 3.651a.5.5 0 0 1-.726.528l-3.279-1.724a.5.5 0 0 0-.465 0z"></path></svg></li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><path d="M6.826 10.743l-3.28 1.724a.5.5 0 0 1-.725-.528l.627-3.65a.5.5 0 0 0-.144-.443L.65 5.26a.5.5 0 0 1 .277-.853l3.666-.533a.5.5 0 0 0 .377-.273L6.61.279a.5.5 0 0 1 .896 0L9.147 3.6a.5.5 0 0 0 .376.273l3.666.533a.5.5 0 0 1 .277.853l-2.653 2.586a.5.5 0 0 0-.144.442l.627 3.651a.5.5 0 0 1-.726.528l-3.279-1.724a.5.5 0 0 0-.465 0z"></path></svg></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<style type="text/css">
+    .review-panel {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 80vh;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, .0705882353);
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out
+}
+
+@media screen and (max-width: 1030px) {
+    .review-panel {
+        max-width: 95%;
+    }
+}
+
+.review-panel-overflow{
+    z-index: 998;
+    background-color: #000000a6;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.review-panel.open,
+.review-panel-overflow.open {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.review-panel .review-close {
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #4bcf2e;
+    border-radius: 50%;
+}
+
+.review-panel .review-close svg {
+    width: 12px;
+    fill: #fff;
+}
+
+.review-panel .inner {
+    height: 100%;
+    padding: 2.5rem 0 1.225rem 1.225rem;
+}
+
+.review-panel .inner iframe {
+    height: 100%;
+    width: 100%;
+    border: none
+}
+
+.review-panel .inner:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../../../../../../media/images/loading_search.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    background-color: #fff;
+    content: ""
+}
+
+.review-panel .inner.loader-hide:after {
+    display: none
+}
+
+.google-review {
+    position: fixed;
+    bottom: 100px;
+    left: 15px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, .1) 0px 6px 12px 0px;
+    z-index: 995;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    direction: ltr;
+}
+
+.google-review .icon-container {
+    text-align: center;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+
+.google-review .icon-container svg {
+    width: 20px;
+    height: auto
+}
+
+.google-review .title {
+    text-align: center;
+    color: #111;
+    font-size: 16px;
+    white-space: nowrap
+}
+
+.google-review .rating-container {
+    margin-top: 6px
+}
+
+.google-review .rating-container .rating {
+    font-weight: 700;
+    line-height: normal;
+    font-size: 20px;
+    color: #111;
+    word-break: normal;
+    margin-right: 13px;
+    position: relative;
+    top: -2px;
+}
+
+.google-review .rating-container .rating-bar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+.google-review .rating-container .rating-bar ul li{
+     margin: 0;
+     line-height: normal !important;
+}
+
+.google-review .rating-container .rating-bar ul li svg {
+    width: 20px;
+    fill: #fcbf02
+}
+
+@media screen and (max-width: 991px) {
+    .google-review {
+        padding: 6px 10px;
+        border-radius: 8px;
+        left: 10px;
+        bottom: 120px;
+    }
+
+    .google-review .icon-container {
+        margin-right: 0;
+        width: 100%
+    }
+
+    .google-review .icon-container svg {
+        width: 20px;
+        height: 20px
+    }
+
+    .google-review .title {
+        display: none
+    }
+
+    .google-review .rating-container {
+        margin-top: 2px
+    }
+
+    .google-review .rating-container .rating {
+        margin-right: 0;
+        font-size: 14px
+    }
+
+    .google-review .rating-container .rating-bar {
+        display: none
+    }
+}
+
+</style>
+
+
+<style type="text/css">
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+}    
+.whatsapp-float:hover {
+    color: #000 !important;
+}
+.whatsapp-float i {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:767px) {
+    .whatsapp-float {
+       bottom: 120px;
+       right: 22px;
+       left: auto;
+    }    
+    .whatsapp-float {
+       width: 60px;
+       height: 60px;
+       font-size: 34px;
+    }    
+}
+</style>
+
+
+<script type="text/javascript">
+    require(["jquery"], function($) {
+$('.google-review, .review-close').click(function() {
+   $('.review-panel').toggleClass('open');
+   $('.review-panel-overflow').toggleClass('open');
+   $('.overlay').toggleClass('open');
+   $('html').toggleClass('scroll-overflow');
+   setTimeout(function(){
+    $('.review-panel .inner').addClass('loader-hide');
+    }, 
+     5000);
+   if ($('.review-panel .inner').hasClass('loaded')){
+    
+  } else {
+    $('.review-panel .inner').addClass('loaded');
+    $('.review-panel-iframe').attr('src', 'https://www.tyresvision.com/google-reviews.html');
+  }
+});
+});
+</script>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function(jQuery){
+        (function($) {
+            
+            $('.play-icon').on('click', function(ev) {
+                $('.video-block').html("");
+                $('.video-block').html('<iframe id="car-video" src="https://www.youtube.com/embed/dAVwR4Ov_DQ?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                 $("#car-video")[0].src += "&autoplay=1";
+            });
+
+            /* $(window).on("load", function () {
+            $('.preloader').hide();
+            }); */
+            
+        })(jQuery);
+    });
+</script>

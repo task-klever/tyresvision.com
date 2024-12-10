@@ -1,0 +1,42 @@
+<?php
+/**
+ * @category   Hdweb
+ * @package    Hdweb_Insurance
+ * @author     vicky.hdit@gmail.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+namespace Hdweb\Insurance\Controller\Index;
+
+use Magento\Framework\App\Action\Context;
+use Hdweb\Insurance\Model\InsuranceFactory;
+
+class Save extends \Magento\Framework\App\Action\Action
+{
+	/**
+     * @var Insurance
+     */
+    protected $_insurance;
+
+    public function __construct(
+		Context $context,
+        InsuranceFactory $insurance
+    ) {
+        $this->_insurance = $insurance;
+        parent::__construct($context);
+    }
+	public function execute()
+    {
+        $data = $this->getRequest()->getParams();
+    	$insurance = $this->_insurance->create();
+        $insurance->setData($data);
+        if($insurance->save()){
+            $this->messageManager->addSuccessMessage(__('You saved the data.'));
+        }else{
+            $this->messageManager->addErrorMessage(__('Data was not saved.'));
+        }
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('insurance/index/index');
+        return $resultRedirect;
+    }
+}

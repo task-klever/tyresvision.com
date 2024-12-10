@@ -1,0 +1,10 @@
+SKU,"ERP Product Ref","Created Date",Status,Message
+HD-C04512140000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000-2019,N/A,"2021/02/06 10:45: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512140000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-RHBATNS40(ZL),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN55,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATNS60(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed

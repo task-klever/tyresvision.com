@@ -1,0 +1,711 @@
+<?php
+/**
+ * @category   Hdweb
+ * @package    Hdweb_Insurance
+ * @author     vicky.hdit@gmail.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+$insuranceHelper = $this->helper('Hdweb\Insurance\Helper\Data');
+
+$getYearUrl = 'https://insured.ae/get-car-model-years';
+$getYearResult = file_get_contents($getYearUrl);
+$getYearResultArray = json_decode($getYearResult);
+$years = $getYearResultArray->data;
+
+$years25 = date('Y', strtotime('-25 year'));
+$years65 = date('Y', strtotime('-65 year'));
+
+$authResponse = $insuranceHelper->insuranceAuth();
+$authResponseArr = json_decode($authResponse);
+?>
+<div class="car-details step1">
+    <?php /*
+    <form class="" action="<?php echo $block->getBaseUrl().'insurance/index/save'; ?>" id="hdweb-insurance-form" method="post" data-mage-init='{"validation": {}}'>
+    */ ?>
+    <form class="" action="<?php echo $block->getBaseUrl().'insurance/index/save'; ?>" id="carDetails" method="post" data-mage-init='{"validation": {}}'>
+        <input type="hidden" name="step" value="car_details">
+        <fieldset class="fieldset">
+            <div class="field">
+                <div class="control">
+                    <div>Policy Type</div>
+                    <input type="radio" id="policy_type_third_party" name="policy_type" value="third-party" onclick="window.location='<?php echo $block->getBaseUrl().'insurance'; ?>';" checked>
+                    <label>3rd Party</label>
+                    <input type="radio" id="policy_type_comprehensive" name="policy_type" value="comprehensive" onclick="alert('TBD')">
+                    <label>Comprehensive</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Model Year</span></label>
+                    <select name="car_model_year" id="car_model_year" data-validate="{required:true}">
+                        <option value="">Select Model Year</option>
+                        <?php foreach($years as $year): ?>
+                            <option value="<?php echo $year->Name; ?>"><?php echo $year->Name; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Make</span></label>
+                    <select name="car_make" id="car_make" data-validate="{required:true}">
+                        <option value="">Select Make</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Model</span></label>
+                    <select name="car_model" id="car_model" data-validate="{required:true}">
+                        <option value="">Select Model</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Trim</span></label>
+                    <select name="car_trim" id="car_trim" data-validate="{required:true}">
+                        <option value="">Select Trim</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Body Type</span></label>
+                    <select name="car_body_type" id="car_body_type" data-validate="{required:true}">
+                        <option value="">Select Body Type</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Engine Size</span></label>
+                    <select name="car_engine_size" id="car_engine_size" data-validate="{required:true}">
+                        <option value="">Select Engine Size</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Transmission</span></label>
+                    <select name="car_transmission" id="car_transmission" data-validate="{required:true}">
+                        <option value="">Select Transmission</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car Region</span></label>
+                    <select name="car_region" id="car_region" data-validate="{required:true}">
+                        <option value="">Select Region</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Car type</span></label>
+                    <select name="car_type" id="car_type" data-validate="{required:true}">
+                        <option value="">Select Car type</option>
+                        <?php /* need to get options from api */ ?>
+                        <option value="1">Saloon - 4 Cylinders</option>
+                        <option value="2">Saloon - 6 Cylinders</option>
+                        <option value="3">Saloon - 8 Cylinders</option>
+                        <option value="4">Station/SUV - 4 Cylinders</option>
+                        <option value="5">Station/SUV - 6 Cylinders</option>
+                        <option value="6">Station/SUV - 8 Cylinders</option>
+                        <option value="7">Coupe - 4 Cylinders</option>
+                        <option value="8">Coupe - 6 Cylinders</option>
+                        <option value="9">Coupe - 8 Cylinders</option>
+                        <option value="10">Pickup/Van - 1 &amp; 2 Ton</option>
+                        <option value="11">Pickup/Van - Up to 3 Ton</option>
+                        <option value="12">Pickup/Van - Above 3 Ton</option>
+                        <option value="13">Pickup/Van - Recovery Pickup</option>
+                        <option value="14">Pickup/Van - Gas Pickup 1 &amp; 2 Ton</option>
+                        <option value="15">Pickup/Van - Gas Pickup upto 3 Ton</option>
+                        <option value="16">Pickup/Van - Luxury Pickup</option>
+                        <option value="17">Bike - Up to 200 CC</option>
+                        <option value="18">Bike - Above 200 CC</option>
+                        <option value="19">Bus - Upto 14 seats</option>
+                        <option value="20">Bus - Upto 26 seats</option>
+                        <option value="21">Bus - Above 26 seats</option>
+                        <option value="22">Dumper</option>
+                        <option value="23">Forklift - Light</option>
+                        <option value="24">Forklift - Heavy</option>
+                        <option value="25">Truck, Trailer, Tipper Truck Head Only</option>
+                        <option value="26">Tail Unit</option>
+                        <option value="27">Tankers</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>License Start Date</span></label>
+                    <input type="text" name="license_start_date" id="license_start_date" value="" placeholder="License Start Date" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <div>Is Brand New?</div>
+                    <input type="radio" id="is_brand_new_yes" name="is_brand_new" value="1" checked>
+                    <label for="html">Yes</label>
+                    <input type="radio" id="is_brand_new_no" name="is_brand_new" value="0">
+                    <label for="css">No</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Nationality</span></label>
+                    <select name="nationality" id="nationality" data-validate="{required:true}">
+                        <option value="">Select Nationality</option>
+                        <option value="1">Afghanistan</option>
+                        <option value="2">Albania</option>
+                        <option value="3">Algeria</option>
+                        <option value="5">Andorra</option>
+                        <option value="6">Angola</option>
+                        <option value="7">Anguilla</option>
+                        <option value="8">Antarctica</option>
+                        <option value="9">Antigua and Barbuda</option>
+                        <option value="10">Argentina</option>
+                        <option value="11">Armenia</option>
+                        <option value="12">Aruba</option>
+                        <option value="13">Australia</option>
+                        <option value="14">Austria</option>
+                        <option value="15">Azerbaijan</option>
+                        <option value="16">Bahamas</option>
+                        <option value="17">Bahrain</option>
+                        <option value="18">Bangladesh</option>
+                        <option value="19">Barbados</option>
+                        <option value="20">Belarus</option>
+                        <option value="21">Belgium</option>
+                        <option value="22">Belize</option>
+                        <option value="23">Benin</option>
+                        <option value="24">Bermuda</option>
+                        <option value="25">Bhutan</option>
+                        <option value="26">Bolivia</option>
+                        <option value="27">Bosnia and Herzegovina</option>
+                        <option value="28">Botswana</option>
+                        <option value="29">Bouvet Island</option>
+                        <option value="30">Brazil</option>
+                        <option value="31">British Indian Ocean Territory</option>
+                        <option value="32">Brunei Darussalam</option>
+                        <option value="33">Bulgaria</option>
+                        <option value="34">Burkina Faso</option>
+                        <option value="35">Burundi</option>
+                        <option value="36">Cambodia</option>
+                        <option value="37">Cameroon</option>
+                        <option value="38">Canada</option>
+                        <option value="39">Cape Verde</option>
+                        <option value="40">Cayman Islands</option>
+                        <option value="41">Central African Republic</option>
+                        <option value="42">Chad</option>
+                        <option value="43">Chile</option>
+                        <option value="44">China</option>
+                        <option value="45">Christmas Island</option>
+                        <option value="46">Cocos (Keeling) Islands</option>
+                        <option value="47">Colombia</option>
+                        <option value="48">Comoros</option>
+                        <option value="49">Congo</option>
+                        <option value="50">Congo, the Democratic Republic of the</option>
+                        <option value="51">Cook Islands</option>
+                        <option value="52">Costa Rica</option>
+                        <option value="53">Cote D&#039;Ivoire</option>
+                        <option value="54">Croatia</option>
+                        <option value="55">Cuba</option>
+                        <option value="56">Cyprus</option>
+                        <option value="57">Czech Republic</option>
+                        <option value="58">Denmark</option>
+                        <option value="59">Djibouti</option>
+                        <option value="60">Dominica</option>
+                        <option value="61">Dominican Republic</option>
+                        <option value="62">Ecuador</option>
+                        <option value="63">Egypt</option>
+                        <option value="64">El Salvador</option>
+                        <option value="65">Equatorial Guinea</option>
+                        <option value="66">Eritrea</option>
+                        <option value="67">Estonia</option>
+                        <option value="68">Ethiopia</option>
+                        <option value="69">Falkland Islands (Malvinas)</option>
+                        <option value="70">Faroe Islands</option>
+                        <option value="71">Fiji</option>
+                        <option value="72">Finland</option>
+                        <option value="73">France</option>
+                        <option value="74">French Guiana</option>
+                        <option value="75">French Polynesia</option>
+                        <option value="76">French Southern Territories</option>
+                        <option value="77">Gabon</option>
+                        <option value="78">Gambia</option>
+                        <option value="79">Georgia</option>
+                        <option value="80">Germany</option>
+                        <option value="81">Ghana</option>
+                        <option value="82">Gibraltar</option>
+                        <option value="83">Greece</option>
+                        <option value="84">Greenland</option>
+                        <option value="85">Grenada</option>
+                        <option value="86">Guadeloupe</option>
+                        <option value="87">Guam</option>
+                        <option value="88">Guatemala</option>
+                        <option value="89">Guinea</option>
+                        <option value="90">Guinea-Bissau</option>
+                        <option value="91">Guyana</option>
+                        <option value="92">Haiti</option>
+                        <option value="93">Heard Island and Mcdonald Islands</option>
+                        <option value="94">Holy See (Vatican City State)</option>
+                        <option value="95">Honduras</option>
+                        <option value="96">Hong Kong</option>
+                        <option value="97">Hungary</option>
+                        <option value="98">Iceland</option>
+                        <option value="99">India</option>
+                        <option value="100">Indonesia</option>
+                        <option value="101">Iran, Islamic Republic of</option>
+                        <option value="102">Iraq</option>
+                        <option value="103">Ireland</option>
+                        <option value="104">Israel</option>
+                        <option value="105">Italy</option>
+                        <option value="106">Jamaica</option>
+                        <option value="107">Japan</option>
+                        <option value="108">Jordan</option>
+                        <option value="109">Kazakhstan</option>
+                        <option value="110">Kenya</option>
+                        <option value="111">Kiribati</option>
+                        <option value="112">Korea, Democratic People&#039;s Republic of</option>
+                        <option value="113">Korea, Republic of</option>
+                        <option value="114">Kuwait</option>
+                        <option value="115">Kyrgyzstan</option>
+                        <option value="116">Lao People&#039;s Democratic Republic</option>
+                        <option value="117">Latvia</option>
+                        <option value="118">Lebanon</option>
+                        <option value="119">Lesotho</option>
+                        <option value="120">Liberia</option>
+                        <option value="121">Libyan Arab Jamahiriya</option>
+                        <option value="122">Liechtenstein</option>
+                        <option value="123">Lithuania</option>
+                        <option value="124">Luxembourg</option>
+                        <option value="125">Macao</option>
+                        <option value="126">Macedonia, the Former Yugoslav Republic of</option>
+                        <option value="127">Madagascar</option>
+                        <option value="128">Malawi</option>
+                        <option value="129">Malaysia</option>
+                        <option value="130">Maldives</option>
+                        <option value="131">Mali</option>
+                        <option value="132">Malta</option>
+                        <option value="133">Marshall Islands</option>
+                        <option value="134">Martinique</option>
+                        <option value="135">Mauritania</option>
+                        <option value="136">Mauritius</option>
+                        <option value="137">Mayotte</option>
+                        <option value="138">Mexico</option>
+                        <option value="139">Micronesia, Federated States of</option>
+                        <option value="140">Moldova, Republic of</option>
+                        <option value="141">Monaco</option>
+                        <option value="142">Mongolia</option>
+                        <option value="143">Montserrat</option>
+                        <option value="144">Morocco</option>
+                        <option value="145">Mozambique</option>
+                        <option value="146">Myanmar</option>
+                        <option value="147">Namibia</option>
+                        <option value="148">Nauru</option>
+                        <option value="149">Nepal</option>
+                        <option value="150">Netherlands</option>
+                        <option value="151">Netherlands Antilles</option>
+                        <option value="152">New Caledonia</option>
+                        <option value="153">New Zealand</option>
+                        <option value="154">Nicaragua</option>
+                        <option value="155">Niger</option>
+                        <option value="156">Nigeria</option>
+                        <option value="157">Niue</option>
+                        <option value="158">Norfolk Island</option>
+                        <option value="159">Northern Mariana Islands</option>
+                        <option value="160">Norway</option>
+                        <option value="161">Oman</option>
+                        <option value="162">Pakistan</option>
+                        <option value="163">Palau</option>
+                        <option value="164">Palestinian Territory, Occupied</option>
+                        <option value="165">Panama</option>
+                        <option value="166">Papua New Guinea</option>
+                        <option value="167">Paraguay</option>
+                        <option value="168">Peru</option>
+                        <option value="169">Philippines</option>
+                        <option value="170">Pitcairn</option>
+                        <option value="171">Poland</option>
+                        <option value="172">Portugal</option>
+                        <option value="173">Puerto Rico</option>
+                        <option value="174">Qatar</option>
+                        <option value="175">Reunion</option>
+                        <option value="176">Romania</option>
+                        <option value="177">Russian Federation</option>
+                        <option value="178">Rwanda</option>
+                        <option value="179">Saint Helena</option>
+                        <option value="180">Saint Kitts and Nevis</option>
+                        <option value="181">Saint Lucia</option>
+                        <option value="182">Saint Pierre and Miquelon</option>
+                        <option value="183">Saint Vincent and the Grenadines</option>
+                        <option value="184">Samoa</option>
+                        <option value="185">San Marino</option>
+                        <option value="186">Sao Tome and Principe</option>
+                        <option value="187">Saudi Arabia</option>
+                        <option value="188">Senegal</option>
+                        <option value="189">Serbia and Montenegro</option>
+                        <option value="190">Seychelles</option>
+                        <option value="191">Sierra Leone</option>
+                        <option value="192">Singapore</option>
+                        <option value="193">Slovakia</option>
+                        <option value="194">Slovenia</option>
+                        <option value="195">Solomon Islands</option>
+                        <option value="196">Somalia</option>
+                        <option value="197">South Africa</option>
+                        <option value="198">South Georgia and the South Sandwich Islands</option>
+                        <option value="199">Spain</option>
+                        <option value="200">Sri Lanka</option>
+                        <option value="201">Sudan</option>
+                        <option value="202">Suriname</option>
+                        <option value="203">Svalbard and Jan Mayen</option>
+                        <option value="204">Swaziland</option>
+                        <option value="205">Sweden</option>
+                        <option value="206">Switzerland</option>
+                        <option value="207">Syrian Arab Republic</option>
+                        <option value="208">Taiwan, Province of China</option>
+                        <option value="209">Tajikistan</option>
+                        <option value="210">Tanzania, United Republic of</option>
+                        <option value="211">Thailand</option>
+                        <option value="212">Timor-Leste</option>
+                        <option value="213">Togo</option>
+                        <option value="214">Tokelau</option>
+                        <option value="215">Tonga</option>
+                        <option value="216">Trinidad and Tobago</option>
+                        <option value="217">Tunisia</option>
+                        <option value="218">Turkey</option>
+                        <option value="219">Turkmenistan</option>
+                        <option value="220">Turks and Caicos Islands</option>
+                        <option value="221">Tuvalu</option>
+                        <option value="222">Uganda</option>
+                        <option value="223">Ukraine</option>
+                        <option value="224">United Arab Emirates</option>
+                        <option value="225">United Kingdom</option>
+                        <option value="226">United States</option>
+                        <option value="227">United States Minor Outlying Islands</option>
+                        <option value="228">Uruguay</option>
+                        <option value="229">Uzbekistan</option>
+                        <option value="230">Vanuatu</option>
+                        <option value="231">Venezuela</option>
+                        <option value="232">Viet Nam</option>
+                        <option value="233">Virgin Islands, British</option>
+                        <option value="234">Virgin Islands, U.s.</option>
+                        <option value="235">Wallis and Futuna</option>
+                        <option value="236">Western Sahara</option>
+                        <option value="237">Yemen</option>
+                        <option value="238">Zambia</option>
+                        <option value="239">Zimbabwe</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Place of Registration</span></label>
+                    <select name="place_of_registration" id="place_of_registration" data-validate="{required:true}">
+                        <option value="">Select Place of Registration</option>
+                        <option value="7c256058-f8a8-e611-80cd-005056bd47e8">ABU DHABI</option>
+                        <option value="7e256058-f8a8-e611-80cd-005056bd47e8">AJMAN</option>
+                        <option value="88256058-f8a8-e611-80cd-005056bd47e8">AL AIN</option>
+                        <option value="80256058-f8a8-e611-80cd-005056bd47e8">DUBAI</option>
+                        <option value="82256058-f8a8-e611-80cd-005056bd47e8">FUJAIRAH</option>
+                        <option value="86256058-f8a8-e611-80cd-005056bd47e8">RAK</option>
+                        <option value="84256058-f8a8-e611-80cd-005056bd47e8">SHARJAH</option>
+                        <option value="3585f9c9-fda8-e611-80c5-005056bd2b52">UMM AL QUWAIN</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Date of birth</span></label>
+                    <select name="dob[day]" id="dob" data-validate="{required:true}">
+                        <option value="">Day</option>
+                        <?php foreach (range(01, 31) as $day): ?>
+                            <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <select name="dob[month]" id="dom" data-validate="{required:true}">
+                        <option value="">Month</option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+                    <select name="dob[year]" id="doy" data-validate="{required:true}">
+                        <option value="">Year</option>.
+                        <?php foreach (range($years25, $years65) as $year): ?>
+                            <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <p>Minimum age: 25 years; Maximum age: 65 years</p>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <div>Any claims that are your fault in the last 3 years?</div>
+                    <input type="radio" id="three_years_claim_yes" name="three_years_claim" value="1">
+                    <label for="html">Yes</label>
+                    <input type="radio" id="three_years_claim_no" name="three_years_claim" value="0" checked>
+                    <label for="css">No</label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>First Date of Car Registration</span></label>
+                    <input type="text" name="date_of_registration" id="date_of_registration" value="" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <p>I agree on the vehicle values subject to the insurance company's approval. If the insurer does not accept your valuation, your premium may need to be adjusted.</p>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="Show me quotes" class="action submit primary">
+                    <span>Show me quotes</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="instant-quotes" style="display: none">
+    <div class="row header">
+        <div class="col-sm-3">
+            Plan
+        </div>
+        <div class="col-sm-4">
+            Benefits overview
+        </div>
+        <div class="col-sm-2">
+            Total price
+        </div>
+        <div class="col-sm-3">
+            Compare or buy
+        </div>
+    </div>
+</div>
+<script>
+    require(['jquery','mage/url',"mage/calendar"], function($, url) {
+
+        $("#carDetails").submit(function(e) {
+            e.preventDefault(); 
+            var form = $(this);
+            var actionUrl = form.attr('action');
+            if ($('#carDetails').valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: actionUrl,
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+                        $(".car-details").hide();
+                        $(".instant-quotes .header").append(data.step2Html);
+                        $(".instant-quotes").show();
+
+                    }
+                });
+            }
+            
+        });
+        
+        $('#car_model_year').change(function(){
+                $('#car_make').find('option').not(':first').remove();
+                $('#car_model').find('option').not(':first').remove();
+                $('#car_trim').find('option').not(':first').remove();
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedYear = $(this).val();
+            //alert($(this).val());
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {year:selectedYear, type:'getmake'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_make').find('option').not(':first').remove();
+                    $('#car_make').append(response)
+                }
+            });
+        });
+
+        $('#car_make').change(function(){
+                $('#car_model').find('option').not(':first').remove();
+                $('#car_trim').find('option').not(':first').remove();
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedMake = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {make:selectedMake, year:selectedYear, type:'getmodel'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_model').find('option').not(':first').remove();
+                    $('#car_model').append(response)
+                }
+            });
+        });
+
+        $('#car_model').change(function(){
+                $('#car_trim').find('option').not(':first').remove();
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedModel = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {model:selectedModel,make:selectedMake, year:selectedYear, type:'gettrim'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_trim').find('option').not(':first').remove();
+                    $('#car_trim').append(response)
+                }
+            });
+        });
+
+        $('#car_trim').change(function(){
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedTrim = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'bodytype'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_body_type').find('option').not(':first').remove();
+                    $('#car_body_type').append(response)
+                }
+            });
+        });
+
+        $('#car_body_type').change(function(){
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedBodyType = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            var selectedTrim = $('#car_trim').find(":selected").val();
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {bodytype:selectedBodyType, trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'enginesize'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_engine_size').find('option').not(':first').remove();
+                    $('#car_engine_size').append(response)
+                }
+            });
+        });
+
+        $('#car_engine_size').change(function(){
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedEngineSize = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            var selectedTrim = $('#car_trim').find(":selected").val();
+            var selectedBodyType = $('#car_body_type').find(":selected").val();
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {enginesize:selectedEngineSize, bodytype:selectedBodyType, trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'gettransmission'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_transmission').find('option').not(':first').remove();
+                    $('#car_transmission').append(response)
+                }
+            });
+        });
+
+        $('#car_transmission').change(function(){
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedTransmission = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            var selectedTrim = $('#car_trim').find(":selected").val();
+            var selectedBodyType = $('#car_body_type').find(":selected").val();
+            var selectedEngineSize = $('#car_engine_size').find(":selected").val();
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {transmission:selectedTransmission, enginesize:selectedEngineSize, bodytype:selectedBodyType, trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'getregion'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_region').find('option').not(':first').remove();
+                    $('#car_region').append(response)
+                }
+            });
+        });
+
+        var dateobj = new Date();
+        var currentYear = dateobj.getFullYear();
+        $("#license_start_date").datepicker({
+          maxDate: new Date(),
+          showMonthAfterYear: false,
+          dateFormat:'dd-mm-yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: '1950:'+currentYear,
+          defaultViewDate: {year: '2023'}
+        });
+
+        $("#date_of_registration").datepicker({
+          maxDate: new Date(),
+          showMonthAfterYear: false,
+          dateFormat:'dd-mm-yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: '1900:'+currentYear,
+          defaultViewDate: {year: '2023'}
+        });
+    });
+</script>

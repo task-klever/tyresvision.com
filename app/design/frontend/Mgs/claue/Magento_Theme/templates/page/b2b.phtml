@@ -1,0 +1,125 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+?>
+
+<div class="b2b">
+    <div class="container">
+        <div class="login-container row">
+            <div class="col-sm-6 col-xs-12 margin-bottom50">
+                <div class="block block-customer-login">
+                    <div class="block-title">
+                        <h2 class="title" id="block-customer-login-heading" role="heading" aria-level="2"><span>B2B Log in - Existing/Registered Customers</span></h2>
+                    </div>
+                    <div class="block-content" aria-labelledby="block-login-customer-heading">
+                        <p><?php echo __('B2B login will allow you to see B2B discounted price. Plus, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.'); ?></p>
+                        <div class="actions-toolbar padding-top10">
+                            <div class="primary">
+                                <a href="<?php echo $this->getBaseUrl().'customer/account/login'; ?>" class="action sign-in btn btn-secondary"><span>Log In</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12 pull-right">
+                <div class="block block-new-customer">
+                    <div class="block-title">
+                        <h2 class="title" id="block-new-customer-heading" role="heading" aria-level="2"><span>B2B - Create New Account</span></h2>
+                    </div>
+                    <div class="block-content" aria-labelledby="block-new-customer-heading">
+                        <p><?php echo __('Register as new B2B customer to see the visibility of discounted prices. Plus, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.'); ?></p>
+                        <div class="actions-toolbar padding-top10">
+                            <div class="primary">
+                                <a href="https://wa.me/971800847466" class="action create btn btn-secondary"><span>Create Account</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-block">
+            <div class="title">
+                <h2>Exclusively for all Garages and Corporate Customers.</h2>
+            </div>
+            <div class="content">
+                <p>Register in our B2B TyresVision e-commerce portal and get unbeatable wholesale discounts on all tyres.</p>
+                <p>Simply complete your registration process in three easy steps.</p>
+                <ul>
+                    <li>Apply, get the account approved, and start ordering.</li>
+                    <li>No contracts, fees, or minimum order values.</li>
+                </ul>
+                <p>It doesn&#39;t matter whether you run a small or a large business. Ordering your tyres online has never been easier...</p>
+                <p><strong>TyresVision B2B Portal a simple</strong> solution that allows you to order your favourite tyre brands online, anytime.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.cms-b2b-html .page-title-wrapper, .cms-b2b .page-title-wrapper {
+    /* background-image: url('/../media/images/b2b-title-banner.jpg'); */
+    background-image: url('/../media/images/b2b-top-banner.jpg');
+    height: calc(67vw - 128px - 49px);
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.cms-b2b-html .page-title-wrapper h1.page-header, .cms-b2b .page-title-wrapper h1.page-header{
+    /* font-size: 45px; */
+    display: none;
+}
+
+.cms-b2b-html .page-title-wrapper:before, .cms-b2b .page-title-wrapper:before {
+    background: rgb(0 0 0 / 24%);
+}
+
+.cms-b2b-html .text-block, .cms-b2b .text-block {
+    margin-bottom: 40px;
+}
+.cms-b2b-html .text-block .title, .cms-b2b .text-block .title {
+    margin-bottom: 10px;
+}
+.cms-b2b-html .text-block p, .cms-b2b .text-block p {
+    line-height: normal !important;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.cms-b2b-html .text-block .title h2, .cms-b2b .text-block .title h2 {
+    color: #4bcf2e;
+    font-size: 25px;
+}
+.cms-b2b-html .text-block ul, .cms-b2b .text-block ul {
+  list-style: none;
+  margin-bottom: 10px;
+  margin-left: 24px;
+}
+.cms-b2b-html .text-block ul li, .cms-b2b .text-block ul li {
+    color: #fff;
+}
+.cms-b2b-html .text-block ul li::before, .cms-b2b .text-block ul li::before {
+    content: "\2713"; /* Unicode character for the checkmark symbol */
+    /* font-family: 'Font Awesome'; */ /* Optional: You may need to adjust the font family based on your project's font choices */
+    margin-right: 5px;
+}
+body.cms-b2b-html, body.cms-b2b {
+    background-color:#000;
+}
+.cms-b2b-html .b2b h2, .cms-b2b-html .b2b .block-content p, .cms-b2b .b2b h2, .cms-b2b .b2b .block-content p {
+    color:#fff;
+}
+
+.cms-b2b-html #main-Menucontent .navigation, .cms-b2b #main-Menucontent .navigation{display: none;}
+
+@media screen and (max-width:767px) {
+  .cms-b2b-html .page-title-wrapper, .cms-b2b .page-title-wrapper {
+     /* background-image: url('/../media/images/b2b-title-banner-sm.jpg'); */
+     height: calc(103vw - 128px - 49px);
+  }
+  .cms-b2b-html .page-title-wrapper h1.page-header, .cms-b2b .page-title-wrapper h1.page-header {
+    font-size: 35px;
+  }
+  .cms-b2b-html .login-container, .cms-b2b .login-container {
+    margin-bottom: 40px;
+  }
+}
+</style>

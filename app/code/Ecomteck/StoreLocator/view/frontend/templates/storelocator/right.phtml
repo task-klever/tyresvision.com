@@ -1,0 +1,293 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$objDate = $objectManager->create('Magento\Framework\Stdlib\DateTime\TimezoneInterface');
+$todaydate = $objDate->date()->format('m/d/Y');
+$todayhrs = $objDate->date()->format('H');
+$todayhrs=$todayhrs+1;
+$todayhrs=sprintf("%02d", $todayhrs);
+if($todayhrs >= 24){
+	$todayhrs=00;
+}
+$todaysecond = $objDate->date()->format('i');
+$todayhrssecond=$todayhrs.$todaysecond;
+$isEnablefitmentinstaller = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('carttostorepickup/general/no_fitment_installer');
+ /** @var \Ecomteck\StoreLocator\Block\StoreLocator $block */?>
+<?php $_store = $block->getCurrentStore();?>
+<?php $countryList = $block->storelocatorConfig->getCountries(); ?>
+<?php $storeId = $block->storelocatorConfig->getStoreId(); ?>
+<?php $distanceSteps = $block->storelocatorConfig->getDinstanceSteps();?>
+<?php
+$unit = $block->storelocatorConfig->getUnitOfLengthSettings();
+if($unit == 'km'){
+	$unitText = $block->storelocatorConfig->getTextSettings('kilometer_lang');
+} else {
+	$unitText = $block->storelocatorConfig->getTextSettings('mile_lang');
+}
+?>
+<?php $filters = $block->getFilters();?>
+
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storePickup = $objectManager->get('Ecomteck\StorePickup\Block\StorePickup');
+$stores=$storePickup->getStorePickupList();
+$storePickupImagepath=$storePickup->getStorePickupMediaPath();
+$allStoreOpeningdatetime='';
+foreach ($stores as $key => $store) {  
+	$startendtime=array();
+	$opening_hours=json_decode($store['opening_hours']);
+	foreach ($opening_hours as $key => $value) {
+		
+      if(isset($value) && !empty($value)) {		
+		   $value=str_replace('[', '', $value);
+		   $value=str_replace(']', '', $value);
+		   $value=str_replace(' ', '', $value);
+		   $value=explode(',', $value);
+		   $value = array_map('trim', $value);
+		   $startendtime[$key]=$value;
+	  }else{
+	  	   $startendtime[]=array();
+	  }
+
+	}
+
+   $allStoreOpeningdatetimep[$store->getStoresId()]=$startendtime;
+}
+
+$cartRef=$this->getCartref();
+$isDisplayDateTime=0;
+if(isset($cartRef) && !empty($cartRef)){
+	$isDisplayDateTime=1;
+}
+?>
+<div class="bh-sl-container col-md-12">
+	<div id="bh-sl-map-container" class="bh-sl-map-container">
+		<div id="bh-sl-map" class="bh-sl-map"></div>
+		
+	</div>
+</div>
+<div class="col-md-12">
+			<div class="bh-sl-form-container">
+				<h3 class="location-h3"><?php echo __("PLEASE ENTER YOUR LOCATION")?></h3>
+				<form id="bh-sl-user-location" method="post" action="#">
+					<div class="form-input">
+						<input type="text" id="bh-sl-address" placeholder="<?php echo __('Enter Address')?>" name="bh-sl-address" />
+						
+					</div>
+					<?php /* if($block->storelocatorConfig->getNameSearchSettings()):?>
+					<div class="form-input">
+						<input type="text" id="bh-sl-search" placeholder="<?php echo __('Enter Store Name')?>" name="bh-sl-search" />
+					</div>
+					<?php endif; */ ?>
+					<button id="bh-sl-submit" type="submit"><?php echo __('Search for Installer')?></button>
+					<div class="filter-options" id="narrow-by-list" style="padding-top:20px;" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false}}'>
+						<div data-role="collapsible" class="filter-options-item" style="width:100%;">
+							<div data-role="title" class="filter-options-title"><?= /* @escapeNotVerified */ __('Filter') ?></div>
+							<div data-role="content">
+							<div class="bh-sl-filters-container">
+											<?php if($block->storelocatorConfig->getMaxDistanceSettings() && $distanceSteps):?>
+											<label><?php echo __('Radius:')?></label>
+											<select id="bh-sl-maxdistance" name="bh-sl-maxdistance">
+												<?php foreach($distanceSteps as $step):?>
+												<option value="<?php echo $step['distance']?>"><?php echo $step['distance']. ' '. $unitText?></option>
+												<?php endforeach;?>
+											</select>
+											<?php endif;?>
+											<?php foreach($filters as $name => $filter):?>
+												<?php if($filter['renderer'] == 'checkbox'):?>
+												<ul id="<?php echo $name?>-filters-container" class="bh-sl-filters">
+													<li><strong><?php echo $filter['label']?></strong></li>
+													<?php foreach($filter['items'] as $item):?>
+													<li>
+														<label>
+															<input type="checkbox" name="<?php echo $name?>" value="<?php echo $item['value']?>"> <?php echo $item['label']?>
+														</label>
+													</li>
+													<?php endforeach;?>
+												</ul>
+												<?php endif;?>
+												<?php if($filter['renderer'] == 'select'):?>
+												<ul id="<?php echo $name?>-filters-container" class="bh-sl-filters">
+													<li><strong><?php echo $filter['label']?></strong></li>
+													<li>
+														<select name="<?php echo $name?>">
+															<?php foreach($filter['items'] as $item):?>
+																<option value="<?php echo $item['value']?>"><?php echo $item['label']?></option>
+															<?php endforeach;?>
+														</select>
+													</li>
+												</ul>
+												<?php endif;?>
+												<?php if($filter['renderer'] == 'radio'):?>
+												<ul id="<?php echo $name?>-filters-container" class="bh-sl-filters">
+													<li><strong><?php echo $filter['label']?></strong></li>
+													<?php foreach($filter['items'] as $item):?>
+													<li>
+														<label>
+															<input type="radio" name="<?php echo $name?>" value="<?php echo $item['value']?>"> <?php echo $item['label']?>
+														</label>
+													</li>
+													<?php endforeach;?>
+												</ul>
+												<?php endif;?>
+											<?php endforeach;?>
+										</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="bh-sl-loc-list">
+				<ul class="list"></ul>
+			</div>
+			<div class="bh-sl-pagination-container">
+				<ol class="bh-sl-pagination"></ol>
+			</div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+
+            "ecomteck_storelocator": <?php echo $block->getJsonConfig()?>
+
+        }
+    }
+</script>
+<style type="text/css">
+	.bh-sl-container .bh-sl-map{
+		width: 100%;
+	}
+	li.installer-id-<?php echo $isEnablefitmentinstaller?> {display: none;}
+</style>
+<?php 
+if(!$isDisplayDateTime) { ?>
+<style type="text/css">
+	.storelocator .datetimesubmit, .storelocator .datetimesubmit1, .storelocator .checkbox-select-installer{
+		display: none;
+	}
+</style>
+<?php } ?>
+
+<script type="text/javascript">
+	var alldatetime = {'00.00':'12:00am','00.30':'12:30am','01.00':'01:00am','01.30':'01:30am','02.00':'02:00am','02.30':'02:30am','03.00':'03:00am','03.30':'03:30am','04.00':'04:00am','04.30':'04:30am','05.00':'05:00am','05.30':'05:30am','06.00':'06:00am','06.30':'06:30am','07.00':'07:00am','07.30':'07:30am','08.00':'08:00am','08.30':'08:30am','09.00':'09:00am','09.30':'09:30am','10.00':'10:00am','10.30':'10:30am','11.00':'11:00am','11.30':'11:30am','12.00':'12:00pm','12.30':'12:30pm','13.00':'01:00pm','13.30':'01:30pm','14.00':'02:00pm','14.30':'02:30pm','15.00':'03:00pm','15.30':'03:30pm','16.00':'04:00pm','16.30':'04:30pm','17.00':'05:00pm','17.30':'05:30pm','18.00':'06:00pm','18.30':'06:30pm','19.00':'07:00pm','19.30':'07:30pm','20.00':'08:00pm','20.30':'08:30pm','21.00':'09:00pm','21.30':'09:30pm','22.00':'10:00pm','22.30':'10:30pm','23.00':'11:00pm','23.30':'11:30pm'
+		};
+	
+    var todayhrssecond='<?php echo $todayhrssecond ?>';
+    console.log('time-'+todayhrssecond);
+
+    var todaydate='<?php echo $todaydate ?>';
+    console.log('date-'+todaydate);
+    var allStoreOpeningdatetimep=<?php echo json_encode($allStoreOpeningdatetimep) ?>;
+	
+	
+
+
+	require(["jquery", "mage/calendar"], function($) {
+    $(document).ajaxComplete(function(event, xhr, settings) {
+        $(document).ready(function() {
+            $('.checkoutselectstore .datetimesubmit, .checkoutselectstore .pickup-time').hide();
+
+            $('.checkbox-select-installer .form-check-input').on('change', function() {
+                if ($(this).prop('checked')) {
+                    var city = $(this).closest('.list-details').find('.loc-addr').text().trim();
+                    var currentTime = new Date();
+                    var currentHour = currentTime.getHours();
+                    var selectorId = $(this).attr('data-id');
+                    $('.form-check-input').prop('checked', false);
+                    $('.form-check-input.' + selectorId).prop('checked', true);
+                    var mainId = $(this).closest('form').attr('id');
+
+                    var fitmentDateField = $('#' + mainId).find('.storePickupdatepicker');
+                    var fitmentTimeField = $('#' + mainId).find('.storePickuptimepicker');
+                    fitmentDateField.val('');
+                    fitmentTimeField.html(''); // Clear previous options
+
+                    // Set minimum date based on city conditions
+                    if (city.includes("Dubai")) {
+                        fitmentDateField.datepicker("option", "minDate", currentHour < 17 ? 0 : 1);
+                    } else if (city.includes("Sharjah")) {
+                        fitmentDateField.datepicker("option", "minDate", currentHour < 13 ? 0 : 1);
+
+                    } else if (city.includes("Ras Al Khaimah") || city.includes("Fujairah")) {
+                        fitmentDateField.datepicker("option", "minDate", 1);
+                        fitmentDateField.datepicker("option", "beforeShowDay", function(date) {
+                            var day = date.getDay();
+                            return [(day !== 0 && day !== 5), ""]; // Disable Sundays and Fridays for Ras Al Khaimah & Fujeirah
+                        });
+
+                    } else { // Other cities
+                        fitmentDateField.datepicker("option", "minDate", 1); // Hide current date
+                        fitmentDateField.datepicker("option", "beforeShowDay", function(date) {
+                            return [date.getDay() !== 0, ""]; // Disable Sundays for other cities
+                        });
+                    }
+
+                    // Update time options based on current time and selection
+                    fitmentDateField.on("change", function() {
+                        var selectedDate = fitmentDateField.datepicker("getDate");
+                        if (!selectedDate) return; // If no date is selected, exit
+
+                        var selectedDay = selectedDate.getDate();
+                        var todayDay = new Date().getDate();
+                        var isToday = selectedDate.toDateString() === new Date().toDateString();
+
+                        // Clear previous time options
+                        fitmentTimeField.html('');
+
+                        if (city.includes("Dubai")) {
+                            if (isToday) {
+                                fitmentTimeField.html(currentHour >= 12 ? '<option value="PM">PM</option>' : '<option value="AM">AM</option><option value="PM">PM</option>');
+                            } else if (selectedDay === todayDay + 1 && currentHour >= 17) { // Next day
+                                fitmentTimeField.html('<option value="PM">PM</option>'); // Only PM for next day
+                            } else {
+                                fitmentTimeField.html('<option value="AM">AM</option><option value="PM">PM</option>'); // AM/PM for other days
+                            }
+                        } else if (city.includes("Sharjah")) {
+                            if (isToday) {
+                                fitmentTimeField.html(currentHour >= 12 ? '<option value="PM">PM</option>' : '<option value="AM">AM</option><option value="PM">PM</option>');
+                            } else if (selectedDay === todayDay + 1 && currentHour >= 13) { // Next day
+                                fitmentTimeField.html('<option value="PM">PM</option>'); // Only PM for next day
+                            } else {
+                                fitmentTimeField.html('<option value="AM">AM</option><option value="PM">PM</option>'); // AM/PM for other days
+                            }
+                        } else { // Other cities
+                            fitmentTimeField.html('<option value="PM">PM</option>'); // Show only PM for next day
+                            if (selectedDay !== todayDay + 1) {
+                                fitmentTimeField.html('<option value="AM">AM</option><option value="PM">PM</option>'); // AM/PM for other days
+                            }
+                        }
+                    });
+
+                    $('#' + mainId).find('.datetimesubmit, .datetimesubmit1').show();
+                } else {
+                    $('.checkoutselectstore .datetimesubmit, .checkoutselectstore .pickup-time').hide();
+                }
+            });
+        });
+    });
+});
+
+
+	
+</script>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Ecomteck_StoreLocator/js/installer": {
+        }
+    }
+}
+</script>
+<style>
+.form-check.checkbox-select-installer {
+    width: 100%;
+}
+.checkbox-select-installer label.form-check-label {
+    pointer-events: none;
+    cursor: none;
+}
+.checkbox-select-installer input#defaultCheckInstaller {
+    cursor: pointer;
+    pointer-events: all;
+}
+</style>

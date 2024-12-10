@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Hdweb_Brandrim::parent" title="Installer Brandrim" module="Hdweb_Brandrim" sortOrder="10" resource="Hdweb_Brandrim::parent"/>
+        
+		<add id="Hdweb_Brandrim::brandrim" title="Installer Brandrim" module="Hdweb_Brandrim" sortOrder="1" parent="Hdweb_Brandrim::parent" action="brandrim/create/grid" resource="Hdweb_Brandrim::brandrim"/>
+
+    </menu>
+</config>

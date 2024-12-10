@@ -1,0 +1,227 @@
+<?php $themeHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<?php $cr_Header = $themeHelper->getStoreConfig('mgstheme/general/header'); ?>
+<?php $stickyLogo = $themeHelper->getStoreConfig('mgstheme/general/sticky_logo'); ?>
+
+<?php if($stickyLogo): ?>
+    <?php 
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $stickyLogo = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'stickylogo/' . $stickyLogo; 
+    ?>
+<?php endif ?>
+
+<?php if($themeHelper->getStoreConfig('mgstheme/general/sticky_menu') && $cr_Header != 'header_5'): ?>
+	
+<?php endif ?>
+<?php if($themeHelper->getStoreConfig('mgstheme/general/back_to_top')): ?>
+	<a href="" class="scroll-to-top"><i class="fa fa-arrow-up"></i></a>
+	<script type="text/javascript">
+		require([
+			'jquery'
+		], function(jQuery){
+			(function($) {
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 1) {
+						$('.scroll-to-top').css({bottom:"25px"});
+					} else {
+						$('.scroll-to-top').css({bottom:"-45px"});
+					}
+				});
+
+				$('.scroll-to-top').click(function(){
+					$('html, body').animate({scrollTop: '0px'}, 800);
+					return false;
+				});
+			})(jQuery);
+		});
+	</script>
+<?php endif ?>
+
+<?php if (!$themeHelper->getStoreConfig('checkout/cart/redirect_to_cart')) : ?>
+	<script type="text/x-magento-init">
+	{
+		"[data-role=tocart-form], .form.map.checkout": {
+			"catalogAddToCart": {}
+		}
+	}
+	</script>
+<?php endif; ?>	
+
+<div class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready" id="mgs-ajax-loading">
+	<div class="mfp-bg mfp-ready"></div>
+	<div class="preloader"></div>
+</div>
+
+<script type="text/javascript">
+    require([ 'jquery', 'mgs/owlcarousel' ], function ($) {
+        $('.list_gallery').owlCarousel({
+            items: 1,
+            autoplay: false,
+            nav: false,
+            dots: true,
+            rtl: RTL,
+            touchDrag: false,
+            mouseDrag: false,
+            loop:false,
+            navText: ["<span></span>","<span></span>"],
+        });
+    });
+</script>
+
+<!-- Add Template Hover Products  -->
+<?php $hover_template = $themeHelper->getStoreConfig('mpanel/catalog/hover'); ?>
+<script type="text/javascript">
+	require([
+		'jquery'
+	], function($){
+		$(document).ready(function(){
+			$('.products-grid .product.product-item .product-item-info').addClass('<?php echo $hover_template ?>');
+			$('.products-grid .products.product-items .product-item-info').addClass('<?php echo $hover_template ?>');
+		});
+	});
+</script>
+
+<script type="text/javascript">
+require([ 'jquery', 'mgs/owlcarousel' ], function ($) {
+$('.brands-slider .slider').owlCarousel({
+	//loop:true,
+	margin:15,
+	nav:true,
+	navText: ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15.28 5.22a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L9.56 12l5.72-5.72a.75.75 0 000-1.06z"></path></svg>', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>'],
+	lazyLoad: true,
+	responsive:{
+	    0:{
+	    items:3,
+	    nav:false
+	},
+	    599:{
+	    items:3,
+	     nav:false
+	},
+	    767:{
+	    items:4,
+	    nav:false
+	},
+	    991:{
+	    items:5,
+	    nav:false
+	},
+	    1024:{
+	    items:6,
+	    //nav:false
+	 }
+	}
+	});
+	});
+</script>
+
+
+<script type="text/javascript">
+require([ 'jquery', 'mgs/owlcarousel' ], function ($) {
+$('.testimonials-slider .slider').owlCarousel({
+	loop:true,
+	margin:15,
+	nav:true,
+	navText: ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15.28 5.22a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L9.56 12l5.72-5.72a.75.75 0 000-1.06z"></path></svg>', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>'],
+	lazyLoad: true,
+	responsive:{
+	    0:{
+	    items:1,
+	    nav:false,
+	    margin:0,
+	},
+	    599:{
+	    items:1,
+	    nav:false,
+	    margin:0,
+	},
+	    767:{
+	    items:1,
+	    nav:false,
+	    margin:0,
+	},
+	    991:{
+	    items:2,
+	},
+	    1024:{
+	    items:2,
+	 }
+	}
+	});
+	});
+</script>
+
+
+<script type="text/javascript">
+require([ 'jquery', 'mgs/owlcarousel' ], function ($) {
+$('.offer-slider .slider').owlCarousel({
+	loop:true,
+	margin:15,
+	nav:false,
+	autoplay:true,
+    autoplayTimeout:2000,
+	navText: ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M15.28 5.22a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L9.56 12l5.72-5.72a.75.75 0 000-1.06z"></path></svg>', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z"></path></svg>'],
+	lazyLoad: true,
+	responsive:{
+	    0:{
+	    items:1,
+	    nav:false,
+	    margin:0,
+	},
+	    599:{
+	    items:1,
+	    nav:false,
+	    margin:0,
+	},
+	    767:{
+	    items:1,
+	    nav:false,
+	    margin:0,
+	},
+	    991:{
+	    items:2,
+	},
+	    1024:{
+	    items:2,
+	 }
+	}
+	});
+	});
+</script>
+
+
+
+<script type="text/javascript">
+ 	require([
+		'jquery'
+	], function($){
+		$(document).ready(function(){
+      $(".show-more a").click(function () {
+        $(".text").toggleClass("show-more-height");
+        $(this).toggleClass("tshow");
+    });
+
+ 	});
+
+		jQuery.event.special.touchstart = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+jQuery.event.special.touchmove = {
+    setup: function( _, ns, handle ) {
+        this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+    }
+};
+jQuery.event.special.wheel = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("wheel", handle, { passive: true });
+    }
+};
+jQuery.event.special.mousewheel = {
+    setup: function( _, ns, handle ){
+        this.addEventListener("mousewheel", handle, { passive: true });
+    }
+};
+	});
+
+</script>

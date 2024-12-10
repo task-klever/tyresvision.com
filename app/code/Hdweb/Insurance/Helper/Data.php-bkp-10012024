@@ -1,0 +1,148 @@
+<?php
+
+namespace Hdweb\Insurance\Helper;
+
+use Magento\Store\Model\ScopeInterface;
+
+class Data extends \Magento\Framework\App\Helper\AbstractHelper
+{
+    const XML_PATH_CLIENT_ID = 'insurance/general/client_id';
+    const XML_PATH_CLIENT_SECRET = 'insurance/general/client_secret';
+    const XML_PATH_API_CALL_BASEURL = 'insurance/general/api_call_baseurl';
+    protected $_storeManager;
+    protected $_scopeConfig;
+
+    public function __construct(
+        \Magento\Framework\App\Helper\Context $context,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+    ) {
+        $this->_storeManager = $storeManager;
+        $this->_scopeConfig  = $scopeConfig;
+        parent::__construct($context);
+    }
+
+    public function getClientId()
+    {
+      $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
+      return $this->_scopeConfig->getValue(self::XML_PATH_CLIENT_ID, $storeScope);
+    }
+
+    public function getClientSecret()
+    {
+      $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
+      return $this->_scopeConfig->getValue(self::XML_PATH_CLIENT_SECRET, $storeScope);
+    }
+
+    public function getAPIcallBaseUrl()
+    {
+      $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
+      return $this->_scopeConfig->getValue(self::XML_PATH_API_CALL_BASEURL, $storeScope);
+    }
+
+    public function getDataUsingCURL($url)
+    {
+        //$url = "https://insured.ae/get-car-model-years";
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        //for debug only!
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+        return $resp;
+
+    }
+
+    public function insuranceAuth()
+    {
+        $clienId = $this->getClientId();
+        $clienSecret = $this->getClientSecret();
+        $apiCallBaseUrl = $this->getAPIcallBaseUrl();
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => $apiCallBaseUrl.'api/v2/auth',
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'POST',
+          CURLOPT_POSTFIELDS =>'{
+            "grant_type": "client_credentials",
+            "client_id": "'.$clienId.'",
+            "client_secret": "'.$clienSecret.'"
+        }',
+          CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json'
+          ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response;
+    }
+
+    public function getCarTypes($access_token)
+    {
+        $apiCallBaseUrl = $this->getAPIcallBaseUrl();
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => $apiCallBaseUrl.'api/v2/master/car',
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'GET',
+          CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
+            'Authorization: Bearer '.$access_token
+          ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response;
+    }
+
+    public function getDataFromAPI($url)
+    {
+      $authResponse = $this->insuranceAuth();
+      $authResponseArr = json_decode($authResponse);
+      $access_token = $authResponseArr->response->access_token;
+      
+      $curl = curl_init();
+
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'GET',
+        CURLOPT_HTTPHEADER => array(
+          'Authorization: Bearer '.$access_token
+        ),
+      ));
+
+      $response = curl_exec($curl);
+
+      curl_close($curl);
+      return $response;
+    }
+
+}

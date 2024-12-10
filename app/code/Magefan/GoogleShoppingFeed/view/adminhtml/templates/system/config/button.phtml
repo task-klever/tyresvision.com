@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+?>
+<?php
+/** @var $block \Magefan\GoogleShoppingFeed\Block\Adminhtml\System\Config\Form\Regenerate */
+?>
+<?php
+$feedByStore = $block->getFeedByStore();
+if (count($feedByStore)) { ?>
+    <span><?= $block->escapeHtml(__('Generated feed:')) ?></span><br>
+    <?php foreach ($feedByStore as $key => $item) { ?>
+        <span>
+            <?= $block->escapeHtml($key + 1 . ') ') ?>
+            <a href="<?= $block->escapeUrl($item['link']) ?>" target="_blank"><?= $block->escapeHtml($item['name']) ?></a>
+        </span><br>
+    <?php }
+}
+?>
+<br/>
+
+<?= $block->getButtonHtml() ?>
+<?= $block->getAsyncButtonHtml() ?>
+<br/><br/>
+<?= __('Please note that XML feeds are also regenerated (updated) automatically by cron. You don\'t need to update them manually every day.') ?>

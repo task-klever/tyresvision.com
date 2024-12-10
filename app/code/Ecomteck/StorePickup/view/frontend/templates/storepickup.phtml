@@ -1,0 +1,131 @@
+<?php
+$stores=$block->getStorePickupList();
+$storePickupImagepath=$block->getStorePickupMediaPath();
+$allStoreOpeningdatetime='';
+foreach ($stores as $key => $store) {  
+	$startendtime=array();
+	$opening_hours=json_decode($store['opening_hours']);
+	foreach ($opening_hours as $key => $value) {
+		
+      if(isset($value) && !empty($value)) {		
+		   $value=str_replace('[', '', $value);
+		   $value=str_replace(']', '', $value);
+		   $value=str_replace(' ', '', $value);
+		   $value=explode(',', $value);
+		   $value = array_map('trim', $value);
+		   $startendtime[$key]=$value;
+	  }else{
+	  	   $startendtime[]=array();
+	  }
+
+	}
+
+   $allStoreOpeningdatetimep[$store->getStoresId()]=$startendtime;
+?>
+<form action="<?php echo $this->getUrl('storepickup/index/selectstore') ?>"  class="checkoutselectstore" method="post">
+
+	<input type="hidden" name="pickup_store" value="<?php echo $store->getStoresId() ?>">
+	<div class="storepickupdiv">
+		<ul class="storepickulist">
+            <li data-markerid="0"  class="list-focus">
+                    <div class="loc-image">
+                        <img src="<?php echo $storePickupImagepath.$store['image'] ?>">
+                    </div>
+	                <div class="list-details">
+	                    <div class="loc-name"><?php echo $store['name'] ?></div>
+	                    <div class="loc-description"><?php echo $store['description'] ?></div>
+	                    <div class="list-content">
+	                        <div class="loc-addr"><b><?php __('Address:') ?> </b><?php echo $store['address'] ?> </div>
+	                            <div class="loc-phone">
+	                                <b><?php __('Phone:') ?> </b>
+	                                <a href="tel:5454343401" target="_blank"><?php echo $store['phone'] ?></a>
+	                            </div>
+	                            <div class="loc-email"><b><?php __('E-Mail:') ?></b><a href="mailto:<?php echo $store['email'] ?>" target="_blank"><?php echo $store['email'] ?></a></div>
+	                    </div>
+	                </div>
+	                <div class="pickup-date">
+						<label class="label"><?php __('Pick Up Date') ?></label>
+						<div class="control">
+							<input data-storeid="<?php echo $store->getStoresId() ?>" class="input-text storePickupdatepicker" type="text"  value="" name="pickup_date"/>
+						</div>
+						<div class="pickup-time">
+							<label class="label"><?php __('Pick Up Time')?></label>
+							<div class="control">
+								<select class="input-text storePickuptimepicker" type="text"  value="" name="pickup_time"  data-storetimeid="<?php echo $store->getStoresId() ?>">
+							   </select>
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<button type="submit" name="proceedtocheckout"><?php echo __('Proceed To Checkout')?></button>
+					</div>
+
+            </li>
+         </ul>
+	</div>	
+</form>	
+<?php }  ?>
+<script type="text/javascript">
+	var alldatetime = {'00.00':'12:00am','00.30':'12:30am','01.00':'01:00am','01.30':'01:30am','02.00':'02:00am','02.30':'02:30am','03.00':'03:00am','03.30':'03:30am','04.00':'04:00am','04.30':'04:30am','05.00':'05:00am','05.30':'05:30am','06.00':'06:00am','06.30':'06:30am','07.00':'07:00am','07.30':'07:30am','08.00':'08:00am','08.30':'08:30am','09.00':'09:00am','09.30':'09:30am','10.00':'10:00am','10.30':'10:30am','11.00':'11:00am','11.30':'11:30am','12.00':'12:00pm','12.30':'12:30pm','13.00':'01:00pm','13.30':'01:30pm','14.00':'02:00pm','14.30':'02:30pm','15.00':'03:00pm','15.30':'03:30pm','16.00':'04:00pm','16.30':'04:30pm','17.00':'05:00pm','17.30':'05:30pm','18.00':'06:00pm','18.30':'06:30pm','19.00':'07:00pm','19.30':'07:30pm','20.00':'08:00pm','20.30':'08:30pm','21.00':'09:00pm','21.30':'09:30pm','22.00':'10:00pm','22.30':'10:30pm','23.00':'11:00pm','23.30':'11:30pm'
+		};
+   
+   
+
+var allStoreOpeningdatetimep=<?php echo json_encode($allStoreOpeningdatetimep) ?>;
+require(["jquery", "mage/calendar"], function($){
+        $(".storePickupdatepicker").datepicker({
+          showMonthAfterYear: false,
+          dateFormat:'mm/dd/yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: '2000:2025',
+        });
+
+	jQuery('.storePickupdatepicker').change(function(){
+	    var selecteddate=jQuery(this).val();
+	    var selecctedday=jQuery(this).datepicker('getDate').getDay();
+	    var storeid=jQuery(this).attr('data-storeid');
+	    jQuery('select[data-storetimeid='+storeid+']').empty();
+	    
+	    var storeStartEnddate=allStoreOpeningdatetimep[storeid][selecctedday];
+	    
+	    jQuery.each(alldatetime, function(key,value) { 
+       	    var valueKey=key+value;
+       	    valueKey=value;
+       	    
+       	    if(typeof storeStartEnddate[0] !== "undefined" && typeof storeStartEnddate[1] !== "undefined"){ 
+		       	    var storeStartdate=storeStartEnddate[0];
+		       	    var storeEndDate=storeStartEnddate[1];
+		       	    key=key.replace(".", "");
+		       	    storeStartdate=storeStartdate.replace(":", "");
+		       	    storeEndDate=storeEndDate.replace(":", "");
+		       	    storeStartdate=storeStartdate.replace(/\"/g, "");
+		            storeEndDate=storeEndDate.replace(/\"/g, "");
+		       	
+		       	   if(key >= storeStartdate   && key <= storeEndDate){ 	
+				    	jQuery('select[data-storetimeid='+storeid+']').append(jQuery('<option>', {
+					         value: valueKey,
+						     text: valueKey,
+					     }));	
+				    }else{
+				    		jQuery('select[data-storetimeid='+storeid+']').append(jQuery('<option>', {
+					         value: valueKey,
+						     text: valueKey,
+						     disabled  : 'disabled',
+					     }));	
+				    } 	
+			 }else{
+			 		    jQuery('select[data-storetimeid='+storeid+']').append(jQuery('<option>', {
+					         value: valueKey,
+						     text: valueKey,
+						     disabled  : 'disabled',
+					     }));	
+			 }	    
+
+	    });
+	    
+	    
+	});
+
+});
+</script>

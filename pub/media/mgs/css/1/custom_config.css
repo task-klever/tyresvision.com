@@ -1,0 +1,40 @@
+body{font-size:16px;}#mainMenu li a.level0, .navigation ul.container .level0 > a{font-size: 14px;}
+				h1{font-size: 22px;}
+				h2{font-size: 20px;}
+				h3{font-size: 18px;}
+				h4{font-size: 16px;}
+				h5{font-size: 16px;}
+				h6{font-size: 16px;}
+				.price, .price-box .price{font-size: 16px;}
+				.btn{font-size: 14px;}
+				{font-size: 16px;}
+				.top-header-content{background-color: rgba(0, 0, 0, 0) !important;color: #ffffff !important;}.top-header-content a, .top-header-content .dropdown-switcher .switcher-toggle{color: #ffffff !important;}.top-header-content a:hover, .top-header-content .dropdown-switcher .switcher-toggle:hover{color: #4bcf2e !important;}.header .dropdown-switcher .dropdown-menu li > a{color: #8e8e8e !important;}.header .dropdown-switcher .dropdown-menu li > a:hover, .header .dropdown-switcher .dropdown-menu li > a:focus{color: #4bcf2e !important;}.header .search-form .actions-search .action-search,.header .dropdown-toplinks .dropdown-toggle,.header .header-wl a,.minicart-wrapper .action.showcart{color: #ffffff !important;}.header .search-form .actions-search .action-search:hover,.header .dropdown-toplinks .dropdown-toggle:hover,.header .dropdown-toplinks:hover .dropdown-toggle,.header .header-wl a:hover,.header .dropdown-toplinks.open .dropdown-toggle,.minicart-wrapper .action.showcart:hover::before, .minicart-wrapper .action.showcart:active::before{color: #4bcf2e !important;}.minicart-wrapper .action.showcart > .counter.qty,.header .header-wl .count-wl{color: #000000 !important;background-color: #ffffff !important;}#mainMenu .level0 a.level0{color: #ffffff !important;}#mainMenu .level0:hover a.level0{color: #4bcf2e !important;}.navigation .battery247 a span {
+    font-weight: 900;
+    color: #4bcf2e;
+}
+.cms-urgent-car-services-in-uae .bottom-images-block .image-wrap img {
+    max-width: 100%;
+}
+
+.header:not(.header6):not(.header7) .navigation .nav-main-menu li.custom-menu-col1 ul.dropdown-menu li {
+    display: block;
+    padding: 5px 20px 10px 20px;
+}
+
+@media only screen and (max-width: 767px) {
+	.navigation .nav-main-menu li.custom-menu-col1 ul.dropdown-menu li a { 
+    	color: #000000;
+    	border-bottom: none;
+    	padding-left: 0;
+	}
+}
+
+.header:not(.header6):not(.header7) .navigation .nav-main-menu li.custom-menu-col1 ul.dropdown-menu li {
+    display: block;
+    padding: 5px 20px 10px 20px;
+}
+
+.navigation .battery24 a span {
+    font-weight: 900;
+    
+    }

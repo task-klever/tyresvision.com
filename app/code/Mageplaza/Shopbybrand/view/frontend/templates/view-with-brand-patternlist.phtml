@@ -1,0 +1,543 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Shopbybrand
+ * @copyright   Copyright (c) 2017 Mageplaza (http://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+<script type="text/javascript">
+    require([
+            'jquery'
+        ],
+        function ($) {
+            $(".navigation li.mpbrand-top-link").addClass("active");
+        }
+    );
+</script>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$mediaUrl =$storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$brandDetail = $block->getBrand();
+//echo '<pre>';print_r($brandDetail->getData());
+$brandPatternList = $block->getPatternbyBrand();
+
+?>
+<div class="cms_page" style="margin-bottom: -30px;">
+   <div class="topfullimage cms-margin-bottom">
+      <a href="#" class="video_link"  data-toggle="modal" data-target="#myModal">
+         <img src="<?php echo $mediaUrl.'wysiwyg/banner.jpg';?>" alt="" />
+         <span class="video_overlay">
+            <!-- <img src="{{media url=&quot;wysiwyg/icn-play-video.png&quot;}}" alt="" /> -->
+         </span>
+      </a>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                  <!-- 16:9 aspect ratio -->
+                  <div class="embed-responsive embed-responsive-16by9">
+                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oR-KhDSJ2h8" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="custom_container cms-margin-bottom davanti-logo">
+      <div class="col-md-12">
+         <div class="pirelli_webcome">
+            <h1 class="dk"><img src="<?php echo $mediaUrl.'wysiwyg/pirelli-logo.jpg';?>" alt="" class="comp_logo" /></h1>
+            <h2>Unique Tread Patterns With Innovative Features</h2>
+            <p>Pirelli is one of the brands which made a big reputation for itself by manufacturing stable, safe and high-quality tyres for different vehicles. It has certainly made a name for itself, both for selling top quality tyres in UAE and the rest of the world - as well as its presence in competition, racing events and sponsorships.</p>
+         </div>
+      </div>
+   </div>
+   <br class="clear">   
+   <!--   Single section start -->
+   <div class="row pirelli_dtl">
+      <div class="subject_contain col-md-12">
+         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+               <div class="panel-heading" role="tab" id="1">
+                  <h4 class="panel-title">
+                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1" class="collapsed">
+                     <i class="more-less glyphicon glyphicon-plus"></i>
+                     <i class="more-less glyphicon glyphicon-minus"></i>
+                     About Pirelli Tyres In Dubai, UAE </a>
+                  </h4>
+               </div>
+               <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse1" aria-expanded="false" style="height: 0px;">
+                  <div class="panel-body">
+                     <p>
+                        Pirelli is the sixth largest tyre brand in the world. The brand is easily among the best tyre manufacturers on a global scale. The real secret in Pirelli’s success lies in the class and quality, as well as its attention to detail.
+                     </p>
+                     <p>Born in Italy, this brand is a name that is usually linked with passion for cars and unique heritage. Car fans already know that Italy is a synonym of sports cars and the home of many successful brands. </p>
+                     <p>Well, just like in UAE, Pirelli has been living off this tradition and leading the market with top-quality tyres designed for high-performance cars are still top of the line, but are also coming under increased pressure from other competitors that are battling with the Italian brand and trying to offer products with superior features.</p>
+                     <p>Nowadays, Pirelli has a lot of competition but still manages to manufacture tyres which are quiet, well-performing on wet surfaces, with hydroplaning resistance features and safe in high-speed conditions.</p>
+                     <div class="about_feature">
+                        <div class="row">
+                           <div class="col-md-6 col-sm-12 col-12">
+                              <h4>Quick Facts About Pirelli</h4>
+                              <ul>
+                                 <li>Pirelli was founded in 1872 in Milan, by Giovanni Battista Pirelli</li>
+                                 <li>The brand has a unique Pirelli Calendar which is published once a year</li>
+                                 <li>Pirelli is the long-time main sponsor of the Italian football club Internazionale Milano (Inter FC)</li>
+                                 <li>From 2014 to 2017, an average of over 300 Pirelli tyres were approved by car manufacturers every year</li>
+                                 <li>Since 2007, Pirelli is the only tyre brand used in the FIM World Superbike Championship</li>
+                                 <li>As of 2018, there are 31,489 employees working at Pirelli</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 col-12">
+                              <img src="<?php echo $mediaUrl.'wysiwyg/about-pirelli.jpg';?>" alt="" />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading" role="tab" id="2">
+                  <h4 class="panel-title">
+                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2" class="collapsed">
+                     <i class="more-less glyphicon glyphicon-plus"></i>
+                     <i class="more-less glyphicon glyphicon-minus"></i>
+                     Pirelli Tyres Available In UAE</a>
+                  </h4>
+               </div>
+               <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse2" aria-expanded="false">
+                  <div class="panel-body">
+                     <div class="row">
+                        <div class="col-sm-12 col-12">
+                           <p>As we mentioned above, the Pirelli tyres in UAE are great for all weather conditions. The brand made sure to customize its treads and offer tyres in different segments, aligning to the needs of drivers and setting the bar higher when it comes to performance under special road conditions, handling and noise levels.</p>
+                           <p>The build quality of the Pirelli tyres is one of the features that puts the brand among the best. Their handling score on dry and wet conditions is also excellent on almost every model, along with the noise level which is relatively quiet for a tyre in this caliber.</p>
+                           <p>Below, we are listing all of our Pirelli tyre models in UAE, helping you choose the right one for your and your vehicle’s needs.</p>
+                        </div>
+                     </div>
+                     <div class="row d-flex flex-wrap">
+					 <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('brand-pattern-list')->toHtml();?>
+					 <?php /* foreach($brandPatternList as $brandPatternListData):?>
+						<?php <div class="col-sm-6 col-lg-3 col-md-4 col-xs-6 col-12">
+                           <div class="tyre_info_box_new">
+							<?php if ($image = $block->getBrandImage()):?>
+								<img src="<?php echo $block->getBrandImage();?>" alt="" class="new_tyre_logo" />
+							<?php endif;?>
+                              <h3><?php echo $brandPatternListData->getPattern();?></h3>
+                              <div class="full_tyre_img">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/cinturato-p1-tyre.jpg';?>" alt="" />
+                              </div>
+                              <div class="tyre_info_detail">
+                                <?php echo $brandPatternListData->getShortDescription();?>
+                                 <hr>
+                                 <a href="<?php echo $brandDetail->getUrlKey().'/'.$brandPatternListData->getUrlKey();?>" class="tyre_info_btn">more details</a>  
+                              </div>
+                           </div>
+                        </div>
+					<?php endforeach;?> */ ?>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading" role="tab" id="3">
+                  <h4 class="panel-title">
+                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed">
+                     <i class="more-less glyphicon glyphicon-plus"></i>
+                     <i class="more-less glyphicon glyphicon-minus"></i>
+                     Buy Pirelli Tyres In UAE From A Certified Distributor</a>
+                  </h4>
+               </div>
+               <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse3" aria-expanded="false">
+                  <div class="panel-body distributersec">
+                     <div class="row">
+                        <div class="col-md-7 col-sm-7 col-sm-12 col-12">
+                           <p>At TyresOnline, we pride ourselves on being a certified distributor of Pirelli in UAE. Our Dubai, Abu Dhabi and Sharjah customers know that we sell products with superior quality - and are able to provide the best prices on Pirelli tyres along with additional services.</p>
+                           <p>You can visit our Pirelli catalogue and check out the UAE Pirelli tyres prices and get the best quote on buying a new set of tyres for your vehicles. We are here to install, balance and/or ship the Pirelli tyres to any location within the United Arab Emirates. </p>
+                           <p>We strive to cut out the middleman and be the best Pirelli distributor in UAE, sourcing various brands from different manufacturers. Our main focus is quality - the same one that is shown in the Pirelli tyres available in different sizes and types.</p>
+                           <p>For more information about our Pirelli products, feel free to contact us today and request an estimate.</p>
+                        </div>
+                        <div class="col-md-4 col-md-offset-1 col-sm-5 col-12 text-center">
+                           <img src="<?php echo $mediaUrl.'wysiwyg/pirelli-red-tyre.jpg';?>" alt="" />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading" role="tab" id="4">
+                  <h4 class="panel-title">
+                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4" class="collapsed">
+                     <i class="more-less glyphicon glyphicon-plus"></i>
+                     <i class="more-less glyphicon glyphicon-minus"></i>
+                     Pirelli Certificates And Accreditations</a>
+                  </h4>
+               </div>
+               <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse4" aria-expanded="false">
+                  <div class="panel-body certificateSec">
+                     <div class="row">
+                        <div class="col-sm-12 col-12">
+                           <p>Pirelli has won a lot of awards in the past for its tyres and how they performed in racing competitions as well as everyday use. The international standard ISO 14001 was adopted by the brand in 1997.</p>
+                           <p>Since 2014, all certificates have been given further ANAB accreditation on an international level. In 2018, the complete lineup of Pirelli tyres was certified under the ISO 14001 standard.</p>
+                        </div>
+                        <div class="col-sm-12 col-12 certificateLogo">
+                           <img src="<?php echo $mediaUrl.'wysiwyg/anab-logo.png';?>" alt=""   />
+                           <img src="<?php echo $mediaUrl.'wysiwyg/sgs-logo.png';?>" alt=""   />
+                        </div>
+                     </div>
+                  </div>
+                  <img src="<?php echo $mediaUrl.'wysiwyg/perelli-half-tyre.png';?>" alt=""  class="full-tyre-cover"  />
+               </div>
+            </div>
+            <div class="panel panel-default">
+               <div class="panel-heading" role="tab" id="6">
+                  <h4 class="panel-title">
+                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6" class="collapsed">
+                     <i class="more-less glyphicon glyphicon-plus"></i>
+                     <i class="more-less glyphicon glyphicon-minus"></i>
+                     Pirelli Partnerships</a>
+                  </h4>
+               </div>
+               <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse6" aria-expanded="false">
+                  <div class="panel-body">
+                     <div class="row">
+                        <div class="col-md-6 col-sm-6 col-12">
+                           <p>Pirelli has positioned itself as one of the leading brands in the tyre industry. In order to strengthen its brand image and authority, it partnered with some of the most prestigious car manufacturers, including Ferrari, Maserati, Lamborghini, Porsche, Bentley, Aston Martin, Pagani and McLaren, as well as many premium car manufacturers such as Mercedes, Audi, BMW, Jaguar Land Rover and Volvo. The brand has partnerships with numerous motorcycle manufacturers such as Ducati, BMW, MV Agusta, Triumph and KTM.</p>
+                           <p>The brand continues its legacy and belief that partnerships with prestigious brands are fundamental to the Pirelli business model.</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-12 partnersLogoList">
+                           <div class="row">
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/astron-martin-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/jaguar-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/bentley-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/porsche-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/ferrari-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/bmw-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/ducati-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/mv-agusta-logo.png';?>" alt=""   />
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-12">
+                                 <img src="<?php echo $mediaUrl.'wysiwyg/ktm-logo.png';?>" alt=""   />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-12"><img  src="<?php echo $mediaUrl.'wysiwyg/perelli-car.jpg';?>" alt=""  ></div>
+   </div>
+   <!--   Single section end-->
+</div>
+
+<style type="text/css">
+    @media (max-width: 600px) {
+        .brand-detail .product-item-photo{
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        .brand-detail .product-item-details{
+            float: left;
+        }
+    }
+
+.brand-product-list {
+    clear: both;
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+</style>
+
+<style>
+   .panel-group .panel { border-radius: 0;  box-shadow: none;  border-color: #EEEEEE;
+   }
+   .panel-default > .panel-heading {padding: 0;border-radius: 0;color: #ffffff;background-color: #da1e26;border-color: #da1e26;}
+   .panel-title {font-size: 14px !important;margin: 0 !important;}
+   .panel-title > a {display: block;padding: 15px;color: black !important;text-decoration: none;}
+   .panel-title  a:hover {color: #ffffff;}
+   .more-less {float: right;color: #D80000;}
+   .panel-body p{font-size: 16px !important;}
+   .panel-body img{max-width: 100%;}
+   .panel-default > .panel-heading + .panel-collapse > .panel-body {border-top-color: #EEEEEE;}
+   /*30-10-2019*/
+   .pirelli_dtl .panel-body .tyre_info_box_new{border:#757575 solid 1px; border-radius: 15px; box-shadow: 0.407px 0.914px 5px 0px rgba(46, 46, 46, 0.25); text-align:center; overflow:hidden; margin-bottom:30px;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .new_tyre_logo{width:40%; margin:20px auto 0;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .full_tyre_img { width: 100%; overflow: hidden; display: flex; align-items: flex-start;  justify-content: center; height: 205px;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .full_tyre_img img{max-width: initial; width: 340px;  max-height: inherit;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail{background:#ececec; border-top:rgba(0,0,0,.50) solid 1px; border-radius: 0 0 15px 15px; padding:15px; letter-spacing: 1px; min-height: 165px;
+   display: flex; flex-wrap: wrap; justify-content: center;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail hr{margin:0; width:100%}
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail a{background:#d70000; color:#ffffff; text-transform:uppercase; line-height:45px; padding:0 20px; border-radius: 25px;
+   font-family: rubik;  font-weight: 500; letter-spacing: 1px; margin-top: 5px; display:inline-block;  box-shadow: 0.813px 1.827px 12px 0px rgba(46, 46, 46, 0.25); margin-top:auto; margin-bottom:0}
+   .pirelli_dtl .panel-body .d-flex {display:flex;}
+   .pirelli_dtl .panel-body .flex-wrap{flex-wrap:wrap}
+   .pirelli_webcome{position:relative; padding-left: 465px; padding-right:50px;  min-height: 162px; margin-top:35px; margin-bottom:20px;}
+   .pirelli_webcome h1.dk{position: absolute;  left: 15px;  margin: 0; top:10px}
+   .pirelli_webcome h2{text-transform:uppercase;}
+   .cms-page-view .pirelli_webcome p{font-size:20px; font-family:'Rubik'; font-weight:400; letter-spacing: 2.5px;}
+   .pirelli_webcome h1.dk .comp_logo{max-width:400px;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail a:hover,.pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail a:focus{background:#000000; color:#ffffff}
+   .pirelli_dtl .panel-body .partnersLogoList .row{display: flex; align-items: center; flex-wrap: wrap; justify-content: center; text-align: center;}
+   .pirelli_dtl .panel-body .partnersLogoList img{margin-bottom:20px; margin-top:20px;}
+   .pirelli_dtl .panel-body.certificateSec .certificateLogo{text-align:center;}
+   .pirelli_dtl .panel-body.certificateSec .certificateLogo img{margin:0 25px 30px;}
+   .pirelli_dtl .panel-body .full-tyre-cover{width:100%}
+   .pirelli_dtl .panel-body .text-center{text-align:center;}
+   .pirelli_dtl .panel-body.distributersec img{margin-bottom:50px;}
+   .tyre_info_box_new b, .tyre_info_box_new strong {    font-weight:700 !important; color: #323232 !important;}
+   .tyre_info_box p{font-size: 20px !important;}
+   .container-custom{width: 100%; max-width: inherit;}
+   .comp_logo{max-width:500px !important;}
+   .logo_explore{position:fixed; top:110px; right:20px; width:200px; display:block; z-index: 999;}
+   .logo_explore img{width:100%;}
+   .sub_heading{font-size: 22px !important; font-weight:500; display: block; letter-spacing: 2.5px; margin: 0 0 20px;}
+   .item-desc .panel-body p{font-size: 24px; font-weight: 400; letter-spacing: 2px; line-height: 32px;}
+   .tyre_feature ul{display: block; padding: 0px; margin: 0;}
+   .tyre_feature ul li{display: block; list-style: none; width: 100%; float: left;font-weight: 700 !important; font-size: 20px !important; margin: 6px 0;}
+   .tyre_feature ul li img{float: left;margin: -6px 15px 0 0;max-width: 30px;}
+   .design_euro{max-width: 300px !important;}
+   .tyre_info_box{padding: 0 100px 0 0; width: 100%;}
+   .tyre_info_box img{width: auto;}
+   .ttl_tyre_img{ display: block; margin:0px 0 25px -40px;}
+   .ttl_tyre_img img{width: auto;max-width: 65%;}
+   .orange_heading{display: block; color: #ffdd00; font-size: 22px; margin: 15px 0; font-weight: 500;  letter-spacing: 2px;}
+   .table_guarantee,
+   .table_guarantee > thead > tr > th,
+   .table_guarantee > tbody > tr > td{ border-color: #ffdd00; color: #000; font-weight: 700; text-align: center; padding: 10px;}
+   .orng_1 td{ background: #ffdd00;}
+   .orng_2 td{ background: #ee7c37;}
+   .orng_3 td{ background: #f39d69;}
+   .orng_4 td{ background: #f7bd9b;}
+   .orng_5 td{ background: #fadecd;}
+   .pirelli_dtl .panel-title > a{background: #ffdd00;    color: #000000 !important;    font-weight: 900;    font-size: 24px;    letter-spacing: 3px;    padding: 23px 40px;}
+   .pirelli_dtl .panel-body{padding:30px 40px 0;}
+   .full_img, .banner_btm{ margin: 0 -42px -3px; width: calc(100% + 84px);max-width: inherit !important;}
+   .full_img{margin-bottom: 0;}
+   .pirelli_dtl .panel-group{padding: 0 2px; margin-bottom: 3px;}
+   .pirelli_dtl .panel-body p{font-size: 20px !important; font-weight: 400; letter-spacing: 2.5px; padding-bottom: 25px;}
+   .pirelli_dtl .glyphicon{font-size: 18px; color: #000;}
+   .pirelli_dtl .collapsed .glyphicon-minus{ display: none;}
+   .pirelli_dtl .collapsed .glyphicon-plus{ display: block;}
+   .pirelli_dtl .glyphicon-plus{ display: none;}
+   .pirelli_dtl .panel{border: 0;}
+   .pirelli_dtl .panel-group .panel+.panel{margin-top: 2px;}
+   .pirelli_dtl .panel-body .about_feature{margin-top:5%; margin-bottom: 3%; padding-bottom: 30px;}
+   .pirelli_dtl .panel-body img{width:auto;}
+   .pirelli_dtl .panel-body h4{color:#000000; letter-spacing:1px;}
+   .pirelli_dtl .panel-body ul li{ color: #000000; font-size: 20px; font-weight: 400; line-height:26px; font-family: rubik; margin-bottom: 20px;}
+   .pirelli_dtl .panel-body .about_feature ul{margin-top:30px; padding:0 0 0 20px;}
+   .toggle_box{border: 3px solid #ffdd00; width: 100%; height: 100%; position: relative;}
+   .btn_view_toggle {  background: #000;    font-size: 15px; -transform: uppercase;    padding: 8px 10px;    width: 100%;    display: block;    font-weight: 500;    letter-spacing: 3px;
+   color: #fff !important;}
+   .show_text{    position: absolute;    bottom: 0;    left: 0;    border-bottom: 0px solid #ffdd00;}
+   .hide_text{    position: absolute;    top: 0;    left: 0;    border-bottom: 3px solid #ffdd00;}
+   .excl_gaurantee{ position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: #000; padding:40px 40px 0; display: none; overflow: auto;}
+   .excl_gaurantee p{color: #fff !important; line-height: 30px!important;}
+   .font_orang{color:#ffdd00}
+   .img_prod_tyre{text-align: center;}
+   .img_prod_tyre img{width: 65%; margin-bottom: 20px;}
+   .custom_container.cms-margin-bottom.davanti-logo {max-width: 100% !important;}
+   /* Play Button */
+   .topfullimage{width: 100%; float: left; margin: 0;}
+   .cms-page-view .column.main .custom_container{float: left; width: 100%;}
+   .video_link{ position: relative; width: 100%; float: left;}
+   .video_overlay{ position:absolute; display:block; width:100%; height:100%; left:0px; top:0px; background:rgba(0,0,0,.5); background-image:url(https://dzd7a0731x0nr.cloudfront.net/media/wysiwyg/icn-play-video.png); background-repeat:no-repeat; background-position:  center center; background-size: 70px auto; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; opacity: 0;}
+   .video_link:hover .video_overlay{ opacity: 1;}
+   .clear{clear: both;}
+   /* Extra Large Screen */
+   @media (min-width: 1800px){
+   .tyre_info_box p{font-size: 24px !important;}
+   .logo_explore{ top:110px; right:20px; width:200px;}
+   .sub_heading{font-size: 24px !important;}
+   .item-desc .panel-body p{font-size: 24px; line-height: 32px; }
+   .tyre_feature ul li{ font-size: 20px !important; }
+   .orange_heading{ font-size: 22px; }
+   .pirelli_dtl .panel-title > a{font-size: 32px; padding: 40px 80px;}
+   .pirelli_dtl .panel-body{padding:40px 80px 0;}
+   .pirelli_dtl .panel-body p{font-size: 20px !important;}
+   .pirelli_dtl .glyphicon{font-size: 18px;}
+   .ttl_tyre_img{ margin: 0px 0 25px -80px;}
+   .full_img, .banner_btm{ margin: 0 -82px -3px; width: calc(100% + 164px);}
+   .full_img{margin-bottom: 0;}
+   .pirelli_dtl .panel-group .panel+.panel{margin-top: 3px;}
+   .table_guarantee, .table_guarantee > thead > tr > th, .table_guarantee > tbody > tr > td{padding: 15px;}
+   .toggle_box{border: 4px solid #ffdd00;}
+   .btn_view_toggle {font-size: 24px;}
+   .hide_text{    border-bottom: 4px solid #ffdd00;}
+   .excl_gaurantee{padding:50px 40px 0;}
+   .excl_gaurantee p{line-height: 42px!important;}
+   .img_prod_tyre img{width: 62%;}
+   .pirelli_webcome h2{font-size:40px;}
+   }
+   @media screen and  (max-width: 1550px){
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail{min-height:175px;}
+   }
+   @media screen and  (max-width: 1500px){
+   .pirelli_dtl .panel-body .tyre_info_box_new .full_tyre_img img{width:250px;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .full_tyre_img{height:150px;}
+   .pirelli_webcome h1.dk .comp_logo { max-width: 300px !important;}
+   .pirelli_webcome {  position: relative;  padding-left: 350px;}
+   }
+   @media screen and  (max-width: 1399px){
+   .pirelli_webcome{min-height:105px;}
+   .cms-page-view .pirelli_webcome p { font-size: 14px !important; line-height: 22px;}
+   }
+   /* Laptop Screen */
+   @media all and (min-width: 1200px) and  (max-width: 1399px){
+   .tyre_info_box p{font-size: 18px !important;}
+   .logo_explore{ top:110px; right:20px; width:200px;}
+   .sub_heading{font-size: 18px !important;}
+   .item-desc .panel-body p{font-size: 18px; }
+   .tyre_feature ul li{ font-size: 16px !important; }
+   .orange_heading{ font-size: 18px; }
+   .pirelli_dtl .panel-title > a{font-size: 22px; padding: 20px 40px;}
+   .pirelli_dtl .panel-body{padding:20px 40px 0;}
+   .pirelli_dtl .panel-body p{font-size: 14px !important; line-height: 22px;}
+   .pirelli_dtl .panel-body ul li{font-size: 14px; line-height: 22px; margin-bottom: 15px;}
+   .pirelli_dtl .glyphicon{font-size: 16px;}
+   .ttl_tyre_img{ margin: 0px 0 25px -40px;}
+   .banner_btm{ margin: 0 -42px -3px; width: calc(100% + 84px);}
+   .pirelli_dtl .panel-group .panel+.panel{margin-top: 2px;}
+   .table_guarantee, .table_guarantee > thead > tr > th, .table_guarantee > tbody > tr > td{padding: 10px;}
+   .toggle_box{border: 3px solid #ffdd00;}
+   .btn_view_toggle {font-size: 15px;}
+   .hide_text{    border-bottom: 3px solid #ffdd00;}
+   .excl_gaurantee{padding:50px 30px 0;}
+   .pirelli_dtl .panel-body .excl_gaurantee p{line-height: 24px!important;}
+   .img_prod_tyre img{width: 75%;}
+   }
+   @media screen and  (max-width: 1024px){
+   .pirelli_webcome h1.dk .comp_logo { max-width: 250px !important;}
+   .pirelli_webcome {  position: relative;  padding-left: 300px; padding-right: 30px;}
+   }
+   @media screen and  (max-width: 1280px){
+   .pirelli_dtl .panel-body .tyre_info_box_new .full_tyre_img img{width:180px;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .full_tyre_img{height:110px;}
+   }
+   /*Small Desktop screen*/
+   @media (max-width: 1199px){
+   .tyre_info_box p{font-size: 14px !important;}
+   .logo_explore{ top:110px; right:20px; width:150px;}
+   .sub_heading{font-size: 14px !important;}
+   .item-desc .panel-body p{font-size: 14px; }
+   .tyre_feature ul li{ font-size: 14px !important; }
+   .design_euro {
+   max-width: 250px !important;
+   }
+   .orange_heading{ font-size: 14px; }
+   .pirelli_dtl .panel-title > a{font-size: 18px; padding: 18px 30px;}
+   .pirelli_dtl .panel-body{padding:20px 40px 0;}
+   .pirelli_dtl .panel-body p{font-size: 14px !important; line-height: 22px;}
+   .pirelli_dtl .glyphicon{font-size: 14px;}
+   .ttl_tyre_img{ margin: 0px 0 25px -40px;}
+   .banner_btm{ margin: 0 -42px -3px; width: calc(100% + 84px);}
+   .pirelli_dtl .panel-group .panel+.panel{margin-top: 2px;}
+   .table_guarantee, .table_guarantee > thead > tr > th, .table_guarantee > tbody > tr > td{padding: 10px;}
+   .toggle_box{border: 3px solid #ffdd00;}
+   .btn_view_toggle {font-size: 15px;}
+   .hide_text{    border-bottom: 3px solid #ffdd00;}
+   .excl_gaurantee{padding:50px 30px 0;}
+   .pirelli_dtl .panel-body .excl_gaurantee p{line-height: 24px!important;}
+   .img_prod_tyre img{width: 100%;}
+   }
+   @media screen and (max-width: 1024px){
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail { min-height: 210px;}
+   }
+   @media screen and (max-width: 991px){
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail {  min-height: 160px;}
+   }
+   /* iPad Tablet Portrait */
+   @media all and (min-width: 768px) and (max-width: 992px){
+   .pirelli_dtl .panel-body p {      line-height: 20px;    letter-spacing: 2px;}
+   .pirelli_dtl .panel-body {   padding: 20px 30px 0;}
+   .tyre_info_box {    padding: 0 20px 0 0;}
+   .ttl_tyre_img img {   max-width: 85%;}
+   .img_prod_tyre img{width:100%;}
+   }
+   /* Mobile */
+   @media screen and (max-width: 599px){
+   #collapse2 .panel-body .col-xs-6{width:100%}
+   }
+   @media screen and (max-width: 767px){
+   .pirelli_dtl .panel-body.certificateSec .certificateLogo img{max-width: calc(50% - 35px); margin: 0 15px 30px;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail a{margin-top:20px;}
+   .pirelli_webcome h1.dk{position:relative; left:0; top:0}
+   .pirelli_webcome { padding-left: 0;  padding-right: 0;  text-align: center;}
+   .cms-page-view .pirelli_webcome p{text-align:center;}
+   }
+   @media screen and (max-width: 750px){
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail { min-height: 210px;}
+   }
+   @media all and (min-width: 320px) and (max-width: 767px){
+   .comp_logo {    max-width: 300px !important;}
+   .logo_explore {        right: 15px;    width: 100px;}
+   .pirelli_dtl .panel-title > a {    font-size: 16px;    padding: 15px 20px;}
+   .design_euro {    max-width: 180px !important;}
+   .pirelli_dtl .panel-body p{letter-spacing: 1px;     text-align: inherit;}
+   .pirelli_dtl .panel-body {    padding: 20px 20px 0;}
+   .tyre_info_box{padding: 0;}
+   .img_prod img{ display: block; margin: 0 auto; width: 60%;}
+   .ttl_tyre_img img {    max-width: 90%;}
+   .excl_gaurantee {    padding: 40px 20px 0;}
+   .img_prod_tyre img{width: 65%;}
+   }
+   /* Smaller Mobile Device */
+   @media all and (max-width: 575px){
+   .img_prod_tyre img{width: 80%;}
+   .pirelli_dtl .panel-body .tyre_info_box_new .tyre_info_detail { min-height: 100px;}
+   }
+   .panel-title>a.collapsed:before{display:none;}
+   .panel-title>a:before {display:none;}
+</style>
+<script>
+   jQuery(function($){
+       $('.btn_view_toggle').on('click', function () {
+           $('.excl_gaurantee').slideToggle();
+       });
+   
+   
+   // Gets the video src from the data-src on each button
+   
+   // document ready
+   
+   
+   
+   });
+   
+</script>

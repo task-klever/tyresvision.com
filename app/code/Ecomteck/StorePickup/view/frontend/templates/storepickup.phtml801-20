@@ -1,0 +1,49 @@
+<?php
+$stores=$block->getStorePickupList();
+$storePickupImagepath=$block->getStorePickupMediaPath();
+
+foreach ($stores as $key => $store) { 
+
+	?>
+<form action="<?php echo $this->getUrl('storepickup/index/selectstore') ?>"  class="checkoutselectstore" method="post">
+
+	<input type="hidden" name="pickup_store" value="<?php echo $store->getStoreId() ?>">
+	<div class="storepickupdiv">
+		<ul class="storepickulist">
+            <li data-markerid="0"  class="list-focus">
+                    <div class="loc-image">
+                        <img src="<?php echo $storePickupImagepath.$store['image'] ?>">
+                    </div>
+	                <div class="list-details">
+	                    <div class="loc-name"><?php echo $store['name'] ?></div>
+	                    <div class="loc-description"><?php echo $store['description'] ?></div>
+	                    <div class="list-content">
+	                        <div class="loc-addr"><b><?php __('Address:') ?> </b><?php echo $store['address'] ?> </div>
+	                            <div class="loc-phone">
+	                                <b><?php __('Phone:') ?> </b>
+	                                <a href="tel:5454343401" target="_blank"><?php echo $store['phone'] ?></a>
+	                            </div>
+	                            <div class="loc-email"><b><?php __('E-Mail:') ?></b><a href="mailto:<?php echo $store['email'] ?>" target="_blank"><?php echo $store['email'] ?></a></div>
+	                    </div>
+	                </div>
+	                <div class="pickup-date">
+						<label class="label"><?php __('Pick Up Date') ?></label>
+						<div class="control">
+							<input class="input-text" type="text"  value="" name="pickup_date" />
+						</div>
+						<div class="pickup-time">
+							<label class="label"><?php __('Pick Up Time')?></label>
+							<div class="control">
+								<input class="input-text" type="text"  value="" name="pickup_time" />
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<button type="submit" name="proceedtocheckout"><?php echo __('Proceed To Checkout')?></button>
+					</div>
+
+            </li>
+         </ul>
+	</div>	
+</form>	
+<?php }

@@ -1,0 +1,443 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\View */ ?>
+
+<?php $_product = $block->getProduct(); ?>
+<?php $themeHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+
+<?php if($_product->getMgsDetailTemplate() == ""): ?>
+	<?php $templateLayout = $themeHelper->getStoreConfig('mpanel/product_details/product_ct_template'); ?>
+<?php else: ?>
+	<?php $templateLayout = $_product->getMgsDetailTemplate(); ?>
+<?php endif ?>
+
+<?php $galleryPopup = $themeHelper->getStoreConfig('mpanel/product_details/popup_gallery'); ?>
+<?php $stickyMenu = $themeHelper->getStoreConfig('mgstheme/general/sticky_menu'); ?>
+<?php $cr_header = $themeHelper->getStoreConfig('mgstheme/general/header'); ?>
+<?php $class = "product-detail-media"; ?>
+
+<?php if(!$templateLayout): ?><?php $templateLayout = 0; ?><?php endif ?>
+<input id="mgs_template_layout" type="hidden" name="mgs_template_layout" value="<?php echo $templateLayout; ?>">
+<input id="galleryPopup" type="hidden" name="galleryPopup" value="<?php echo $galleryPopup; ?>">
+<?php echo $block->getChildHtml('product.info.popup.gallery') ?>
+
+<?php if ($priceAmount = $_product->getFinalPrice()):?>
+	<div class="no-display price product-price"><?php echo $priceAmount; ?></div>
+<?php endif;?>
+
+<?php 
+$listingHelper = $this->helper('Hdweb\Tyrefinder\Helper\Productlisting');
+$isAnyRuleExist=$listingHelper->isAnyRuleExist($_product->getEntityId());   
+    $borderColor="";    
+    if(count($isAnyRuleExist) > 0 ){
+        $borderColor='border:2px solid '.$isAnyRuleExist[1].';border-radius:5px';
+    }
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();	
+$mediaUrl = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+?>
+
+<?php if($templateLayout != 5): ?>
+	<?php if($templateLayout == 3): ?>
+		<?php //Product with sticky info 2  ?>
+		<div class="row sticky-info-multiple-col">
+			<div class="col-lg-3 hidden-md hidden-sm hidden-xs product-detail-infomation  product-detail-infomation-sticky">
+				<div class="product-detail-infomation-content <?php if($stickyMenu && $cr_header): ?> has-sticky-menu<?php endif ?>">
+					<?php echo $block->getChildHtml('alert_urls') ?>
+					<div class="product-info-main">
+						<?php echo $block->getChildHtml('product.info.name') ?>
+						<?php echo $block->getChildHtml('product.info.overview') ?>
+						<?php echo $block->getChildHtml('product.info.price') ?>
+						<?php echo $block->getChildHtml('product.price.tier') ?>
+						<?php echo $block->getChildHtml('product.info.main') ?>
+						<div class="product-sub-infomation">
+							<div class="product-info-stock-sku">
+								<?php echo $block->getChildHtml('product.info.type') ?>
+							</div>
+							<?php echo $block->getChildHtml('product.info.sku') ?>
+							<?php echo $block->getChildHtml('product.brand.name') ?>
+						</div>
+						<?php echo $block->getChildHtml('product.info.review') ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-6 col-xs-12<?php if($galleryPopup): ?> product-gallery-popup<?php endif ?>">
+				<div class="<?php echo $class; ?>">
+					<?php echo $block->getChildHtml('product.info.media.image') ?>
+				</div>		
+			</div>
+			<div class="col-lg-3 col-sm-6 col-xs-12 product-detail-infomation  product-detail-infomation-sticky">
+				<div class="product-info-main <?php if($stickyMenu && $cr_header != 'header_5'): ?> has-sticky-menu<?php endif ?>">
+					<div class="hidden-lg">
+						<?php echo $block->getChildHtml('alert_urls') ?>
+						<?php echo $block->getChildHtml('product.info.name') ?>
+						<?php echo $block->getChildHtml('product.info.overview') ?>
+						<?php echo $block->getChildHtml('product.info.price') ?>
+						<?php echo $block->getChildHtml('product.price.tier') ?>
+					</div>
+					<?php echo $block->getChildHtml('product.info.main') ?>
+					<?php echo $block->getChildHtml('bundle.options.container') ?>
+					<?php echo $block->getChildHtml('product.info') ?>
+					<?php echo $block->getChildHtml('custom.product.detail.top.static.block') ?>
+
+					<div class="product-sub-infomation hidden-lg">
+						<?php /* <div class="product-info-stock-sku">
+							<?php echo $block->getChildHtml('product.info.type') ?>
+						</div> */ ?>
+						<?php echo $block->getChildHtml('product.brand.name') ?>
+						<?php echo $block->getChildHtml('product.info.sku') ?>
+					</div>
+					<?php echo $block->getChildHtml('product.info.review') ?>
+					<?php if($themeHelper->getStoreConfig('mpanel/share_config/share_product_detail')): ?>
+						<div class="text-center margin-top20">
+							<?php echo $block->getChildHtml('product.detail.sharethis') ?>
+						</div>
+					<?php endif ?>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		require([
+			'jquery',
+			'sticky-content'
+			], function($){
+				$(window).scroll(function(){
+					$(".product-detail-infomation-sticky").stick_in_parent({
+						parent: $('.sticky-info-multiple-col')
+					});
+				});
+			});
+		</script>
+	<?php else: ?>
+		<div class="row product-detail-infomation-sticky-parent">
+			<div class="col-sm-6 col-xs-12<?php if($galleryPopup): ?> product-gallery-popup<?php endif ?>">
+				<div class="<?php echo $class; ?>">
+					<?php echo $block->getChildHtml('product.info.media.image') ?>
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12 product-detail-infomation product-detail-infomation-sticky">
+				<div class="product-detail-infomation-content<?php if($themeHelper->getStoreConfig('mgstheme/general/sticky_menu') && $themeHelper->getStoreConfig('mgstheme/general/header') != 'header_5'): ?> has-sticky-menu<?php endif ?>">
+					<?php echo $block->getChildHtml('alert_urls') ?>
+					<div class="product-info-main">
+
+						<?php echo $block->getChildHtml('product.info.name') ?>
+						<?php echo $block->getChildHtml('product.info.overview') ?>
+
+						<div class="product-sub-infomation">
+						<?php /* <div class="product-info-stock-sku">
+							<?php echo $block->getChildHtml('product.info.type') ?>
+						</div> */ ?>
+						<?php echo $block->getChildHtml('product.info.name') ?>
+						<?php echo $block->getChildHtml('product.brand.name') ?>
+						<div class="product attribute1 name">
+							<span class="value" itemprop="name"><strong class="type" style="font-weight: 900"><?php echo $_product->getName();?></strong></span>
+						</div>
+						<?php /* start vehicle compatible */ ?>
+						<?php
+						$vehicle_compatible = $_product->getResource()->getAttribute("vehicle_compatible")->getFrontend()->getValue($_product);
+						?>
+						<?php if($vehicle_compatible):?>
+							<?php $vehicle_compatibleArray = explode(', ', $vehicle_compatible);?>
+							<div class="product attribute vehicle_compatible">
+								<strong class="type"><?php echo __('Vehicle Compatible : ');?> </strong>
+								<ul class="list-compatible show-more-height">
+								<?php foreach($vehicle_compatibleArray as $vehicle_compatibleData):?>
+									<li><?php echo $vehicle_compatibleData; ?></li>
+								<?php endforeach ?>
+								</ul>
+								 <div class="show-more">Show More +</div>
+							</div>
+						<?php endif; ?>
+						<?php /* end vehicle compatible */ ?>
+						<?php echo $block->getChildHtml('product.info.sku') ?>
+
+						<?php if($themeHelper->getStoreConfig('mpanel/share_config/share_product_detail')): ?>
+							<?php echo $block->getChildHtml('product.detail.sharethis') ?>
+						<?php endif ?>
+						</div>
+
+			   			<div class="tyre_offers detail_tyre_offers">
+                            <?php if(count($isAnyRuleExist) > 0  ) { ?>
+                             <img alt="Tyre Offers" class="img_tyre_offer detail_img_tyre_offer" src="<?php  echo $isAnyRuleExist[0] ?>" />
+                            <?php } ?>    
+                        </div>
+
+						<?php echo $block->getChildHtml('product.info.price') ?>
+						<?php echo $block->getChildHtml('product.price.tier') ?>
+						<?php echo $block->getChildHtml('product.info.main') ?>
+						<?php echo $block->getChildHtml('bundle.options.container') ?>
+						<?php echo $block->getChildHtml('product.info') ?>
+						<?php echo $block->getChildHtml('custom.product.detail.top.static.block') ?>
+
+						<?php echo $block->getChildHtml('product.info.review') ?>
+
+						<?php if($themeHelper->getStoreConfig('protabs/general/position')): ?>
+							<?php echo $block->getChildHtml('product.info.details') ?>
+						<?php endif ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12">
+				<div class="you-may-like">
+				<div class="content-heading">
+					<h3 class="title">You may also like</h3>
+				</div>
+
+                  <div class="row">
+                  	<div class="col-sm-4 col-xs-12">
+                  		<div class="box">
+                  			<a href="https://wa.me/971800847466" target="_blank">
+                  			<div class="image-wrap">
+                  			    <img src="<?php echo $mediaUrl.'images/Rims-Wheel.jpg'; ?>" alt="">
+                  			</div>
+                  		    </a>
+                  			<div class="title">
+                  				<h3>Rims/Wheels</h3>
+                  			</div>
+                  			<a href="https://wa.me/971800847466" target="_blank" title="WhatsApp Us" class="action">
+                                 <i class="fa fa-whatsapp"></i><span> WhatsApp Us</span>                                     
+                            </a>
+                  		</div>
+                  	</div>
+                  		<div class="col-sm-4 col-xs-12">
+                  		<div class="box">
+                  			<a href="https://wa.me/971800847466" target="_blank">
+                  			<div class="image-wrap">
+                  			    <img src="<?php echo $mediaUrl.'images/Battery-Bosch.jpg'; ?>" alt="">
+                  			</div>
+                  			</a>
+                  			<div class="title">
+                  				<h3>Battery</h3>
+                  			</div>
+                  			<a href="https://wa.me/971800847466" target="_blank" title="WhatsApp Us" class="action">
+                                 <i class="fa fa-whatsapp"></i><span> WhatsApp Us</span>                                     
+                            </a>
+                  		</div>
+                  	</div>
+                  		<div class="col-sm-4 col-xs-12">
+                  		<div class="box">
+                  			<a href="https://wa.me/971800847466" target="_blank">
+                  			<div class="image-wrap">
+                  			    <img src="<?php echo $mediaUrl.'images/Brake-Pad.jpg'; ?>" alt="">
+                  			</div>
+                  			</a>
+                  			<div class="title">
+                  				<h3>Brake Pad</h3>
+                  			</div>
+                  			<a href="https://wa.me/971800847466" target="_blank" title="WhatsApp Us" class="action">
+                                 <i class="fa fa-whatsapp"></i><span> WhatsApp Us</span>                                     
+                            </a>
+                  		</div>
+                  	</div>
+                  </div>
+                </div>
+			</div>
+		</div>
+	<?php endif ?>
+	<?php if(!$themeHelper->getStoreConfig('protabs/general/position') || $templateLayout== 3): ?>
+		<?php echo $block->getChildHtml('product.info.details') ?>
+	<?php endif ?>
+	<?php if($templateLayout == 2): ?>
+		<script type="text/javascript">
+		require([
+			'jquery',
+			'sticky-content'
+			], function(jQuery){
+				(function($) {
+					$(window).scroll(function(){
+						$(".product-detail-infomation-sticky").stick_in_parent({
+							parent: $('.product-detail-infomation-sticky-parent')
+						});
+					});
+				})(jQuery);
+			});
+		</script>
+	<?php endif ?>
+<?php else:?>
+	<div class="row product-detail-infomation-slide-gallery">
+		<div id="slide-gallery" class="<?php echo $class; ?>">
+			<?php echo $block->getChildHtml('product.info.media.image') ?>
+		</div>
+		<div class="product-detail-infomation-content<?php if($themeHelper->getStoreConfig('mgstheme/general/sticky_menu') && $themeHelper->getStoreConfig('mgstheme/general/header') != 'header_5'): ?> has-sticky-menu<?php endif ?>">
+			<?php echo $block->getChildHtml('alert_urls') ?>
+			<div class="product-info-main">
+				<?php echo $block->getChildHtml('product.info.name') ?>
+				<?php echo $block->getChildHtml('product.info.overview') ?>
+				<?php echo $block->getChildHtml('product.info.price') ?>
+				<?php echo $block->getChildHtml('product.price.tier') ?>
+				<?php echo $block->getChildHtml('product.info.main') ?>
+				<?php echo $block->getChildHtml('bundle.options.container') ?>
+				<?php echo $block->getChildHtml('product.info') ?>
+				<?php if($themeHelper->getStoreConfig('mpanel/share_config/share_product_detail')): ?>
+					<?php echo $block->getChildHtml('product.detail.sharethis') ?>
+				<?php endif ?>
+				<?php echo $block->getChildHtml('custom.product.detail.top.static.block') ?>
+				<div class="product-sub-infomation">
+					<div class="product-info-stock-sku">
+						<?php echo $block->getChildHtml('product.info.type') ?>
+					</div>
+					<?php echo $block->getChildHtml('product.info.sku') ?>
+					<?php echo $block->getChildHtml('product.brand.name') ?>
+				</div>
+				<?php echo $block->getChildHtml('product.info.review') ?>
+
+				<?php if($themeHelper->getStoreConfig('protabs/general/position')): ?>
+					<?php echo $block->getChildHtml('product.info.details') ?>
+				<?php endif ?>
+
+			</div>
+		</div>
+		<?php echo $block->getChildHtml('product.info.details') ?>
+		<script type="text/javascript">
+			require([
+			'jquery'
+			], function(jQuery){
+				(function($) {
+					$(document).ready(function(){
+						$('#slide-gallery').insertAfter('.breadcrumbs');
+					});
+				})(jQuery);
+			});
+		</script>
+	</div>
+<?php endif ?>
+<script type="text/javascript">
+	require([
+	'jquery'
+	], function(jQuery){
+		(function($) {
+			$(document).ready(function(){
+				$('.product-info-main .product-reviews-summary a').click(function(event){
+					event.returnValue = false;
+					event.preventDefault();
+					$('html, body').animate({
+						scrollTop: $(".product.info.detailed").offset().top - 150
+					}, 300);
+					<?php if(!$themeHelper->getStoreConfig('protabs/general/type')): ?>
+					if($(window).width() > 767){
+						$('#tab-label-reviews-title').click();
+					}else {
+						$('.title-accordion.accordion-reviews').click();
+					}
+					<?php else: ?>
+					if(!$('.title-accordion.accordion-reviews').hasClass('active')){
+						$('.title-accordion.accordion-reviews').click();
+					}
+					<?php endif ?>
+				});
+			});
+		$(document).ready(function(){	
+         $(".show-more").click(function () {
+		        if($(".list-compatible").hasClass("show-more-height")) {
+		            $(this).text("Show Less -");
+		        } else {
+		            $(this).text("Show More +");
+		        }
+		        $(".list-compatible").toggleClass("show-more-height");
+			});
+		         	$(".list-compatible").each(function() {
+
+		var $minHeight = 127;
+		//you need the height of the div you are currently iterating on: use this
+		if ( $(this).height() > $minHeight) {
+		//find the img in this div and hide it
+		$(".show-more").addClass('show')
+		}
+
+		});
+			});
+		})(jQuery);
+	});
+</script>
+<style type="text/css">
+	.detail_img_tyre_offer{
+		margin:10px 0px 5px 0px;
+		width: 50%;
+	}
+.you-may-like{
+	margin-top: 70px;
+}
+
+.you-may-like .box{
+	text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.you-may-like .box .image-wrap img{
+	max-width: 100%;
+    max-height: 210px;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.you-may-like .box:hover .image-wrap img{
+	filter: grayscale(1);
+    transform: scale(1.03);
+}
+
+.you-may-like .box .title{
+	margin-top: 20px;
+}
+
+.you-may-like .box .action{
+	display: inline-block;
+    margin-top: 15px;
+    padding: 9px 33px;
+    background-color: #000;
+    color: #4bcf2e;
+    border: none;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.you-may-like .box .title h3{
+	font-size: 15px;
+}
+
+@media screen and (max-width:767px){
+
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+	.you-may-like .box .image-wrap img{
+		max-height: 125px;
+	}
+	.you-may-like .box .action{
+		padding: 9px 25px;
+	}
+}
+@media screen and (min-width:992px) and (max-width:1199px){
+	.you-may-like .box .image-wrap img{
+		max-height: 170px;
+	}
+}
+.product-info-main .product-sub-infomation .product.attribute.name strong:after {
+    content: ":";
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.product-info-main .product-sub-infomation .vehicle_compatible ul.show-more-height {
+    max-height: 128px;
+    overflow: hidden;
+}
+
+.product-info-main .product-sub-infomation .vehicle_compatible ul li{
+	padding: 4px 15px;
+}
+
+</style>

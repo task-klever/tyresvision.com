@@ -1,0 +1,88 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$tyreSizeCatId = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('hdwebconfig/general/tyre_size_cat_id');
+if($tyreSizeCatId){
+    $baseUrl = $this->getBaseUrl();
+    $categoryCollection = $objectManager->get('Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+    $tyreSizeChildCatCollection = $categoryCollection
+            ->create()
+            ->addAttributeToSelect('parent_id')
+            ->addAttributeToSelect('name')
+            ->addAttributeToFilter('parent_id', $tyreSizeCatId)
+            ->setOrder('name', 'ASC')
+            ->load();
+}
+?>
+<div class="container custom-width">
+    <?php if($tyreSizeCatId): ?>
+        <?php if(count($tyreSizeChildCatCollection->getData()) > 0): ?>
+            <div class="section section-padding alltyresize allbrands">
+                
+                <div class="content-heading text-center">
+<h1 class="title"><?php echo __('All Tyre Size'); ?></h1>
+</div>
+                <div class="search">
+                    <input type="text" class="input-text" id="all-tyre-size-search" autocomplete="off" placeholder="Search here..." title="Search here">
+                      <button class="serch-btn" aria-label="Serach">
+                       <span>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M384 208A176 176 0 1 0 32 208a176 176 0 1 0 352 0zM343.3 366C307 397.2 259.7 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 51.7-18.8 99-50 135.3L507.3 484.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L343.3 366z"/></svg></span>
+                    </button>
+                </div>
+                <ul class="select-year list-none all-tyre-size-searchUL">
+                    <?php foreach ($tyreSizeChildCatCollection as $subcategories): ?>
+                        <?php  $child = $objectManager->create('Magento\Catalog\Model\Category')->load($subcategories->getId());?>
+                        <?php if($child->getId()): ?>
+                            <?php 
+                            $categoryUrl = $baseUrl.$child->getUrlPath().'.html';
+                            $optionText = $child->getName();
+                            $optionTextNoSpace = str_replace(' ','',$optionText); 
+                            $optionText1 = str_replace('R','',$optionTextNoSpace); 
+                            $optionText2 = str_replace('/','',$optionText1); 
+                            $optionText3 = str_replace('/','',$optionTextNoSpace);
+                            $optionText4 = str_replace('R','/',$optionTextNoSpace);
+                            $optionText5 = str_replace('/',' ',$optionText);
+                            $optionText5 = str_replace('R','',$optionText5);
+                            $optionTextString = $optionTextNoSpace.' '.$optionText2.' '.$optionText3.' '.$optionText4.' '.$optionText5.' '.$optionText;
+                            ?>
+                            <li class="li-search select-year-name " data-lookup="<?php echo $optionTextString;?>">
+                                <a href="<?php echo $categoryUrl;?>" class="" title="<?php echo __($child->getName());?>"><?php echo __($child->getName());?> </a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <script>
+                document.addEventListener('keyup', function(event) {
+                    const ids = ['all-tyre-size-search'];
+                    if (ids.includes(event.target.id)) {
+                        var value = event.target.value.toLowerCase();
+                        var liElements = document.querySelectorAll('.all-tyre-size-searchUL .li-search');
+                        liElements.forEach(function(liElement) {
+                            var dataLookup = liElement.getAttribute('data-lookup').toLowerCase();
+                            //liElement.style.display = liElement.textContent.toLowerCase().indexOf(value) > -1 ? 'block' : 'none';
+                            liElement.style.display = dataLookup.indexOf(value) > -1 ? 'block' : 'none';
+                        });
+                    }
+                });
+            </script>
+        <?php else: ?>
+            <div class="message info empty shadow-none">
+                <span><?= $escaper->escapeHtml(__('Can not find any child categories of category id: '.$tyreSizeCatId)) ?></span>
+                <a href="javascript:void(0)" class="close cursor-pointer absolute right-2 top-3" title="close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-white" width="18" height="18">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </a>
+            </div>    
+        <?php endif; ?>
+    <?php else: ?>
+        <div class="message info empty shadow-none">
+            <span><?= $escaper->escapeHtml(__('Please enter Tyre Size Category Id in system configuration at admin site')) ?></span>
+            <a href="javascript:void(0)" class="close cursor-pointer absolute right-2 top-3" title="close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="text-white" width="18" height="18">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>

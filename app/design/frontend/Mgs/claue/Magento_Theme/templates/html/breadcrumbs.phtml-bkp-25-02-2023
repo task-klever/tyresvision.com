@@ -1,0 +1,51 @@
+<?php   
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$requestInterface = $objectManager->get('Magento\Framework\App\RequestInterface');
+$actionaname=$requestInterface->getFullActionName();
+// start for motorcycle finder changes
+$tyFinderHelper = $this->helper('Hdweb\Tyrefinder\Helper\Data');
+$currentCategory = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+if ($currentCategory) {
+	$currentCategoryId = $currentCategory->getId();
+	if ($currentCategoryId == $tyFinderHelper->getCarTyCatId()) {
+		echo $this->getLayout()->createBlock("Hdweb\Tyrefinder\Block\Finderpopup")->setTemplate("Hdweb_Tyrefinder::tyre_finder_block.phtml")->toHtml();
+	} else {
+		echo $this->getLayout()->createBlock("Hdweb\Tyrefinder\Block\Finderpopup")->setTemplate("Hdweb_Tyrefinder::motorcycle_tyre_finder_block.phtml")->toHtml();
+	}
+}
+if($actionaname == 'catalogsearch_advanced_result') { 
+	echo $this->getLayout()->createBlock("Hdweb\Tyrefinder\Block\Finderpopup")->setTemplate("Hdweb_Tyrefinder::tyre_finder_block.phtml")->toHtml();	
+}
+// end for motorcycle finder changes
+
+//need to comment for adding motorcycle finder	
+/*if( $actionaname == 'catalog_category_view'  || $actionaname == 'catalogsearch_advanced_result') { 
+	echo $this->getLayout()->createBlock("Hdweb\Tyrefinder\Block\Finderpopup")->setTemplate("Hdweb_Tyrefinder::tyre_finder_block.phtml")->toHtml();	
+}*/
+
+?>
+<?php if ($crumbs && is_array($crumbs)) : ?>
+<?php $mgsHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<div class="breadcrumbs">
+	<div class="<?php if($mgsHelper->getStoreConfig('mpanel/breadcrumbs/fullwidth')): ?>container-fluid<?php else: ?>container<?php endif ?>">
+		<ul class="items">
+			<?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+				<li class="item <?php /* @escapeNotVerified */ echo $crumbName ?>">
+				<?php if ($crumbInfo['link']) : ?>
+					<a href="<?php /* @escapeNotVerified */ echo $crumbInfo['link'] ?>" title="<?php echo $block->escapeHtml($crumbInfo['title']) ?>">
+						<?php echo $block->escapeHtml($crumbInfo['label']) ?>
+					</a>
+				<?php elseif ($crumbInfo['last']) : ?>
+					<strong><?php echo $block->escapeHtml($crumbInfo['label']) ?></strong>
+				<?php else: ?>
+					<?php echo $block->escapeHtml($crumbInfo['label']) ?>
+				<?php endif; ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<?php if($mgsHelper->getStoreConfig('mpanel/share_config/share_product_detail')): ?>
+			<?php echo $block->getChildHtml('product.catalog.sharethis') ?>
+		<?php endif ?>
+	</div>
+</div>
+<?php endif; ?>

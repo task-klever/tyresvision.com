@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+     
+        <section id="productsearch" translate="label" type="text" sortOrder="1" showInStore="1" showInDefault="1" showInWebsite="1">
+            <class>separator-top</class>
+            <label>Productsearch</label>
+            <tab>hdweb</tab>
+            <resource>Hdweb_Productsearch::config_productsearch</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>General</label>
+                 <field id="mobile_installer_id" type="text" translate="label" sortOrder="100" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Mobile Installer Id</label>
+                   
+                </field>
+
+                 <field id="ipaddress" type="textarea" translate="label" sortOrder="100" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>IP addresss List</label>
+                    <comment>Comma separated value</comment>
+                   
+                </field>
+               
+            </group>
+        </section>
+		<tab id="hdweb" translate="label" sortOrder="300">
+            <label>Hdweb</label>
+        </tab>
+		<section id="purchaseorder" translate="label" type="text" sortOrder="1" showInStore="1" showInDefault="1" showInWebsite="1">
+            <class>separator-top</class>
+            <label>Purchase Order</label>
+            <tab>hdweb</tab>
+            <resource>Hdweb_Purchaseorder::config_purchaseorder</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>General</label>
+                 <field id="po_logo_name" type="text" translate="label" sortOrder="1" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order PDF Logo Name</label>
+                    <comment>Enter Logo name where image located at pub/media directory. Like logo.png</comment>
+                </field>
+				<field id="po_store_name" type="text" translate="label" sortOrder="2" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order PDF Store Name</label>
+                </field>
+				<field id="po_store_address_street1" type="text" translate="label" sortOrder="2" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Store address Street 1</label>
+                </field>
+				<field id="po_store_address_street2" type="text" translate="label" sortOrder="3" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Store address Street 2</label>
+                </field>
+				<field id="po_trn_no" type="text" translate="label" sortOrder="4" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>TRN</label>
+                </field>
+				<field id="po_phone_no" type="text" translate="label" sortOrder="5" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order PDF Phone No</label>
+                </field>
+				<field id="po_website" type="text" translate="label" sortOrder="6" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order PDF Website</label>
+                </field>
+				<field id="po_contact_person" type="text" translate="label" sortOrder="7" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order Contact Person</label>
+                </field>
+				<field id="po_contact_person_phone_no" type="text" translate="label" sortOrder="8" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order Contact Person Phone No</label>
+                </field>
+				<field id="po_contact_person_email" type="text" translate="label" sortOrder="9" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order Contact Person Email</label>
+                </field>
+				<field id="po_file_name" type="text" translate="label" sortOrder="10" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order PDF file Name</label>
+					<comment>Enter PDF file name witout file extension. Like EasyClick-PO-</comment>
+                </field>
+				<field id="po_email_template_id" type="text" translate="label" sortOrder="11" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Purchase Order Email Template ID</label>
+					<comment>Enter Purchase Order Emai Template ID from Marketing > Email Template</comment>
+                </field>
+            </group>
+        </section>
+    </system>	
+</config>

@@ -1,0 +1,1184 @@
+SKU,"ERP Product Ref","Created Date",Status,Message
+HD-C04512140000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000-2019,N/A,"2021/02/06 10:45: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512140000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-RHBATNS40(ZL),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN55,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATNS60(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN66,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN88,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN100,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATN120L,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT115D31(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT105D31(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT55D23(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT80D26(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT105D31R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT55D231R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT80D26R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-SM-G1700235ST1L,REF-ITEM000000001945,"2021/02/06 10:49: AM",Sucess,Updated
+YT-SM-G1500225ST3L,REF-ITEM000000001946,"2021/02/06 10:49: AM",Sucess,Updated
+YT-SUMS18514SL720,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200035683,REF-ITEM000000001947,"2021/02/06 10:49: AM",Sucess,Updated
+YT-ROA1200036698,REF-ITEM000000001948,"2021/02/06 10:49: AM",Sucess,Updated
+YT-ROA1200033434,REF-ITEM000000001949,"2021/02/06 10:49: AM",Sucess,Updated
+YT-PIR-P3153021PZ4N09,N/A,"2021/02/06 10:49: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09",Failed
+YT-PIR-P3153021PZ4N09-20,N/A,"2021/02/06 10:49: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09-20",Failed
+YT-PIR1200031593-20,REF-ITEM000000001950,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR-3184-2020,REF-ITEM000000001951,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200038540-2020,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200038540-2020",Failed
+YT-PIR-1196,REF-ITEM000000001952,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200011941-20,REF-ITEM000000001953,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200023592-2020,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200023592-2020",Failed
+YT-PIR1200011943-ZNQ,REF-ITEM000000001954,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR-19801,REF-ITEM000000001955,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200024105-20,REF-ITEM000000001956,"2021/02/06 10:50: AM",Sucess,Updated
+YT-MIC651885,REF-ITEM000000001957,"2021/02/06 10:50: AM",Sucess,Updated
+YT-MIC-M2853020CUP29,REF-ITEM000000001958,"2021/02/06 10:50: AM",Sucess,Updated
+YT-ZEE1200045687-2019,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045687-2019",Failed
+YT-ZEE1200045694-2019,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045694-2019",Failed
+YT-YOK-1335LT315/70R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335LT315/70R17-G015TL",Failed
+YT-YOK-1335315/30ZR22-V105ETL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335315/30ZR22-V105ETL",Failed
+YT-YOK-1335295/30ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335295/30ZR19-V105STL",Failed
+YT-YOK-1335LT285/70R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335LT285/70R17-G015TL",Failed
+YT-YOK-1335285/65R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G015TL",Failed
+YT-YOK-1335285/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G056TL",Failed
+YT-YOK-1335285/65R17-G94BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/65R17-G94BTL",Failed
+YT-YOK-1335285/60R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/60R18-G056TL",Failed
+YT-YOK-1335285/35ZR22-V105TL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335285/35ZR22-V105TL",Failed
+YT-YOK-1335275/70R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/70R16-G056TL",Failed
+YT-YOK-1335275/70R16-G015TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/70R16-G015TL-2019",Failed
+YT-YOK-1335275/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/65R17-G056TL",Failed
+YT-YOK-1335275/60R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/60R18-G056TL",Failed
+YT-YOK-1335275/50R20-V802TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/50R20-V802TL",Failed
+YT-YOK-1335275/45R20-V103HTL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 33, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/45R20-V103HTL-2019",Failed
+YT-YOK-1335275/45R19-V103BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/45R19-V103BTL",Failed
+YT-YOK-1335275/40R20-V103BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/40R20-V103BTL",Failed
+YT-YOK-1335275/40ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/40ZR19-V105STL",Failed
+YT-YOK-1335275/35ZR20-V105DTL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/35ZR20-V105DTL",Failed
+YT-YOK-1335275/35ZR20-V105DTL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/35ZR20-V105DTL-2019",Failed
+"YT-YOK-1335275/35ZR19-V105TL/AMG E43-BR213",N/A,"2021/02/06 10:51: AM","The length of the string is 42, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/35ZR19-V105TL/AMG E43-BR213",Failed
+YT-YOK-1335275/30ZR20-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335275/30ZR20-V105STL",Failed
+YT-YOK-1335265/75R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/75R16-G056TL",Failed
+YT-YOK-1335265/70R18-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/70R18-G015TL",Failed
+YT-YOK-1335265/70R16-G039TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/70R16-G039TL",Failed
+YT-YOK-1335265/70R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/70R16-G056TL",Failed
+YT-YOK-1335265/65R18-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R18-G015TL",Failed
+YT-YOK-1335265/65R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R17-G015TL",Failed
+YT-YOK-1335265/65R17-G015TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R17-G015TL-2019",Failed
+YT-YOK-1335265/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/65R17-G056TL",Failed
+YT-YOK-1335265/60R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/60R18-G056TL",Failed
+YT-YOK-1335265/60R18-G056TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/60R18-G056TL-2019",Failed
+YT-YOK-1335265/50R19-V103BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/50R19-V103BTL",Failed
+YT-YOK-1335265/35ZR20-V103STL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335265/35ZR20-V103STL-2019",Failed
+YT-YOK-1335255/70R18-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/70R18-G015TL",Failed
+YT-YOK-1335P255/70R18-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335P255/70R18-G056TL",Failed
+YT-YOK-1335P255/70R18-G056TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 33, but it must be less than or equal to 20 characters. Value: YT-YOK-1335P255/70R18-G056TL-2019",Failed
+YT-YOK-1335255/70R15-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/70R15-G056TL",Failed
+YT-YOK-1335255/70R15-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/70R15-G015TL",Failed
+YT-YOK-1335255/65R17-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/65R17-G056TL",Failed
+YT-YOK-1335255/65R17-G056TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335255/65R17-G056TL-2019",Failed
+YT-YOK-1335245/70R16-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/70R16-G056TL",Failed
+YT-YOK-1335245/65R17-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/65R17-G055TL",Failed
+YT-YOK-1335245/65R17-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/65R17-G015TL",Failed
+YT-YOK-1335245/60R18-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/60R18-G055TL",Failed
+YT-YOK-1335245/50R20-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/50R20-G055TL",Failed
+YT-YOK-1335245/45R18-S221TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/45R18-S221TL",Failed
+YT-YOK-1335245/35ZR20-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/35ZR20-V105STL",Failed
+YT-YOK-1335245/35ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/35ZR19-V105STL",Failed
+YT-YOK-1335245/35ZR19-V105STL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335245/35ZR19-V105STL-2019",Failed
+YT-YOK-1335235/70R16-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/70R16-G055TL",Failed
+YT-YOK-1335235/55R18-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/55R18-G055TL",Failed
+YT-YOK-1335235/35ZR19-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/35ZR19-V105STL",Failed
+YT-YOK-1335235/35ZR19-V105STL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 34, but it must be less than or equal to 20 characters. Value: YT-YOK-1335235/35ZR19-V105STL-2019",Failed
+YT-YOK-1335225/70R16-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/70R16-G055TL",Failed
+YT-YOK-1335225/65R17-G91ATL/SP,N/A,"2021/02/06 10:51: AM","The length of the string is 30, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/65R17-G91ATL/SP",Failed
+YT-YOK-1335225/60R16-ES32TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/60R16-ES32TL-2019",Failed
+YT-YOK-1335225/55R18-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/55R18-G055TL",Failed
+YT-YOK-1335225/55R17-S221TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/55R17-S221TL",Failed
+YT-YOK-1335225/55R17-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/55R17-G055TL",Failed
+YT-YOK-1335225/50R18-V103ETL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R18-V103ETL",Failed
+YT-YOK-1335225/50R18-V103ETL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 33, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R18-V103ETL-2019",Failed
+YT-YOK-1335225/50R17-AE51TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R17-AE51TL",Failed
+YT-YOK-1335225/50R17-ES32ATL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/50R17-ES32ATL",Failed
+YT-YOK-1335225/40ZR18-V105STL,N/A,"2021/02/06 10:51: AM","The length of the string is 29, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/40ZR18-V105STL",Failed
+YT-YOK-1335225/40R18-V701TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335225/40R18-V701TL",Failed
+YT-YOK-1335215/70R16-G033VTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/70R16-G033VTL",Failed
+YT-YOK-1335215/70R15-G056TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/70R15-G056TL",Failed
+YT-YOK-1335215/65R16-A349ATL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/65R16-A349ATL",Failed
+YT-YOK-1335215/60R16-E75TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 31, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/60R16-E75TL-2019",Failed
+YT-YOK-1335215/60R16-E70BTL/MT,N/A,"2021/02/06 10:51: AM","The length of the string is 30, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/60R16-E70BTL/MT",Failed
+YT-YOK-1335215/55R17-AE51BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/55R17-AE51BTL",Failed
+YT-YOK-1335215/55R17-E70BTL/PRV,N/A,"2021/02/06 10:51: AM","The length of the string is 31, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/55R17-E70BTL/PRV",Failed
+YT-YOK-1335215/55R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/55R16-ES32TL",Failed
+YT-YOK-1335215/45R17-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335215/45R17-ES32TL",Failed
+YT-YOK-1335205R16-G97ATL-2019,N/A,"2021/02/06 10:51: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-YOK-1335205/80R16-G015TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/80R16-G015TL",Failed
+YT-YOK-1335205/70R15-G055TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/70R15-G055TL",Failed
+YT-YOK-1335205/65R16-AE51ATL,N/A,"2021/02/06 10:51: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R16-AE51ATL",Failed
+YT-YOK-1335205/65R16-E70BTL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R16-E70BTL",Failed
+YT-YOK-1335205/65R15-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R15-ES32TL",Failed
+YT-YOK-1335205/65R15-ES32TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R15-ES32TL-2019",Failed
+YT-YOK-1335205/65R15-AA01TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/65R15-AA01TL",Failed
+YT-YOK-1335205/60R16-AE61TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/60R16-AE61TL",Failed
+YT-YOK-1335205/60R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/60R16-ES32TL",Failed
+YT-YOK-1335205/55R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/55R16-ES32TL",Failed
+YT-YOK-1335205/55R16-E70JTL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/55R16-E70JTL",Failed
+YT-YOK-1335205/50R17-A10ETL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335205/50R17-A10ETL",Failed
+YT-YOK-1335195R15-6PR-Y356TL,N/A,"2021/02/06 10:51: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-YOK-1335195/65R15-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335195/65R15-ES32TL",Failed
+YT-YOK-1335195/60R16-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335195/60R16-ES32TL",Failed
+YT-YOK-1335185/70R14-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335185/70R14-ES32TL",Failed
+YT-YOK-1335185/65R15-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335185/65R15-ES32TL",Failed
+YT-YOK-1335185/65R14-ES32TL-2019,N/A,"2021/02/06 10:51: AM","The length of the string is 32, but it must be less than or equal to 20 characters. Value: YT-YOK-1335185/65R14-ES32TL-2019",Failed
+YT-YOK-1335175/70R14-S207TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335175/70R14-S207TL",Failed
+YT-YOK-1335175/65R14-ES32TL,N/A,"2021/02/06 10:51: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-YOK-1335175/65R14-ES32TL",Failed
+YT-TY-285-65R17-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-285-65R17-TY0-OPUT",Failed
+YT-TY-285-60R18-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-285-60R18-TY0-OPUT",Failed
+YT-TY-285-50R20-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-285-50R20-TY0-OPUT",Failed
+YT-TY-275-70R16-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-275-70R16-TY0-OPUT",Failed
+YT-TY-275-60R20-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-275-60R20-TY0-OPUT",Failed
+YT-TY-265-70R17-TY0-OPAT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-70R17-TY0-OPAT",Failed
+YT-TY-265-70R17-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-70R17-TY0-OPUT",Failed
+YT-TY-265-70R16-TY0-OPUT,N/A,"2021/02/06 10:51: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-70R16-TY0-OPUT",Failed
+YT-TY-265-50R20-TY0-PXPS,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-265-50R20-TY0-PXPS",Failed
+YT-TY-255-50R20-TY0-PXPS,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-255-50R20-TY0-PXPS",Failed
+YT-TY-245-75R16-TY0-OPUT,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-75R16-TY0-OPUT",Failed
+YT-TY-245-60R18-TY0-OPUT,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-60R18-TY0-OPUT",Failed
+YT-TY-245-45R19-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-45R19-TY0-PXSP",Failed
+YT-TY-245-45R18-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-45R18-TY0-PXSP",Failed
+YT-TY-245-40R20-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-40R20-TY0-PXSP",Failed
+YT-TY-245-40R19-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-40R19-TY0-PXSP",Failed
+YT-TY-245-40R18-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-245-40R18-TY0-PXSP",Failed
+YT-TY-235-60R18-PXTSS,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-235-60R18-PXTSS",Failed
+YT-TY-235-55R19-PXTSS,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-235-55R19-PXTSS",Failed
+YT-TY-235-45ZR18-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-235-45ZR18-PXSP",Failed
+YT-TY-225-60R18-TY0-CF2S,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-225-60R18-TY0-CF2S",Failed
+YT-TY-225-55R17-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-225-55R17-TY0-CF2",Failed
+YT-TY-225-55R17-PXTSB,N/A,"2021/02/06 10:52: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-TY-225-55R17-PXTSB",Failed
+YT-TY-225-50R17-TY0-PXSP,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-225-50R17-TY0-PXSP",Failed
+YT-TY-215-70R16-TY0-OPUT,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-215-70R16-TY0-OPUT",Failed
+YT-TY-215-60R16-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-215-60R16-TY0-CF2",Failed
+YT-TY-215-55R17-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-215-55R17-TY0-CF2",Failed
+YT-TY-205-65R15-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-205-65R15-TY0-CF2",Failed
+YT-TY-205-55R16-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-205-55R16-TY0-CF2",Failed
+YT-TY-195-65R15-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-195-65R15-TY0-CF2",Failed
+YT-TY-185-65R15-TY0-CF2,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-TY-185-65R15-TY0-CF2",Failed
+YT-TY-175-70R14-TY0-NE03,N/A,"2021/02/06 10:52: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-TY-175-70R14-TY0-NE03",Failed
+YT-SM-G1700285ST2L,REF-ITEM000000001959,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800285ST2L,REF-ITEM000000001960,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G2000285SH9L,REF-ITEM000000001961,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600275ST2L,REF-ITEM000000001962,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1900275SH3T,REF-ITEM000000001963,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F2000275SH3T,REF-ITEM000000001964,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1900275SH3L,REF-ITEM000000001965,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2C,REF-ITEM000000001966,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800265ST2C-2019",Failed
+YT-SM-G1700265ST2L,REF-ITEM000000001967,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600265ST2L,REF-ITEM000000001968,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2T,REF-ITEM000000001969,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700265ST1L,REF-ITEM000000001970,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2L,REF-ITEM000000001971,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800265ST2L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800265ST2L-2019",Failed
+YT-SM-F1800265SH3L,REF-ITEM000000001972,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500255ST2L,REF-ITEM000000001973,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500255ST2L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1500255ST2L-2019",Failed
+YT-SM-F2000255SH3L,REF-ITEM000000001974,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600245ST2L,REF-ITEM000000001975,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600245ST2L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600245ST2L-2019",Failed
+YT-SM-G1700245ST1L,REF-ITEM000000001976,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800245ST1L,REF-ITEM000000001977,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700245ST3L,REF-ITEM000000001978,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700245ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700245ST3L-2019",Failed
+YT-SM-F1800245SH3T,REF-ITEM000000001979,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1800245SH3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-F1800245SH3T-2019",Failed
+YT-SM-G1800245ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800245ST3L-2019",Failed
+YT-SM-F2000245SH3L,REF-ITEM000000001980,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500235SC5L,REF-ITEM000000001981,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600235ST1C,REF-ITEM000000001982,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700235ST1L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700235ST1L-2019",Failed
+YT-SM-G1800235ST1C,REF-ITEM000000001983,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600235ST1L,REF-ITEM000000001984,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800235ST1L,REF-ITEM000000001985,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800235ST3C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800235ST3C-2019",Failed
+YT-SM-G1700235ST3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700235ST3T-2019",Failed
+YT-SM-F1800235SH3L,REF-ITEM000000001986,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800235ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800235ST3L-2019",Failed
+YT-SM-G1500225SH2L,REF-ITEM000000001987,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700225ST1C,REF-ITEM000000001988,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700225ST1T,REF-ITEM000000001989,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600225ST1L,REF-ITEM000000001990,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600225ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600225ST3L-2019",Failed
+YT-SM-G1800225ST3C,REF-ITEM000000001991,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800225ST3C-2019",Failed
+YT-SM-G1700225ST3T,REF-ITEM000000001992,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3T,REF-ITEM000000001993,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1800225ST3T-2019",Failed
+YT-SM-G1700225ST3L,REF-ITEM000000001994,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-F1900225SH3T,REF-ITEM000000001995,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1800225ST3,REF-ITEM000000001996,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST1L,REF-ITEM000000001997,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST1L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600215ST1L-2019",Failed
+YT-SM-G1600215ST1C,REF-ITEM000000001998,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST1C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600215ST1C-2019",Failed
+YT-SM-G1600215SH7C-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600215SH7C-2019",Failed
+YT-SM-G1700215ST1L,REF-ITEM000000001999,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700215ST1L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1700215ST1L-2019",Failed
+YT-SM-G1700215ST3C,REF-ITEM000000002000,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600215ST3T,REF-ITEM000000002001,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1700215ST3L,REF-ITEM000000002002,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500205ST3T,REF-ITEM000000002003,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600205ST3L,REF-ITEM000000002004,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500205ST3L-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1500205ST3L-2019",Failed
+YT-SM-G1500205SH7T,REF-ITEM000000002005,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600225ST3V-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600225ST3V-2019",Failed
+YT-SM-G1600205ST1T,REF-ITEM000000002006,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600205ST3T,REF-ITEM000000002007,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1600205ST3T-2019,N/A,"2021/02/06 10:52: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1600205ST3T-2019",Failed
+YT-S19515SL720,N/A,"2021/02/06 10:52: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-SUM19515SL9,N/A,"2021/02/06 10:52: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-SM-G1500195SH7T,REF-ITEM000000002008,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500195ST3C,REF-ITEM000000002009,"2021/02/06 10:52: AM",Sucess,Updated
+YT-SM-G1500195ST3T,REF-ITEM000000002010,"2021/02/06 10:53: AM",Sucess,Updated
+YT-SUM18514SL9,N/A,"2021/02/06 10:53: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-SM-G1400185ST3L-2019,N/A,"2021/02/06 10:53: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1400185ST3L-2019",Failed
+YT-SM-G1400185SH7L,REF-ITEM000000002011,"2021/02/06 10:53: AM",Sucess,Updated
+YT-SM-G1500185ST3L,REF-ITEM000000002012,"2021/02/06 10:53: AM",Sucess,Updated
+YT-SM-G1400185ST3C,REF-ITEM000000002013,"2021/02/06 10:53: AM",Sucess,Updated
+YT-SM-G1400175SH7T,REF-ITEM000000002014,"2021/02/06 10:53: AM",Sucess,Updated
+YT-SM-G1400175ST3L-2019,N/A,"2021/02/06 10:53: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-SM-G1400175ST3L-2019",Failed
+YT-SM-G1400175ST3C,REF-ITEM000000002015,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046966,REF-ITEM000000002016,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046223,REF-ITEM000000002017,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036702,REF-ITEM000000002018,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033935,REF-ITEM000000002019,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036701,REF-ITEM000000002020,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031500,REF-ITEM000000002021,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031499,REF-ITEM000000002022,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200039862,REF-ITEM000000002023,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200039859,REF-ITEM000000002024,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036700,REF-ITEM000000002025,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033929,REF-ITEM000000002026,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033928,REF-ITEM000000002027,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033932,REF-ITEM000000002028,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046961,REF-ITEM000000002029,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031497,REF-ITEM000000002030,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046967,REF-ITEM000000002031,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033936,REF-ITEM000000002032,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046971,REF-ITEM000000002033,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200038042,REF-ITEM000000002034,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031482,REF-ITEM000000002035,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046968,REF-ITEM000000002036,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200039864,REF-ITEM000000002037,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031470,REF-ITEM000000002038,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046969,REF-ITEM000000002039,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034392,REF-ITEM000000002040,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036689,REF-ITEM000000002041,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033931,REF-ITEM000000002042,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046962,REF-ITEM000000002043,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200045067,REF-ITEM000000002044,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031466,REF-ITEM000000002045,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031465,REF-ITEM000000002046,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200039855,REF-ITEM000000002047,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033430,REF-ITEM000000002048,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200048966,REF-ITEM000000002049,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033920,REF-ITEM000000002050,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036704,REF-ITEM000000002051,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200035014,REF-ITEM000000002052,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031488,REF-ITEM000000002053,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034731,REF-ITEM000000002054,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046965,REF-ITEM000000002055,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031476,REF-ITEM000000002056,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031476-2019,N/A,"2021/02/06 10:53: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ROA1200031476-2019",Failed
+YT-ROA1200030974,REF-ITEM000000002057,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033431,REF-ITEM000000002058,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031463,REF-ITEM000000002059,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033423,REF-ITEM000000002060,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033428,REF-ITEM000000002061,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200032594,REF-ITEM000000002062,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200022589,REF-ITEM000000002063,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036703,REF-ITEM000000002064,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033925,REF-ITEM000000002065,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046964,REF-ITEM000000002066,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200018321,REF-ITEM000000002067,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034730,REF-ITEM000000002068,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034730-2019,N/A,"2021/02/06 10:53: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ROA1200034730-2019",Failed
+YT-ROA1200046963,REF-ITEM000000002069,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200018319,REF-ITEM000000002070,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200046959,REF-ITEM000000002071,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033424,REF-ITEM000000002072,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200018318,REF-ITEM000000002073,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033422,REF-ITEM000000002074,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200044764,REF-ITEM000000002075,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200044764-2019,N/A,"2021/02/06 10:53: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ROA1200044764-2019",Failed
+YT-ROA1200033418,REF-ITEM000000002076,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033416,REF-ITEM000000002077,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200030971,REF-ITEM000000002078,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200026469,REF-ITEM000000002079,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034729,REF-ITEM000000002080,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200028724,REF-ITEM000000002081,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200018306,REF-ITEM000000002082,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034728,REF-ITEM000000002083,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200048963,REF-ITEM000000002084,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033421,REF-ITEM000000002085,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033429,REF-ITEM000000002086,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033425,REF-ITEM000000002087,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033420,REF-ITEM000000002088,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033414,REF-ITEM000000002089,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200040098,N/A,"2021/02/06 10:53: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200022578,REF-ITEM000000002090,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034727,REF-ITEM000000002091,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034726,REF-ITEM000000002092,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034725,REF-ITEM000000002093,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200039715,REF-ITEM000000002094,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200040099,REF-ITEM000000002095,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033417,REF-ITEM000000002096,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200033415,REF-ITEM000000002097,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036723,N/A,"2021/02/06 10:53: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200036816,N/A,"2021/02/06 10:53: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200022599,REF-ITEM000000002098,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200034724,REF-ITEM000000002099,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200037697,REF-ITEM000000002100,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200018291,REF-ITEM000000002101,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200036815,N/A,"2021/02/06 10:53: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200022566,REF-ITEM000000002102,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200037696,REF-ITEM000000002103,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200042003,REF-ITEM000000002104,"2021/02/06 10:53: AM",Sucess,Updated
+YT-ROA1200031704,REF-ITEM000000002105,"2021/02/06 10:54: AM",Sucess,Updated
+YT-ROA1200022552,REF-ITEM000000002106,"2021/02/06 10:54: AM",Sucess,Updated
+YT-P3253021PZN10,REF-ITEM000000002107,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-315-30-22-N0,REF-ITEM000000002108,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P3153021PZPN0,REF-ITEM000000002109,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P3153021PZ49,REF-ITEM000000002110,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200020202,REF-ITEM000000002111,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200039347,REF-ITEM000000002112,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200024091,REF-ITEM000000002113,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P3053020PZ0,REF-ITEM000000002114,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200012442-ZNQ,REF-ITEM000000002115,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200040771,REF-ITEM000000002116,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-18902,REF-ITEM000000002117,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR12000311584-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR12000311584-2020",Failed
+YT-PIR1200017683,REF-ITEM000000002118,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200017683-ZNQ,REF-ITEM000000002119,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2953521PZN09-20,N/A,"2021/02/06 10:54: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-PIR-P2953521PZN09-20",Failed
+YT-PIR1200032842-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200032842-2020",Failed
+YT-PIR-P2953019PZ0-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-PIR-P2953019PZ0-2020",Failed
+YT-PIR1200039093,REF-ITEM000000002120,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-18919-20,REF-ITEM000000002121,"2021/02/06 10:54: AM",Sucess,Updated
+YT-P2854022PZ0,REF-ITEM000000002122,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200036947-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200036947-2020",Failed
+YT-PIR-P2854021PZN09,REF-ITEM000000002123,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200032841-ZNQ,REF-ITEM000000002124,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200024041,REF-ITEM000000002125,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-19780,REF-ITEM000000002126,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007758-20,REF-ITEM000000002127,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200012446-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200012446-2020",Failed
+YT-PIR-P2755520SCS0-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2755520SCS0-2020",Failed
+YT-PIR-19685,REF-ITEM000000002128,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-4310-20,REF-ITEM000000002129,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-18918-20,REF-ITEM000000002130,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200016541-20,REF-ITEM000000002131,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-1233-2020,REF-ITEM000000002132,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007730,REF-ITEM000000002133,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2754022SCV0-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2754022SCV0-2020",Failed
+YT-PIR-P2754022-19,REF-ITEM000000002134,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-18864-2020,REF-ITEM000000002135,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-2862-2020,REF-ITEM000000002136,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2754019PZMO9,REF-ITEM000000002137,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200039356,REF-ITEM000000002138,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200031593,REF-ITEM000000002139,"2021/02/06 10:54: AM",Sucess,Updated
+YT-P2754018CP70,REF-ITEM000000002140,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200032938,REF-ITEM000000002141,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-1042,REF-ITEM000000002142,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-1786,REF-ITEM000000002143,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2753521PZPN0-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-PIR-P2753521PZPN0-2020",Failed
+YT-PIR-P2753521PZ49,REF-ITEM000000002144,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2753521PZ4NO9,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P2753521PZ4NO9",Failed
+YT-PIR1200032855,REF-ITEM000000002145,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200032854,REF-ITEM000000002146,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-1130,REF-ITEM000000002147,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-275-35-R20-102Y,N/A,"2021/02/06 10:54: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR-275-35-R20-102Y",Failed
+YT-PIR1200031585-20,REF-ITEM000000002148,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200031585-ZNQ,REF-ITEM000000002149,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007712-20,REF-ITEM000000002150,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007712,REF-ITEM000000002151,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007713,REF-ITEM000000002152,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200016947,REF-ITEM000000002153,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200032824,REF-ITEM000000002154,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200039488,REF-ITEM000000002155,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200032575,REF-ITEM000000002156,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-2700,REF-ITEM000000002157,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200039381,REF-ITEM000000002158,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2753020RO19,REF-ITEM000000002159,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200024049-ZNQ,REF-ITEM000000002160,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-2052,REF-ITEM000000002161,"2021/02/06 10:54: AM",Sucess,Updated
+YT-2655019GC2020,REF-ITEM000000002162,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200023510,REF-ITEM000000002163,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-19251,REF-ITEM000000002164,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200030187-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200030187-2020",Failed
+YT-PIR1200020211,REF-ITEM000000002165,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-5042,REF-ITEM000000002166,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-265/40R21-105Y,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-265/40R21-105Y",Failed
+YT-PIR1200038532,REF-ITEM000000002167,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200019125-20,REF-ITEM000000002168,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200019125,REF-ITEM000000002169,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-4262,REF-ITEM000000002170,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200039383-ZNQ,REF-ITEM000000002171,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR265/35R20-20,REF-ITEM000000002172,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200012440-ZNQ,REF-ITEM000000002173,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200015954,REF-ITEM000000002174,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200015954-20,REF-ITEM000000002175,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-265/30R21-96Y,REF-ITEM000000002176,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200030179-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200030179-2020",Failed
+YT-PIR1200030179,REF-ITEM000000002177,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200038535,REF-ITEM000000002178,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200016311-20,REF-ITEM000000002179,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2555520SCVERD9,N/A,"2021/02/06 10:54: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR-P2555520SCVERD9",Failed
+YT-PIR-P2555520SCV0,REF-ITEM000000002180,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200028052-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200028052-2020",Failed
+YT-PIR1200022705,REF-ITEM000000002181,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-P2555019SCV0-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2555019SCV0-2020",Failed
+YT-PIR1200030160-20,REF-ITEM000000002182,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-19876,REF-ITEM000000002183,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200032833-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200032833-2020",Failed
+YT-PIR1200007589,REF-ITEM000000002184,"2021/02/06 10:54: AM",Sucess,Updated
+YT-P2554018PZ0,REF-ITEM000000002185,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200030169,REF-ITEM000000002186,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR-1955,REF-ITEM000000002187,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007568-20,REF-ITEM000000002188,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007568-ZNQ,REF-ITEM000000002189,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007567-20,REF-ITEM000000002190,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200007567,REF-ITEM000000002191,"2021/02/06 10:54: AM",Sucess,Updated
+YT-PIR1200021223-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200021223-2020",Failed
+YT-PIR-P2553519PZP0-2020,N/A,"2021/02/06 10:54: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2553519PZP0-2020",Failed
+YT-PIR1200024069-ZNQ,REF-ITEM000000002192,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200034372-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200034372-2020",Failed
+YT-PIR-1200024109,REF-ITEM000000002193,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200036869,REF-ITEM000000002194,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2553518PZRFT*9,N/A,"2021/02/06 10:55: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR-P2553518PZRFT*9",Failed
+YT-PIR-4347,REF-ITEM000000002195,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200024126,REF-ITEM000000002196,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200014564,REF-ITEM000000002197,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200028703-ZNQ,REF-ITEM000000002198,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-2788,REF-ITEM000000002199,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2454520PZ49B,REF-ITEM000000002200,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200014566-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200014566-2020",Failed
+YT-PIR-19176,REF-ITEM000000002201,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200032813-20,REF-ITEM000000002202,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2454519PZRFT9B,N/A,"2021/02/06 10:55: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR-P2454519PZRFT9B",Failed
+YT-PIR1200031644-20,REF-ITEM000000002203,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-2867,REF-ITEM000000002204,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-4640,REF-ITEM000000002205,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200025685,REF-ITEM000000002206,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-1079,REF-ITEM000000002207,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200016410,REF-ITEM000000002208,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200015695,REF-ITEM000000002209,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200042209-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200042209-2020",Failed
+YT-PIR1200031584-20,REF-ITEM000000002210,"2021/02/06 10:55: AM",Sucess,Updated
+"YT-PIR 245/40R20-99Y-ARD",N/A,"2021/02/06 10:55: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR 245/40R20-99Y-ARD",Failed
+YT-PIR-P2454020PZM0-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2454020PZM0-2020",Failed
+YT-PIR1200032830,REF-ITEM000000002211,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200039487,REF-ITEM000000002212,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200032814,REF-ITEM000000002213,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200024072,REF-ITEM000000002214,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200038537,REF-ITEM000000002215,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200032932,REF-ITEM000000002216,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-4395,REF-ITEM000000002217,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-18913,REF-ITEM000000002218,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200038990-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200038990-2020",Failed
+YT-PIR1200007457-2019,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200007457-2019",Failed
+YT-PIR1200024048-20,REF-ITEM000000002219,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200015957-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200015957-2020",Failed
+YT-PIR1200015957,REF-ITEM000000002220,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200039346,REF-ITEM000000002221,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-19673,REF-ITEM000000002222,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200033114,REF-ITEM000000002223,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200038036,REF-ITEM000000002224,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2356018SCVERD9,N/A,"2021/02/06 10:55: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR-P2356018SCVERD9",Failed
+YT-PIR-P2355519SCVER9,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P2355519SCVER9",Failed
+YT-PIR-P2355519SCV9-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2355519SCV9-2020",Failed
+YT-PIR1200024131,REF-ITEM000000002225,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2355519SCV9,REF-ITEM000000002226,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200038538,REF-ITEM000000002227,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200030154-20,REF-ITEM000000002228,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-4121,REF-ITEM000000002229,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-5055,REF-ITEM000000002230,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200018468,REF-ITEM000000002231,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200030152,REF-ITEM000000002232,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200032800,REF-ITEM000000002233,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200011944,REF-ITEM000000002234,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2354518P7CINT9,N/A,"2021/02/06 10:55: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-PIR-P2354518P7CINT9",Failed
+YT-PIR-P2354019PZ4N19,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P2354019PZ4N19",Failed
+YT-PIR1200034388,REF-ITEM000000002235,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-19671,REF-ITEM000000002236,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200007329-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200007329-2020",Failed
+YT-PIR-P2353519PZN0-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P2353519PZN0-2020",Failed
+YT-PIR-P2353519A19,REF-ITEM000000002237,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200024015,REF-ITEM000000002238,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200024103-ZNQ,REF-ITEM000000002239,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200016944-20,REF-ITEM000000002240,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200024105,REF-ITEM000000002241,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200024107-ZNQ,REF-ITEM000000002242,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200032931-20,REF-ITEM000000002243,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2254517CP7M0-2020,N/A,"2021/02/06 10:55: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-PIR-P2254517CP7M0-2020",Failed
+YT-PIR-2217-ZNQ,REF-ITEM000000002244,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2254019PZP0,REF-ITEM000000002245,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-P2254019PZ9,REF-ITEM000000002246,"2021/02/06 10:55: AM",Sucess,Updated
+YT-P2254018PZ40,REF-ITEM000000002247,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200007985-20,REF-ITEM000000002248,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-1545,REF-ITEM000000002249,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR1200028702,REF-ITEM000000002250,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PIR-1144,REF-ITEM000000002251,"2021/02/06 10:55: AM",Sucess,Updated
+YT-PR18423,N/A,"2021/02/06 10:55: AM","The value ""31X"" can't be evaluated into type Integer.",Failed
+YT-NIT-1200005464,N/A,"2021/02/06 10:57: AM","The value ""33X"" can't be evaluated into type Integer.",Failed
+YT-NIT-1200035925-2019,N/A,"2021/02/06 10:57: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NIT-1200035925-2019",Failed
+YT-NIT-1200005310-2019,N/A,"2021/02/06 10:57: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NIT-1200005310-2019",Failed
+YT-NIT-1200039977-2019,N/A,"2021/02/06 10:57: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NIT-1200039977-2019",Failed
+YT-NIT-1200037016-2019,N/A,"2021/02/06 10:57: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NIT-1200037016-2019",Failed
+YT-NIT-1200035914-2019,N/A,"2021/02/06 10:57: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NIT-1200035914-2019",Failed
+YT-NEX-3312515N19,N/A,"2021/02/06 10:57: AM","The value ""33X"" can't be evaluated into type Integer.",Failed
+YT-NEX-3157017N19,REF-ITEM000000002252,"2021/02/06 10:57: AM",Sucess,Updated
+"YT-NEX 315/35R20-110W-19",N/A,"2021/02/06 10:57: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-NEX 315/35R20-110W-19",Failed
+YT-NEX-2378,REF-ITEM000000002253,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX1200034502/ARD,REF-ITEM000000002254,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-NX2856018RH52,REF-ITEM000000002255,"2021/02/06 10:57: AM",Sucess,Updated
+"YT-NEX 286/60R18-116V/ARD",N/A,"2021/02/06 10:57: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-NEX 286/60R18-116V/ARD",Failed
+YT-NEX-2326,REF-ITEM000000002256,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-NX2756518RH59B,N/A,"2021/02/06 10:57: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2756518RH59B",Failed
+YT-NEX-1879,REF-ITEM000000002257,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-NX2756020RO2,REF-ITEM000000002258,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX1200026511,REF-ITEM000000002259,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-1731,REF-ITEM000000002260,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-1862,REF-ITEM000000002261,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-2451,REF-ITEM000000002262,"2021/02/06 10:57: AM",Sucess,Updated
+"YT-NEX 275/40R20-106W",N/A,"2021/02/06 10:57: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX 275/40R20-106W",Failed
+YT-NEX-16220,REF-ITEM000000002263,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-3519,REF-ITEM000000002264,"2021/02/06 10:57: AM",Sucess,Updated
+YT-NEX-19197,REF-ITEM000000002265,"2021/02/06 10:57: AM",Sucess,Updated
+"YT-NEX 275/35R19-100Y",N/A,"2021/02/06 10:57: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX 275/35R19-100Y",Failed
+YT-NEX-NX2753020NFS9,REF-ITEM000000002266,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3226,REF-ITEM000000002267,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036700,REF-ITEM000000002268,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036700-2017,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX1200036700-2017",Failed
+YT-NEX1200033929,REF-ITEM000000002269,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2657016RH52,REF-ITEM000000002270,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200033923/ANF,REF-ITEM000000002271,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-4361,REF-ITEM000000002272,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200033934,REF-ITEM000000002273,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200033928/ARD,REF-ITEM000000002274,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2656517N19,REF-ITEM000000002275,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-4119,REF-ITEM000000002276,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-AD2848,REF-ITEM000000002277,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-AD2848-2019,REF-ITEM000000002278,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NX2654520NRU0,REF-ITEM000000002279,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-19235,REF-ITEM000000002280,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-AD3569,REF-ITEM000000002281,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2231,REF-ITEM000000002282,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2557018RH59,REF-ITEM000000002283,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1726,REF-ITEM000000002284,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036699,REF-ITEM000000002285,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2557015RH59B,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2557015RH59B",Failed
+YT-NEX-4356,REF-ITEM000000002286,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036699-2019,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX1200036699-2019",Failed
+YT-NEX-NX2556019ROHTX2,N/A,"2021/02/06 10:58: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2556019ROHTX2",Failed
+YT-NEX1200031483,REF-ITEM000000002287,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1984,REF-ITEM000000002288,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3416,REF-ITEM000000002289,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3023,REF-ITEM000000002290,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2555518N20,REF-ITEM000000002291,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2814,REF-ITEM000000002292,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2555020NRU19,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2555020NRU19",Failed
+YT-NEX1200035683,REF-ITEM000000002293,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2555019NFR9,REF-ITEM000000002294,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2555019N19,REF-ITEM000000002295,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2554520N20,REF-ITEM000000002296,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2554520NFR9,REF-ITEM000000002297,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-4286,REF-ITEM000000002298,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2554519NFS9,REF-ITEM000000002299,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2554518NFSU19,N/A,"2021/02/06 10:58: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2554518NFSU19",Failed
+YT-NEX-AD4252,REF-ITEM000000002300,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-4017-20,REF-ITEM000000002301,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1729,REF-ITEM000000002302,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200031467/ARD,REF-ITEM000000002303,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3212,REF-ITEM000000002304,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2411,REF-ITEM000000002305,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2382,REF-ITEM000000002306,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2457017N19,REF-ITEM000000002307,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036698,REF-ITEM000000002308,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3396,REF-ITEM000000002309,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036689/ARD,REF-ITEM000000002310,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2455020NFAU52,N/A,"2021/02/06 10:58: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2455020NFAU52",Failed
+YT-NEX-1586,REF-ITEM000000002311,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2455018NPAH89,N/A,"2021/02/06 10:58: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2455018NPAH89",Failed
+YT-NEX-2454520NE20,REF-ITEM000000002312,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-245-45-20-2019,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-245-45-20-2019",Failed
+YT-NEX1200031466,REF-ITEM000000002313,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2454519N20,REF-ITEM000000002314,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NX2454518NFS2B,REF-ITEM000000002315,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2454518NFA2,REF-ITEM000000002316,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2454517NFA9,REF-ITEM000000002317,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2454517N19,REF-ITEM000000002318,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-20048,REF-ITEM000000002319,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2496,REF-ITEM000000002320,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NX2454019AU70,REF-ITEM000000002321,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2249,REF-ITEM000000002322,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEXEN-2331,REF-ITEM000000002323,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2454018N19,REF-ITEM000000002324,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2454018NPAH89-20,N/A,"2021/02/06 10:58: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2454018NPAH89-20",Failed
+YT-NEX-NX2453520SU19,REF-ITEM000000002325,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1010,REF-ITEM000000002326,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200033921,REF-ITEM000000002327,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3970,REF-ITEM000000002328,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2356518N20,REF-ITEM000000002329,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200036704,REF-ITEM000000002330,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2356518NPZ9B,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2356518NPZ9B",Failed
+YT-NEX1200035014,REF-ITEM000000002331,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2356517RH59,REF-ITEM000000002332,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-235/65/17-20,REF-ITEM000000002333,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-235/65/17,REF-ITEM000000002334,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-19523,REF-ITEM000000002335,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2356018RO5819,N/A,"2021/02/06 10:58: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2356018RO5819",Failed
+YT-NEX1200031488,REF-ITEM000000002336,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2356017N19,REF-ITEM000000002337,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1442-20,REF-ITEM000000002338,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2356016N20,REF-ITEM000000002339,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2356016N19,REF-ITEM000000002340,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NX2355520NFER0,REF-ITEM000000002341,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2355519NE20,REF-ITEM000000002342,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2355519NFR9,REF-ITEM000000002343,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1480,REF-ITEM000000002344,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2355518N20,REF-ITEM000000002345,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX1200030974,REF-ITEM000000002346,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3332,REF-ITEM000000002347,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2355517NBL9-20,N/A,"2021/02/06 10:58: AM","The length of the string is 23, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2355517NBL9-20",Failed
+YT-NEX-NX2355517NBL9,REF-ITEM000000002348,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-1477,REF-ITEM000000002349,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2355018NFA9,REF-ITEM000000002350,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2355018NPAH89,N/A,"2021/02/06 10:58: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2355018NPAH89",Failed
+YT-NX2354519NFERA,REF-ITEM000000002351,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-2354519N19,REF-ITEM000000002352,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NX2354518NPZB,REF-ITEM000000002353,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-3102-2019,REF-ITEM000000002354,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-4346,REF-ITEM000000002355,"2021/02/06 10:58: AM",Sucess,Updated
+YT-NEX-NX2354019NFA9B,N/A,"2021/02/06 10:58: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2354019NFA9B",Failed
+YT-NEX-2354018N19,REF-ITEM000000002356,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2354018NPZB,REF-ITEM000000002357,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-AD2521,REF-ITEM000000002358,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-19521,REF-ITEM000000002359,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2257016N20,REF-ITEM000000002360,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-10015,REF-ITEM000000002361,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX1200022589,REF-ITEM000000002362,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2257015OWL,REF-ITEM000000002363,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1279,REF-ITEM000000002364,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2256517RH52,REF-ITEM000000002365,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4351,REF-ITEM000000002366,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4088-20,REF-ITEM000000002367,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-19522,REF-ITEM000000002368,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2256018CP670,REF-ITEM000000002369,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2256017N20,REF-ITEM000000002370,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX1200018321,REF-ITEM000000002371,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1377,REF-ITEM000000002372,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4824,REF-ITEM000000002373,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2256016N20,REF-ITEM000000002374,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2186,REF-ITEM000000002375,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2255519RU19B,N/A,"2021/02/06 10:59: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2255519RU19B",Failed
+YT-NEX-2656,REF-ITEM000000002376,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1364,REF-ITEM000000002377,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2255517NFA2,REF-ITEM000000002378,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEXEN-1378,REF-ITEM000000002379,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-20004,REF-ITEM000000002380,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2255516N20,REF-ITEM000000002381,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4143-20,REF-ITEM000000002382,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2957,REF-ITEM000000002383,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2255018N20,REF-ITEM000000002384,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2255018CP6729,N/A,"2021/02/06 10:59: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2255018CP6729",Failed
+YT-NEX-2255017N20,REF-ITEM000000002385,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEXEN-3036,REF-ITEM000000002386,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4294,REF-ITEM000000002387,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-19525,REF-ITEM000000002388,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2254519AU70,REF-ITEM000000002389,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2254519N20,REF-ITEM000000002390,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2254518N20,REF-ITEM000000002391,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEXEN-4342,REF-ITEM000000002392,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-3534,REF-ITEM000000002393,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX1200034452,REF-ITEM000000002394,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2254517NPRIZ9,N/A,"2021/02/06 10:59: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2254517NPRIZ9",Failed
+YT-NEX-16325,REF-ITEM000000002395,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1917,REF-ITEM000000002396,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1305-20,REF-ITEM000000002397,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-16460,REF-ITEM000000002398,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2243,REF-ITEM000000002399,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2156516NBLU9B-20,N/A,"2021/02/06 10:59: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2156516NBLU9B-20",Failed
+YT-NEX-NX2156516NBLU9B,N/A,"2021/02/06 10:59: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX2156516NBLU9B",Failed
+YT-NEX-2781,REF-ITEM000000002400,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4823,REF-ITEM000000002401,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2156017NBL2,REF-ITEM000000002402,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2156016N20,REF-ITEM000000002403,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2156016CP672,REF-ITEM000000002404,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2155517N20,REF-ITEM000000002405,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2127-20,REF-ITEM000000002406,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2466,REF-ITEM000000002407,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2155516N20,REF-ITEM000000002408,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-12471-20,REF-ITEM000000002409,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-12471-2019,REF-ITEM000000002410,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1247,REF-ITEM000000002411,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1247-2019,REF-ITEM000000002412,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2155017AU70,REF-ITEM000000002413,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2155017NBL0B,REF-ITEM000000002414,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2155017NFERA,REF-ITEM000000002415,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2154518AU70,REF-ITEM000000002416,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2154518AH8B,REF-ITEM000000002417,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4380,REF-ITEM000000002418,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2154517N20,REF-ITEM000000002419,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2286-20,REF-ITEM000000002420,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2154018N20,REF-ITEM000000002421,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2056516NB2,REF-ITEM000000002422,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX2056515NBL2,REF-ITEM000000002423,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-10022,REF-ITEM000000002424,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-16235,REF-ITEM000000002425,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2055516N20,REF-ITEM000000002426,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NX2055516NBL0B,REF-ITEM000000002427,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-205/55/16,REF-ITEM000000002428,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2055017N20,REF-ITEM000000002429,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1158,REF-ITEM000000002430,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1238,REF-ITEM000000002431,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4066,REF-ITEM000000002432,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1538,REF-ITEM000000002433,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-16326,REF-ITEM000000002434,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-3079-20,REF-ITEM000000002435,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX1956515CP729B,N/A,"2021/02/06 10:59: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX1956515CP729B",Failed
+YT-NX1956015NBLUE,REF-ITEM000000002436,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-3385,REF-ITEM000000002437,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-2113,REF-ITEM000000002438,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX1955516CP6729,N/A,"2021/02/06 10:59: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-NEX-NX1955516CP6729",Failed
+YT-NEX-1955016N20,REF-ITEM000000002439,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1857014N20,REF-ITEM000000002440,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-3410,REF-ITEM000000002441,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX1856515NB2,REF-ITEM000000002442,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-1187,REF-ITEM000000002443,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-4796,REF-ITEM000000002444,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX1856514NBL9B-20,N/A,"2021/02/06 10:59: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-NEX-NX1856514NBL9B-20",Failed
+YT-NEX-1836,REF-ITEM000000002445,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-NX1856015NBL2,REF-ITEM000000002446,"2021/02/06 10:59: AM",Sucess,Updated
+YT-NEX-3404,REF-ITEM000000002447,"2021/02/06 11:00: AM",Sucess,Updated
+YT-NEX-NX1855515NBL,REF-ITEM000000002448,"2021/02/06 11:00: AM",Sucess,Updated
+YT-NEX-NX1757014NBLUE,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-NEX-NX1757014NBLUE",Failed
+YT-NEX1200022552,REF-ITEM000000002449,"2021/02/06 11:00: AM",Sucess,Updated
+YT-NEX-NX1756514NBL2,REF-ITEM000000002450,"2021/02/06 11:00: AM",Sucess,Updated
+YT-NEX-3318,REF-ITEM000000002451,"2021/02/06 11:00: AM",Sucess,Updated
+YT-NEX-3368,REF-ITEM000000002452,"2021/02/06 11:00: AM",Sucess,Updated
+YT-NEX-1656014N20,REF-ITEM000000002453,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC62286,REF-ITEM000000002454,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3253021PS4S0,REF-ITEM000000002455,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3253020PSCUP29,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M3253020PSCUP29",Failed
+YT-MIC-3253020PSCP2,REF-ITEM000000002456,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3253019PSC2NO9,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M3253019PSC2NO9",Failed
+YT-MIC146108,REF-ITEM000000002457,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M3153520PS40,REF-ITEM000000002458,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3153520LS30,REF-ITEM000000002459,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M3153022PS4S0,REF-ITEM000000002460,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M3153021CUP2MO0,REF-ITEM000000002461,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3153021PS40,REF-ITEM000000002462,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3153021S4A0,REF-ITEM000000002463,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC171043,REF-ITEM000000002464,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M3053522PS4S0,REF-ITEM000000002465,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3053020PSSMO,REF-ITEM000000002466,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC993883,REF-ITEM000000002467,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M3053020PSC2K20,REF-ITEM000000002468,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3053019SC2N0,REF-ITEM000000002469,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3053019PS4S8,REF-ITEM000000002470,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M3052520P0,REF-ITEM000000002471,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2954520LATS0,REF-ITEM000000002472,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2954519PS4SUV,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2954519PS4SUV",Failed
+YT-M2954020PS40,REF-ITEM000000002473,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2954020LATS0,REF-ITEM000000002474,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2954020LATHP,REF-ITEM000000002475,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953521PS4SUV,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2953521PS4SUV",Failed
+YT-MIC-M2953521PS4SMO1,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2953521PS4SMO1",Failed
+YT-MIC433460-ZNQ,REF-ITEM000000002476,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC433460-2019,REF-ITEM000000002477,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2953521LATS30,REF-ITEM000000002478,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953521LS30,REF-ITEM000000002479,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2953520PSS0,REF-ITEM000000002480,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC429255-2019,REF-ITEM000000002481,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953520PS4S0,REF-ITEM000000002482,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953520PS4K1,REF-ITEM000000002483,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2953519PSM0,REF-ITEM000000002484,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC240093,REF-ITEM000000002485,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953021PS4S0,REF-ITEM000000002486,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953021PILSP9,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2953021PILSP9",Failed
+YT-MIC978679,REF-ITEM000000002487,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953020PSS*9,REF-ITEM000000002488,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC899482,REF-ITEM000000002489,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC300179,REF-ITEM000000002490,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2953020PS40,REF-ITEM000000002491,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC054029,REF-ITEM000000002492,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2952522PS4S0,REF-ITEM000000002493,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-2327,REF-ITEM000000002494,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC470674-2019,REF-ITEM000000002495,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC593087,REF-ITEM000000002496,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2856018LTX0,REF-ITEM000000002497,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC574132-ZNQ,REF-ITEM000000002498,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2853522PS4S0,REF-ITEM000000002499,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2853520PSS0,REF-ITEM000000002500,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2853021PS4S0,REF-ITEM000000002501,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2853020PSS8,REF-ITEM000000002502,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2853020C2M0,REF-ITEM000000002503,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2853020PSC2M9,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2853020PSC2M9",Failed
+YT-M2853020PSC20,REF-ITEM000000002504,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2853019PSS9,REF-ITEM000000002505,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC775465,REF-ITEM000000002506,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2757016TLX9,REF-ITEM000000002507,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC557096,REF-ITEM000000002508,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC304643,REF-ITEM000000002509,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2756517LTX0,REF-ITEM000000002510,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC501268,REF-ITEM000000002511,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC501268-2019,REF-ITEM000000002512,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC887014-ZNQ,REF-ITEM000000002513,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2755520XLT,REF-ITEM000000002514,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC348624,REF-ITEM000000002515,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2755021PS40,REF-ITEM000000002516,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2755020LASP3Z9,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2755020LASP3Z9",Failed
+YT-MIC058138,REF-ITEM000000002517,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2755019PS40,REF-ITEM000000002518,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2755019PS4SUV,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2755019PS4SUV",Failed
+YT-MIC-M2755019LATS0,REF-ITEM000000002519,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2755019LS3N09,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2755019LS3N09",Failed
+YT-MIC-M2754521PS40,REF-ITEM000000002520,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2754520LAT0,REF-ITEM000000002521,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2754520LATS3T0,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2754520LATS3T0",Failed
+YT-MIC-M2754519LATSP9,N/A,"2021/02/06 11:00: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2754519LATSP9",Failed
+YT-MIC233435-2019,REF-ITEM000000002522,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC536851,REF-ITEM000000002523,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC522255-2019,REF-ITEM000000002524,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2754020LASP3Z9,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2754020LASP3Z9",Failed
+YT-MIC192246,REF-ITEM000000002525,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M2754020PS4AN09,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2754020PS4AN09",Failed
+YT-M2754020LT30,REF-ITEM000000002526,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC-M27540204X4DMS9,N/A,"2021/02/06 11:00: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M27540204X4DMS9",Failed
+YT-MIC-M2754019PS49,REF-ITEM000000002527,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2754019PRI30,REF-ITEM000000002528,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC419781,REF-ITEM000000002529,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC990833,REF-ITEM000000002530,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC990833-2019,REF-ITEM000000002531,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2754018PRI30,REF-ITEM000000002532,"2021/02/06 11:00: AM",Sucess,Updated
+YT-MIC432853,REF-ITEM000000002533,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2754018PSS0,REF-ITEM000000002534,"2021/02/06 11:00: AM",Sucess,Updated
+YT-M2753521PSS0,REF-ITEM000000002535,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2753520PS4Z0,REF-ITEM000000002536,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2753520PSS0,REF-ITEM000000002537,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2753520PS0,REF-ITEM000000002538,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC504037,REF-ITEM000000002539,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2753519PSC20,REF-ITEM000000002540,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2753519PS40,REF-ITEM000000002541,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2753518PS38,REF-ITEM000000002542,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2753020PSS0,REF-ITEM000000002543,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2753020PS4S0,REF-ITEM000000002544,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC985652,REF-ITEM000000002545,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC985652-2019,REF-ITEM000000002546,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC363916,REF-ITEM000000002547,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2657017PRIM0,REF-ITEM000000002548,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2657016LTXF9,REF-ITEM000000002549,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2657016PRISUV8,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2657016PRISUV8",Failed
+YT-MIC938431,REF-ITEM000000002550,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC328903,REF-ITEM000000002551,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2656517PRISUV9,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2656517PRISUV9",Failed
+YT-M2656018PS40,REF-ITEM000000002552,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC243767-ZNQ,REF-ITEM000000002553,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2655019LATS0,REF-ITEM000000002554,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2654022PS40,REF-ITEM000000002555,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2654021PS4SUV,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2654021PS4SUV",Failed
+YT-MIC-M2654021PS4S0,REF-ITEM000000002556,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC197915,REF-ITEM000000002557,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2654021LT30,REF-ITEM000000002558,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2654019PS40,REF-ITEM000000002559,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2654018PSS0,REF-ITEM000000002560,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC495268,REF-ITEM000000002561,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC016663,REF-ITEM000000002562,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653520PSS*9,REF-ITEM000000002563,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC414316,REF-ITEM000000002564,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653520PS4S8N0,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2653520PS4S8N0",Failed
+YT-MIC-M2653520PS4SMO0,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2653520PS4SMO0",Failed
+YT-MIC-M2653520PS4S0,REF-ITEM000000002565,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2653519PSM0,REF-ITEM000000002566,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2653519PSSMO10,REF-ITEM000000002567,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2653519PSSP,REF-ITEM000000002568,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2653519SC20,REF-ITEM000000002569,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC817389,REF-ITEM000000002570,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653519PS20,REF-ITEM000000002571,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC615912,REF-ITEM000000002572,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653020PSS*9,REF-ITEM000000002573,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653020PS4S0,REF-ITEM000000002574,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653020PS4S9,REF-ITEM000000002575,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2653019PSCUP2,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2653019PSCUP2",Failed
+YT-MIC-M2653019PS4S9,REF-ITEM000000002576,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC423863,REF-ITEM000000002577,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2556018PS40,REF-ITEM000000002578,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2555520PS40,REF-ITEM000000002579,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2555519PS4SUV,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2555519PS4SUV",Failed
+YT-M2555519LATT0,REF-ITEM000000002580,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2555518PS40,REF-ITEM000000002581,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC514028,REF-ITEM000000002582,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2555020LATT0,REF-ITEM000000002583,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2555019S40,REF-ITEM000000002584,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2555019PS4SUV9,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2555019PS4SUV9",Failed
+YT-MIC-M2555019LATSP39,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2555019LATSP39",Failed
+YT-MIC-M2555019PS4SUV,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2555019PS4SUV",Failed
+YT-MIC-M2554520PS4SUV,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2554520PS4SUV",Failed
+YT-MIC-M2554520LATSP3T,N/A,"2021/02/06 11:01: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2554520LATSP3T",Failed
+YT-MIC-M2554520,REF-ITEM000000002585,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC592741,REF-ITEM000000002586,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2554519S4A0,REF-ITEM000000002587,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC711247-2019,REF-ITEM000000002588,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2554519MXM40,REF-ITEM000000002589,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC215021,REF-ITEM000000002590,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2554021PS40,REF-ITEM000000002591,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC122962,REF-ITEM000000002592,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2554020PS4S9,REF-ITEM000000002593,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2554020PS40,REF-ITEM000000002594,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2554019PS29,REF-ITEM000000002595,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2554019PS4S0,REF-ITEM000000002596,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC272795,REF-ITEM000000002597,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2554018PSS,REF-ITEM000000002598,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2553520PSP40,REF-ITEM000000002599,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2553519PSM0,REF-ITEM000000002600,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2553519PSCUP2,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2553519PSCUP2",Failed
+YT-M2553519P4S0,REF-ITEM000000002601,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2553519PSP40,REF-ITEM000000002602,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2553519PS0,REF-ITEM000000002603,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC604092,REF-ITEM000000002604,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2553518PSS9,REF-ITEM000000002605,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2553518PS40,REF-ITEM000000002606,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC796573,REF-ITEM000000002607,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2553022PS4S0,REF-ITEM000000002608,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2553020PS4S0,REF-ITEM000000002609,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2553019PS4,REF-ITEM000000002610,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2457517LTX1219,REF-ITEM000000002611,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC128931,REF-ITEM000000002612,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC368596-ZNQ,REF-ITEM000000002613,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2455020PS4,REF-ITEM000000002614,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2454521PS49,REF-ITEM000000002615,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2454520LT30,REF-ITEM000000002616,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2454520LS30,REF-ITEM000000002617,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC564211,REF-ITEM000000002618,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2454519PS4,REF-ITEM000000002619,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-245-45-19-2019,N/A,"2021/02/06 11:01: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-245-45-19-2019",Failed
+YT-MIC162305,REF-ITEM000000002620,"2021/02/06 11:01: AM",Sucess,Updated
+YT-M2454518PRI30,REF-ITEM000000002621,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC831899,REF-ITEM000000002622,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC974019,REF-ITEM000000002623,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC974019-2019,REF-ITEM000000002624,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC773625,REF-ITEM000000002625,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC773625-2017,REF-ITEM000000002626,"2021/02/06 11:01: AM",Sucess,Updated
+YT-MIC-M2454518MXM48,REF-ITEM000000002627,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2454518PS4,REF-ITEM000000002628,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2454517PRIM0,REF-ITEM000000002629,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC518047,REF-ITEM000000002630,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC535170,REF-ITEM000000002631,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC693216,REF-ITEM000000002632,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2454020PS40,REF-ITEM000000002633,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2454019PS4,REF-ITEM000000002634,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC486703,REF-ITEM000000002635,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC545550,REF-ITEM000000002636,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC120075,REF-ITEM000000002637,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2454017PSP40,REF-ITEM000000002638,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC736885,REF-ITEM000000002639,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453520PS39,REF-ITEM000000002640,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-2453520PSSK3,REF-ITEM000000002641,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453520PSS0,REF-ITEM000000002642,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2453520SC20,REF-ITEM000000002643,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC698035-2019,REF-ITEM000000002644,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453520PSCP29,N/A,"2021/02/06 11:02: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2453520PSCP29",Failed
+YT-MIC-M2453520NS4S0,REF-ITEM000000002645,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453520PS4S9,REF-ITEM000000002646,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2453520S4S0,REF-ITEM000000002647,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453519PSSMO10,N/A,"2021/02/06 11:02: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2453519PSSMO10",Failed
+YT-MIC177283,REF-ITEM000000002648,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453519PSC2,REF-ITEM000000002649,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2453519SC20,REF-ITEM000000002650,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453519PSCUP28,N/A,"2021/02/06 11:02: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2453519PSCUP28",Failed
+YT-MIC139305,REF-ITEM000000002651,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2453519PS40,REF-ITEM000000002652,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC617008,REF-ITEM000000002653,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453518PS4,REF-ITEM000000002654,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2453020PS4SAO0,N/A,"2021/02/06 11:02: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2453020PS4SAO0",Failed
+YT-M2453020PS4S0,REF-ITEM000000002655,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC453682,REF-ITEM000000002656,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2357016LTXF0,REF-ITEM000000002657,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC711891,REF-ITEM000000002658,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2356518PS4SUV,N/A,"2021/02/06 11:02: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2356518PS4SUV",Failed
+YT-MIC64359,REF-ITEM000000002659,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2356517PMXV8,REF-ITEM000000002660,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2356018PS4SUV-2019,N/A,"2021/02/06 11:02: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MIC-M2356018PS4SUV-2019",Failed
+YT-MIC-M2356018LATHP,REF-ITEM000000002661,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2356018PS4SUV9,N/A,"2021/02/06 11:02: AM","The length of the string is 22, but it must be less than or equal to 20 characters. Value: YT-MIC-M2356018PS4SUV9",Failed
+YT-MIC039810,REF-ITEM000000002662,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2356018LATH9,REF-ITEM000000002663,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2356018LATS0,REF-ITEM000000002664,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC452837,REF-ITEM000000002665,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC534716,REF-ITEM000000002666,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2355519LATSP30,REF-ITEM000000002667,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2355519LATSP3A,REF-ITEM000000002668,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2355519PS4SUV,N/A,"2021/02/06 11:02: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2355519PS4SUV",Failed
+YT-M2355519PS4SU9,REF-ITEM000000002669,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC991601,REF-ITEM000000002670,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2355518PRI30,REF-ITEM000000002671,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2355517PCY4,REF-ITEM000000002672,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2355517PRI4,REF-ITEM000000002673,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2355020PS40,REF-ITEM000000002674,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2355019LS3,REF-ITEM000000002675,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC765691,REF-ITEM000000002676,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC125768,REF-ITEM000000002677,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC916195,REF-ITEM000000002678,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC832597,REF-ITEM000000002679,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC832597-2019,REF-ITEM000000002680,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2354519PS4,REF-ITEM000000002681,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2354518PRI4,REF-ITEM000000002682,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-1101,REF-ITEM000000002683,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2354518PS30,REF-ITEM000000002684,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2354518PCY4W0,N/A,"2021/02/06 11:02: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2354518PCY4W0",Failed
+YT-MIC-M2354517PRIM0,REF-ITEM000000002685,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC542695,REF-ITEM000000002686,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC542695-2019,REF-ITEM000000002687,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC239716,REF-ITEM000000002688,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2353519PS4S0,REF-ITEM000000002689,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-2148,REF-ITEM000000002690,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2257516AGIL0,REF-ITEM000000002691,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC397696,REF-ITEM000000002692,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2257015AGILIS9,REF-ITEM000000002693,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC834879,REF-ITEM000000002694,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2256018PS40,REF-ITEM000000002695,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2256017PRI4,REF-ITEM000000002696,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC343993,REF-ITEM000000002697,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC589024-2020,REF-ITEM000000002698,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2255518PCY40,REF-ITEM000000002699,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2255518PCY4V0,REF-ITEM000000002700,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2255517PCY40,REF-ITEM000000002701,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2255517PS49,REF-ITEM000000002702,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2255517PS40,REF-ITEM000000002703,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2255516PCY39,REF-ITEM000000002704,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2255017PRIM0,REF-ITEM000000002705,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2254518PS3ZP9,N/A,"2021/02/06 11:02: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2254518PS3ZP9",Failed
+YT-M2254518PCY9,REF-ITEM000000002706,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC134256,REF-ITEM000000002707,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2254518PSS0,REF-ITEM000000002708,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2254018PS30,REF-ITEM000000002709,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC478670-2019,REF-ITEM000000002710,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2254517PRI0,REF-ITEM000000002711,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2254517PRIM0,REF-ITEM000000002712,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2254019PS30,REF-ITEM000000002713,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-225/40R19-ZNQ,REF-ITEM000000002714,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2254019PS4*0,REF-ITEM000000002715,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC358251,REF-ITEM000000002716,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC674619,REF-ITEM000000002717,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2254018PS9,REF-ITEM000000002718,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC794074,REF-ITEM000000002719,"2021/02/06 11:02: AM",Sucess,Updated
+YT-M2157015AGILIS9,REF-ITEM000000002720,"2021/02/06 11:02: AM",Sucess,Updated
+YT-MIC-M2156017PCY4,REF-ITEM000000002721,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M2156017PCY39,REF-ITEM000000002722,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC446848,REF-ITEM000000002723,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M2155517PRI4,REF-ITEM000000002724,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M2155017PCY4,REF-ITEM000000002725,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M2155017PCY49,REF-ITEM000000002726,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M2154518PS40,REF-ITEM000000002727,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M2154517PCY49,REF-ITEM000000002728,"2021/02/06 11:03: AM",Sucess,Updated
+"YT-MIC-M2058016LAT CR",N/A,"2021/02/06 11:03: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M2058016LAT CR",Failed
+YT-MIC-M2056516E-SA0,REF-ITEM000000002729,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M2056516CAGL9,REF-ITEM000000002730,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M2056516CAGLI,REF-ITEM000000002731,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC414950,REF-ITEM000000002732,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M2056016PRIM0,REF-ITEM000000002733,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M2055516PCY40,REF-ITEM000000002734,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M2055017PS40,REF-ITEM000000002735,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M19515AGIL0,N/A,"2021/02/06 11:03: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-MIC052151,N/A,"2021/02/06 11:03: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-MIC784793,REF-ITEM000000002736,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC269353,REF-ITEM000000002737,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-1120,REF-ITEM000000002738,"2021/02/06 11:03: AM",Sucess,Updated
+YT-M1956015XM20,REF-ITEM000000002739,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M1955516PYC9-2019,N/A,"2021/02/06 11:03: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-MIC-M1955516PYC9-2019",Failed
+YT-MIC326543,REF-ITEM000000002740,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC101392,REF-ITEM000000002741,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M1856515XM2TH0,N/A,"2021/02/06 11:03: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MIC-M1856515XM2TH0",Failed
+YT-MIC985806,REF-ITEM000000002742,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC086572,REF-ITEM000000002743,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC-M1855516PCY39,REF-ITEM000000002744,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MIC501469,REF-ITEM000000002745,"2021/02/06 11:03: AM",Sucess,Updated
+YT-MAXXIS-P285-60R18-HT760,N/A,"2021/02/06 11:03: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-P285-60R18-HT760",Failed
+YT-MAXXIS-275-70R16-MX0-HT76,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-275-70R16-MX0-HT76",Failed
+YT-MAXXIS-275-40ZR19-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-275-40ZR19-HPM3",Failed
+YT-MAXXIS-265-70R18-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-265-70R18-MX0-HPM3",Failed
+YT-MAXXIS-265-70R17-MX0-HT76,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-265-70R17-MX0-HT76",Failed
+YT-MAXXIS-265-70R16-MX0-HT76,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-265-70R16-MX0-HT76",Failed
+YT-MAXXIS-P265-65R17-MX0-MXS,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-P265-65R17-MX0-MXS",Failed
+YT-MAXXIS-255-50R20-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-255-50R20-MX0-HPM3",Failed
+YT-MAXXIS-245-75R16-MX0-HT76,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-75R16-MX0-HT76",Failed
+YT-MAXXIS-245-65R17-MX0-HT76,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-65R17-MX0-HT76",Failed
+YT-MAXXIS-245-60R18-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-60R18-MX0-HPM3",Failed
+YT-MAXXIS-245-60R18-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-60R18-HPM3",Failed
+YT-MAXXIS-245-45R20-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-45R20-MX0-HPM3",Failed
+YT-MAXXIS-245-45R18-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-45R18-MX0-HPM3",Failed
+YT-MAXXIS-245-40R19-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-40R19-MX0-HPM3",Failed
+YT-MAXXIS-245-40ZR18-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 25, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-245-40ZR18-HPM3",Failed
+YT-MAXXIS-235-65R18-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-235-65R18-HPM3",Failed
+YT-MAXXIS-235-60R18-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-235-60R18-HPM3",Failed
+YT-MAXXIS-235-55R18-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-235-55R18-MX0-HPM3",Failed
+YT-MAXXIS-P225-70R16-HT760,N/A,"2021/02/06 11:03: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-P225-70R16-HT760",Failed
+YT-MAXXIS-225-60R18-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-225-60R18-MX0-HPM3",Failed
+YT-MAXXIS-225-55R17-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-225-55R17-HPM3",Failed
+YT-MAXXIS-225-55R17-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-225-55R17-MX0-HPM3",Failed
+YT-MAXXIS-225-50R17-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-225-50R17-MX0-HPM3",Failed
+YT-MAXXIS-225-40ZR18-MX0-HP5,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-225-40ZR18-MX0-HP5",Failed
+YT-MAXXIS-215-65R16-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-215-65R16-MX0-HPM3",Failed
+YT-MAXXIS-215-60R16-MX0-MA65,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-215-60R16-MX0-MA65",Failed
+YT-MAXXIS-215-45R17-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-215-45R17-MX0-HPM3",Failed
+YT-MAXXIS-205-65R16-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-205-65R16-MX0-ME3",Failed
+YT-MAXXIS-205-65R15-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-205-65R15-MX0-ME3",Failed
+YT-MAXXIS-205-60R16-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-205-60R16-MX0-HPM3",Failed
+YT-MAXXIS-205-55R16-MX0-HPM3,N/A,"2021/02/06 11:03: AM","The length of the string is 28, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-205-55R16-MX0-HPM3",Failed
+YT-MAXXIS-195R15-MX0-UE168N,N/A,"2021/02/06 11:03: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-MAXXIS-195-65R15-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-195-65R15-MX0-ME3",Failed
+YT-MAXXIS-195-65R15-MA307A,N/A,"2021/02/06 11:03: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-195-65R15-MA307A",Failed
+YT-MAXXIS-185-70R14-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-185-70R14-MX0-ME3",Failed
+YT-MAXXIS-185-65R15-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-185-65R15-MX0-ME3",Failed
+YT-MAXXIS-185-60R15-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-185-60R15-MX0-ME3",Failed
+YT-MAXXIS-175-70R14-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-175-70R14-MX0-ME3",Failed
+YT-MAXXIS-175-65R14-MX0-ME3,N/A,"2021/02/06 11:03: AM","The length of the string is 27, but it must be less than or equal to 20 characters. Value: YT-MAXXIS-175-65R14-MX0-ME3",Failed
+YT-MR-32x11.5R15-KL71,N/A,"2021/02/06 11:03: AM","The value ""32X"" can't be evaluated into type Integer.",Failed
+YT-MR-275/45ZR20-HP91,N/A,"2021/02/06 11:03: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MR-275/45ZR20-HP91",Failed
+YT-MR-275/40ZR20-HP91,N/A,"2021/02/06 11:03: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MR-275/40ZR20-HP91",Failed
+"YT-MR-235/65R16 CR08L KC53",N/A,"2021/02/06 11:03: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MR-235/65R16 CR08L KC53",Failed
+YT-MR-225/70R15C-KC53,N/A,"2021/02/06 11:03: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MR-225/70R15C-KC53",Failed
+"YT-MR-225/65R16 CR08L KC53",N/A,"2021/02/06 11:03: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MR-225/65R16 CR08L KC53",Failed
+YT-MR-225/45ZR18-MU12,N/A,"2021/02/06 11:03: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MR-225/45ZR18-MU12",Failed
+"YT-MR-215R14C Q08L KC53",N/A,"2021/02/06 11:03: AM","The value """" can't be evaluated into type Integer.",Failed
+"YT-MR-215/70R15 CT08L KC53",N/A,"2021/02/06 11:03: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MR-215/70R15 CT08L KC53",Failed
+YT-MR-215/55ZR17-MU12,N/A,"2021/02/06 11:04: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MR-215/55ZR17-MU12",Failed
+"YT-MR-205/75R16 CR08L KC53",N/A,"2021/02/06 11:04: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MR-205/75R16 CR08L KC53",Failed
+YT-MR-205/70R15C-KC53,N/A,"2021/02/06 11:04: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-MR-205/70R15C-KC53",Failed
+"YT-MR-205/65R16 CT08L KC53",N/A,"2021/02/06 11:04: AM","The length of the string is 26, but it must be less than or equal to 20 characters. Value: YT-MR-205/65R16 CT08L KC53",Failed
+YT-MR-195R15-KC53,N/A,"2021/02/06 11:04: AM","The value """" can't be evaluated into type Integer.",Failed
+"YT-MR-195R14C 08 KC53",N/A,"2021/02/06 11:04: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-K3110515AT510,N/A,"2021/02/06 11:04: AM","The value ""31X"" can't be evaluated into type Integer.",Failed
+YT-KUM-K2857017HT5120,N/A,"2021/02/06 11:04: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-KUM-K2857017HT5120",Failed
+YT-KUM-2178573,REF-ITEM000000002746,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-2176523,REF-ITEM000000002747,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-2177843,REF-ITEM000000002748,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-2177823,REF-ITEM000000002749,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-K2756518AT51,REF-ITEM000000002750,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-2155513,REF-ITEM000000002751,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-275/35/20,REF-ITEM000000002752,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-K2753019PS710,REF-ITEM000000002753,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-2119283,REF-ITEM000000002754,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-K2656018L2120,REF-ITEM000000002755,"2021/02/06 11:04: AM",Sucess,Updated
+YT-K2655020KL21B,REF-ITEM000000002756,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-5337,REF-ITEM000000002757,"2021/02/06 11:04: AM",Sucess,Updated
+YT-K2653019PS71,REF-ITEM000000002758,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-4557,REF-ITEM000000002759,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-K2555020KL33,REF-ITEM000000002760,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-19409,REF-ITEM000000002761,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-1767,REF-ITEM000000002762,"2021/02/06 11:04: AM",Sucess,Updated
+YT-KUM-2181753,REF-ITEM000000002763,"2021/02/06 11:04: AM",Sucess,Updated

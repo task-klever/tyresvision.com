@@ -1,0 +1,13 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+$currentUrl = $block->getRequest()->getUriString();
+?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "www.tyresvision.com",
+  "url": "<?php echo $currentUrl;?>"
+}
+</script>

@@ -1,0 +1,172 @@
+<?php
+/**
+ * @var $block \Hdweb\Rfc\Block\Adminhtml\OrderEdit\Tab\View
+ */
+?>
+<?php
+$orderId = $block->getOrderId();
+$orderIncrementId = $block->getOrderIncrementId();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$orderResponse = unserialize($block->getOrderiMileResponse());
+$iMileOrderResponse = json_decode($orderResponse, true);
+$orderTrackingResponse = unserialize($block->getOrderiMileTrackingResponse());
+$iMileOrderTrackingResponse = json_decode($orderTrackingResponse, true);
+?>
+<div class="fieldset-wrapper order-information">
+<?php if(!$iMileOrderResponse):?>
+	<?php /* Start iMile Order Generate action */ ?>
+	<form class="action-element"
+		  action="<?= $block->escapeUrl($block->getUrl('rfc/rnr/createimileorder/order_id/'.$orderId)) ?>"
+		  method="post">
+		<input
+			name="form_key"
+			type="hidden"
+			value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+		<button
+			class="action-primary"
+			type="submit"
+			title="<?= $block->escapeHtmlAttr(__('Generate iMile Delivery')) ?>">
+			<?= $block->escapeHtml(__('Generate iMile Delivery')) ?>
+		</button>
+	</form>
+	<?php /* End iMile Order Generate action */ ?>
+<?php else:?>
+	<div class="fieldset-wrapper-title">
+        <span class="title"><?php /* @escapeNotVerified */ echo __('iMile Order Information') ?></span>
+    </div>
+	<table class="admin__table-secondary">
+        <tbody>
+        <?php echo $block->getChildHtml(); ?>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('status:') ?></th>
+			<td><?php echo $iMileOrderResponse['status']; ?></td>
+		</tr>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('description:') ?></th>
+			<td><?php echo $iMileOrderResponse['description']; ?></td>
+		</tr>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('expressNo:') ?></th>
+			<td><?php echo $iMileOrderResponse['expressNo']; ?></td>
+		</tr>
+		<?php /*<tr>
+			<th><?php echo __('imileAwb:') ?></th>
+			<td><?php echo $iMileOrderResponse['imileAwb']; ?></td>
+		</tr>
+		<tr>
+			<th><?php echo __('imileInvoice:') ?></th>
+			<td><?php echo $iMileOrderResponse['imileInvoice']; ?></td>
+		</tr> */ ?>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('vendorAwb:') ?></th>
+			<td><?php echo $iMileOrderResponse['vendorAwb']; ?></td>
+		</tr>
+		<tr>
+			<th><?php /* @escapeNotVerified */ echo __('vendorInvoice:') ?></th>
+			<td><?php echo $iMileOrderResponse['vendorInvoice']; ?></td>
+		</tr>
+        </tbody>
+    </table>
+	<br/>
+	<?php if(!$iMileOrderTrackingResponse):?>
+	<?php /* Start iMile Order Track action */ ?>
+	<form class="action-element"
+		  action="<?= $block->escapeUrl($block->getUrl('rfc/rnr/trackimileorder/order_id/'.$orderId)) ?>"
+		  method="post">
+		<input
+			name="form_key"
+			type="hidden"
+			value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+		<button
+			class="action-primary"
+			type="submit"
+			title="<?= $block->escapeHtmlAttr(__('Track iMile Order')) ?>">
+			<?= $block->escapeHtml(__('Track iMile Order')) ?>
+		</button>
+	</form>
+	<?php /* End iMile Order Track action */ ?>
+	<?php else:?>
+		<div class="fieldset-wrapper-title">
+			<span class="title"><?php /* @escapeNotVerified */ echo __('iMile Order Tracking Information') ?></span>
+		</div>
+		<table class="admin__table-secondary">
+			<tbody>
+			<?php echo $block->getChildHtml(); ?>
+			<tr>
+				<th><?php /* @escapeNotVerified */ echo __('billNo:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['billNo']; ?></td>
+			</tr>
+			<tr>
+				<th><?php /* @escapeNotVerified */ echo __('latestLocus:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['latestLocus']; ?></td>
+			</tr>
+			<tr>
+				<th><?php /* @escapeNotVerified */ echo __('latestSite:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['latestSite']; ?></td>
+			</tr>
+			<tr>
+				<th><?php echo __('latestStatus:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['latestStatus']; ?></td>
+			</tr>
+			<tr>
+				<th><?php echo __('latestStatusTime:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['latestStatusTime']; ?></td>
+			</tr>
+			<?php if(count($iMileOrderTrackingResponse['locusDetailed'][0]['locus']) > 0):?>
+				<?php foreach($iMileOrderTrackingResponse['locusDetailed'][0]['locus'] as $locus):?>
+					<tr>
+						<th><?php /* @escapeNotVerified */ echo __('latestSite:') ?></th>
+						<td><?php echo $locus['latestSite']; ?></td>
+					</tr>
+					<tr>
+						<th><?php /* @escapeNotVerified */ echo __('latestStatus:') ?></th>
+						<td><?php echo $locus['latestStatus']; ?></td>
+					</tr>
+					<tr>
+						<th><?php /* @escapeNotVerified */ echo __('latestStatusTime:') ?></th>
+						<td><?php echo $locus['latestStatusTime']; ?></td>
+					</tr>
+					<tr>
+						<th><?php /* @escapeNotVerified */ echo __('locusDetailed:') ?></th>
+						<td><?php echo $locus['locusDetailed']; ?></td>
+					</tr>
+					<tr>
+						<th><?php /* @escapeNotVerified */ echo __('locusType:') ?></th>
+						<td><?php echo $locus['locusType']; ?></td>
+					</tr>
+				<?php endforeach;?>
+			<?php endif;?>
+			<tr>
+				<th><?php /* @escapeNotVerified */ echo __('locusType:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['locusType']; ?></td>
+			</tr>
+			<tr>
+				<th><?php /* @escapeNotVerified */ echo __('orderNo:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['orderNo']; ?></td>
+			</tr>
+			<tr>
+				<th><?php /* @escapeNotVerified */ echo __('orderType:') ?></th>
+				<td><?php echo $iMileOrderTrackingResponse['locusDetailed'][0]['orderType']; ?></td>
+			</tr>
+			</tbody>
+		</table>
+	<?php endif;?>
+	<br/>
+	<?php /* Start iMile Order Delete action */ ?>
+	<form class="action-element"
+		  action="<?= $block->escapeUrl($block->getUrl('rfc/rnr/deleteimileorder/order_id/'.$orderId.'/express_no/'.$iMileOrderResponse['expressNo'])) ?>"
+		  method="post">
+		<input
+			name="form_key"
+			type="hidden"
+			value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>"/>
+		<button
+			class="action-primary"
+			type="submit"
+			title="<?= $block->escapeHtmlAttr(__('Delete iMile Order')) ?>">
+			<?= $block->escapeHtml(__('Delete iMile Order')) ?>
+		</button>
+	</form>
+	<?php /* End iMile Order Delete action */ ?>
+<?php endif;?>	
+</div>

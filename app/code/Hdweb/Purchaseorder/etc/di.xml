@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+ 
+
+     <virtualType name="Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorder\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+             <argument name="mainTable" xsi:type="string">purchase_order</argument>
+            <argument name="resourceModel" xsi:type="string">Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorder</argument>
+        </arguments>
+    </virtualType>
+ 
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="purchaseorder_create_grid_data_source" xsi:type="string">
+                    Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorder\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="purchaseorder_create_itemgrid_data_source" xsi:type="string">
+                    Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorderitem\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    
+       <virtualType name="Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorderitem\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+             <argument name="mainTable" xsi:type="string">purchase_order_item</argument>
+            <argument name="resourceModel" xsi:type="string">Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorderitem</argument>
+        </arguments>
+    </virtualType>
+ 
+    
+    <virtualType name="Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorder\Collection" type="Hdweb\Purchaseorder\Ui\Component\Listing\CustomerDataProvider">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">purchase_order</argument>
+            <argument name="resourceModel" xsi:type="string">Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorder</argument>
+        </arguments>
+    </virtualType>
+	
+	<virtualType name="Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorderitem\Collection" type="Hdweb\Purchaseorder\Ui\Component\Listing\PoitemDataProvider">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">purchase_order_item</argument>
+            <argument name="resourceModel" xsi:type="string">Hdweb\Purchaseorder\Model\ResourceModel\Purchaseorderitem</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <plugin name="sales_order_invoice_additional_columns" type="Hdweb\Purchaseorder\Plugin\SalesInvoiceCustomColumn" sortOrder="10" disabled="false" />
+    </type>
+<!-- 
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sales_order_invoice_grid_data_source" xsi:type="string">Hdweb/Purchaseorder\Model\ResourceModel\Order\Invoice\Collection</item>
+            </argument>
+        </arguments>
+    </type> -->
+
+</config>

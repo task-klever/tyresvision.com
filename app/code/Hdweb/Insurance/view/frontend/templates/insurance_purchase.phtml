@@ -1,0 +1,98 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$insuranceHelper = $this->helper('Hdweb\Insurance\Helper\Data');
+
+$applicationId = $this->getRequest()->getParam('application-id');
+
+$authResponse = $insuranceHelper->insuranceAuth();
+$authResponseArr = json_decode($authResponse);
+$access_token = $authResponseArr->response->access_token;
+
+$apiCallBaseUrl = $insuranceHelper->getAPIcallBaseUrl();
+
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => $apiCallBaseUrl.'api/v2/car/policy',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{
+    "application_id": "'.$applicationId.'"
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'Authorization: Bearer '.$access_token
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+$responseArr = json_decode($response);
+$clientPhone = $responseArr->response->client_info->phone_number;
+$clientEmail = $responseArr->response->client_info->email;
+$clientFirstName = $responseArr->response->client_info->first_name;
+$today = date('d-m-Y');
+
+$quoteId = $responseArr->response->quote_id;
+$record = $objectManager->create('Hdweb\Insurance\Model\ResourceModel\Insurance\Collection')->addFieldToFilter('quote_id', $quoteId)->getFirstItem();
+$reqParamPolicy = array("application_id" => '"'.$applicationId.'"');
+$reqParamPolicy = json_encode($reqParamPolicy);
+$resParamPolicy = $response;
+$insuranceModel = $objectManager->get('Hdweb\Insurance\Model\Insurance');
+$insurance = $insuranceModel->load($record->getInsuranceId());
+$insurance->setRequestParameterPolicy($reqParamPolicy);
+$insurance->setResponseParameterPolicy($resParamPolicy);
+$insurance->setStatus(1);
+$insurance->save();
+?>
+
+  <div class="steps">
+  <ul class="list-unstyled multi-steps">
+    <li id="step-1">
+        <?php echo __('Provide Car Details'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-2">
+        <?php echo __('Instant Quotes'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-3">
+        <?php echo __('Application Form'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-4">
+        <?php echo __('Payment'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-5">
+        <?php echo __('Get the Policy'); ?>
+    </li>
+  </ul>
+</div>
+
+<div class="insurance-success">
+	<div class="text-wrap">
+        <h2 class=""><?php echo __('Done'); ?></h2>
+        <p class=""><?php echo __('Thank you for the payment and completing the registration.'); ?></p>
+        <p><?php echo __('It takes 1-2 working hours to get the policy.'); ?></p>
+        <p>We'll reach out to you via <b><?php echo $clientPhone; ?></b> or <b><?php echo $clientEmail; ?></b></p>
+        <hr>
+		    <p class="">Client Name: <b><?php echo $clientFirstName; ?></b> || Application ID: <b><?php echo $applicationId; ?></b> || Payment Date: <b><?php echo $today; ?></b></p>
+	</div>
+</div>

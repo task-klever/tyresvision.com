@@ -1,0 +1,375 @@
+<?php
+
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php
+$_product = $block->getProduct();
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
+$prod_qty =  $StockState->getStockQty($_product->getEntityId());
+$stockQty = '';
+if ($prod_qty >= 8) {
+	$stockQty = 8;
+} else {
+	$stockQty = $prod_qty;
+}
+$partsCat = $_product->getResource()->getAttribute('parts_category')->getFrontend()->getValue($_product);
+?>
+<?php $buttonTitle = __('Add To Cart'); ?>
+<?php if ($_product->isSaleable()) : ?>
+
+	<?php $themeHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+
+	<?php // If is deals product. Show countdown time 
+	?>
+	<?php if ($_product->getSpecialPrice() && $_product->getSpecialToDate() && $_product->getSpecialFromDate()) : ?>
+
+		<?php $dateTimeFormat = \Magento\Framework\Stdlib\DateTime::DATETIME_PHP_FORMAT; ?>
+		<?php $now = $themeHelper->getCurrentDateTime(); ?>
+		<?php $specialFromDate = date($dateTimeFormat, strtotime($_product->getSpecialFromDate())); ?>
+		<?php $specialToDate = date($dateTimeFormat, strtotime($_product->getSpecialToDate())); ?>
+
+		<?php if ($specialFromDate <= $now && $specialToDate > $now) : ?>
+			<div class="product-detail-deals margin-top25">
+				<?php
+				$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+				$StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
+				$stockItem = $StockState->getStockQty($_product->getId(), $_product->getStore()->getWebsiteId());
+				?>
+				<div class="hurry-text text-uppercase"><?php echo __('Hurry! Only %1 left in stock', $stockItem); ?></div>
+				<?php echo $this->getLayout()->createBlock('MGS\Mpanel\Block\Products\Deals')->setProduct($_product)->setTemplate('MGS_Mpanel::products/deals/item.phtml')->toHtml() ?>
+			</div>
+		<?php endif ?>
+
+	<?php endif ?>
+	<?php // End Deals 
+	?>
+
+	<div class="box-tocart">
+
+		<?php echo $block->getChildHtml('', true) ?>
+
+		<div class="fieldset">
+			<?php if ($block->shouldRenderQuantity()) : ?>
+				<div class="field qty">
+					<label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?></span></label>
+					<?php /* 
+					<div class="control">
+						<span class="edit-qty minus" onclick="minusQty('qty')">-</span>
+						<input type="number" name="qty" id="qty" maxlength="12" value="<?php echo $block->getProductDefaultQty() * 1 ?>" title="<?php echo __('Qty') ?>" class="input-text qty" data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
+						<span class="edit-qty plus" onclick="plusQty('qty')">+</span>
+					</div>
+					 */ ?>
+					<select name="qty" class="select_qty qty-dropdown">
+						<?php
+						for ($i = 1; $i <= $stockQty; $i++) {
+							if ($partsCat == 'Car Tyres') {
+								//if ($i % 2 != 0) {
+								if ($i % 2 != 0 && $i != 5) {
+									// Skip odd numbers
+									continue;
+								}
+							}
+						?>
+							<option value=<?php echo $i; ?>><?php echo $i; ?></option>
+						<?php } ?>
+					</select>
+				</div>
+			<?php endif; ?>
+			<div class="actions">
+				<button type="submit" title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>" class="action primary tocart" id="product-addtocart-button">
+					<span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
+				</button>
+				<?php
+				$_wishlistSubmitParams = $this->helper('Magento\Wishlist\Helper\Data')->getAddParams($_product);
+				$compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
+				?>
+			</div>
+		</div>
+		<div class="actions action-add-to">
+			<?php if ($themeHelper->getStoreConfig('mpanel/product_details/compare')) : ?>
+				<button type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Compare') ?>" class="action primary tocart tocompare" data-post='<?php echo $compareHelper->getPostDataParams($_product); ?>' data-role="add-to-links" id="product-addtocart-button">
+					<span><?php /* @escapeNotVerified */ echo __('Add to Compare') ?></span>
+				</button>
+			<?php endif ?>
+			<?php if ($themeHelper->getStoreConfig('mpanel/product_details/wishlist') && $this->helper('Magento\Wishlist\Helper\Data')->isAllow()) : ?>
+				<button type="button" class="action towishlist" data-post='<?php /* @escapeNotVerified */ echo $_wishlistSubmitParams; ?>' data-action="add-to-wishlist" title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
+					<span class="pe-7s-like"></span>
+				</button>
+				<script type="text/x-magento-init">
+					{
+						"body": {
+							"addToWishlist": <?php /* @escapeNotVerified */ echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($block->getWishlistOptions()) ?>
+						}
+					}
+				</script>
+			<?php endif; ?>
+
+			<?php if ($themeHelper->getStoreConfig('mpanel/product_details/compare')) : ?>
+				<?php /*<button type="button" class="action tocompare" 
+					data-post='<?php echo $compareHelper->getPostDataParams($_product);?>'
+					data-role="add-to-links"
+					title="<?php echo __('Add to Compare') ?>">
+						<span class="pe-7s-graph3"></span>
+				</button> */ ?>
+			<?php endif ?>
+
+			<?php if ($block->canEmailToFriend()) : ?>
+				<button type="button" onclick="setLocation('<?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Product')->getEmailToFriendUrl($_product) ?>')" class="action mailto friend" title="<?php /* @escapeNotVerified */ echo __('Send Email to Friend') ?>"><span class="pe-7s-mail"></span></button>
+			<?php endif; ?>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<?php else : ?>
+	<a href="https://api.whatsapp.com/send?phone=%20+971800847466&text=Hello%20TyresVision" class="call-us-action">
+		<i class="fa fa-lg fa-whatsapp"></i><span><?php echo __(' WhatsApp Us'); ?></span>
+	</a>
+<?php endif; ?>
+<script type="text/x-magento-init">
+	{
+        "#product_addtocart_form": {
+            "Magento_Catalog/product/view/validation": {
+                "radioCheckboxClosest": ".nested"
+            }
+        }
+    }
+</script>
+<?php if (!$block->isRedirectToCartEnabled()) : ?>
+	<script type="text/x-magento-init">
+		{
+        "#product_addtocart_form": {
+            "catalogAddToCart": {
+                "bindSubmit": false
+            }
+        }
+    }
+</script>
+<?php endif; ?>
+
+<?php if ($block->shouldRenderQuantity()) : ?>
+	<script type="text/javascript">
+		function plusQty(qtyInput) {
+			require([
+				'jquery'
+			], function(jQuery) {
+				(function($) {
+					if ($('#' + qtyInput).attr('disabled') != 'disabled') {
+						qty = $('#' + qtyInput).attr('value');
+						qty = parseInt(qty);
+						qty++;
+						$('#' + qtyInput).val(qty);
+					}
+				})(jQuery);
+			});
+
+		}
+
+		function minusQty(qtyInput) {
+			require([
+				'jquery'
+			], function(jQuery) {
+				(function($) {
+					if ($('#' + qtyInput).attr('disabled') != 'disabled') {
+						qty = $('#' + qtyInput).attr('value');
+						qty = parseInt(qty);
+
+						if (qty > 1) {
+							qty--;
+							$('#' + qtyInput).val(qty);
+						}
+					}
+				})(jQuery);
+			});
+		}
+	</script>
+<?php endif; ?>
+<style>
+	.catalog-product-view .product-info-main a.call-us-action {
+		float: left;
+		display: block;
+		background: #1b3fec;
+		width: auto;
+		padding: 0 34px;
+		line-height: 40px;
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: #FFF;
+		margin: 10px auto;
+		border-radius: 40px;
+	}
+
+	.catalog-product-view .call-us-action .fa.fa-phone {
+		margin-right: 10px;
+	}
+
+	.catalog-product-view .product-info-main .product-sub-infomation:not(:empty) {
+		clear: both;
+	}
+
+	.compare_btn.actions {
+		width: 100%;
+		display: block;
+		margin-top: 20px;
+	}
+
+	.catalog-product-view .product-info-main .product-add-form .actions.action-add-to,
+	.catalog-product-view .bundle-info .product-details .actions.action-add-to {
+		margin-left: 8px;
+	}
+
+	@media only screen and (max-width: 768px) {
+
+		.catalog-product-view .product-info-main .product-add-form .actions.action-add-to,
+		.catalog-product-view .bundle-info .product-details .actions.action-add-to {
+			margin-left: 0;
+			margin-top: 20px;
+		}
+
+		.catalog-product-view .download-inner {
+			display: block;
+		}
+
+		.catalog-product-view .download-right {
+			width: 100%;
+		}
+	}
+
+	.catalog-product-view ul.additional_info_text {
+		display: block;
+		width: 100%;
+	}
+
+	.catalog-product-view .additional_info_text li {
+		padding: 2px;
+		word-spacing: normal;
+		font-size: 15px;
+		font-weight: 500;
+	}
+
+	.catalog-product-view .additional_info_text li:before {
+		content: "\203A";
+		font-size: 24px;
+		margin: 5px;
+		color: #4bcf2e;
+		font-weight: 700;
+	}
+
+	.catalog-product-view .dimensions ul {
+		width: 100%;
+		background: #E4DECE;
+		margin: 0 auto;
+		padding: 10px;
+		display: flex;
+		border-radius: 15px;
+		margin-top: 10px;
+	}
+
+	.catalog-product-view .dimensions ul li {
+		display: inline-block;
+		color: #000;
+		margin: 0 auto;
+		font-weight: 500;
+	}
+
+	.catalog-product-view .additional_info_detail {
+		margin-top: 20px;
+	}
+
+	.catalog-product-view .dimensions {
+		padding-bottom: 20px;
+	}
+
+	.catalog-product-view .progress {
+		border: none;
+		background: none;
+		box-shadow: none;
+		margin-top: 10px;
+	}
+
+	.catalog-product-view.progress {
+		width: 50%;
+		background: none;
+		border: none;
+		box-shadow: none;
+		margin-top: 10px;
+	}
+
+	.catalog-product-view .progress .progress-bar {
+		margin-right: 20px;
+		background: #a1a1a1;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.catalog-product-view .progress .progress-bar.bg {
+		background: #E4DECE;
+	}
+
+	.catalog-product-view .technical-details {
+		padding-top: 20px;
+	}
+
+	.catalog-product-view .technical-details h4 {
+		text-transform: capitalize;
+		font-size: 17px;
+	}
+
+	.catalog-product-view .additional-div {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.catalog-product-view .download-inner .download-img {
+		float: left;
+		clear: both;
+	}
+
+	.catalog-product-view .download-inner>div {
+		margin-right: 20px;
+	}
+
+	.catalog-product-view .download-inner .download-right span {
+		font-weight: 500;
+		font-size: 14px;
+	}
+
+	.catalog-product-view .page-title-wrapper .page-header {
+		display: none;
+	}
+
+	.seal-logo {
+		vertical-align: bottom;
+		align-items: center;
+		display: flex;
+		padding-top: 10px;
+	}
+
+	.seal-logo .continental-seal {
+		display: flex;
+	}
+
+	@media only screen and (min-width: 768px) {
+
+		.catalog-product-view .download-inner {
+			display: flex;
+			align-items: center;
+			padding-top: 20px;
+		}
+
+		.catalog-product-view .download-right {
+			display: flex;
+			align-items: center;
+			width: 20%;
+		}
+	}
+</style>

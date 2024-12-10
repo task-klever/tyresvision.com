@@ -1,0 +1,41 @@
+SKU,"ERP Product Ref","Created Date",Status,Message
+HD-C04512140000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000,N/A,"2021/02/06 10:40: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04710690000-2019,N/A,"2021/02/06 10:45: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512140000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-C04512250000-2019,N/A,"2021/02/06 10:49: AM","The value ""None"" can't be evaluated into type Integer.",Failed
+HD-RHBATNS40(ZL),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN55,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATNS60(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN66,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN88,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATDIN100,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBATN120L,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT115D31(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT105D31(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT55D23(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT80D26(L),N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT105D31R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT55D231R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+HD-RHBAT80D26R,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-SM-G1700235ST1L,REF-ITEM000000001945,"2021/02/06 10:49: AM",Sucess,Updated
+YT-SM-G1500225ST3L,REF-ITEM000000001946,"2021/02/06 10:49: AM",Sucess,Updated
+YT-SUMS18514SL720,N/A,"2021/02/06 10:49: AM","The value """" can't be evaluated into type Integer.",Failed
+YT-ROA1200035683,REF-ITEM000000001947,"2021/02/06 10:49: AM",Sucess,Updated
+YT-ROA1200036698,REF-ITEM000000001948,"2021/02/06 10:49: AM",Sucess,Updated
+YT-ROA1200033434,REF-ITEM000000001949,"2021/02/06 10:49: AM",Sucess,Updated
+YT-PIR-P3153021PZ4N09,N/A,"2021/02/06 10:49: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09",Failed
+YT-PIR-P3153021PZ4N09-20,N/A,"2021/02/06 10:49: AM","The length of the string is 24, but it must be less than or equal to 20 characters. Value: YT-PIR-P3153021PZ4N09-20",Failed
+YT-PIR1200031593-20,REF-ITEM000000001950,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR-3184-2020,REF-ITEM000000001951,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200038540-2020,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200038540-2020",Failed
+YT-PIR-1196,REF-ITEM000000001952,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200011941-20,REF-ITEM000000001953,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200023592-2020,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-PIR1200023592-2020",Failed
+YT-PIR1200011943-ZNQ,REF-ITEM000000001954,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR-19801,REF-ITEM000000001955,"2021/02/06 10:50: AM",Sucess,Updated
+YT-PIR1200024105-20,REF-ITEM000000001956,"2021/02/06 10:50: AM",Sucess,Updated
+YT-MIC651885,REF-ITEM000000001957,"2021/02/06 10:50: AM",Sucess,Updated
+YT-MIC-M2853020CUP29,REF-ITEM000000001958,"2021/02/06 10:50: AM",Sucess,Updated
+YT-ZEE1200045687-2019,N/A,"2021/02/06 10:50: AM","The length of the string is 21, but it must be less than or equal to 20 characters. Value: YT-ZEE1200045687-2019",Failed

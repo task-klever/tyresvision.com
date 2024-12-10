@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mfgoogleshoppinfeed>
+            <general>
+                <enabled>0</enabled>
+                <mfmodule>GoogleShoppingFeed</mfmodule>
+                <feed_title>Google Shopping Feed</feed_title>
+                <feed_description/>
+            </general>
+            <attributes>
+                <mapping>
+                    {
+                    "_1658487871455_455":{"tag":"id","attr":"sku","value":""},
+                    "_1658490700442_442":{"tag":"title","attr":"name","value":""},
+                    "_1658490704691_690":{"tag":"description","attr":"short_description","value":""},
+                    "_1658490704691_691":{"tag":"link","attr":"product_url","value":""},
+                    "_1658490704691_692":{"tag":"image_link","attr":"image","value":""},
+                    "_1658732014810_810":{"tag":"availability","attr":"1","value":"in_stock"},
+                    "_1658732073630_630":{"tag":"price","attr":"price","value":""},
+                    "_1658732178419_419":{"tag":"sale_price","attr":"final_price","value":""},
+                    "_1658732074295_295":{"tag":"brand","attr":"1","value":"  "},
+                    "_1658732097537_537":{"tag":"condition","attr":"1","value":"new"},
+                    "_1658732124744_743":{"tag":"gtin","attr":"1","value":""},
+                    "_1658732124744_744":{"tag":"identifier_exists","attr":"1","value":"yes"},
+                    "_1658732124744_745":{"tag":"mpn","attr":"sku","value":""},
+                    "_1658732139833_833":{"tag":"product_type","attr":"product_type","value":""},
+                    "_1658732139833_834":{"tag":"google_product_category","attr":"google_product_category","value":""}
+                    }
+                </mapping>
+            </attributes>
+            <product_types>
+                <configurable>
+                    <include_configurable>0</include_configurable>
+                    <include_child>1</include_child>
+                </configurable>
+            </product_types>
+            <conditions>
+                <price>1</price>
+                <stock_status>0</stock_status>
+            </conditions>
+            <google_analytics>
+                <utm_campaign/>
+                <utm_content/>
+                <utm_source/>
+                <utm_medium/>
+                <utm_term/>
+            </google_analytics>
+            <generate_feed>
+                <multi_currency>0</multi_currency>
+            </generate_feed>
+        </mfgoogleshoppinfeed>
+    </default>
+</config>

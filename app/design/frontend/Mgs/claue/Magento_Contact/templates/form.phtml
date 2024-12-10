@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+?>
+<?php
+$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+$canUsePanel = $themeHelper->acceptToUsePanel();
+?>
+<div class="contact-form-content">
+	<div class="row">
+		<div class="col-sm-6 col-xs-12 margin-bottom60">
+			<div class="contact-info">
+				<h3 class="text-uppercase margin-bottom15"><?php echo __('CONTACT INFO'); ?></h3>
+				<ul>
+					<li> <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> Sharjah Media City (Shams), Al Messaned, Al Bataeh, Sharjah, UAE</li>
+					<li><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span> <a href="tel:+971 800 847 466">+971 800 847 466</a></li>
+					<li><span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i> </span> <a href="mailto: customercare@tyresvision.com">customercare@tyresvision.com</a></li>
+				</ul>
+			</div>
+			<?php //echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact_page_custom_block')->setCanUsePanel($canUsePanel)->toHtml(); 
+			?>
+		</div>
+		<div class="col-sm-6 col-xs-12 margin-bottom60">
+			<h3 class="text-uppercase margin-bottom15"><?php echo __('SEND US A MESSAGE'); ?></h3>
+			<p>We love to hear from you! Please let us know if you have any questions or concerns and we will get back to you within 2 business days. Thanks!</p>
+			<form class="form contact" action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>" id="contact-form" method="post" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}'>
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group name required">
+							<label for="name"><?php echo __('Name'); ?></label>
+							<input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text form-control" type="text" data-validate="{required:true}" />
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group email required">
+							<label for="email"><?php echo __('Email'); ?></label>
+							<input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text form-control" type="email" data-validate="{required:true, 'validate-email':true}" />
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-12">
+						<div class="form-group telephone">
+							<label for="telephone"><?php echo __('Phone'); ?></label>
+							<input name="telephone" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Phone') ?>" value="" class="input-text form-control" type="text" />
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-12">
+						<div class="form-group comment required">
+							<label for="comment"><?php echo __('Leave A Comment'); ?></label>
+							<textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text form-control" rows="4" data-validate="{required:true}"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="actions-toolbar">
+					<input type="hidden" name="hideit" id="hideit" value="" />
+					<button type="submit" title="<?php /* @escapeNotVerified */ echo __('Send Messages') ?>" class="action submit btn btn-primary">
+						<span><?php /* @escapeNotVerified */ echo __('Send Messages') ?></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	.contact-form-content form {
+		margin-top: 20px;
+	}
+
+	.contact-form-content .contact-info {}
+
+	.contact-form-content .contact-info ul {
+		margin: 25px 0 0;
+	}
+
+	.contact-form-content .contact-info ul li {
+		margin-bottom: 30px;
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	.contact-form-content .contact-info ul li span {
+		height: 40px;
+		width: 40px;
+		background-color: #000;
+		display: block;
+		color: #4bcf2e;
+		font-size: 20px;
+		text-align: center;
+		line-height: 37px;
+		border-radius: 15px;
+		display: block;
+		flex: 0 0 auto;
+		margin-right: 18px;
+	}
+
+	.contact-form-content .contact-info ul li a {}
+
+	.contact-form-content .contact-info ul li i {}
+</style>

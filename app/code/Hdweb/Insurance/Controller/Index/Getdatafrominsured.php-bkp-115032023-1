@@ -1,0 +1,177 @@
+<?php
+
+namespace Hdweb\Insurance\Controller\Index;
+
+class Getdatafrominsured extends \Magento\Framework\App\Action\Action
+{
+
+	 public function __construct(
+		\Magento\Framework\App\Action\Context $context,
+		\Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
+        \Hdweb\Insurance\Helper\Data $insuranceHelper
+	) {
+		$this->resultJsonFactory 	= $resultJsonFactory;
+        $this->insuranceHelper    = $insuranceHelper;
+    	parent::__construct($context);
+    }
+
+	public function execute()
+    {
+    	$type = $this->getRequest()->getParam('type');
+
+    	if($type == 'getmake'){
+    		$year = $this->getRequest()->getParam('year');
+
+    		$getMakeUrl = 'https://insured.ae/get-car-make/'.$year;
+			//$getMakeResult = file_get_contents($getMakeUrl);
+            $getMakeResult = $this->insuranceHelper->getDataUsingCURL($getMakeUrl);
+			$getMakeResultArray = json_decode($getMakeResult);
+			$makes = $getMakeResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($makes as $make) {
+				$optionsHtml .= '<option value="'.$make->Name.'">'.$make->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+
+    	if($type == 'getmodel'){
+    		$make = $this->getRequest()->getParam('make');
+    		$year = $this->getRequest()->getParam('year');
+    		$make = str_replace(' ', '%20', $make);
+    		$getModelUrl = 'https://insured.ae/get-car-model/'.$year.'/'.$make;
+			//$getModelResult = file_get_contents($getModelUrl);
+            $getModelResult = $this->insuranceHelper->getDataUsingCURL($getModelUrl);
+			$getModelResultArray = json_decode($getModelResult);
+			$models = $getModelResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($models as $model) {
+				$optionsHtml .= '<option value="'.$model->Name.'">'.$model->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+
+    	if($type == 'gettrim'){
+    		$make = $this->getRequest()->getParam('make');
+    		$year = $this->getRequest()->getParam('year');
+    		$model = $this->getRequest()->getParam('model');
+    		$make = str_replace(' ', '%20', $make);
+    		$model = str_replace(' ', '%20', $model);
+    		$getTrimUrl = 'https://insured.ae/get-car-trim/'.$year.'/'.$make.'/'.$model;
+			//$getTrimResult = file_get_contents($getTrimUrl);
+            $getTrimResult = $this->insuranceHelper->getDataUsingCURL($getTrimUrl);
+			$getTrimResultArray = json_decode($getTrimResult);
+			$trims = $getTrimResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($trims as $trim) {
+				$optionsHtml .= '<option value="'.$trim->Name.'">'.$trim->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+
+    	if($type == 'bodytype'){
+    		$make = $this->getRequest()->getParam('make');
+    		$year = $this->getRequest()->getParam('year');
+    		$model = $this->getRequest()->getParam('model');
+    		$trim = $this->getRequest()->getParam('trim');
+    		$make = str_replace(' ', '%20', $make);
+    		$model = str_replace(' ', '%20', $model);
+    		$trim = str_replace(' ', '%20', $trim);
+    		$getBodyTypeUrl = 'https://insured.ae/get-car-body-type/'.$year.'/'.$make.'/'.$model.'/'.$trim;
+			//$getBodyTypeResult = file_get_contents($getBodyTypeUrl);
+            $getBodyTypeResult = $this->insuranceHelper->getDataUsingCURL($getBodyTypeUrl);
+			$getBodyTypeResultArray = json_decode($getBodyTypeResult);
+			$bodyTypes = $getBodyTypeResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($bodyTypes as $bodyType) {
+				$optionsHtml .= '<option value="'.$bodyType->Name.'">'.$bodyType->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+
+    	if($type == 'enginesize'){
+    		$make = $this->getRequest()->getParam('make');
+    		$year = $this->getRequest()->getParam('year');
+    		$model = $this->getRequest()->getParam('model');
+    		$trim = $this->getRequest()->getParam('trim');
+    		$bodytype = $this->getRequest()->getParam('bodytype');
+    		$make = str_replace(' ', '%20', $make);
+    		$model = str_replace(' ', '%20', $model);
+    		$trim = str_replace(' ', '%20', $trim);
+    		$bodytype = str_replace(' ', '%20', $bodytype);
+    		$getEngineSizeUrl = 'https://insured.ae/get-car-engine-size/'.$year.'/'.$make.'/'.$model.'/'.$trim.'/'.$bodytype;
+			//$getEngineSizeResult = file_get_contents($getEngineSizeUrl);
+            $getEngineSizeResult = $this->insuranceHelper->getDataUsingCURL($getEngineSizeUrl);
+			$getEngineSizeResultArray = json_decode($getEngineSizeResult);
+			$engineSizes = $getEngineSizeResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($engineSizes as $engineSize) {
+				$optionsHtml .= '<option value="'.$engineSize->Name.'">'.$engineSize->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+
+    	if($type == 'gettransmission'){
+    		$make = $this->getRequest()->getParam('make');
+    		$year = $this->getRequest()->getParam('year');
+    		$model = $this->getRequest()->getParam('model');
+    		$trim = $this->getRequest()->getParam('trim');
+    		$bodytype = $this->getRequest()->getParam('bodytype');
+    		$enginesize = $this->getRequest()->getParam('enginesize');
+    		$make = str_replace(' ', '%20', $make);
+    		$model = str_replace(' ', '%20', $model);
+    		$trim = str_replace(' ', '%20', $trim);
+    		$bodytype = str_replace(' ', '%20', $bodytype);
+    		$enginesize = str_replace(' ', '%20', $enginesize);
+    		$getTransmissionUrl = 'https://insured.ae/get-car-transmission/'.$year.'/'.$make.'/'.$model.'/'.$trim.'/'.$bodytype.'/'.$enginesize;
+			//$getTransmissionResult = file_get_contents($getTransmissionUrl);
+            $getTransmissionResult = $this->insuranceHelper->getDataUsingCURL($getTransmissionUrl);
+			$getTransmissionResultArray = json_decode($getTransmissionResult);
+			$transmissions = $getTransmissionResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($transmissions as $transmission) {
+				$optionsHtml .= '<option value="'.$transmission->Name.'">'.$transmission->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+        
+        if($type == 'getregion'){
+    		$make = $this->getRequest()->getParam('make');
+    		$year = $this->getRequest()->getParam('year');
+    		$model = $this->getRequest()->getParam('model');
+    		$trim = $this->getRequest()->getParam('trim');
+    		$bodytype = $this->getRequest()->getParam('bodytype');
+    		$enginesize = $this->getRequest()->getParam('enginesize');
+    		$transmission = $this->getRequest()->getParam('transmission');
+    		$make = str_replace(' ', '%20', $make);
+    		$model = str_replace(' ', '%20', $model);
+    		$trim = str_replace(' ', '%20', $trim);
+    		$bodytype = str_replace(' ', '%20', $bodytype);
+    		$enginesize = str_replace(' ', '%20', $enginesize);
+    		$transmission = str_replace(' ', '%20', $transmission);
+    		$getRegionUrl = 'https://insured.ae/get-car-region/'.$year.'/'.$make.'/'.$model.'/'.$trim.'/'.$bodytype.'/'.$enginesize.'/'.$transmission;
+			//$getRegionResult = file_get_contents($getRegionUrl);
+            $getRegionResult = $this->insuranceHelper->getDataUsingCURL($getRegionUrl);
+			$getRegionResultArray = json_decode($getRegionResult);
+			$regions = $getRegionResultArray->data;
+
+			$optionsHtml = '';
+			foreach ($regions as $region) {
+				$optionsHtml .= '<option value="'.$region->Name.'">'.$region->Name.'</option>';
+			}
+			$resultJson = $this->resultJsonFactory->create();
+			return $resultJson->setData($optionsHtml);
+    	}
+    }
+}

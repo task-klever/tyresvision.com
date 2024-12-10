@@ -1,0 +1,939 @@
+<?php
+/**
+ * @category   Hdweb
+ * @package    Hdweb_Insurance
+ * @author     vicky.hdit@gmail.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();  
+$insuranceHelper = $this->helper('Hdweb\Insurance\Helper\Data');
+
+//$getYearUrl = 'https://insured.ae/get-car-model-years';
+//$getYearResult = file_get_contents($getYearUrl);
+/*$getYearResult = $insuranceHelper->getDataUsingCURL($getYearUrl);
+$getYearResultArray = json_decode($getYearResult);
+$years = $getYearResultArray->data;*/
+
+/* $years25 = date('Y', strtotime('-25 year'));
+$years65 = date('Y', strtotime('-65 year'));
+
+$authResponse = $insuranceHelper->insuranceAuth();
+$authResponseArr = json_decode($authResponse);
+
+$access_token = $authResponseArr->response->access_token; */
+
+/* $apiCallBaseUrl = $insuranceHelper->getAPIcallBaseUrl();
+
+$getYearUrl = $apiCallBaseUrl.'api/v2/master/car/data/model_years';
+$getYearResult = $insuranceHelper->getDataFromAPI($getYearUrl);
+$getYearResultArray = json_decode($getYearResult);
+$years = array_reverse($getYearResultArray->response); */
+
+$request = $objectManager->get('Magento\Framework\App\Request\Http');
+$actionaname = $request->getFullActionName();
+if($actionaname == 'insurance_index_thirdparty'){
+    $thirdParyChekced = 'checked';
+    $comprehensiveChecked = '';
+}else{
+    $comprehensiveChecked = 'checked';
+    $thirdParyChekced = '';
+}
+    
+
+/* $carTypesRes = $insuranceHelper->getCarTypes($access_token);
+$carTypesResArr = json_decode($carTypesRes);
+$carTypes = $carTypesResArr->response->car_type->third_party;
+$nationalities = $carTypesResArr->response->nationalities; */
+?>
+<div class="car-insurance">
+<?php /* 
+<div class="steps">
+  <ul class="list-unstyled multi-steps">
+    <li id="step-1" class="is-active">
+        <?php echo __('Provide Car Details'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-2">
+        <?php echo __('Instant Quotes'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-3">
+        <?php echo __('Application Form'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-4">
+        <?php echo __('Payment'); ?>
+        <div class="progress-bar progress-bar--success">
+            <div class="progress-bar__bar"></div>
+        </div>
+    </li>
+    <li id="step-5">
+        <?php echo __('Get the Policy'); ?>
+    </li>
+  </ul>
+</div>
+ */ ?>
+<div class="car-details insurance-step1">
+    <div class="box">
+    <?php /*
+    <form class="" action="<?php echo $block->getBaseUrl().'insurance/index/save'; ?>" id="hdweb-insurance-form" method="post" data-mage-init='{"validation": {}}'>
+    */ ?>
+    <form class="" action="<?php echo $block->getBaseUrl().'insurance/index/save'; ?>" id="carDetails" method="post" data-mage-init='{"validation": {}}'>
+        <?php /* <input type="hidden" name="step" value="car_details">  */ ?>
+        <fieldset class="fieldset row">
+            <div class="col-sm-12 col-xs-12 field">
+                <div class="control">
+                    <div><?php echo __('Policy Type'); ?></div>
+                    <input type="radio" id="policy_type_third_party" name="policy_type" value="third-party" onclick="window.location='<?php echo $block->getBaseUrl().'insurance/index/thirdparty'; ?>';" <?php echo $thirdParyChekced ?>>
+                    <label for="policy_type_third_party"><?php echo __('3rd Party'); ?></label>
+                    <input type="radio" id="policy_type_comprehensive" name="policy_type" value="comprehensive" onclick="window.location='<?php echo $block->getBaseUrl().'insurance/index/comprehensive'; ?>';" <?php echo $comprehensiveChecked ?>>
+                    <label for="policy_type_comprehensive"><?php echo __('Comprehensive'); ?></label>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Name'); ?></span></label>
+                    <input type="text" name="customer_name" value="" data-validate="{required:true}">
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Mobile Number'); ?></span></label>
+                    <input type="number" placeholder="05XXXXXXXX" name="mobile_number" id="mobile-number" value="" title="<?php echo __('Mobile Number') ?>" class="input-text form-control" data-validate='{"required":true, "minlength":10, "maxlength":10, "validate-number":1}'>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Email'); ?></span></label>
+                    <input type="email" name="email" value="" data-validate="{required:true, 'validate-email':true}">
+                </div>
+            </div>
+            <?php /* 
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Model Year'); ?></span></label>
+                    <select name="car_model_year" id="car_model_year" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Model Year'); ?></option>
+                        <?php foreach($years as $year): ?>
+                            <option value="<?php echo $year->Name; ?>"><?php echo $year->Name; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Make'); ?></span></label>
+                    <select name="car_make" id="car_make" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Make'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Model'); ?></span></label>
+                    <select name="car_model" id="car_model" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Model'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Vehicle Plate No'); ?></span></label>
+                    <input type="text" name="vehicle_plate_no" value="" data-validate="{required:true}">
+                </div>
+            </div>
+             */ ?>
+            <?php /* 
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Trim'); ?></span></label>
+                    <select name="car_trim" id="car_trim" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Trim'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Body Type'); ?></span></label>
+                    <select name="car_body_type" id="car_body_type" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Body Type'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Engine Size'); ?></span></label>
+                    <select name="car_engine_size" id="car_engine_size" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Engine Size'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Transmission'); ?></span></label>
+                    <select name="car_transmission" id="car_transmission" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Transmission'); ?></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car Region'); ?></span></label>
+                    <select name="car_region" id="car_region" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Region'); ?></option>
+                    </select>
+                </div>
+            </div>
+             */ ?>
+             <?php /* 
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Car type'); ?></span></label>
+                    <select name="car_type" id="car_type" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Car type'); ?></option>
+                        */ ?>
+                        <?php /* need to get options from api */ ?>
+                        <?php /* 
+                        <?php foreach($carTypes as $carType): ?>
+                            <option value="<?php echo $carType->id; ?>"><?php echo $carType->name; ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+            </div>
+            */ ?>
+            <?php /* 
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('License Start Date'); ?></span></label>
+                    <input type="text" name="license_start_date" id="license_start_date" value="" placeholder="License Start Date" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                </div>
+            </div>
+            */ ?>
+            <?php /*
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group">
+                    <div><?php echo __('Is Brand New?'); ?></div>
+                    <input type="radio" id="is_brand_new_yes" name="is_brand_new" value="1" checked>
+                    <label for="is_brand_new_yes"><?php echo __('Yes'); ?></label>
+                    <input type="radio" id="is_brand_new_no" name="is_brand_new" value="0">
+                    <label for="is_brand_new_no"><?php echo __('No'); ?></label>
+                </div>
+            </div>
+            
+            <div class="col-sm-3 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Nationality'); ?></span></label>
+                    <select name="nationality" id="nationality" data-validate="{required:true}">
+                        <option value=""><?php echo __('Select Nationality'); ?></option>
+                        <?php foreach($nationalities as $nationality): ?>
+                            <option value="<?php echo $nationality->id; ?>"><?php echo $nationality->nicename; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            */ ?>
+            <?php /*
+            <div class="field">
+                <div class="control">
+                    <label class="label"><span>Place of Registration</span></label>
+                    <select name="place_of_registration" id="place_of_registration" data-validate="{required:true}">
+                        <option value="">Select Place of Registration</option>
+                        <option value="7c256058-f8a8-e611-80cd-005056bd47e8">ABU DHABI</option>
+                        <option value="7e256058-f8a8-e611-80cd-005056bd47e8">AJMAN</option>
+                        <option value="88256058-f8a8-e611-80cd-005056bd47e8">AL AIN</option>
+                        <option value="80256058-f8a8-e611-80cd-005056bd47e8">DUBAI</option>
+                        <option value="82256058-f8a8-e611-80cd-005056bd47e8">FUJAIRAH</option>
+                        <option value="86256058-f8a8-e611-80cd-005056bd47e8">RAK</option>
+                        <option value="84256058-f8a8-e611-80cd-005056bd47e8">SHARJAH</option>
+                        <option value="3585f9c9-fda8-e611-80c5-005056bd2b52">UMM AL QUWAIN</option>
+                    </select>
+                </div>
+            </div>
+            */ ?>
+            <?php /*
+            <div class="col-sm-4 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('Date of birth'); ?></span></label>
+                    <div class="row">
+                    <div class="col-sm-4 col-xs-12 field">
+                    <select name="dob[day]" id="dob" data-validate="{required:true}">
+                        <option value=""><?php echo __('Day'); ?></option>
+                        <?php foreach (range(01, 31) as $day): ?>
+                            <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-sm-4 col-xs-12 field">
+                    <select name="dob[month]" id="dom" data-validate="{required:true}">
+                        <option value=""><?php echo __('Month'); ?></option>
+                        <option value="1"><?php echo __('Jan'); ?></option>
+                        <option value="2"><?php echo __('Feb'); ?></option>
+                        <option value="3"><?php echo __('Mar'); ?></option>
+                        <option value="4"><?php echo __('Apr'); ?></option>
+                        <option value="5"><?php echo __('May'); ?></option>
+                        <option value="6"><?php echo __('Jun'); ?></option>
+                        <option value="7"><?php echo __('Jul'); ?></option>
+                        <option value="8"><?php echo __('Aug'); ?></option>
+                        <option value="9"><?php echo __('Sep'); ?></option>
+                        <option value="10"><?php echo __('Oct'); ?></option>
+                        <option value="11"><?php echo __('Nov'); ?></option>
+                        <option value="12"><?php echo __('Dec'); ?></option>
+                    </select>
+                </div>
+                <div class="col-sm-4 col-xs-12 field">
+                    <select name="dob[year]" id="doy" data-validate="{required:true}">
+                        <option value=""><?php echo __('Year'); ?></option>.
+                        <?php foreach (range($years25, $years65) as $year): ?>
+                            <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                </div>
+                   <div class="note"><?php echo __('Minimum age: 25 years; Maximum age: 65 years'); ?></div>
+            </div>
+            </div>
+            <div class="col-sm-4 col-xs-12 field">
+                <div class="form-group">
+                    <div><?php echo __('Any claims that are your fault in the last 3 years?'); ?></div>
+                    <input type="radio" id="three_years_claim_yes" name="three_years_claim" value="1">
+                    <label for="three_years_claim_yes"><?php echo __('Yes'); ?></label>
+                    <input type="radio" id="three_years_claim_no" name="three_years_claim" value="0" checked>
+                    <label for="three_years_claim_no"><?php echo __('No'); ?></label>
+                </div>
+            </div>
+            */ ?>
+            <?php /*
+            <div class="col-sm-4 col-xs-12 field">
+                <div class="form-group required">
+                    <label class="label"><span><?php echo __('First Date of Car Registration'); ?></span></label>
+                    <input type="text" name="date_of_registration" id="date_of_registration" value="" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                </div>
+            </div>
+            */ ?>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <?php /* 
+                <button type="submit" title="Show me quotes" class="action submit primary btn btn-primary" id="show-me-quotes">
+                    <span><?php echo __('Show me quotes'); ?></span>
+                </button>
+                 */ ?>
+                <button type="submit" title="Submit" class="action submit primary btn btn-primary" id="insurance-submit">
+                    <span><?php echo __('Submit'); ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="insurance-form-note"><?php echo __('All insurance-related services and policy issuance is provided by Petra Insurance Brokers LLC, a company incorporated and existing under the laws of the United Arab Emirates, holding CBUAE Insurance Authority broker license number 147.For more information, please contact '); ?><a href="https://www.insurewithpetra.com/" target="_blank"><?php echo __('Petra Insurance Brokers'); ?></a>.</div>
+</div>
+</div>
+
+<?php /*
+<div class="instant-quotes insurance-step2" style="display: none">
+    <div class="box">
+    <div class="car-info">
+        <h2 class="insurance-count"></h2>
+        <span class="policy-type"><?php echo __('Policy type - 3rd Party'); ?></span>
+        <p class="year-make-model"></p>
+    </div>
+
+        <div class="quotes-header not-style">
+        <div class="quotes-header-inner">
+        <div class="row">
+        <div class="col-sm-3">
+            <?php echo __('Plan'); ?>
+        </div>
+        <div class="col-sm-4">
+            <?php echo __('Benefits overview'); ?>
+        </div>
+        <div class="col-sm-2">
+            <?php echo __('Total price'); ?>
+        </div>
+        <div class="col-sm-3">
+            <?php echo __('Buy'); ?>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+*/ ?>
+
+
+<?php /*
+<div class="application-form insurance-step3" style="display: none">
+    <div class="box">
+      <div class="car-info">
+        <h2 class="almost-there"><?php echo __('Almost there..'); ?></h2>
+        <span class="policy-type"><?php echo __('Policy type - 3rd Party'); ?></span>
+        <p class="year-make-model"></p>
+    </div>
+    <form class="" action="<?php echo $block->getBaseUrl().'insurance/index/save'; ?>" id="applicationForm" enctype='multipart/form-data' method="post" data-mage-init='{"validation": {}}'>
+        <input type="hidden" name="step" value="application_form">
+        <input type="hidden" class="saved_id" name="id" value="">
+        <input type="hidden" class="quote_id" name="quote_id" value="">
+        <input type="hidden" class="plan_id" name="plan_id" value="">
+        <fieldset class="fieldset">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="row">
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('First name'); ?></span></label>
+                            <input name="first_name" id="first_name" value="" class="input-text" type="text" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Family name'); ?></span></label>
+                            <input name="family_name" id="family_name" value="" class="input-text" type="text" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Phone number'); ?></span></label>
+                            <span class="phone-prefix">+971</span>
+                            <input name="application_phone" id="application_phone" value="" class="input-text input-text validate-length maximum-length-9 minimum-length-9 validate-digits" type="text" placeholder="5xxxxxxxx" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Email'); ?></span></label>
+                            <input name="email" id="email" value="" class="input-text" type="email" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    */ ?>
+                    <?php /*
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Traffic number'); ?></span></label>
+                            <input name="traffic_number" id="traffic_number" value="" class="input-text input-text validate-digits" type="text" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('License number'); ?></span></label>
+                            <input name="license_number" id="license_number" value="" class="input-text input-text validate-digits" type="text" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('License Issue Date'); ?></span></label>
+                            <input type="text" name="license_issue_date" id="license_issue_date" value="" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('License Expiry Date'); ?></span></label>
+                            <input type="text" name="license_expiry_date" id="license_expiry_date" value="" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                        </div>
+                    </div>
+                    */ ?>
+                    <?php /*
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Policy Start Date'); ?></span></label>
+                            <input type="text" name="policy_start_date" id="policy_start_date" value="" class="datepicker input-text" data-validate="{required:true}" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field">
+                            <div><?php echo __('Detail about this car'); ?></div>
+                            <input type="radio" id="car_company_type_private" name="car_company_type" value="private" checked>
+                            <label for="car_company_type_private"><?php echo __('Private'); ?></label>
+                            <input type="radio" id="car_company_type_commercial" name="car_company_type" value="commercial">
+                            <label for="car_company_type_commercial"><?php echo __('Commercial'); ?></label>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12">
+                        <div class="field">
+                            <label class="label"><span><?php echo __('Company name'); ?></span></label>
+                            <input name="company_name" id="company_name" value="" class="input-text" type="text">
+                        </div>
+                    </div>
+                </div>
+              </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Driving License - Front'); ?></span></label>
+                            <input name="driving_license_front" id="driving_license_front" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Driving License - Back'); ?></span></label>
+                            <input name="driving_license_back" id="driving_license_back" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Vehicle Registration (Mulkiya) - Front'); ?></span></label>
+                            <input name="vehicle_registration_mulkiya_front" id="vehicle_registration_mulkiya_front" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Vehicle Registration (Mulkiya) - Back'); ?></span></label>
+                            <input name="vehicle_registration_mulkiya_back" id="vehicle_registration_mulkiya_back" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <!-- <div class="form-group emirates-id">
+                        <div class="field required">
+                            <label class="label"><span>Emirates ID</span></label>
+                            <input name="emirates_id" id="emirates_id" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div> -->
+                    <div class="form-group emirates-id-front">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Emirates ID - Front'); ?></span></label>
+                            <input name="emirates_id_front" id="emirates_id_front" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div>
+                    <div class="form-group emirates-id-back">
+                        <div class="field required">
+                            <label class="label"><span><?php echo __('Emirates ID - Back'); ?></span></label>
+                            <input name="emirates_id_back" id="emirates_id_back" value="" class="" type="file" data-validate="{required:true}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <div class="field required">
+                            <input id="step3Checkbox1" name="application_checkbox1" value="1" class="" type="checkbox" data-validate="{required:true}">
+                            <label class="label" for="step3Checkbox1"><span><?php echo __('I declare that I am a resident of UAE and I have a valid Emirates ID and valid Visa'); ?></span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field required">
+                            <input id="step3Checkbox2" name="application_checkbox2" value="1" class="" type="checkbox" data-validate="{required:true}">
+                            <label class="label" for="step3Checkbox2"><span><?php echo __('I hereby declare that the information I have provided is correct, and I bear full responsibility in case of proof of incorrect information above'); ?></span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field required">
+                            <input id="step3Checkbox3" name="application_checkbox3" value="1" class="" type="checkbox" data-validate="{required:true}">
+                            <label class="label" for="step3Checkbox3"><span class="insurance-form-note"><?php echo __('I agree with the website <a href="https://insured.ae/privacy-policy" target="_blank">Privacy Policy</a> and <a href="https://insured.ae/terms" target="_blank">Terms of Use</a>'); ?></span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field">
+                            <input id="step3Checkbox4" name="application_checkbox4" value="" class="" type="checkbox">
+                            <label class="label" for="step3Checkbox4"><span><?php echo __('I am happy to receive SMS / Email / WhatsApp / Phone Call communication regarding the updates to my quote and policies.'); ?></span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="Continue" class="action submit primary btn btn-primary">
+                    <span><?php echo __('Continue'); ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="insurance-form-note">After the payment, the policy will be issued in 2-4 working hours.</div>
+</div>
+</div>
+*/ ?>
+</div>
+
+
+<?php /*start any claims yes popup*/ ?>
+<?php /*
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" id="anyClaimsYes" data-target="#anyClaimsYesModal" style="display: none">
+  <?php echo __('Any Claims Yes'); ?>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="anyClaimsYesModal" tabindex="-1" role="dialog" aria-labelledby="anyClaimsYesModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="anyClaimsYesModalLabel"><?php echo __('Sorry'); ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><?php echo __('Sorry, no instant quotes available.'); ?></p>
+        <p><?php echo __('But we can help with a quote offline.'); ?></p>
+        <p><?php echo __("Call us at 800-PETRA and we'll be happy to help."); ?></p>
+      </div>
+    </div>
+  </div>
+</div>
+*/ ?>
+<?php /*end any claims yes popup*/ ?>
+<?php /*
+<script>
+    require(['jquery','mage/url',"mage/calendar"], function($, url) {
+
+        $("#carDetails").submit(function(e) {
+            e.preventDefault(); 
+            var form = $(this);
+            var actionUrl = form.attr('action');
+            if ($('#carDetails').valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: actionUrl,
+                    data: form.serialize(), // serializes the form's elements.
+                    showLoader: true,
+                    success: function(data)
+                    {
+                        $(".car-details").hide();
+                        $(".instant-quotes .quotes-header").append(data.step2Html);
+                        $(".instant-quotes").show();
+                        $(".insurance-count").text(data.insurance_count+" insurance options");
+                        $(".year-make-model").text(data.selected_year+" - "+data.selected_make+" - "+data.selected_model);
+                        $(".saved_id").val(data.lastsavedid);
+                        $(".multi-steps #step-1").removeClass("is-active");
+                        $(".multi-steps #step-2").addClass("is-active");
+                        $('html, body').animate({
+                            scrollTop: $(".car-insurance .steps").offset().top
+                        }, 2000);
+                        $(document).ready(function(){ 
+                        $('.policy-info').tooltip();
+                        });
+
+                    }
+                });
+            }
+            
+        });
+        
+        $('#car_model_year').change(function(){
+                $('#car_make').find('option').not(':first').remove();
+                $('#car_model').find('option').not(':first').remove();
+                $('#car_trim').find('option').not(':first').remove();
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedYear = $(this).val();
+            //alert($(this).val());
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {year:selectedYear, type:'getmake'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_make').find('option').not(':first').remove();
+                        $('#car_make').append(response)
+                    }
+                });
+            }
+        });
+
+        $('#car_make').change(function(){
+                $('#car_model').find('option').not(':first').remove();
+                $('#car_trim').find('option').not(':first').remove();
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedMake = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {make:selectedMake, year:selectedYear, type:'getmodel'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_model').find('option').not(':first').remove();
+                        $('#car_model').append(response)
+                    }
+                });
+            }
+        });
+
+        $('#car_model').change(function(){
+                $('#car_trim').find('option').not(':first').remove();
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedModel = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {model:selectedModel,make:selectedMake, year:selectedYear, type:'gettrim'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_trim').find('option').not(':first').remove();
+                        $('#car_trim').append(response)
+                    }
+                });
+            }
+        });
+
+        $('#car_trim').change(function(){
+                $('#car_body_type').find('option').not(':first').remove();
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedTrim = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'bodytype'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_body_type').find('option').not(':first').remove();
+                        $('#car_body_type').append(response)
+                    }
+                });
+            }
+        });
+
+        $('#car_body_type').change(function(){
+                $('#car_engine_size').find('option').not(':first').remove();
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedBodyType = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            var selectedTrim = $('#car_trim').find(":selected").val();
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {bodytype:selectedBodyType, trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'enginesize'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_engine_size').find('option').not(':first').remove();
+                        $('#car_engine_size').append(response)
+                    }
+                });
+            }
+        });
+
+        $('#car_engine_size').change(function(){
+                $('#car_transmission').find('option').not(':first').remove();
+                $('#car_region').find('option').not(':first').remove();
+            
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedEngineSize = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            var selectedTrim = $('#car_trim').find(":selected").val();
+            var selectedBodyType = $('#car_body_type').find(":selected").val();
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {enginesize:selectedEngineSize, bodytype:selectedBodyType, trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'gettransmission'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_transmission').find('option').not(':first').remove();
+                        $('#car_transmission').append(response)
+                    }
+                });
+            }
+        });
+
+        $('#car_transmission').change(function(){
+            var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+            var selectedTransmission = $(this).val();
+            var selectedYear = $('#car_model_year').find(":selected").val();
+            var selectedMake = $('#car_make').find(":selected").val();
+            var selectedModel = $('#car_model').find(":selected").val();
+            var selectedTrim = $('#car_trim').find(":selected").val();
+            var selectedBodyType = $('#car_body_type').find(":selected").val();
+            var selectedEngineSize = $('#car_engine_size').find(":selected").val();
+            if($(this).val() != ''){
+                $.ajax({
+                    url: getDataFromInsuredUrl,
+                    type: "POST",
+                    data: {transmission:selectedTransmission, enginesize:selectedEngineSize, bodytype:selectedBodyType, trim:selectedTrim, model:selectedModel,make:selectedMake, year:selectedYear, type:'getregion'},
+                    showLoader: true,
+                    dataType: 'json',
+                    success: function(response){
+                        $('#car_region').find('option').not(':first').remove();
+                        $('#car_region').append(response)
+                    }
+                });
+            }
+        });
+
+        var dateobj = new Date();
+        var currentYear = dateobj.getFullYear();
+        $("#license_start_date").datepicker({
+          maxDate: new Date(),
+          showMonthAfterYear: false,
+          dateFormat:'dd-mm-yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: '1950:'+currentYear,
+          defaultViewDate: {year: currentYear}
+        });
+
+       
+
+        $("#policy_start_date").datepicker({
+          minDate: 0,
+          showMonthAfterYear: false,
+          dateFormat:'dd-mm-yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: '1900:'+currentYear,
+          defaultViewDate: {year: currentYear}
+        });
+        $( "#policy_start_date" ).datepicker( "setDate", 1);
+
+     
+
+        $("#license_issue_date").datepicker({
+          showMonthAfterYear: false,
+          dateFormat:'dd-mm-yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "-100:+100"
+        });
+
+        $("#license_expiry_date").datepicker({
+          showMonthAfterYear: false,
+          dateFormat:'dd-mm-yy',
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "-100:+100"
+        });
+
+        $('body').on('click','.planContinue',function(){
+            var quoteId = $(this).attr("data-quoteid");
+            var planId = $(this).attr("data-planid");
+            $(".quote_id").val(quoteId);
+            $(".plan_id").val(planId);
+            $(".instant-quotes").hide();
+            $(".application-form").show();
+            $(".almost-there").text("Almost there..");
+            $(".multi-steps #step-2").removeClass("is-active");
+            $(".multi-steps #step-3").addClass("is-active");
+            $('html, body').animate({
+                scrollTop: $(".car-insurance .steps").offset().top
+            }, 2000);
+        });
+
+        $("#applicationForm").submit(function(e) {
+            e.preventDefault(); 
+            var form = $(this);
+            var actionUrl = form.attr('action');
+            if ($('#applicationForm').valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: actionUrl,
+                    //data: form.serialize(), // serializes the form's elements.
+                    data: new FormData(this), // 
+                    contentType: false,
+                    processData: false,
+                    showLoader: true,
+                    success: function(data)
+                    {
+                        //alert('application id - '+data.application_id);
+                        window.location.replace(data.redirect_url);
+                    }
+                });
+            }
+            
+        });
+
+        $('input[type=radio][name=three_years_claim]').change(function() {
+            var three_years_claim = $('input[name="three_years_claim"]:checked').val();
+            if(three_years_claim == '1'){
+                $('#show-me-quotes').attr('disabled', 'disabled');
+                $('#anyClaimsYes').trigger('click');
+            }
+        });
+
+        $("#anyClaimsYesModal").on("hidden.bs.modal", function () {
+            $('input[name="three_years_claim"][value="0"]').prop('checked', true);
+            $('#show-me-quotes').removeAttr('disabled');
+        });
+    });
+</script>
+*/ ?>
+<?php /* 
+<script>
+require(['jquery','mage/url'], function($, url) {
+    $('#car_model_year').change(function(){
+        $('#car_make').find('option').not(':first').remove();
+        $('#car_model').find('option').not(':first').remove();
+    
+        var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+        var selectedYear = $(this).val();
+        //alert($(this).val());
+        if($(this).val() != ''){
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {year:selectedYear, type:'getmake'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_make').find('option').not(':first').remove();
+                    $('#car_make').append(response)
+                }
+            });
+        }
+    });
+
+    $('#car_make').change(function(){
+        $('#car_model').find('option').not(':first').remove();
+        
+        var getDataFromInsuredUrl = url.build('insurance/index/getdatafrominsured');
+        var selectedMake = $(this).val();
+        var selectedYear = $('#car_model_year').find(":selected").val();
+        if($(this).val() != ''){
+            $.ajax({
+                url: getDataFromInsuredUrl,
+                type: "POST",
+                data: {make:selectedMake, year:selectedYear, type:'getmodel'},
+                showLoader: true,
+                dataType: 'json',
+                success: function(response){
+                    $('#car_model').find('option').not(':first').remove();
+                    $('#car_model').append(response)
+                }
+            });
+        }
+    });
+});
+</script>
+ */ ?>

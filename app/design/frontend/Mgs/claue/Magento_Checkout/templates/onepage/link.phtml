@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block \Magento\Checkout\Block\Onepage\Link */
+$tyrefinderHelpre=$this->helper('Hdweb\Tyrefinder\Helper\Data');
+$storePickupUrl=$tyrefinderHelpre->getStorepickupUrl();
+$isRedirectToStorepickuppage=$tyrefinderHelpre->redirectCartToStorepickup();
+
+if($isRedirectToStorepickuppage){
+    $redirectUrl=$storePickupUrl;
+}else{
+    $redirectUrl=$block->getCheckoutUrl();
+}
+?>
+<?php if ($block->isPossibleOnepageCheckout()) :?>
+    <button type="button"
+            data-role="proceed-to-checkout"
+            title="<?= $block->escapeHtmlAttr(__('Proceed to Checkout')) ?>"
+            data-mage-init='{
+                "Magento_Checkout/js/proceed-to-checkout":{
+                    "checkoutUrl":"<?= $block->escapeJs($block->escapeUrl($redirectUrl)) ?>"
+                }
+            }'
+            class="action primary checkout<?= ($block->isDisabled()) ? ' disabled' : '' ?>"
+            <?php if ($block->isDisabled()) :?>
+                disabled="disabled"
+            <?php endif; ?>>
+        <span><?= $block->escapeHtml(__('Proceed to Checkout')) ?></span>
+    </button>
+<?php endif?>

@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var $block \Magento\Sales\Block\Order\Totals
+ * @see \Magento\Sales\Block\Order\Totals
+ */
+?>
+<?php foreach ($block->getTotals() as $_code => $_total) : ?>
+    <?php if ($_total->getBlockName()) : ?>
+        <?= $block->getChildHtml($_total->getBlockName(), false) ?>
+    <?php else :?>
+    <tr class="<?= $block->escapeHtmlAttr($_code) ?>" style="text-align: right;background: #fff;padding: 0;margin: 0;font-family: 'Montserrat', sans-serif;">
+        <th colspan="4" scope="row" style="text-align: right;background: #fff !important;font-family: 'Montserrat', sans-serif;">
+            <?php if ($_total->getStrong()) : ?>
+                <strong><?= $block->escapeHtml($_total->getLabel()) ?></strong>
+            <?php else : ?>
+                <?= $block->escapeHtml($_total->getLabel()) ?>
+            <?php endif ?>
+        </th>
+        <td colspan="2" data-th="<?= $block->escapeHtmlAttr($_total->getLabel()) ?>" style="text-align: right;background: #fff !important;font-family: 'Montserrat', sans-serif;">
+            <?php if ($_total->getStrong()) : ?>
+                <strong><?= /* @noEscape */ $block->formatValue($_total) ?></strong>
+            <?php else : ?>
+                <?= /* @noEscape */ $block->formatValue($_total) ?>
+            <?php endif?>
+        </td>
+    </tr>
+    <?php endif; ?>
+<?php endforeach?>

@@ -1,0 +1,2333 @@
+<style type="text/css">
+.tyre_offers {
+    min-height: 50px;
+    display: block;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    z-index: 9;
+}
+
+img.img_tyre_offer {
+    display: block;
+    max-width: 130px;
+}
+
+span.noise {
+    position: absolute;
+    right: 0px;
+}
+
+span.noise.wet-grip {
+    right: 30px;
+}
+
+span.noise.fuel {
+    right: 60px;
+}
+
+.noise label {
+    position: absolute;
+    top: -21px;
+    right: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4bcf2e;
+}
+
+.tyre-labels img {
+    vertical-align: top;
+    float: right;
+}
+
+.tyre-labels {
+    float: right;
+    position: relative;
+    top: -15px;
+}
+
+.product-reviews-summary.short.empty {
+       width: 100%;
+    float: none;
+}
+
+.fitted-balanced {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.block.filter .block-content.filter-content .filter-options-item .filter-options-content ol.items .item .count {
+    opacity: 0
+}
+
+.block.filter .block-content.filter-content .filter-options-item input[type=radio], .block.filter .block-content.filter-content .filter-options-item input[type=checkbox] {
+    margin-top: 6px;
+    vertical-align: top;
+    border: 1px solid #000;
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+}
+
+
+a.mgs-ajax-layer-item {
+    font-size: 0.9vw;
+    margin-left: 5px;
+}
+
+.toolbar select {
+    line-height: 40px;
+}
+
+.message.notice {
+    display: none;
+}
+
+.search.summary {
+    opacity: 0;
+}
+
+/* Listing Page */
+li.item.product.product-item-info {
+    float: none;
+    box-sizing: border-box;
+    padding: 20px 11px;
+    padding-bottom: 15px;
+    vertical-align: bottom;
+    margin-bottom: 0;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: relative;
+    box-shadow:0px 1px 6px 2px rgb(0 0 0 / 2%);/
+    padding: 10px;
+    margin: 10px;
+}
+
+.lazy-loading-img .products-grid .product-item-info .product-top {
+    width: 100%;
+    height: 15vh;
+    -webkit-writing-mode: vertical-lr;
+}
+
+.product-item-details .product-warranty{
+    display: flex;
+    justify-content: center;
+    margin: 10px -10px -4px -10px;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+}
+
+.product-item-details .product-warranty .icon svg{
+    width: 28px;
+    fill: #ff8a00;
+}
+
+.product-item-details .product-warranty .text{
+    font-size: 14px;
+}
+
+.product.media img {
+    min-width: auto;
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    margin: 10px -10px;
+    min-height: 45px;
+    background-color: #f6f6f6;
+    max-height: 45px;
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country .left_inner {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.4em;
+    color: #010101;
+    font-weight: 600;
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country .left_inner img {
+    width: 40px;
+    position: relative;
+    top: 4px;
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country .right_inner {
+    margin-right: 0;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    max-width: initial;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country .right_inner span {
+    display: block;
+    font-size: 12px;
+    line-height: 1.4em;
+    color: #010101;
+    font-weight: 600;
+    text-align: right;
+    width: 100%
+}
+
+.main .products-grid .products.list .bmw_icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 33px;
+    background: rgba(265, 265, 265, .90);
+    padding: 2px;
+    height: 33px;
+}
+
+.main .products-grid .products.list .bmw_icon img {
+    width: 100%
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country .RunFlatlist {
+    display: inline-flex;
+    align-items: center;
+    margin: auto;
+}
+
+.main .products-grid .products.list  .product-item-info .vehicle_year_country .RunFlatlist img {
+    width: 80px;
+}
+
+.main .products-grid .products.list .product-item-info .product-item-details .product.name a {
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+    width: 13vw;
+}
+
+.products-grid .product-item-info .product-item-details .product-item-name {
+    margin-bottom: 0px;
+}
+
+.main .products-grid .products.list  .product-item-info .product-item-details .price-box {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 30px;
+}
+
+.main .products-grid .products.list  .product-item-info .product-item-details .price-box .special-price {
+    width: auto;
+    display: inline-flex;
+}
+
+.main .products-grid .products.list  .product-item-info .product-item-details .price-box .special-price .price, .main .products-grid .products.list  .product-item-info .product-item-details .price-box > .price-final_price .price {
+    color: #4bcf2e
+}
+
+.main .products-grid .products.list  .product-item-info .product-item-details .price-box .old-price {
+    width: auto;
+    display: inline-flex;
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.main .products-grid .products.list  .product-item-info .product-item-details .price-box .old-price .price {
+    font-size: 14px;
+    font-weight: 500
+}
+
+.main .products-grid .products.list  .product-item-info .product-item-details .price-box span {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+span.single-tyre-price {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.batteryprice {
+    margin: 10px -10px 0;
+}
+
+.products.list li.item.product.product-item-info {
+    padding: 0;
+    margin-top: 30px;
+}
+
+.regular-product-list li.item.product{
+    width: calc(25% - 20px);
+}
+
+.products-grid .products.list .product-item-info .product-item-details .buynowbox{
+  margin-top: 15px;
+} 
+
+.products-grid .products.list .product-item-info .product-item-details .buynowbox .select_qty {
+    background: #fff url('/media/down-arrow.svg') no-repeat;
+    height: 45px;
+    background-size: 12px auto;
+    background-position: center right 15px;
+    width: 30%;
+    padding: 0 15px;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+
+.products-grid .products.list .product-item-info .product-item-details .buynowbox button {
+    border-radius: 15px;
+    width: calc(70% - 15px);
+    height: 45px;
+    color: #000000;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    background: #4bcf2e;
+    margin-left: 10px;
+}
+
+.products-grid .products.list .product-item-info .product-item-details .buynowbox button:hover, .products-grid .products.list .product-item-info .product-item-details .buynowbox button:focus {
+    background: #000;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+
+.products-grid .products.list .product-item-info .product-item-details .buynowbox button i, .products-grid .bundle-product-list ol .buynowbox .bundle_final_price button i {
+    margin-right: 5px;
+    font-size: 140%;
+}
+
+.products-grid .products.list .product-item-info .product-item-details {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 0;
+}
+
+.products-grid .products.list .product-item-info .warrenty_img {
+    width: 100px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    z-index: 12;
+    height: 4vh;
+    opacity: 1;
+    background: #4bcf2e;
+}
+
+.products-grid .products.list .product-item-info .warrenty_img span {
+    width: calc(100% - 28px);
+    display: inline-flex;
+    font-size: 10px;
+    color: #fff;
+    line-height: 1.2em;
+    height: auto;
+    -webkit-writing-mode: horizontal-tb;
+    margin: auto;
+    margin-left: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.products-grid .products.list .brand_logo_wrapper {
+    height: 50px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.products-grid .products.list .product-item-info .warrenty_img img {
+    width: 22px;
+    margin: auto;
+    margin-left: 4px;
+}
+
+.products-grid .products.list img.img_brand_logo {
+    min-height: 40px;
+    height: 40px;
+    width: auto;
+}
+
+.products-grid .product-item-info .tocart.btn-cart {
+    line-height: 4vh;
+}
+
+.products-grid .products.list .product-top .product-label {
+    writing-mode: horizontal-tb;
+}
+
+.products-grid .product-label {
+    background: #ddd;
+}
+
+.column.main ol.regular-product-list {
+    margin: 0 -10px !important
+}
+
+
+.rating-summary .rating-result > span:before {
+    color: #4bcf2e
+}
+
+
+.products-grid .bundle-product-list ol {
+    box-shadow: 0px 1px 6px 2px rgb(0 0 0 / 2%);
+    border: #ddd 1px solid;
+    margin: 20px 10px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.products-grid .bundle-product-list ol.bundleBox {
+    width: calc(50% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products-grid .bundle-product-list ol.bundleBox > li {
+    width: 50%;
+}
+
+.products-grid .bundle-product-list ol li.item.product.product-item-info {
+    width: 50%;
+    max-width: 100% !important;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+.products-grid .bundle-product-list ol li.item.product.product-item-info + li {
+    border-left: #ddd 1px solid;
+}
+
+.products-grid .bundle-product-list ol .buynowbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_qty {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_qty > span {
+    width: 100%;
+    text-align: center;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_qty.bundle_right_qty {
+    border-left: #dcdcdc 1px solid;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_qty select.select_qty {
+    border: #ddd solid 1px;
+    width: 90px;
+    max-width: 100%;
+    margin: 0;
+    height: 45px;
+    border-radius: 15px;
+    padding: 0 20px;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_final_price {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle-price-fr-rr {
+    width: 50%;
+    background: #f6f6f6;
+    border: none;
+    border-radius: 0;
+    border-right: #f9f9f9 solid 1px;
+    padding: 0 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_final_price button {
+    border-radius: 0;
+    width: 50%;
+    height: 55px;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0;
+    background: #4bcf2e;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_final_price button:hover, .products-grid .bundle-product-list ol .buynowbox .bundle_final_price button:focus {
+    background: #000;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+}
+
+.column.main ol.bundle-product-list {
+    margin: 0 -10px !important
+}
+
+.product_size span {
+    color: #212121;
+    font-weight: 800;
+    font-size: 1vw;
+}
+
+.page-layout-1column .category-product-actions .filter-toggle a.title .icon {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.page-layout-1column .category-product-actions .filter-toggle .title{
+    padding: 7px 15px;
+}
+
+@media screen and (max-width:1199px) {
+    li.item.product.product-item-info {
+        max-width: 100% !important
+    }
+    .regular-product-list li.item.product {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .main .products-grid .product-item-info .product-top a img {
+        min-width: 100px;
+        max-width: 230px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main .products-grid .regular-product-list .product-item-info .product-top a img {
+        max-width: 200px;
+    }
+
+    .main .products-grid .regular-product-list .product-item-info .product-top {
+        height: 120px;
+    }
+
+    .main .products-grid .products.list .product-item-info .vehicle_year_country .left_inner img {
+        width: 40px;
+    }
+
+    .main .products-grid .products.list .product-item-info .vehicle_year_country .RunFlatlist img {
+        width: 70px;
+    }
+
+}
+
+@media screen and (max-width:991px) {
+    .regular-product-list li.item.product {
+        width: calc(33.33% - 20px);
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .price-box span {
+        font-size: 16px;
+    }
+
+    span.single-tyre-price {
+        font-size: 16px;
+    }
+
+    .products-grid .bundle-product-list ol.bundleBox {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+    .regular-product-list li.item.product {
+        width: calc(50% - 20px);
+    }
+
+    .column.main ol.bundle-product-list {
+        margin: 0 0px !important;
+    }
+
+    .fitted-balanced {
+        font-size: 8px;
+    }
+
+    .price, .price-box .price {
+        font-family: "Montserrat";
+        font-size: 12px;
+    }
+
+    .tyre-labels img {
+        vertical-align: top;
+        float: right;
+        width: 10px;
+    }
+
+    .products.list li.item.product.product-item-info {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .product.name a {
+        width: 40vw;
+    }
+
+    .product_size span {
+        font-size: 3vw;
+    }
+
+    .tyre-labels {
+        top: -10px;
+    }
+
+    span.noise.wet-grip {
+        right: 20px;
+    }
+
+    span.noise.fuel {
+        right: 40px;
+    }
+
+    .main .products-grid .regular-product-list .product-item-info .product-top a img {
+        max-width: 150px;
+    }
+
+    .noise label {
+        position: absolute;
+        top: -18px;
+        right: 2px;
+        font-size: 10px;
+        font-weight: 700;
+        color: #4bcf2e;
+    }
+
+
+    .main .products-grid .regular-product-list .product-item-info .product-top {
+        height: 80px;
+    }
+
+    a.mgs-ajax-layer-item {
+        font-size: 3vw;
+    }
+
+    .block.filter .block-content.filter-content .filter-options-item .filter-options-title {
+        font-size: 4vw;
+        margin-bottom: 5px;
+    }
+
+    .main .products-grid .products.list .product-item-info .vehicle_year_country {
+        margin-bottom: 0;
+    }
+
+    .block.filter .block-content.filter-content .filter-options-item input[type=radio], .block.filter .block-content.filter-content .filter-options-item input[type=checkbox] {
+        margin-top: 9px;
+        vertical-align: top;
+    }
+
+
+    .filter-toggle b {
+        font-size: 13px;
+    }
+
+    .toolbar .sorter .sorter-action {
+        margin-left: 0px;
+    }
+
+    .product-items .action.add-to-cart.call-us .fa.fa-phone {
+        font-size: 2.5vw;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .products-grid .products.list .product-item-info .product-item-details .buynowbox button, .products-grid .products.list .product-item-info .product-item-details .buynowbox .select_qty, .products-grid .bundle-product-list ol .buynowbox .bundle_final_price button {
+        font-size: 2.8vw;
+        line-height: 30px;
+    }
+
+    .products-grid .bundle-product-list ol .buynowbox .bundle-price-fr-rr {
+        font-size: 2.5vw;
+    }
+
+    .products-grid .products.list .product-item-info .product-item-details .buynowbox .select_qty {
+        background-size: 10px auto;
+    padding: 0 7px;
+    background-position: right 6px center;
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .product.name a {
+        font-size: 2.5vw;
+        line-height: 1em
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .setfourprice {
+        font-size: 2.5vw;
+        line-height: 1em;
+        margin-top: 5px;
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .price-box {
+        min-height: 18px
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .price-box span {
+        font-size: 2.65vw;
+        line-height: 1em
+    }
+
+    span.single-tyre-price {
+        font-size: 4vw;
+        line-height: 1em;
+    }
+
+    .main .products-grid .products.list .product-item-info .product-item-details .price-box .old-price .price {
+        font-size: 2.2vw;
+        line-height: 1em
+    }
+
+    .main .products-grid .products.list .product-item-info .product_size {
+        font-size: 2.65vw;
+        line-height: 1.5em
+    }
+
+    .main .products-grid .products.list .product-item-info .vehicle_year_country .left_inner img {
+        width: 7vw;
+    }
+
+    .main .products-grid .products.list .product-item-info .vehicle_year_country .RunFlatlist img {
+        width: 12vw;
+    }
+
+    .products-grid .products.list .product-item-info .warrenty_img img {
+        width: 13px;
+    }
+
+    .products-grid .products.list .product-item-info .warrenty_img span {
+        font-size: 9px;
+    }
+
+    .products-grid .products.list .product-item-info .warrenty_img {
+        width: 85px;
+    }
+
+    .main .products-grid .products.list .product-item-info .vehicle_year_country {
+        min-height: 35px;
+    }
+
+    .products-grid .products.list .product-item-info .product-item-details .buynowbox button, .products-grid .products.list .product-item-info .product-item-details .buynowbox .select_qty, .products-grid .bundle-product-list ol .buynowbox .bundle_final_price button {
+        height: 35px;
+    }
+
+    .products-grid .products.list .product-item-info .product-item-details {
+        padding-top: 5px;
+    }
+
+    .lazy-loading-img .products-grid .product-item-info .product-top {
+        height: 11vh;
+    }
+
+    .products-grid .bundle-product-list ol .buynowbox .bundle_qty select.select_qty {
+        width: 100px;
+        height: 40px;
+        font-size: 3.5vw;
+    }
+
+    .product-items .action.add-to-cart.call-us span {
+        font-size: 2.8vw;
+        font-weight: 600;
+    }
+
+    .products-grid .bundle-product-list ol .buynowbox .bundle_final_price .call-us-action {
+        height: 40px;
+        line-height: 40px;
+        font-size: 2.8vw;
+    }
+
+}
+
+@media screen and (max-width:480px) {
+    .products-grid .products.list .product-item-info .product-item-details .buynowbox button, .products-grid .products.list .product-item-info .product-item-details .buynowbox .select_qty {
+        font-size: 2.5vw;
+        line-height: 30px;
+    }
+
+    .column.main ol.regular-product-list {
+        margin: 0 -5px !important;
+    }
+
+    .regular-product-list li.item.product {
+        width: calc(50% - 10px);
+        margin: 5px;
+    }
+
+    .products-grid .products.list .product-item-info .product-item-details .buynowbox button, .products-grid .products.list .product-item-info .product-item-details .buynowbox .select_qty, .products-grid .bundle-product-list ol .buynowbox .bundle_final_price button {
+        height: 35px;
+    }
+
+    .products-grid .bundle-product-list ol .buynowbox .bundle_qty select.select_qty {
+        height: 35px;
+    }
+
+    .product-items .action.add-to-cart.call-us span {
+        font-size: 2.5vw;
+        font-weight: 600;
+    }
+
+    .products-grid .bundle-product-list ol .buynowbox .bundle_final_price .call-us-action {
+        height: 35px;
+        line-height: 35px;
+        font-size: 2.8vw;
+    }
+
+}
+
+@media screen and (max-width:359px) {
+    .regular-product-list li.item.product {
+        width: calc(100% - 0px);
+        margin-right: 0;
+        margin-left: 0
+    }
+
+    .column.main .product-items.regular-product-list {
+        margin-right: 0
+    }
+
+}
+
+@media screen and (min-width:600px) {
+    .product-items button.action.add-to-cart.call-us {
+        height: 45px;
+    }
+
+    .products-grid .bundle-product-list ol .buynowbox .bundle_final_price .call-us-action {
+        height: 55px;
+        line-height: 55px;
+    }
+
+}
+
+.product-items a.call-us-action {
+    width: 100%;
+    display: flex;
+    margin: 15px 0;
+}
+
+.product-items button.action.add-to-cart.call-us {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #000000;
+    color: #4bcf2e;
+    border: none;
+    border-radius: 15px;
+}
+
+.product-items button.action.add-to-cart:hover{
+    background-color: #000;
+}
+
+.product-items .action.add-to-cart.call-us .fa.fa-phone {
+    margin-right: 10px;
+}
+
+.product-items .action.add-to-cart.call-us span {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.product-items span.product-label.sold-out-label {
+    display: none;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_final_price .call-us-action {
+    float: left;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0;
+    background: #4bcf2e;
+    text-align: center;
+}
+
+.products-grid .bundle-product-list ol .buynowbox .bundle_final_price .call-us-action .fa.fa-phone {
+    margin-right: 10px;
+}
+
+.products-grid .product-item-info .product-top a.photo:after {
+    background-color: transparent;
+}
+
+
+
+
+@media screen and (max-width: 991.98px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .product-items button.action.add-to-cart.call-us {
+       height: 35px;
+       line-height: 5px;
+    }
+
+    .products-grid .products.list .product-item-info .product-item-details .buynowbox button{
+        width: calc(70% - 10px);
+        margin-left: 5px;
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    .brand_logo_wrapper{
+        align-items: center;                                                    
+    }
+    .products-grid .products.list img.img_brand_logo {
+    min-height: 10px;
+    height: 25px;
+    width: auto;
+}
+
+.products-grid .products.list .brand_logo_wrapper{
+    margin-top: 0;
+    height: 48px;
+}
+}
+
+@media screen and (max-width: 599px) {
+  .category-product-actions{
+    flex-wrap: wrap;
+  }
+
+      .page-layout-1column .category-product-actions .filter-toggle a.title {
+    padding: 8px 15px;
+    max-width: 200px;
+    margin: 0 auto 10px auto;
+    }
+
+    .page-layout-1column .category-product-actions .toolbar-products {
+    width: 100%;
+    justify-content: center;
+}
+
+.catalog-category-view.page-layout-1column .category-product-actions .filter-toggle{
+    width: 100%;
+}
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 575.98px) {}
+
+@media screen and (min-width: 575.99px) and (max-width: 767.98px) {}
+
+@media screen and (min-width: 767.99px) and (max-width: 991.98px) {
+.products-grid .products.list .product-item-info .product-item-details .buynowbox button{
+        font-size: 13px;
+}
+ 
+}
+
+@media screen and (min-width: 991.99px) and (max-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1199.98px) {
+
+}
+
+
+@media screen and (min-width: 991.99px) and (max-width: 1199.98px) {
+
+
+}
+
+
+@media screen and (min-width: 767.99px) and (max-width: 1199.98px) {
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px){
+.page-layout-1column .category-product-actions .toolbar-products {
+  width: auto;
+}
+}
+
+
+
+</style>
+<?php
+/**
+ * Copyright Â© 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+use Magento\Framework\App\Action\Action;
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ */
+?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+$_aHelper = $this->helper('MGS\AjaxCart\Helper\Data');
+
+$colClassRow = $themeHelper->getColClass();
+$arrColClass = explode(' ', $colClassRow);
+$pageType = 'catalog';
+$settings = $themeHelper->getThemeSettings();
+$lazyLoad = $themeHelper->getStoreConfig('mgstheme/general/lazy_load');
+$baseImage = $this->getViewFileUrl('MGS_Mpanel::images/blank.png');
+$baseImageHover = $this->getViewFileUrl('MGS_Mpanel::images/blank.png');
+$perrow = $settings['catalog']['per_row'];
+$animationType = $_aHelper->getConfig('ajaxcart/additional/animation_type');
+
+$requestInterface=$objectManager->get('Magento\Framework\App\RequestInterface');
+$pageType= $requestInterface->getRouteName();
+if($this->hasData('page_type')){
+    $pageType = $this->getData('page_type');
+}
+if($pageType == 'catalog'){
+    $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+    if($category->getPerRow()){
+        $perrow = $category->getPerRow();
+    }
+}elseif($pageType == 'catalogsearch') {
+    if($settings['catalogsearch']['per_row']){
+        $perrow = $settings['catalogsearch']['per_row'];
+    }
+}elseif($pageType == 'catalog_brand') {
+    if($settings['catalog_brand']['per_row']){
+        $perrow = $settings['catalog_brand']['per_row'];
+    }
+}
+
+$hover_effect = "";
+if ($themeHelper->getStoreConfig('mpanel/catalog/disable_hover_effect')== 1){
+    $hover_effect = "disable_hover_effect";
+}
+
+$colCheck = $themeHelper->convertPerRowtoCol($perrow);
+$colClass = $themeHelper->convertColClass($colCheck, 'col');
+
+$listingHelper = $this->helper('Hdweb\Tyrefinder\Helper\Productlisting');
+$isBundle=$block->isBundle();//0;
+$bundleCollection=$this->getBundleCollection();
+$recommendedCollection = $this->getRecommendedProducts();
+
+//$current_category_pr = $category->getId();
+$not_tyre = 0;
+
+// $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/templog9.log');
+// $logger = new \Zend\Log\Logger();
+// $logger->addWriter($writer);
+
+// $logger->info("Info=-".count($bundleCollection) );
+$requestHttp = $objectManager->get('Magento\Framework\App\Request\Http');  
+$widthParam = $requestHttp->getParam('width');
+?>
+<?php if (!$_productCollection->count() || ($isBundle && count($bundleCollection) == 0 ) ): ?>
+	<div class="category-product-actions"></div>
+    <div class="message info empty"><div><?php  echo __('We can\'t find products matching the selection.') ?></div></div>
+<?php else: ?>
+    <div class="category-product-actions">
+        <div class="filter-toggle">
+            <a href="javascript:void(0)" class="title">
+                <span class="icon"><i class="las la-sliders-h"></i></span> <b>Filter Results</b>
+            </a>
+        </div>
+        <?php echo $block->getAdditionalHtml() ?>
+        <?php if(!$isBundle):?>
+        <?php echo $block->getToolbarHtml() ?>
+        <?php endif;?>
+    </div>
+    <?php
+    if ($block->getMode() == 'grid') {
+        $viewMode = 'grid';
+        $image = 'category_page_grid';
+        $image_hover = 'product_thumbnail_image';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    } else {
+        $viewMode = 'list';
+        $image = 'category_page_list';
+        $image_hover = 'product_thumbnail_image';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+    }
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos = $block->getPositioned();
+    ?>
+
+<?php  if(!$isBundle) {
+      /*  Simple Prodcut listing start */ ?>   
+      <div class="products 01 wrapper <?php  echo $viewMode; ?> products-<?php  echo $viewMode; ?>" id="product-wrapper">
+        <?php $iterator = 1; ?>
+        <?php /* Recommended List */ ?>
+        <?php if(isset($widthParam) && !empty($widthParam)) { ?>
+        <?php $RecommendedCounter=0;?>
+        <ol class="recommended products list items product-items regular-product-list <?php if ($block->getMode() == 'grid'): ?>row<?php endif ?> <?php echo 'row-'.$arrColClass[0] ?>">
+        
+            <?php $_imagehelper = $this->helper('Magento\Catalog\Helper\Image'); ?>
+            <?php $size = $themeHelper->getImageSize(); ?>
+            <?php $padding = $themeHelper->getImagePadding(); ?>
+            <?php $quickViewHelper = $this->helper('MGS\QuickView\Helper\Data'); ?>
+            <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
+            
+            <?php if ($block->getMode() == 'grid'): ?>
+                <?php $params = $block->getRequest()->getParams();  ?>
+                <?php if($settings['catalog']['ajaxscroll']): ?>
+                
+                    <?php if(isset($params['product_list_limit'])): ?>
+                        <?php $countAll = $params['product_list_limit']; ?>
+                    <?php else: ?>
+                        <?php $countAll = $themeHelper->getStoreConfig('catalog/frontend/grid_per_page'); ?>        
+                    <?php endif ?>
+                    
+                    <?php if(isset($params['p'])): ?>
+                        <?php $i = ($params['p'] - 1) * $countAll; ?>
+                    <?php else: ?>
+                        <?php $i = 0; ?>
+                    <?php endif ?>
+                    
+                <?php else: ?>
+                    <?php $i = 0; ?>
+                <?php endif ?>
+                
+                <?php /* Start Recommended list */ ?>
+                <?php if(count($recommendedCollection) > 0) {?> 
+                <?php foreach ($recommendedCollection as $recommendedProduct): $i++;  
+                    if($RecommendedCounter ==  4){
+                        break;
+                     }
+                    $_product = $objectManager->create('Magento\Catalog\Model\Product')->load($recommendedProduct['id']);
+                    $displayname=$_helper->productAttribute($_product, $_product->getDisplayname(), 'displayname');
+                    $tyreSize = '';
+                    $tyreSize = $listingHelper->getTyreSize($_product, true);
+                    $origin=$listingHelper->getAttributeValue($_product, 'manufacturer');
+                    $year=$listingHelper->getAttributeValue($_product, 'year');
+                    $set4price=$listingHelper->getSet4price($_product);
+                    $set1price=$listingHelper->getSet1price($_product);
+                    $productpriceWC=$listingHelper->getSet1priceWithoutCurrency($_product);
+                    $vehicleImageUrl=$listingHelper->getVehcileImageUrl($_product,'vehicle_model');
+                    $manufacturer_warranty=$_helper->productAttribute($_product, $_product->getManufacturerWarranty(), 'manufacturer_warranty');
+                    $runflat=$_helper->productAttribute($_product, $_product->getRunflat(), 'runflat');
+
+                    $fuel_efficiency=$_helper->productAttribute($_product, $_product->getFuelEfficiency(), 'fuel_efficiency');
+                    $wet_grip=$_helper->productAttribute($_product, $_product->getWetGrip(), 'wet_grip');
+                    $noise_levels=$_helper->productAttribute($_product, $_product->getNoiseLevels(), 'noise_levels');
+                    $offers= $_product->getResource()->getAttribute('offers')->getFrontend()->getValue($_product);
+
+                    $brand=$_helper->productAttribute($_product, $_product->getMgsBrand(), 'mgs_brand');
+                    $brandDetails = $listingHelper->getBrandDetails($brand); 
+                    $branimage=$listingHelper->getBrandImageUrl($brandDetails); 
+                    $brand_title=$brandDetails->getName();
+
+                    $partsCat= $_product->getResource()->getAttribute('parts_category')->getFrontend()->getValue($_product);
+
+
+                    if($tyreSize == '' ){
+                        $not_tyre = 1;
+                    }else { 
+                        $not_tyre = 0;
+                    }              
+                
+                    $isAnyRuleExist=$AnyRuleExist=$listingHelper->isAnyRuleExist($_product->getEntityId());   
+                    $borderColor="";    
+                    if(count($isAnyRuleExist) > 0 ){
+                        $borderColor='border:2px solid '.$isAnyRuleExist[1];
+                    }                      
+                    ?> 
+                    <li class="item product product-item-info product-item  <?php echo $themeHelper->getClearClass($perrow, $i) ?> <?php echo $hover_effect ?>"  style="<?php echo $borderColor; ?>" >  
+                        <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                        <?php $productImage = $_imagehelper->init($_product, $image)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php $productImageHover = $_imagehelper->init($_product, $image_hover)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php if(!$lazyLoad): ?>
+                            <?php $baseImage = $productImage ?>
+                            <?php $baseImageHover = $productImageHover ?>
+                        <?php endif ?>  
+                       <div class="tyre_offers">
+                            <?php if(count($isAnyRuleExist) > 0  ) { ?>
+                             <img alt="Tyre Offers" class="img_tyre_offer" src="<?php  echo $isAnyRuleExist[0] ?>" />
+                            <?php } ?>    
+                        </div>                                             
+                        <div class="brand_logo_wrapper">
+                            <img src="<?php echo $branimage ?>" alt="<?php echo $brand_title ?>" class="img_brand_logo"/>
+                        </div>
+                        <div class="product-top">
+                            <?php if($themeHelper->getStoreConfig('mpanel/catalog/images_slides')== 1): ?>
+                               <div class="owl-carousel list_gallery">
+                                    <a href="<?php  echo $_product->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productImageBase ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail"/>
+                                    </a>
+                                   <?php if(basename($_product->getData('thumbnail')) != basename($_product->getData('image'))): ?>
+                                       <a href="<?php  echo $_product->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productThumbnail ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productThumbnail ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                  <?php if((basename($_product->getData('small_image')) != basename($_product->getData('image'))) && (basename($_product->getData('small_image')) != basename($_product->getData('thumbnail')))): ?>
+                                        <a href="<?php  echo $_product->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                            <img src="<?php echo $productImageSmall ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productImageSmall ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                </div>
+                                
+                            <?php else:?>
+                             <a href="<?php echo $_product->getProductUrl() ?>" style="padding-bottom: <?php echo $padding; ?>;" class="product photo product-item-photo" tabindex="-1">
+                                <img src="<?php echo $baseImage ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImage ?>"/>
+                                
+                                <?php if(basename($_product->getData('thumbnail')) !=  'no_selection'): ?>
+                                    <?php if(basename($_product->getData('thumbnail')) != basename($_product->getData('small_image'))): ?>
+                                        <img src="<?php echo $baseImageHover ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-hover-show<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImageHover ?>" />
+                                    <?php endif ?>
+                                <?php endif ?>
+                                
+                                <div class="product-image-photo"></div>
+                            </a>
+                               
+                            <?php endif;?>
+                            <?php echo $themeHelper->getProductLabel($_product) ?>
+                        </div>
+                        <div class="product details product-item-details">
+                            <h5 class="product name product-item-name">
+                                <a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>" title="<?php  echo $displayname; ?>">
+                                    <?php  echo $displayname; ?>
+                                </a>
+                            </h5>
+
+                            <div class="product_size">
+                                <span><a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>"><?php echo $tyreSize; ?></a></span>
+                            </div>
+                            <?php if($manufacturer_warranty):?>
+                            <div class="product-warranty">
+                                <span class="icon"><svg  fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M46.865,71.869l-5.15,18.301l-3.626-5.972c-0.164-0.27-0.453-0.422-0.751-0.422c-0.135,0-0.273,0.031-0.402,0.098    l-6.207,3.205l4.698-16.698c-0.538-0.392-1.018-0.856-1.431-1.397l-5.505,19.564c-0.094,0.336,0.02,0.697,0.291,0.918    c0.27,0.221,0.648,0.26,0.958,0.1l7.274-3.756l4.248,6.999c0.16,0.264,0.446,0.422,0.75,0.422c0.039,0,0.079-0.003,0.118-0.008    c0.346-0.047,0.632-0.295,0.727-0.632l5.939-21.105C48.168,71.63,47.522,71.759,46.865,71.869z"></path></g><g><path d="M69.257,90.953l-4.614-21.085c-0.259,0.421-0.532,0.834-0.836,1.231c-0.061,0.08-0.129,0.144-0.196,0.21    c-0.093,0.191-0.204,0.358-0.344,0.482l3.88,17.73l-6.009-3.564c-0.395-0.235-0.907-0.124-1.17,0.256l-3.969,5.748L51.37,70.814    c-0.599-0.011-1.197-0.01-1.794,0.015l5.138,23.48c0.075,0.341,0.345,0.606,0.688,0.673C55.458,94.994,55.515,95,55.572,95    c0.285,0,0.556-0.139,0.723-0.379l4.652-6.736l7.042,4.177c0.138,0.082,0.293,0.123,0.448,0.123c0.007,0.001,0.013,0,0.017,0    c0.485,0,0.878-0.393,0.878-0.878C69.33,91.181,69.305,91.061,69.257,90.953z"></path></g><g><g><path d="M59.979,75.292c-1.722,0-3.526-0.896-5.271-1.762c-1.619-0.804-3.293-1.635-4.707-1.635     c-1.414,0-3.089,0.832-4.707,1.635c-1.745,0.866-3.55,1.762-5.272,1.762c-0.482,0-0.943-0.07-1.372-0.21     c-2.224-0.722-3.433-3.054-4.603-5.308c-0.806-1.555-1.64-3.163-2.708-3.94c-1.089-0.793-2.893-1.095-4.638-1.387     c-2.486-0.417-5.056-0.848-6.413-2.711c-1.34-1.842-0.962-4.405-0.597-6.884c0.261-1.763,0.53-3.587,0.105-4.892     c-0.397-1.223-1.595-2.437-2.864-3.723c-1.799-1.823-3.658-3.707-3.658-6.092s1.86-4.269,3.658-6.092     c1.269-1.285,2.467-2.499,2.864-3.723c0.424-1.305,0.155-3.128-0.105-4.892c-0.365-2.479-0.743-5.042,0.597-6.884     c1.356-1.863,3.927-2.294,6.413-2.711c1.745-0.292,3.548-0.595,4.637-1.387c1.069-0.778,1.903-2.385,2.709-3.941     c1.169-2.255,2.378-4.586,4.602-5.308C39.078,5.07,39.539,5,40.021,5c1.722,0,3.526,0.896,5.272,1.762     C46.911,7.566,48.585,8.397,50,8.397c1.414,0,3.089-0.832,4.707-1.635C56.453,5.896,58.257,5,59.979,5     c0.482,0,0.943,0.07,1.372,0.21c2.224,0.722,3.433,3.054,4.603,5.308c0.806,1.555,1.64,3.163,2.708,3.94     c1.089,0.793,2.893,1.095,4.638,1.388c2.486,0.417,5.056,0.848,6.413,2.711c1.34,1.842,0.962,4.405,0.597,6.884     c-0.261,1.763-0.53,3.586-0.105,4.892c0.397,1.223,1.595,2.437,2.864,3.723c1.799,1.823,3.658,3.707,3.658,6.092     s-1.859,4.269-3.658,6.092c-1.269,1.285-2.467,2.499-2.864,3.723c-0.424,1.305-0.155,3.128,0.105,4.892     c0.365,2.479,0.743,5.042-0.597,6.884c-1.356,1.863-3.927,2.294-6.413,2.711c-1.745,0.292-3.548,0.595-4.637,1.387     c-1.069,0.778-1.903,2.385-2.709,3.941c-1.169,2.255-2.378,4.586-4.602,5.308C60.922,75.222,60.461,75.292,59.979,75.292z      M50,70.139c1.826,0,3.688,0.925,5.488,1.819c1.636,0.812,3.181,1.579,4.49,1.579c0.302,0,0.573-0.04,0.83-0.124     c1.538-0.499,2.579-2.506,3.585-4.446c0.9-1.736,1.83-3.531,3.235-4.552c1.423-1.036,3.434-1.373,5.38-1.699     c2.238-0.375,4.351-0.729,5.284-2.013c0.918-1.262,0.608-3.366,0.279-5.594c-0.29-1.964-0.59-3.994-0.039-5.691     c0.525-1.618,1.928-3.039,3.284-4.413c1.55-1.571,3.152-3.194,3.152-4.858s-1.602-3.288-3.152-4.858     c-1.356-1.374-2.759-2.795-3.284-4.413c-0.551-1.697-0.251-3.727,0.039-5.691c0.328-2.228,0.639-4.332-0.279-5.594     c-0.934-1.283-3.047-1.637-5.284-2.012c-1.945-0.326-3.957-0.663-5.381-1.7c-1.402-1.021-2.334-2.816-3.233-4.551     c-1.006-1.94-2.047-3.947-3.586-4.447c-0.257-0.084-0.528-0.124-0.83-0.124c-1.31,0-2.855,0.767-4.49,1.579     c-1.8,0.894-3.662,1.819-5.488,1.819c-1.826,0-3.688-0.925-5.488-1.819c-2.013-0.999-3.947-1.901-5.32-1.455     c-1.538,0.499-2.579,2.506-3.585,4.446c-0.9,1.736-1.83,3.531-3.235,4.552c-1.423,1.036-3.434,1.373-5.38,1.699     c-2.238,0.375-4.351,0.729-5.284,2.013c-0.918,1.262-0.608,3.366-0.279,5.594c0.29,1.964,0.59,3.994,0.039,5.691     c-0.525,1.618-1.928,3.039-3.284,4.413c-1.55,1.571-3.152,3.194-3.152,4.858s1.602,3.288,3.152,4.858     c1.356,1.374,2.759,2.795,3.284,4.413c0.551,1.697,0.251,3.727-0.039,5.691c-0.328,2.228-0.639,4.332,0.279,5.594     c0.934,1.283,3.047,1.637,5.284,2.012c1.945,0.326,3.957,0.664,5.381,1.7c1.402,1.021,2.334,2.816,3.233,4.551     c1.006,1.941,2.047,3.947,3.586,4.447c1.373,0.447,3.307-0.456,5.32-1.455C46.312,71.064,48.174,70.139,50,70.139z"></path></g></g><g><polygon points="64.046,30.549 49.442,49.743 46.72,53.314 44.003,49.743 37.71,41.475 40.428,37.898 46.72,46.167 61.328,26.978"></polygon></g></g></svg></span>
+                                <span class="text"><?php echo $manufacturer_warranty;?></span>
+                            </div>
+                            <?php endif;?>
+
+                             <?php // if(!$themeHelper->getStoreConfig('mpanel/catalog/review')): ?>
+                                <?php //echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+                            <?php //endif ?>                   
+
+                            <div class="vehicle_year_country">
+                                <div class="left_inner">
+                                    <?php /* <img src="<?php echo $vehicleImageUrl; ?>" title="" alt="Vehicle Icon" class="vehicle_model_image"> */ ?>
+                                    <span><?php echo $origin  ?></span>
+                                </div>
+                                <?php if(isset($runflat)) { ?>
+                                    <div class="RunFlatlist"><img src="../media/run-flat-icon.svg" title="" alt="" class="vehicle_model_image"></div>
+                                <?php } ?>
+                                <div class="right_inner">
+                                    <span><?php echo (isset($year) && !empty($year)) ? $year : '';  ?></span>
+                                </div>
+                            </div>  
+                             <?php //echo $block->getProductPrice($_product) ?>
+                                <?php if($not_tyre != 1) { ?>
+                                    <span class="fitted-balanced">
+                                        <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                            <?= __('Price incl. VAT') ?>
+                                        <?php else: ?>
+                                            <?= __('Fitment & Wheel Balancing Included') ?>
+                                        <?php endif; ?>
+                                    </span>
+                                    <span class="single-tyre-price"><?php echo $set1price; ?></span>                                    
+                                    <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                        <div class="setfourprice"><span><?php echo __('Set of 1: ').$set1price; ?></span></div>
+                                    <?php else: ?>
+                                        <div class="setfourprice"><span><?php echo __('Set of 4: ').$set4price; ?></span></div>
+                                    <?php endif; ?>
+                                <?php }else { ?>
+                                    <span class="fitted-balanced">
+                                        <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                            <?= __('Price incl. VAT') ?>
+                                        <?php else: ?>
+                                            <?= __('Fully fitted price per battery') ?>
+                                        <?php endif; ?>
+                                    </span>
+                                    <span class="single-tyre-price"><?php echo $set1price; ?></span>                                      
+                                    <div class="batteryprice"></div>
+                                <?php }?>
+                            <?php if ($_product->isSaleable()): ?>  
+                            <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                            <form  data-role="tocart-form" class="buynowbox tv1" action="<?php echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                 <input type="hidden" name="product" value="<?php echo $postParams['data']['product']; ?>">
+                                 <input type="hidden" name="uenc" value="<?php echo $postParams['data']['uenc']; ?>">
+                                 <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+
+                                <?php if($not_tyre != 1) { ?>
+                                    <select name="qty" class="select_qty" data-unitprice="<?= $productpriceWC ?>" 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-discountqty=".$AnyRuleExist[2]   :  "";  ?> 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-totalqty=".$AnyRuleExist[3]:"";  ?> 
+                                      >
+                                    <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                      <option value="1" selected="">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                    <?php else: ?>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4" selected="">4</option>
+                                    <?php endif; ?>
+                                      
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                    </select>
+                                <?php }else{ ?>
+                                    <select name="qty" class="select_qty" data-unitprice="<?= $productpriceWC ?>" 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-discountqty=".$AnyRuleExist[2]   :  "";  ?> 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-totalqty=".$AnyRuleExist[3]:"";  ?> 
+                                      > 
+                                      <option value="1" selected="">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                    </select>                                    
+                                <?php } ?>
+                                <button type="submit"><i class="las la-shopping-cart"></i> <?= __('Add to Cart') ?> </button>
+                            </form>
+                            <?php echo $block->getProductDetailsHtml($_product); ?>
+                            <?php if ($themeHelper->getStoreConfig('mpanel/catalog/disable_add_to_cart') == 0 && $themeHelper->getStoreConfig('mpanel/catalog/disable_hover_effect') == 1): ?>
+                                <?php if ($_product->isSaleable()): ?>
+                                    <div>
+                                        <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                        <form data-role="tocart-form" action="<?php  echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                            <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                            <input type="hidden" name="uenc" value="<?php  echo $postParams['data']['uenc']; ?>">
+                                            <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+                                            <button class="action tocart btn-cart hover_effect" type="submit" title="<?php  echo __('Add to Cart') ?>">
+                                                <span class="icon pe-7s-shopbag"></span>
+                                                <span class="text"><?php  echo __('Add to Cart') ?></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                <?php endif ?>
+                            <?php endif ?>
+                            <?php else:?>
+                            <a href="https://api.whatsapp.com/send?phone=%20+971800847466&text=Hello%20TyresVision" class="call-us-action">
+                                <button title="WhatsApp Us" class="action add-to-cart call-us">
+                                    <i class="fa fa-lg fa-whatsapp"></i><span><?php echo __(' WhatsApp Us');?></span>                                     
+                                </button>
+                            </a>
+                            <?php endif ?>
+                        </div>
+                    </li>
+                <?php $RecommendedCounter++; endforeach ?>
+                <?php } ?>
+                <?php /* End Recommended list */ ?>
+            <?php else: ?>
+                <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+                <?php foreach ($_productCollection as $_product): ?>
+                    <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                    <?php $productImage = $_imagehelper->init($_product, $image)->resize($size['width'], $size['height'])->getUrl(); ?>
+                    <?php $productImageHover = $_imagehelper->init($_product, $image_hover)->resize($size['width'], $size['height'])->getUrl(); ?>
+                    <?php if(!$lazyLoad): ?>
+                        <?php $baseImage = $productImage ?>
+                        <?php $baseImageHover = $productImageHover ?>
+                    <?php endif ?>
+                    <li class="item product product-item-info product-item">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="product-image-content">
+                                    <a href="<?php echo $_product->getProductUrl() ?>" style="padding-bottom: <?php echo $padding; ?>;" class="product photo product-item-photo" tabindex="-1">
+                                        <img src="<?php echo $baseImage ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImage ?>"/>
+                                
+                                        <?php if(basename($_product->getData('thumbnail')) !=  'no_selection'): ?>
+                                            <?php if(basename($_product->getData('thumbnail')) != basename($_product->getData('small_image'))): ?>
+                                                <img src="<?php echo $baseImageHover ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-hover-show<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImageHover ?>" />
+                                            <?php endif ?>
+                                        <?php endif ?>
+                                        <div class="product-image-photo"></div>
+                                    </a>
+                                    <?php echo $themeHelper->getProductLabel($_product) ?>
+                                    <?php echo $quickViewHelper->aroundQuickViewHtml($_product); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                <div class="visible-xs padding-top20"></div>
+                                <div class="product details product-item-details">
+                                
+                                    <h5 class="product name product-item-name">
+                                        <a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>">
+                                            <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                        </a>
+                                    </h5>
+                                    
+                                    <?php if(!$themeHelper->getStoreConfig('mpanel/catalog/review')): ?>
+                                        <?php echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+                                    <?php endif ?>
+                                    
+                                    <?php echo $block->getProductPrice($_product) ?>
+                                    
+                                    <?php echo $block->getProductDetailsHtml($_product); ?>
+                                    
+                                    <?php if($_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description')): ?>
+                                        <div class="product description product-item-description">
+                                            <?php  echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                        </div>
+                                    <?php endif ?>
+                                    
+                                    <ul class="actions-link" data-role="add-to-links">
+                                    
+                                        <?php if ($_product->isSaleable()): ?>
+                                            <li><?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                            <form data-role="tocart-form" action="<?php  echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data'][Action::PARAM_NAME_URL_ENCODED], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                                <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                                <input type="hidden" name="<?php  echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php  echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                                <?php echo $block->getBlockHtml('formkey')?>
+                                                
+                                                <?php 
+                                                $has_option = 0;
+                                                if($_product->getTypeId() == 'simple'){
+                                                    $data = $_product->getData();
+                                                    $has_option = ( isset($data['has_options']) && $data['has_options'] == 1) ? 1 : 0;
+                                                }
+                                             ?>
+                                            <?php if($animationType == 'cartshow' && ($_product->getTypeId() == 'configurable' || $_product->getTypeId() == 'bundle' || $_product->getTypeId() == 'grouped' || ($_product->getTypeId() == 'simple' && $has_option == 1) )): ?>
+                                                <button class="action btn-cart tocart" type="button" title="<?php  echo __('Add to Cart') ?>" onclick="window.location.href = '<?php echo $_product->getProductUrl() ?>'">
+                                                    <span class="icon pe-7s-shopbag"></span>
+                                                    <span class="product-item-link">
+                                                        <?php echo __('Add to cart'); ?>
+                                                    </span>
+                                                </button>   
+                                            <?php else: ?>
+                                                <button class="action tocart btn-cart" type="submit" title="<?php  echo __('Add to Cart') ?>">
+                                                    <span class="icon pe-7s-shopbag"></span>
+                                                    <span class="text"><?php  echo __('Add to Cart') ?></span>
+                                                </button>
+                                            <?php endif ?>
+                                            </form></li>
+                                        <?php endif ?>
+                                        
+                                        <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && !$settings['catalog']['wishlist_button']): ?>
+                                            <li><button data-title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                               class="action towishlist"
+                                               title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                               aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                               data-post='<?php  echo $block->getAddToWishlistParams($_product); ?>'
+                                               data-action="add-to-wishlist"
+                                               role="button">
+                                                <i class="pe-7s-like"></i>
+                                            </button></li>
+                                        <?php endif; ?>
+                                            
+                                        <?php if(!$settings['catalog']['compare_button']): ?>
+                                            <li><button data-title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                               class="action tocompare"
+                                               title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                               aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                               data-post='<?php  echo $compareHelper->getPostDataParams($_product); ?>'
+                                               role="button">
+                                                <i class="pe-7s-graph3"></i>
+                                            </button></li>
+                                        <?php endif ?>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            <?php endif ?>
+        </ol>
+    <?php } ?>
+        <?php /* End Recommended List*/ ?>
+        <ol class="products list items product-items regular-product-list <?php if ($block->getMode() == 'grid'): ?>row<?php endif ?> <?php echo 'row-'.$arrColClass[0] ?>">
+        
+            <?php $_imagehelper = $this->helper('Magento\Catalog\Helper\Image'); ?>
+            <?php $size = $themeHelper->getImageSize(); ?>
+            <?php $padding = $themeHelper->getImagePadding(); ?>
+            <?php $quickViewHelper = $this->helper('MGS\QuickView\Helper\Data'); ?>
+            <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
+            
+            <?php if ($block->getMode() == 'grid'): ?>
+                <?php $params = $block->getRequest()->getParams();  ?>
+                <?php if($settings['catalog']['ajaxscroll']): ?>
+                
+                    <?php if(isset($params['product_list_limit'])): ?>
+                        <?php $countAll = $params['product_list_limit']; ?>
+                    <?php else: ?>
+                        <?php $countAll = $themeHelper->getStoreConfig('catalog/frontend/grid_per_page'); ?>        
+                    <?php endif ?>
+                    
+                    <?php if(isset($params['p'])): ?>
+                        <?php $i = ($params['p'] - 1) * $countAll; ?>
+                    <?php else: ?>
+                        <?php $i = 0; ?>
+                    <?php endif ?>
+                    
+                <?php else: ?>
+                    <?php $i = 0; ?>
+                <?php endif ?>
+                
+                <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+                <?php foreach ($_productCollection as $_product): $i++; 
+
+                    $displayname=$_helper->productAttribute($_product, $_product->getDisplayname(), 'displayname');
+                    $tyreSize = '';
+                    $tyreSize = $listingHelper->getTyreSize($_product, true);
+                    $origin=$listingHelper->getAttributeValue($_product, 'manufacturer');
+                    $year=$listingHelper->getAttributeValue($_product, 'year');
+                    $set4price=$listingHelper->getSet4price($_product);
+                    $set1price=$listingHelper->getSet1price($_product);
+                    $productpriceWC=$listingHelper->getSet1priceWithoutCurrency($_product);
+                    $vehicleImageUrl=$listingHelper->getVehcileImageUrl($_product,'vehicle_model');
+                    $manufacturer_warranty=$_helper->productAttribute($_product, $_product->getManufacturerWarranty(), 'manufacturer_warranty');
+                    $runflat=$_helper->productAttribute($_product, $_product->getRunflat(), 'runflat');
+
+                    $fuel_efficiency=$_helper->productAttribute($_product, $_product->getFuelEfficiency(), 'fuel_efficiency');
+                    $wet_grip=$_helper->productAttribute($_product, $_product->getWetGrip(), 'wet_grip');
+                    $noise_levels=$_helper->productAttribute($_product, $_product->getNoiseLevels(), 'noise_levels');
+                    $offers= $_product->getResource()->getAttribute('offers')->getFrontend()->getValue($_product);
+
+                    $brand=$_helper->productAttribute($_product, $_product->getMgsBrand(), 'mgs_brand');
+                    $brandDetails = $listingHelper->getBrandDetails($brand); 
+                    $branimage=$listingHelper->getBrandImageUrl($brandDetails); 
+                    $brand_title=$brandDetails->getName();
+
+                    $partsCat= $_product->getResource()->getAttribute('parts_category')->getFrontend()->getValue($_product);
+
+
+                    if($tyreSize == '' ){
+                        $not_tyre = 1;
+                    }else { 
+                        $not_tyre = 0;
+                    }              
+                
+                    $isAnyRuleExist=$AnyRuleExist=$listingHelper->isAnyRuleExist($_product->getEntityId());   
+                    $borderColor="";    
+                    if(count($isAnyRuleExist) > 0 ){
+                       $borderColor = 'border:2px solid '.$isAnyRuleExist[1];
+                    }   
+                    $StockState = $objectManager->get('\Magento\CatalogInventory\Api\StockStateInterface');
+                    $prod_qty = $StockState->getStockQty($_product->getId());
+                    $stockQty = '';
+                    if($prod_qty >= 8){
+                        $stockQty = 8;
+                    }else{
+                        $stockQty = $prod_qty;
+                    }   
+                    ?> 
+                    <li class="item product product-item-info product-item  <?php echo $themeHelper->getClearClass($perrow, $i) ?> <?php echo $hover_effect ?>"  style="<?php echo $borderColor; ?>" >  
+                        <!-- <?php //echo  $colClass ?>remove echo in li section -->
+                        <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                        <?php $productImage = $_imagehelper->init($_product, $image)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php $productImageHover = $_imagehelper->init($_product, $image_hover)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php if(!$lazyLoad): ?>
+                            <?php $baseImage = $productImage ?>
+                            <?php $baseImageHover = $productImageHover ?>
+                        <?php endif ?>  
+                       <div class="tyre_offers">
+                            <?php if(count($isAnyRuleExist) > 0  ) { ?>
+                             <img alt="Tyre Offers" class="img_tyre_offer" src="<?php  echo $isAnyRuleExist[0] ?>" />
+                            <?php } ?>    
+                        </div>                                             
+                        <div class="brand_logo_wrapper">
+                            <img src="<?php echo $branimage ?>" alt="<?php echo $brand_title ?>" class="img_brand_logo"/>
+                        </div>
+                        <div class="product-top">
+                            <?php if($themeHelper->getStoreConfig('mpanel/catalog/images_slides')== 1): ?>
+                               <div class="owl-carousel list_gallery">
+                                    <a href="<?php  echo $_product->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productImageBase ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail"/>
+                                    </a>
+                                   <?php if(basename($_product->getData('thumbnail')) != basename($_product->getData('image'))): ?>
+                                       <a href="<?php  echo $_product->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productThumbnail ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productThumbnail ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                  <?php if((basename($_product->getData('small_image')) != basename($_product->getData('image'))) && (basename($_product->getData('small_image')) != basename($_product->getData('thumbnail')))): ?>
+                                        <a href="<?php  echo $_product->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                            <img src="<?php echo $productImageSmall ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productImageSmall ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                </div>
+                                
+                            <?php else:?>
+                             <a href="<?php echo $_product->getProductUrl() ?>" style="padding-bottom: <?php echo $padding; ?>;" class="product photo product-item-photo" tabindex="-1">
+                                <img src="<?php echo $baseImage ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImage ?>"/>
+                                
+                                <?php if(basename($_product->getData('thumbnail')) !=  'no_selection'): ?>
+                                    <?php if(basename($_product->getData('thumbnail')) != basename($_product->getData('small_image'))): ?>
+                                        <img src="<?php echo $baseImageHover ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-hover-show<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImageHover ?>" />
+                                    <?php endif ?>
+                                <?php endif ?>
+                                
+                                <div class="product-image-photo"></div>
+                            </a>
+                               
+                            <?php endif;?>
+                            <?php echo $themeHelper->getProductLabel($_product) ?>
+                        </div>
+                        <div class="product details product-item-details">
+                            <h5 class="product name product-item-name">
+                                <a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>" title="<?php  echo $displayname; ?>">
+                                    <?php  echo $displayname; ?>
+                                </a>
+                            </h5>
+                            <div class="product_size">
+                                <span><a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>"><?php echo $tyreSize; ?></a></span>
+                            </div>
+
+
+                             <?php if($manufacturer_warranty):?>
+                            <div class="product-warranty">
+                                <span class="icon"><svg  fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M46.865,71.869l-5.15,18.301l-3.626-5.972c-0.164-0.27-0.453-0.422-0.751-0.422c-0.135,0-0.273,0.031-0.402,0.098    l-6.207,3.205l4.698-16.698c-0.538-0.392-1.018-0.856-1.431-1.397l-5.505,19.564c-0.094,0.336,0.02,0.697,0.291,0.918    c0.27,0.221,0.648,0.26,0.958,0.1l7.274-3.756l4.248,6.999c0.16,0.264,0.446,0.422,0.75,0.422c0.039,0,0.079-0.003,0.118-0.008    c0.346-0.047,0.632-0.295,0.727-0.632l5.939-21.105C48.168,71.63,47.522,71.759,46.865,71.869z"></path></g><g><path d="M69.257,90.953l-4.614-21.085c-0.259,0.421-0.532,0.834-0.836,1.231c-0.061,0.08-0.129,0.144-0.196,0.21    c-0.093,0.191-0.204,0.358-0.344,0.482l3.88,17.73l-6.009-3.564c-0.395-0.235-0.907-0.124-1.17,0.256l-3.969,5.748L51.37,70.814    c-0.599-0.011-1.197-0.01-1.794,0.015l5.138,23.48c0.075,0.341,0.345,0.606,0.688,0.673C55.458,94.994,55.515,95,55.572,95    c0.285,0,0.556-0.139,0.723-0.379l4.652-6.736l7.042,4.177c0.138,0.082,0.293,0.123,0.448,0.123c0.007,0.001,0.013,0,0.017,0    c0.485,0,0.878-0.393,0.878-0.878C69.33,91.181,69.305,91.061,69.257,90.953z"></path></g><g><g><path d="M59.979,75.292c-1.722,0-3.526-0.896-5.271-1.762c-1.619-0.804-3.293-1.635-4.707-1.635     c-1.414,0-3.089,0.832-4.707,1.635c-1.745,0.866-3.55,1.762-5.272,1.762c-0.482,0-0.943-0.07-1.372-0.21     c-2.224-0.722-3.433-3.054-4.603-5.308c-0.806-1.555-1.64-3.163-2.708-3.94c-1.089-0.793-2.893-1.095-4.638-1.387     c-2.486-0.417-5.056-0.848-6.413-2.711c-1.34-1.842-0.962-4.405-0.597-6.884c0.261-1.763,0.53-3.587,0.105-4.892     c-0.397-1.223-1.595-2.437-2.864-3.723c-1.799-1.823-3.658-3.707-3.658-6.092s1.86-4.269,3.658-6.092     c1.269-1.285,2.467-2.499,2.864-3.723c0.424-1.305,0.155-3.128-0.105-4.892c-0.365-2.479-0.743-5.042,0.597-6.884     c1.356-1.863,3.927-2.294,6.413-2.711c1.745-0.292,3.548-0.595,4.637-1.387c1.069-0.778,1.903-2.385,2.709-3.941     c1.169-2.255,2.378-4.586,4.602-5.308C39.078,5.07,39.539,5,40.021,5c1.722,0,3.526,0.896,5.272,1.762     C46.911,7.566,48.585,8.397,50,8.397c1.414,0,3.089-0.832,4.707-1.635C56.453,5.896,58.257,5,59.979,5     c0.482,0,0.943,0.07,1.372,0.21c2.224,0.722,3.433,3.054,4.603,5.308c0.806,1.555,1.64,3.163,2.708,3.94     c1.089,0.793,2.893,1.095,4.638,1.388c2.486,0.417,5.056,0.848,6.413,2.711c1.34,1.842,0.962,4.405,0.597,6.884     c-0.261,1.763-0.53,3.586-0.105,4.892c0.397,1.223,1.595,2.437,2.864,3.723c1.799,1.823,3.658,3.707,3.658,6.092     s-1.859,4.269-3.658,6.092c-1.269,1.285-2.467,2.499-2.864,3.723c-0.424,1.305-0.155,3.128,0.105,4.892     c0.365,2.479,0.743,5.042-0.597,6.884c-1.356,1.863-3.927,2.294-6.413,2.711c-1.745,0.292-3.548,0.595-4.637,1.387     c-1.069,0.778-1.903,2.385-2.709,3.941c-1.169,2.255-2.378,4.586-4.602,5.308C60.922,75.222,60.461,75.292,59.979,75.292z      M50,70.139c1.826,0,3.688,0.925,5.488,1.819c1.636,0.812,3.181,1.579,4.49,1.579c0.302,0,0.573-0.04,0.83-0.124     c1.538-0.499,2.579-2.506,3.585-4.446c0.9-1.736,1.83-3.531,3.235-4.552c1.423-1.036,3.434-1.373,5.38-1.699     c2.238-0.375,4.351-0.729,5.284-2.013c0.918-1.262,0.608-3.366,0.279-5.594c-0.29-1.964-0.59-3.994-0.039-5.691     c0.525-1.618,1.928-3.039,3.284-4.413c1.55-1.571,3.152-3.194,3.152-4.858s-1.602-3.288-3.152-4.858     c-1.356-1.374-2.759-2.795-3.284-4.413c-0.551-1.697-0.251-3.727,0.039-5.691c0.328-2.228,0.639-4.332-0.279-5.594     c-0.934-1.283-3.047-1.637-5.284-2.012c-1.945-0.326-3.957-0.663-5.381-1.7c-1.402-1.021-2.334-2.816-3.233-4.551     c-1.006-1.94-2.047-3.947-3.586-4.447c-0.257-0.084-0.528-0.124-0.83-0.124c-1.31,0-2.855,0.767-4.49,1.579     c-1.8,0.894-3.662,1.819-5.488,1.819c-1.826,0-3.688-0.925-5.488-1.819c-2.013-0.999-3.947-1.901-5.32-1.455     c-1.538,0.499-2.579,2.506-3.585,4.446c-0.9,1.736-1.83,3.531-3.235,4.552c-1.423,1.036-3.434,1.373-5.38,1.699     c-2.238,0.375-4.351,0.729-5.284,2.013c-0.918,1.262-0.608,3.366-0.279,5.594c0.29,1.964,0.59,3.994,0.039,5.691     c-0.525,1.618-1.928,3.039-3.284,4.413c-1.55,1.571-3.152,3.194-3.152,4.858s1.602,3.288,3.152,4.858     c1.356,1.374,2.759,2.795,3.284,4.413c0.551,1.697,0.251,3.727-0.039,5.691c-0.328,2.228-0.639,4.332,0.279,5.594     c0.934,1.283,3.047,1.637,5.284,2.012c1.945,0.326,3.957,0.664,5.381,1.7c1.402,1.021,2.334,2.816,3.233,4.551     c1.006,1.941,2.047,3.947,3.586,4.447c1.373,0.447,3.307-0.456,5.32-1.455C46.312,71.064,48.174,70.139,50,70.139z"></path></g></g><g><polygon points="64.046,30.549 49.442,49.743 46.72,53.314 44.003,49.743 37.71,41.475 40.428,37.898 46.72,46.167 61.328,26.978"></polygon></g></g></svg></span>
+                                <span class="text"><?php echo $manufacturer_warranty;?></span>
+                            </div>
+                            <?php endif;?>
+
+                             <?php // if(!$themeHelper->getStoreConfig('mpanel/catalog/review')): ?>
+                                <?php //echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+                            <?php //endif ?>                      
+
+                            <div class="vehicle_year_country">
+                                <div class="left_inner">
+                                    <?php /* <img src="<?php echo $vehicleImageUrl; ?>" title="" alt="Vehicle Icon" class="vehicle_model_image"> */ ?>
+                                    <span><?php echo $origin  ?></span>
+                                </div>
+                                <?php if(isset($runflat)) { ?>
+                                    <div class="RunFlatlist"><img src="../media/run-flat-icon.svg" title="" alt="" class="vehicle_model_image"></div>
+                                <?php } ?>
+                                <div class="right_inner">
+                                    <span><?php echo (isset($year) && !empty($year)) ? $year : '';  ?></span>
+                                </div>
+                            </div>  
+                             <?php //echo $block->getProductPrice($_product) ?>
+                                <?php if($not_tyre != 1) { ?>
+                                    <span class="fitted-balanced">
+                                        <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                            <?= __('Price incl. VAT') ?>
+                                        <?php else: ?>
+                                            <?= __('Fitment & Wheel Balancing Included') ?>
+                                        <?php endif; ?>
+                                    </span>
+                                    <span class="single-tyre-price"><?php echo $set1price; ?></span>
+
+                                    <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                        <div class="setfourprice"><span><?php echo __('Set of 1: ').$set1price; ?></span></div>
+                                    <?php else: ?>
+                                        <div class="setfourprice"><span><?php echo __('Set of 4: ').$set4price; ?></span></div>
+                                    <?php endif; ?>
+                                <?php }else { ?>
+                                    <span class="fitted-balanced">
+                                        <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                            <?= __('Price incl. VAT') ?>
+                                        <?php else: ?>
+                                            <?= __('Fully fitted price per battery') ?>
+                                        <?php endif; ?>
+                                    </span>
+                                    <span class="single-tyre-price"><?php echo $set1price; ?></span>                                      
+                                    <div class="batteryprice"></div>
+                                <?php }?>
+                            <?php if ($_product->isSaleable()): ?>  
+                            <?php $postParams = $block->getAddToCartPostParams($_product); ?>   
+                            <form  data-role="tocart-form" class="buynowbox tv2" action="<?php echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                 <input type="hidden" name="product" value="<?php echo $postParams['data']['product']; ?>">
+                                 <input type="hidden" name="uenc" value="<?php echo $postParams['data']['uenc']; ?>">
+                                 <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+
+                                <?php if($not_tyre != 1) { ?>
+                                    <select name="qty" class="select_qty" data-unitprice="<?= $productpriceWC ?>" 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-discountqty=".$AnyRuleExist[2]   :  "";  ?> 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-totalqty=".$AnyRuleExist[3]:"";  ?> 
+                                      >
+                                      <?php
+                                      for ($i = 1; $i <= $stockQty; $i++) {?>
+                                          <?php if($stockQty < 4):?>
+                                          <option value=<?php echo $i;?> <?php if($i == 1): ?> selected <?php endif ?>><?php echo $i;?></option>
+                                          <?php else:?>
+
+                                        <?php if($partsCat == 'Motorcycle Tyres'): ?>
+                                            <option value=<?php echo $i;?> <?php if($i == 1): ?> selected <?php endif ?>><?php echo $i;?></option>
+                                        <?php else: ?>
+                                          <option value=<?php echo $i;?> <?php if($i == 4): ?> selected <?php endif ?>><?php echo $i;?></option>
+                                          <?php endif;?>    
+                                        <?php endif; ?>
+                                          
+                                     <?php } ?>
+                                    </select>
+                                <?php }else{ ?>
+                                    <select name="qty" class="select_qty" data-unitprice="<?= $productpriceWC ?>" 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-discountqty=".$AnyRuleExist[2]   :  "";  ?> 
+                                     <?php echo  (count($AnyRuleExist) > 0 ) ? "data-totalqty=".$AnyRuleExist[3]:"";  ?> 
+                                      > 
+                                      <?php
+                                      for ($i = 1; $i <= $stockQty; $i++) {?>
+                                          <?php if($stockQty < 4):?>
+                                          <option value=<?php echo $i;?> <?php if($i == 1): ?> selected <?php endif ?>><?php echo $i;?></option>
+                                          <?php else:?>
+                                          <option value=<?php echo $i;?> <?php if($i == 4): ?> selected <?php endif ?>><?php echo $i;?></option>
+                                          <?php endif;?>
+                                     <?php } ?>
+                                    </select>                                    
+                                <?php } ?>
+                                <button type="submit"><i class="las la-shopping-cart"></i> <?= __('Add to Cart') ?> </button>
+                            </form>
+                            <?php echo $block->getProductDetailsHtml($_product); ?>
+                            <?php if ($themeHelper->getStoreConfig('mpanel/catalog/disable_add_to_cart') == 0 && $themeHelper->getStoreConfig('mpanel/catalog/disable_hover_effect') == 1): ?>
+                                <?php if ($_product->isSaleable()): ?>
+                                    <div>
+                                        <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                        <form data-role="tocart-form" action="<?php  echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                            <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                            <input type="hidden" name="uenc" value="<?php  echo $postParams['data']['uenc']; ?>">
+                                            <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+                                            <button class="action tocart btn-cart hover_effect" type="submit" title="<?php  echo __('Add to Cart') ?>">
+                                                <span class="icon pe-7s-shopbag"></span>
+                                                <span class="text"><?php echo __('Add to Cart') ?></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                <?php endif ?>
+                            <?php endif ?>
+                            <?php else: ?>
+                            <a href="https://api.whatsapp.com/send?phone=%20+971800847466&text=Hello%20TyresVision" class="call-us-action">
+                                <button title="WhatsApp Us" class="action add-to-cart call-us">
+                                    <i class="fa fa-lg fa-whatsapp"></i><span><?php echo __(' WhatsApp Us');?></span>                                     
+                                </button>
+                            </a>
+                        <?php endif; ?>
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            <?php else: ?>
+                <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+                <?php foreach ($_productCollection as $_product): ?>
+                    <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                    <?php $productImage = $_imagehelper->init($_product, $image)->resize($size['width'], $size['height'])->getUrl(); ?>
+                    <?php $productImageHover = $_imagehelper->init($_product, $image_hover)->resize($size['width'], $size['height'])->getUrl(); ?>
+                    <?php if(!$lazyLoad): ?>
+                        <?php $baseImage = $productImage ?>
+                        <?php $baseImageHover = $productImageHover ?>
+                    <?php endif ?>
+                    <li class="item product product-item-info product-item">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-12">
+                                <div class="product-image-content">
+                                    <a href="<?php echo $_product->getProductUrl() ?>" style="padding-bottom: <?php echo $padding; ?>;" class="product photo product-item-photo" tabindex="-1">
+                                        <img src="<?php echo $baseImage ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImage ?>"/>
+                                
+                                        <?php if(basename($_product->getData('thumbnail')) !=  'no_selection'): ?>
+                                            <?php if(basename($_product->getData('thumbnail')) != basename($_product->getData('small_image'))): ?>
+                                                <img src="<?php echo $baseImageHover ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-hover-show<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImageHover ?>" />
+                                            <?php endif ?>
+                                        <?php endif ?>
+                                        <div class="product-image-photo"></div>
+                                    </a>
+                                    <?php echo $themeHelper->getProductLabel($_product) ?>
+                                    <?php echo $quickViewHelper->aroundQuickViewHtml($_product); ?>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                <div class="visible-xs padding-top20"></div>
+                                <div class="product details product-item-details">
+                                
+                                    <h5 class="product name product-item-name">
+                                        <a class="product-item-link" href="<?php echo $_product->getProductUrl() ?>">
+                                            <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                        </a>
+                                    </h5>
+                                    
+                                    <?php if(!$themeHelper->getStoreConfig('mpanel/catalog/review')): ?>
+                                        <?php echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+                                    <?php endif ?>
+                                    
+                                    <?php echo $block->getProductPrice($_product) ?>
+                                    
+                                    <?php echo $block->getProductDetailsHtml($_product); ?>
+                                    
+                                    <?php if($_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description')): ?>
+                                        <div class="product description product-item-description">
+                                            <?php  echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                        </div>
+                                    <?php endif ?>
+                                    
+                                    <ul class="actions-link" data-role="add-to-links">
+                                    
+                                        <?php if ($_product->isSaleable()): ?>
+                                            <li><?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                            <form data-role="tocart-form" action="<?php  echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data'][Action::PARAM_NAME_URL_ENCODED], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                                <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                                <input type="hidden" name="<?php  echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php  echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                                <?php echo $block->getBlockHtml('formkey')?>
+                                                
+                                                <?php 
+                                                $has_option = 0;
+                                                if($_product->getTypeId() == 'simple'){
+                                                    $data = $_product->getData();
+                                                    $has_option = ( isset($data['has_options']) && $data['has_options'] == 1) ? 1 : 0;
+                                                }
+                                             ?>
+                                            <?php if($animationType == 'cartshow' && ($_product->getTypeId() == 'configurable' || $_product->getTypeId() == 'bundle' || $_product->getTypeId() == 'grouped' || ($_product->getTypeId() == 'simple' && $has_option == 1) )): ?>
+                                                <button class="action btn-cart tocart" type="button" title="<?php  echo __('Add to Cart') ?>" onclick="window.location.href = '<?php echo $_product->getProductUrl() ?>'">
+                                                    <span class="icon pe-7s-shopbag"></span>
+                                                    <span class="product-item-link">
+                                                        <?php echo __('Add to cart'); ?>
+                                                    </span>
+                                                </button>   
+                                            <?php else: ?>
+                                                <button class="action tocart btn-cart" type="submit" title="<?php  echo __('Add to Cart') ?>">
+                                                    <span class="icon pe-7s-shopbag"></span>
+                                                    <span class="text"><?php  echo __('Add to Cart') ?></span>
+                                                </button>
+                                            <?php endif ?>
+                                            </form></li>
+                                        <?php endif ?>
+                                        
+                                        <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && !$settings['catalog']['wishlist_button']): ?>
+                                            <li><button data-title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                               class="action towishlist"
+                                               title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                               aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                               data-post='<?php  echo $block->getAddToWishlistParams($_product); ?>'
+                                               data-action="add-to-wishlist"
+                                               role="button">
+                                                <i class="pe-7s-like"></i>
+                                            </button></li>
+                                        <?php endif; ?>
+                                            
+                                        <?php if(!$settings['catalog']['compare_button']): ?>
+                                            <li><button data-title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                               class="action tocompare"
+                                               title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                               aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                               data-post='<?php  echo $compareHelper->getPostDataParams($_product); ?>'
+                                               role="button">
+                                                <i class="pe-7s-graph3"></i>
+                                            </button></li>
+                                        <?php endif ?>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            <?php endif ?>
+        </ol>
+     </div>
+<?php } /*  Simple Prodcut listing end */ else{ 
+     /* Bundle Prodcut listing start */ ?>
+     <div class="products wrapper <?php  echo $viewMode; ?> products-<?php  echo $viewMode; ?>" id="product-wrapper">
+        <?php $iterator = 1; ?>
+        <ol class="products list items product-items bundle-product-list <?php if ($block->getMode() == 'grid'): ?>row<?php endif ?> <?php echo 'row-'.$arrColClass[0] ?>">
+        
+            <?php $_imagehelper = $this->helper('Magento\Catalog\Helper\Image'); ?>
+            <?php $size = $themeHelper->getImageSize(); ?>
+            <?php $padding = $themeHelper->getImagePadding(); ?>
+            <?php $quickViewHelper = $this->helper('MGS\QuickView\Helper\Data'); ?>
+            <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare'); ?>
+            
+            <?php if ($block->getMode() == 'grid'): ?>
+                <?php $params = $block->getRequest()->getParams();  ?>
+                <?php if($settings['catalog']['ajaxscroll']): ?>
+                
+                    <?php if(isset($params['product_list_limit'])): ?>
+                        <?php $countAll = $params['product_list_limit']; ?>
+                    <?php else: ?>
+                        <?php $countAll = $themeHelper->getStoreConfig('catalog/frontend/grid_per_page'); ?>        
+                    <?php endif ?>
+                    
+                    <?php if(isset($params['p'])): ?>
+                        <?php $i = ($params['p'] - 1) * $countAll; ?>
+                    <?php else: ?>
+                        <?php $i = 0; ?>
+                    <?php endif ?>
+                    
+                <?php else: ?>
+                    <?php $i = 0; ?>
+                <?php endif ?>
+                
+                <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+                <?php foreach ($bundleCollection as $bundleItem): $i++; 
+                    
+                    /*Front Product */
+                    $frontProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($bundleItem['front']);
+                    $frontdisplayname=$_helper->productAttribute($frontProduct, $frontProduct->getDisplayname(), 'displayname');
+                    $fronttyreSize = $listingHelper->getTyreSize($frontProduct, true);
+                    $frontorigin=$listingHelper->getAttributeValue($frontProduct, 'manufacturer');
+                    $frontyear=$listingHelper->getAttributeValue($frontProduct, 'year');
+                    $frontset4price=$listingHelper->getSet4price($frontProduct);
+                    $frontset2price=$listingHelper->getSet2price($frontProduct);
+                    $frontset1price=$listingHelper->getSet1price($frontProduct);
+                    $frontset1priceWC=$listingHelper->getSet1priceWithoutCurrency($frontProduct);
+                    $frontvehicleImageUrl=$listingHelper->getVehcileImageUrl($frontProduct,'vehicle_model');
+                    $frontmanufacturer_warranty=$_helper->productAttribute($frontProduct, $frontProduct->getManufacturerWarranty(), 'manufacturer_warranty');                    
+                    $frontrunflat=$_helper->productAttribute($frontProduct, $frontProduct->getRunflat(), 'runflat');
+
+                    $frontfuel_efficiency=$_helper->productAttribute($frontProduct, $frontProduct->getFuelEfficiency(), 'fuel_efficiency');
+                    $frontwet_grip=$_helper->productAttribute($frontProduct, $frontProduct->getWetGrip(), 'wet_grip');
+                    $frontnoise_levels=$_helper->productAttribute($frontProduct, $frontProduct->getNoiseLevels(), 'noise_levels');
+                    $frontoffers= $frontProduct->getResource()->getAttribute('offers')->getFrontend()->getValue($frontProduct);
+
+                    $frontbrand=$_helper->productAttribute($frontProduct, $frontProduct->getMgsBrand(), 'mgs_brand');
+                    $frontbrandDetails = $listingHelper->getBrandDetails($frontbrand); 
+                    $frontbranimage=$listingHelper->getBrandImageUrl($frontbrandDetails); 
+                    $frontbrand_title=$frontbrandDetails->getName();
+                    
+
+                    $frontisAnyRuleExist=$listingHelper->isAnyRuleExist($frontProduct->getEntityId());   
+                    $frontborderColor="";    
+                    if(count($frontisAnyRuleExist) > 0 ){
+                        $frontborderColor='border:2px solid '.$frontisAnyRuleExist[1].';border-radius:5px';
+                    }
+
+                    $frontPartsCat= $frontProduct->getResource()->getAttribute('parts_category')->getFrontend()->getValue($frontProduct);
+
+                    /* Rear Prodcut */              
+                            
+                    $rearProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($bundleItem['rear']);
+                    $reardisplayname=$_helper->productAttribute($rearProduct, $frontProduct->getDisplayname(), 'displayname');
+                    $reartyreSize = $listingHelper->getTyreSize($rearProduct, true);
+                    $rearorigin=$listingHelper->getAttributeValue($rearProduct, 'manufacturer');
+                    $rearyear=$listingHelper->getAttributeValue($rearProduct, 'year');
+                    $rearset4price=$listingHelper->getSet4price($rearProduct);
+                    $rearset2price=$listingHelper->getSet2price($rearProduct);
+                    $rearset1price=$listingHelper->getSet1price($rearProduct);
+                    $rearset1priceWC=$listingHelper->getSet1priceWithoutCurrency($rearProduct);
+                    $rearvehicleImageUrl=$listingHelper->getVehcileImageUrl($rearProduct,'vehicle_model');
+                    $rearmanufacturer_warranty=$_helper->productAttribute($rearProduct, $rearProduct->getManufacturerWarranty(), 'manufacturer_warranty');                    
+                    $rearrunflat=$_helper->productAttribute($rearProduct, $rearProduct->getRunflat(), 'runflat');
+
+                    $rearfuel_efficiency=$_helper->productAttribute($rearProduct, $rearProduct->getFuelEfficiency(), 'fuel_efficiency');
+                    $rearwet_grip=$_helper->productAttribute($rearProduct, $rearProduct->getWetGrip(), 'wet_grip');
+                    $rearnoise_levels=$_helper->productAttribute($rearProduct, $rearProduct->getNoiseLevels(), 'noise_levels');
+                    $rearoffers= $rearProduct->getResource()->getAttribute('offers')->getFrontend()->getValue($rearProduct);
+
+                    $rearbrand=$_helper->productAttribute($rearProduct, $rearProduct->getMgsBrand(), 'mgs_brand');
+                    $rearbrandDetails = $listingHelper->getBrandDetails($rearbrand); 
+                    $rearbranimage=$listingHelper->getBrandImageUrl($rearbrandDetails); 
+                    $rearbrand_title=$frontbrandDetails->getName();
+
+                    $rearisAnyRuleExist=$listingHelper->isAnyRuleExist($rearProduct->getEntityId());   
+                    $rearborderColor="";    
+                    if(count($rearisAnyRuleExist) > 0 ){
+                        $rearborderColor='border:2px solid '.$rearisAnyRuleExist[1].';border-radius:5px';
+                    }
+
+                    $rearPartsCat= $rearProduct->getResource()->getAttribute('parts_category')->getFrontend()->getValue($rearProduct);
+                    
+                    ?>
+                 
+                 <ol class="bundleBox">   
+                    <li class="leftbundle item product product-item-info product-item  <?php echo $hover_effect ?>" style="<?php //echo $frontborderColor; ?>">
+                        <?php $_productNameStripped = $block->stripTags($frontProduct->getName(), null, true); ?>
+                        <?php $productImage = $_imagehelper->init($frontProduct, $image)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php $productImageHover = $_imagehelper->init($frontProduct, $image_hover)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php if(!$lazyLoad): ?>
+                            <?php $baseImage = $productImage ?>
+                            <?php $baseImageHover = $productImageHover ?>
+                        <?php endif ?>
+
+                        <div class="tyre_offers">
+                            <?php if(count($frontisAnyRuleExist) > 0  ) { ?>
+                             <img alt="Tyre Offers" class="img_tyre_offer" src="<?php  echo $frontisAnyRuleExist[0] ?>" />
+                            <?php } ?>    
+                        </div>                                        
+                        <div class="brand_logo_wrapper">
+                            <img src="<?php echo $frontbranimage ?>" alt="<?php echo $frontbrand_title ?>" class="img_brand_logo"/>
+                        </div>
+                        <div class="product-top">
+                            <?php if($themeHelper->getStoreConfig('mpanel/catalog/images_slides')== 1): ?>
+                               <div class="owl-carousel list_gallery">
+                                    <a href="<?php  echo $frontProduct->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productImageBase ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail"/>
+                                    </a>
+                                   <?php if(basename($frontProduct->getData('thumbnail')) != basename($frontProduct->getData('image'))): ?>
+                                       <a href="<?php  echo $frontProduct->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productThumbnail ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productThumbnail ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                  <?php if((basename($frontProduct->getData('small_image')) != basename($frontProduct->getData('image'))) && (basename($frontProduct->getData('small_image')) != basename($frontProduct->getData('thumbnail')))): ?>
+                                        <a href="<?php  echo $frontProduct->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                            <img src="<?php echo $productImageSmall ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productImageSmall ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                </div>
+                                
+                            <?php else:?>
+                             <a href="<?php echo $frontProduct->getProductUrl() ?>" style="padding-bottom: <?php echo $padding; ?>;" class="product photo product-item-photo" tabindex="-1">
+                                <img src="<?php echo $baseImage ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImage ?>"/>
+                                
+                                <?php if(basename($frontProduct->getData('thumbnail')) !=  'no_selection'): ?>
+                                    <?php if(basename($frontProduct->getData('thumbnail')) != basename($frontProduct->getData('small_image'))): ?>
+                                        <img src="<?php echo $baseImageHover ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-hover-show<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImageHover ?>" />
+                                    <?php endif ?>
+                                <?php endif ?>
+                                
+                                <div class="product-image-photo"></div>
+                            </a>
+                               
+                            <?php endif;?>
+                            <?php echo $themeHelper->getProductLabel($frontProduct) ?>
+                        </div>
+                        
+                        <div class="product details product-item-details">
+                            <h5 class="product name product-item-name">
+                                <a class="product-item-link" href="<?php echo $frontProduct->getProductUrl() ?>">
+                                    <?php  echo $frontdisplayname; ?>
+                                </a>
+                            </h5>
+                            <div class="product_size">
+                                <span><a class="product-item-link" href="<?php echo $frontProduct->getProductUrl() ?>"><?php echo $fronttyreSize; ?></a></span>
+                            </div>
+                            <?php if($frontmanufacturer_warranty):?>
+                            <div class="product-warranty">
+                                <span class="icon"><svg  fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M46.865,71.869l-5.15,18.301l-3.626-5.972c-0.164-0.27-0.453-0.422-0.751-0.422c-0.135,0-0.273,0.031-0.402,0.098    l-6.207,3.205l4.698-16.698c-0.538-0.392-1.018-0.856-1.431-1.397l-5.505,19.564c-0.094,0.336,0.02,0.697,0.291,0.918    c0.27,0.221,0.648,0.26,0.958,0.1l7.274-3.756l4.248,6.999c0.16,0.264,0.446,0.422,0.75,0.422c0.039,0,0.079-0.003,0.118-0.008    c0.346-0.047,0.632-0.295,0.727-0.632l5.939-21.105C48.168,71.63,47.522,71.759,46.865,71.869z"></path></g><g><path d="M69.257,90.953l-4.614-21.085c-0.259,0.421-0.532,0.834-0.836,1.231c-0.061,0.08-0.129,0.144-0.196,0.21    c-0.093,0.191-0.204,0.358-0.344,0.482l3.88,17.73l-6.009-3.564c-0.395-0.235-0.907-0.124-1.17,0.256l-3.969,5.748L51.37,70.814    c-0.599-0.011-1.197-0.01-1.794,0.015l5.138,23.48c0.075,0.341,0.345,0.606,0.688,0.673C55.458,94.994,55.515,95,55.572,95    c0.285,0,0.556-0.139,0.723-0.379l4.652-6.736l7.042,4.177c0.138,0.082,0.293,0.123,0.448,0.123c0.007,0.001,0.013,0,0.017,0    c0.485,0,0.878-0.393,0.878-0.878C69.33,91.181,69.305,91.061,69.257,90.953z"></path></g><g><g><path d="M59.979,75.292c-1.722,0-3.526-0.896-5.271-1.762c-1.619-0.804-3.293-1.635-4.707-1.635     c-1.414,0-3.089,0.832-4.707,1.635c-1.745,0.866-3.55,1.762-5.272,1.762c-0.482,0-0.943-0.07-1.372-0.21     c-2.224-0.722-3.433-3.054-4.603-5.308c-0.806-1.555-1.64-3.163-2.708-3.94c-1.089-0.793-2.893-1.095-4.638-1.387     c-2.486-0.417-5.056-0.848-6.413-2.711c-1.34-1.842-0.962-4.405-0.597-6.884c0.261-1.763,0.53-3.587,0.105-4.892     c-0.397-1.223-1.595-2.437-2.864-3.723c-1.799-1.823-3.658-3.707-3.658-6.092s1.86-4.269,3.658-6.092     c1.269-1.285,2.467-2.499,2.864-3.723c0.424-1.305,0.155-3.128-0.105-4.892c-0.365-2.479-0.743-5.042,0.597-6.884     c1.356-1.863,3.927-2.294,6.413-2.711c1.745-0.292,3.548-0.595,4.637-1.387c1.069-0.778,1.903-2.385,2.709-3.941     c1.169-2.255,2.378-4.586,4.602-5.308C39.078,5.07,39.539,5,40.021,5c1.722,0,3.526,0.896,5.272,1.762     C46.911,7.566,48.585,8.397,50,8.397c1.414,0,3.089-0.832,4.707-1.635C56.453,5.896,58.257,5,59.979,5     c0.482,0,0.943,0.07,1.372,0.21c2.224,0.722,3.433,3.054,4.603,5.308c0.806,1.555,1.64,3.163,2.708,3.94     c1.089,0.793,2.893,1.095,4.638,1.388c2.486,0.417,5.056,0.848,6.413,2.711c1.34,1.842,0.962,4.405,0.597,6.884     c-0.261,1.763-0.53,3.586-0.105,4.892c0.397,1.223,1.595,2.437,2.864,3.723c1.799,1.823,3.658,3.707,3.658,6.092     s-1.859,4.269-3.658,6.092c-1.269,1.285-2.467,2.499-2.864,3.723c-0.424,1.305-0.155,3.128,0.105,4.892     c0.365,2.479,0.743,5.042-0.597,6.884c-1.356,1.863-3.927,2.294-6.413,2.711c-1.745,0.292-3.548,0.595-4.637,1.387     c-1.069,0.778-1.903,2.385-2.709,3.941c-1.169,2.255-2.378,4.586-4.602,5.308C60.922,75.222,60.461,75.292,59.979,75.292z      M50,70.139c1.826,0,3.688,0.925,5.488,1.819c1.636,0.812,3.181,1.579,4.49,1.579c0.302,0,0.573-0.04,0.83-0.124     c1.538-0.499,2.579-2.506,3.585-4.446c0.9-1.736,1.83-3.531,3.235-4.552c1.423-1.036,3.434-1.373,5.38-1.699     c2.238-0.375,4.351-0.729,5.284-2.013c0.918-1.262,0.608-3.366,0.279-5.594c-0.29-1.964-0.59-3.994-0.039-5.691     c0.525-1.618,1.928-3.039,3.284-4.413c1.55-1.571,3.152-3.194,3.152-4.858s-1.602-3.288-3.152-4.858     c-1.356-1.374-2.759-2.795-3.284-4.413c-0.551-1.697-0.251-3.727,0.039-5.691c0.328-2.228,0.639-4.332-0.279-5.594     c-0.934-1.283-3.047-1.637-5.284-2.012c-1.945-0.326-3.957-0.663-5.381-1.7c-1.402-1.021-2.334-2.816-3.233-4.551     c-1.006-1.94-2.047-3.947-3.586-4.447c-0.257-0.084-0.528-0.124-0.83-0.124c-1.31,0-2.855,0.767-4.49,1.579     c-1.8,0.894-3.662,1.819-5.488,1.819c-1.826,0-3.688-0.925-5.488-1.819c-2.013-0.999-3.947-1.901-5.32-1.455     c-1.538,0.499-2.579,2.506-3.585,4.446c-0.9,1.736-1.83,3.531-3.235,4.552c-1.423,1.036-3.434,1.373-5.38,1.699     c-2.238,0.375-4.351,0.729-5.284,2.013c-0.918,1.262-0.608,3.366-0.279,5.594c0.29,1.964,0.59,3.994,0.039,5.691     c-0.525,1.618-1.928,3.039-3.284,4.413c-1.55,1.571-3.152,3.194-3.152,4.858s1.602,3.288,3.152,4.858     c1.356,1.374,2.759,2.795,3.284,4.413c0.551,1.697,0.251,3.727-0.039,5.691c-0.328,2.228-0.639,4.332,0.279,5.594     c0.934,1.283,3.047,1.637,5.284,2.012c1.945,0.326,3.957,0.664,5.381,1.7c1.402,1.021,2.334,2.816,3.233,4.551     c1.006,1.941,2.047,3.947,3.586,4.447c1.373,0.447,3.307-0.456,5.32-1.455C46.312,71.064,48.174,70.139,50,70.139z"></path></g></g><g><polygon points="64.046,30.549 49.442,49.743 46.72,53.314 44.003,49.743 37.71,41.475 40.428,37.898 46.72,46.167 61.328,26.978"></polygon></g></g></svg></span>
+                                <span class="text"><?php echo $frontmanufacturer_warranty;?></span>
+                            </div>
+                            <?php endif;?>
+                             <?php // if(!$themeHelper->getStoreConfig('mpanel/catalog/review')): ?>
+                                <?php //echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+                            <?php //endif ?>   
+
+
+                            <div class="vehicle_year_country">
+                                <div class="left_inner">
+                                    <?php /* <img src="<?php echo $frontvehicleImageUrl; ?>" title="" alt="Vehicle Icon" class="vehicle_model_image"> */ ?>
+                                    <span><?php echo $frontorigin;  ?></span>
+                                </div>
+
+                            <?php if(isset($frontrunflat)) { ?>
+                                <div class="RunFlatlist"><img src="../media/run-flat-icon.svg" title="" alt="" class="vehicle_model_image"></div>
+                            <?php } ?>
+
+                                <div class="right_inner">
+                                    <span><?php echo (isset($frontyear) && !empty($frontyear)) ? $frontyear : '';  ?></span>
+                                </div>
+                            </div>  
+
+                        
+                            <?php //echo $block->getProductPrice($frontProduct) ?>
+                            <span class="fitted-balanced">
+                                <?php if($frontPartsCat == 'Motorcycle Tyres'): ?>
+                                    <?= __('Price incl. VAT') ?>
+                                <?php else: ?>
+                                    <?= __('Fitment & Wheel Balancing Included') ?>
+                                <?php endif; ?>
+                            </span>
+                            <span class="single-tyre-price"><?php echo $frontset1price; ?></span>                           
+                            <div class="setfourprice">
+                                <?php if($frontPartsCat == 'Motorcycle Tyres'): ?>
+                                    <span><?php echo __('Set of 1: ').$frontset1price; ?></span>
+                                <?php else: ?>
+                                    <span><?php echo __('Set of 2: ').$frontset2price; ?></span>
+                                <?php endif; ?>
+                            </div>
+                            </form>
+
+                            <?php echo $block->getProductDetailsHtml($frontProduct); ?>
+                            <?php if ($themeHelper->getStoreConfig('mpanel/catalog/disable_add_to_cart') == 0 && $themeHelper->getStoreConfig('mpanel/catalog/disable_hover_effect') == 1): ?>
+                                <?php if ($frontProduct->isSaleable()): ?>
+                                    <div>
+                                        <?php $postParams = $block->getAddToCartPostParams($frontProduct); ?>
+                                        <form data-role="tocart-form" action="<?php  echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                            <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                            <input type="hidden" name="uenc" value="<?php  echo $postParams['data']['uenc']; ?>">
+                                            <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+                                            <button class="action tocart btn-cart hover_effect" type="submit" title="<?php  echo __('Add to Cart') ?>">
+                                                <span class="icon pe-7s-shopbag"></span>
+                                                <span class="text"><?php  echo __('Add to Cart') ?></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                <?php endif ?>
+                            <?php endif ?>
+                        </div>
+                    </li>
+                    <li class="rightbundle item product product-item-info product-item  <?php echo $hover_effect ?>" style="<?php echo $rearborderColor; ?>">
+                        <?php $_productNameStripped = $block->stripTags($rearProduct->getName(), null, true); ?>
+                        <?php $productImage = $_imagehelper->init($rearProduct, $image)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php $productImageHover = $_imagehelper->init($rearProduct, $image_hover)->resize($size['width'], $size['height'])->getUrl(); ?>
+                        <?php if(!$lazyLoad): ?>
+                            <?php $baseImage = $productImage ?>
+                            <?php $baseImageHover = $productImageHover ?>
+                        <?php endif ?>
+                        <div class="tyre_offers">
+                            <?php if(count($rearisAnyRuleExist) > 0  ) { ?>
+                             <img alt="Tyre Offers" class="img_tyre_offer" src="<?php  echo $rearisAnyRuleExist[0] ?>" />
+                            <?php } ?>    
+                        </div>                 
+                        <div class="brand_logo_wrapper">
+                            <img src="<?php echo $frontbranimage ?>" alt="<?php echo $frontbrand_title ?>" class="img_brand_logo"/>
+                        </div>
+                        <div class="product-top">
+                            <?php if($themeHelper->getStoreConfig('mpanel/catalog/images_slides')== 1): ?>
+                               <div class="owl-carousel list_gallery">
+                                    <a href="<?php  echo $rearProduct->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productImageBase ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail"/>
+                                    </a>
+                                   <?php if(basename($rearProduct->getData('thumbnail')) != basename($rearProduct->getData('image'))): ?>
+                                       <a href="<?php  echo $rearProduct->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                        <img src="<?php echo $productThumbnail ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productThumbnail ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                  <?php if((basename($rearProduct->getData('small_image')) != basename($rearProduct->getData('image'))) && (basename($rearProduct->getData('small_image')) != basename($rearProduct->getData('thumbnail')))): ?>
+                                        <a href="<?php  echo $rearProduct->getProductUrl() ?>" class="product photo product-item-photo" style="padding-bottom: <?php echo $padding ?>;"  tabindex="-1">
+                                            <img src="<?php echo $productImageSmall ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail" data-src="<?php echo $productImageSmall ?>"/>
+                                       </a>
+                                   <?php endif;?>
+                                   
+                                </div>
+                                
+                            <?php else:?>
+                             <a href="<?php echo $rearProduct->getProductUrl() ?>" style="padding-bottom: <?php echo $padding; ?>;" class="product photo product-item-photo" tabindex="-1">
+                                <img src="<?php echo $baseImage ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImage ?>"/>
+                                
+                                <?php if(basename($rearProduct->getData('thumbnail')) !=  'no_selection'): ?>
+                                    <?php if(basename($rearProduct->getData('thumbnail')) != basename($rearProduct->getData('small_image'))): ?>
+                                        <img src="<?php echo $baseImageHover ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-hover-show<?php if($lazyLoad): ?> lazy<?php endif ?>" data-src="<?php echo $productImageHover ?>" />
+                                    <?php endif ?>
+                                <?php endif ?>
+                                
+                                <div class="product-image-photo"></div>
+                            </a>
+                               
+                            <?php endif;?>
+                            <?php echo $themeHelper->getProductLabel($rearProduct) ?>
+                        </div>
+                        
+                        <div class="product details product-item-details">
+                            <h5 class="product name product-item-name">
+                                <a class="product-item-link" href="<?php echo $rearProduct->getProductUrl() ?>">
+                                    <?php  echo $reardisplayname; ?>
+                                </a>
+                            </h5>
+                            <div class="product_size">
+                                <span><a class="product-item-link" href="<?php echo $rearProduct->getProductUrl() ?>"><?php echo $reartyreSize; ?></a></span>
+                            </div>
+                            <?php if($rearmanufacturer_warranty):?>
+                            <div class="product-warranty">
+                                <span class="icon"><svg  fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M46.865,71.869l-5.15,18.301l-3.626-5.972c-0.164-0.27-0.453-0.422-0.751-0.422c-0.135,0-0.273,0.031-0.402,0.098    l-6.207,3.205l4.698-16.698c-0.538-0.392-1.018-0.856-1.431-1.397l-5.505,19.564c-0.094,0.336,0.02,0.697,0.291,0.918    c0.27,0.221,0.648,0.26,0.958,0.1l7.274-3.756l4.248,6.999c0.16,0.264,0.446,0.422,0.75,0.422c0.039,0,0.079-0.003,0.118-0.008    c0.346-0.047,0.632-0.295,0.727-0.632l5.939-21.105C48.168,71.63,47.522,71.759,46.865,71.869z"></path></g><g><path d="M69.257,90.953l-4.614-21.085c-0.259,0.421-0.532,0.834-0.836,1.231c-0.061,0.08-0.129,0.144-0.196,0.21    c-0.093,0.191-0.204,0.358-0.344,0.482l3.88,17.73l-6.009-3.564c-0.395-0.235-0.907-0.124-1.17,0.256l-3.969,5.748L51.37,70.814    c-0.599-0.011-1.197-0.01-1.794,0.015l5.138,23.48c0.075,0.341,0.345,0.606,0.688,0.673C55.458,94.994,55.515,95,55.572,95    c0.285,0,0.556-0.139,0.723-0.379l4.652-6.736l7.042,4.177c0.138,0.082,0.293,0.123,0.448,0.123c0.007,0.001,0.013,0,0.017,0    c0.485,0,0.878-0.393,0.878-0.878C69.33,91.181,69.305,91.061,69.257,90.953z"></path></g><g><g><path d="M59.979,75.292c-1.722,0-3.526-0.896-5.271-1.762c-1.619-0.804-3.293-1.635-4.707-1.635     c-1.414,0-3.089,0.832-4.707,1.635c-1.745,0.866-3.55,1.762-5.272,1.762c-0.482,0-0.943-0.07-1.372-0.21     c-2.224-0.722-3.433-3.054-4.603-5.308c-0.806-1.555-1.64-3.163-2.708-3.94c-1.089-0.793-2.893-1.095-4.638-1.387     c-2.486-0.417-5.056-0.848-6.413-2.711c-1.34-1.842-0.962-4.405-0.597-6.884c0.261-1.763,0.53-3.587,0.105-4.892     c-0.397-1.223-1.595-2.437-2.864-3.723c-1.799-1.823-3.658-3.707-3.658-6.092s1.86-4.269,3.658-6.092     c1.269-1.285,2.467-2.499,2.864-3.723c0.424-1.305,0.155-3.128-0.105-4.892c-0.365-2.479-0.743-5.042,0.597-6.884     c1.356-1.863,3.927-2.294,6.413-2.711c1.745-0.292,3.548-0.595,4.637-1.387c1.069-0.778,1.903-2.385,2.709-3.941     c1.169-2.255,2.378-4.586,4.602-5.308C39.078,5.07,39.539,5,40.021,5c1.722,0,3.526,0.896,5.272,1.762     C46.911,7.566,48.585,8.397,50,8.397c1.414,0,3.089-0.832,4.707-1.635C56.453,5.896,58.257,5,59.979,5     c0.482,0,0.943,0.07,1.372,0.21c2.224,0.722,3.433,3.054,4.603,5.308c0.806,1.555,1.64,3.163,2.708,3.94     c1.089,0.793,2.893,1.095,4.638,1.388c2.486,0.417,5.056,0.848,6.413,2.711c1.34,1.842,0.962,4.405,0.597,6.884     c-0.261,1.763-0.53,3.586-0.105,4.892c0.397,1.223,1.595,2.437,2.864,3.723c1.799,1.823,3.658,3.707,3.658,6.092     s-1.859,4.269-3.658,6.092c-1.269,1.285-2.467,2.499-2.864,3.723c-0.424,1.305-0.155,3.128,0.105,4.892     c0.365,2.479,0.743,5.042-0.597,6.884c-1.356,1.863-3.927,2.294-6.413,2.711c-1.745,0.292-3.548,0.595-4.637,1.387     c-1.069,0.778-1.903,2.385-2.709,3.941c-1.169,2.255-2.378,4.586-4.602,5.308C60.922,75.222,60.461,75.292,59.979,75.292z      M50,70.139c1.826,0,3.688,0.925,5.488,1.819c1.636,0.812,3.181,1.579,4.49,1.579c0.302,0,0.573-0.04,0.83-0.124     c1.538-0.499,2.579-2.506,3.585-4.446c0.9-1.736,1.83-3.531,3.235-4.552c1.423-1.036,3.434-1.373,5.38-1.699     c2.238-0.375,4.351-0.729,5.284-2.013c0.918-1.262,0.608-3.366,0.279-5.594c-0.29-1.964-0.59-3.994-0.039-5.691     c0.525-1.618,1.928-3.039,3.284-4.413c1.55-1.571,3.152-3.194,3.152-4.858s-1.602-3.288-3.152-4.858     c-1.356-1.374-2.759-2.795-3.284-4.413c-0.551-1.697-0.251-3.727,0.039-5.691c0.328-2.228,0.639-4.332-0.279-5.594     c-0.934-1.283-3.047-1.637-5.284-2.012c-1.945-0.326-3.957-0.663-5.381-1.7c-1.402-1.021-2.334-2.816-3.233-4.551     c-1.006-1.94-2.047-3.947-3.586-4.447c-0.257-0.084-0.528-0.124-0.83-0.124c-1.31,0-2.855,0.767-4.49,1.579     c-1.8,0.894-3.662,1.819-5.488,1.819c-1.826,0-3.688-0.925-5.488-1.819c-2.013-0.999-3.947-1.901-5.32-1.455     c-1.538,0.499-2.579,2.506-3.585,4.446c-0.9,1.736-1.83,3.531-3.235,4.552c-1.423,1.036-3.434,1.373-5.38,1.699     c-2.238,0.375-4.351,0.729-5.284,2.013c-0.918,1.262-0.608,3.366-0.279,5.594c0.29,1.964,0.59,3.994,0.039,5.691     c-0.525,1.618-1.928,3.039-3.284,4.413c-1.55,1.571-3.152,3.194-3.152,4.858s1.602,3.288,3.152,4.858     c1.356,1.374,2.759,2.795,3.284,4.413c0.551,1.697,0.251,3.727-0.039,5.691c-0.328,2.228-0.639,4.332,0.279,5.594     c0.934,1.283,3.047,1.637,5.284,2.012c1.945,0.326,3.957,0.664,5.381,1.7c1.402,1.021,2.334,2.816,3.233,4.551     c1.006,1.941,2.047,3.947,3.586,4.447c1.373,0.447,3.307-0.456,5.32-1.455C46.312,71.064,48.174,70.139,50,70.139z"></path></g></g><g><polygon points="64.046,30.549 49.442,49.743 46.72,53.314 44.003,49.743 37.71,41.475 40.428,37.898 46.72,46.167 61.328,26.978"></polygon></g></g></svg></span>
+                                <span class="text"><?php echo $rearmanufacturer_warranty;?></span>
+                            </div>
+                            <?php endif;?>
+                             <?php // if(!$themeHelper->getStoreConfig('mpanel/catalog/review')): ?>
+                                <?php //echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+                            <?php //endif ?>   
+
+                            <div class="vehicle_year_country">
+                                <div class="left_inner">
+                                    <?php /* <img src="<?php echo $rearvehicleImageUrl; ?>" title="" alt="Vehicle Icon" class="vehicle_model_image"> */ ?>
+                                    <span><?php echo $rearorigin;  ?></span>
+                                </div>
+                                <?php if(isset($frontrunflat)) { ?>
+                                    <div class="RunFlatlist"><img src="../media/run-flat-icon.svg" title="" alt="" class="vehicle_model_image"></div>
+                                <?php } ?>                                
+                                <div class="right_inner">
+                                    <span><?php echo (isset($rearyear) && !empty($rearyear)) ? $rearyear : '';  ?></span>
+                                </div>
+                            </div>  
+                        
+                            <?php //echo $block->getProductPrice($rearProduct) ?>
+                            <span class="fitted-balanced">
+                                <?php if($rearPartsCat == 'Motorcycle Tyres'): ?>
+                                    <?= __('Price incl. VAT') ?>
+                                <?php else: ?>
+                                    <?= __('Fitment & Wheel Balancing Included') ?>
+                                <?php endif; ?>
+                            </span>
+                            <span class="single-tyre-price"><?php echo $rearset1price; ?></span>                            
+                            <div class="setfourprice">
+                                <?php if($rearPartsCat == 'Motorcycle Tyres'): ?>
+                                    <span><?php echo __('Set of 1: ').$rearset1price; ?></span>
+                                <?php else: ?>
+                                    <span><?php echo __('Set of 2: ').$rearset2price; ?></span>
+                                <?php endif; ?>
+                            </div>
+                            <?php echo $block->getProductDetailsHtml($rearProduct); ?>
+                            <?php if ($themeHelper->getStoreConfig('mpanel/catalog/disable_add_to_cart') == 0 && $themeHelper->getStoreConfig('mpanel/catalog/disable_hover_effect') == 1): ?>
+                                <?php if ($rearProduct->isSaleable()): ?>
+                                    <div>
+                                        <?php $postParams = $block->getAddToCartPostParams($rearProduct); ?>
+                                        <form data-role="tocart-form" action="<?php  echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                            <input type="hidden" name="product" value="<?php  echo $postParams['data']['product']; ?>">
+                                            <input type="hidden" name="uenc" value="<?php  echo $postParams['data']['uenc']; ?>">
+                                            <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+                                            <button class="action tocart btn-cart hover_effect" type="submit" title="<?php  echo __('Add to Cart') ?>">
+                                                <span class="icon pe-7s-shopbag"></span>
+                                                <span class="text"><?php  echo __('Add to Cart') ?></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                <?php endif ?>
+                            <?php endif ?>
+                        </div>
+                    </li>
+                    <?php $postParams = $block->getAddToCartPostParams($frontProduct);  ?>
+                    <form  data-role="tocart-form" class="buynowbox" action="<?php echo $this->getUrl('checkout/cart/add', ['uenc'=>$postParams['data']['uenc'], 'product'=>$postParams['data']['product']]); ?>" method="post">
+                                 <input type="hidden" name="product" value="<?php echo $postParams['data']['product']; ?>">
+                                 <input type="hidden" name="uenc" value="<?php echo $postParams['data']['uenc']; ?>">
+                                 <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+                                 <input type="hidden" name="bundleproduct" value="<?php echo  $rearProduct->getId(); ?>">
+                                <div class="bundle_qty bundle_left_qty">
+                                <!-- <span class="front-price">Set of 2: AED3125.00</span> -->
+                                <select name="qty" class="select_qty front-qty" data-unitprice="<?= $frontset1priceWC ?>" 
+                                     <?php echo  (count($frontisAnyRuleExist) > 0 ) ? "data-discountqty=".$frontisAnyRuleExist[2]   :  "";  ?> 
+                                     <?php echo  (count($frontisAnyRuleExist) > 0 ) ? "data-totalqty=".$frontisAnyRuleExist[3]:"";  ?> 
+                                      >
+                                <?php if($frontPartsCat == 'Motorcycle Tyres'): ?>
+                                    <option value="1" selected="">1</option>
+                                    <option value="2">2</option>
+                                <?php else: ?>
+                                    <option value="1">1</option>
+                                    <option value="2" selected="">2</option>
+                                <?php endif; ?>
+                                  
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                                </div>
+                                <div class="bundle_qty bundle_right_qty">
+                                <!-- <span class="rear-price">Set of 2: AED4025.00</span> -->
+                                <select name="bundleqty" class="select_qty rear-qty" 
+                                        data-unitprice="<?= $rearset1priceWC ?>" 
+                                        <?php echo  (count($rearisAnyRuleExist) > 0 ) ? "data-discountqty=".$rearisAnyRuleExist[2]   :  "";  ?> 
+                                       <?php echo  (count($rearisAnyRuleExist) > 0 ) ? "data-totalqty=".$rearisAnyRuleExist[3]:"";  ?> 
+                                     >
+                                <?php if($rearPartsCat == 'Motorcycle Tyres'): ?>
+                                    <option value="1" selected="">1</option>
+                                    <option value="2">2</option>
+                                <?php else: ?>
+                                    <option value="1">1</option>
+                                    <option value="2" selected="">2</option>
+                                <?php endif; ?>
+
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                                </div>
+
+                        <div class="bundle_final_price">
+                            <?php 
+                                $front_price = "";
+                                $rear_price = "";
+                                $bundleset4price = "";
+                                
+                                $front_price = str_replace("AED","",$frontset2price); 
+                                $front_price = str_replace(",","",$front_price);
+
+                                $rear_price = str_replace("AED","",$rearset2price); 
+                                $rear_price = str_replace(",","",$rear_price); 
+                                
+                                $bundleset4price = $front_price + $rear_price;
+
+                                $front_priceFM = str_replace("AED","",$frontset1price); 
+                                $front_priceFM = str_replace(",","",$front_priceFM);
+
+                                $rear_priceFM = str_replace("AED","",$rearset1price); 
+                                $rear_priceFM = str_replace(",","",$rear_priceFM);
+
+                                $bundleset2priceFM = $front_priceFM + $rear_priceFM;
+                            ?>
+                            <?php if($frontPartsCat == 'Motorcycle Tyres' && $rearPartsCat == 'Motorcycle Tyres'): ?>
+                                <span class="bundle-price-fr-rr"><?php echo "Set of 2 AED" .number_format($bundleset2priceFM,2); ?></span>
+                            <?php else: ?>
+                                <span class="bundle-price-fr-rr"><?php echo "Set of 4 AED" .number_format($bundleset4price,2); ?></span>
+                            <?php endif; ?>
+                            <?php if ($frontProduct->isSaleable() || $rearProduct->isSaleable() ) { ?>
+                            <button type="submit"><i class="las la-shopping-cart"></i> <?= __('Add to Cart') ?> </button>
+                            <?php } else { ?>
+                            <a href="https://api.whatsapp.com/send?phone=%20+971800847466&text=Hello%20TyresVision" class="call-us-action">
+                                <i class="fa fa-lg fa-whatsapp"></i><span><?php echo __(' WhatsApp Us');?></span>                                     
+                            </a>
+                            <?php } ?>
+                        </div>
+                   </form>      
+                 </ol>  
+                <?php endforeach ?>
+            <?php else: ?>
+            <?php endif ?>
+        </ol>
+     </div>
+
+<?php } /*  Bundle Prodcut listing end */  ?>
+<?php if(!$isBundle) {  ?>
+    <div class="bottom-pagination<?php if($themeHelper->getStoreConfig('mpanel/catalog/ajaxscroll')): ?> ajaxscroll-enable<?php endif ?>">
+        <?php echo $block->getToolbarHtml() ?>
+    </div>
+<?php } ?>    
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+        </script>
+    <?php endif; ?>
+<?php endif; ?>
+
+<script>
+    require([
+    'jquery',
+    'waypoints'
+], function(jQuery){
+    (function($) {
+        $('.filter-toggle .title').click(function(){
+            $('html').toggleClass('filter-open');
+        });
+    })(jQuery);
+});
+</script>

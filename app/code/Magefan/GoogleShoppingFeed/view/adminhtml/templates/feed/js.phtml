@@ -1,0 +1,24 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+?>
+
+<script type="text/javascript">
+    require(['jquery', 'domReady!'], function($) {
+        var intr = setInterval(function () {
+            var $el = $('select[name*="mf_google_product_category"], select[name="product[mf_google_product_product]"]');
+
+            if (!$el.length) {
+                return;
+            }
+
+            clearInterval(intr);
+
+            require(['Magefan_GoogleShoppingFeed/js/chosen.jquery.min'], function () {
+                $el.chosen({disable_search_threshold: 5, width: '140%'});
+            });
+        }, 1000);
+    });
+</script>

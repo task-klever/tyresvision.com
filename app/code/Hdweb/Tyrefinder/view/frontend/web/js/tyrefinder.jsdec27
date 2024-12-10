@@ -1,0 +1,836 @@
+require(
+[
+    'jquery',
+    'Magento_Ui/js/modal/modal'
+],
+function(
+    $,
+    modal
+) {
+
+    var tyre_finder_width_modal_options = {
+        type: 'popup',
+        responsive: true,   
+        innerScroll: true,
+        buttons: [{
+            text: $.mage.__('Close'),
+            class: 'tyreSearchwrapper',
+            click: function () {
+                this.closeModal();
+            }
+        }],
+        opened: function($Event) {
+            $(".modal-footer").hide();
+        }
+    };
+
+    var tyre_finder_modal = modal(tyre_finder_width_modal_options, $('#tyre_finder_modal'));
+    $("#frontWidthLabel").on('click',function(){
+       
+        $("#tyre_finder_modal").modal("openModal");
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_allcontent').remove();
+        jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_front_width_content"></ul>');
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_front_width_content').html(jQuery('.tyre_finder_modal_front_width_wrapper').html());
+
+        jQuery('#tyre_finder_modal .selectiondata').text('');
+        jQuery('#tyre_finder_modal  .selectiontitle').text('Current Selection');
+        jQuery('.allback').hide();
+
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(0).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_1').addClass('active');
+
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(0).addClass('active');
+        
+    });
+
+    $("#frontHeightLabel").on('click',function(){
+        $("#tyre_finder_modal").modal("openModal");
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_allcontent').hide();
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_front_height_content').show();
+
+        jQuery('.allback').hide();
+        jQuery('.backwidth').show();
+
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(1).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_3').addClass('active');
+
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(1).addClass('active');
+       
+        jQuery('.tyreselection .selectiondata').text(jQuery('#frontWidthLabel').text());
+    });
+
+    $("#frontRimLabel").on('click',function(){
+        $("#tyre_finder_modal").modal("openModal");
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_allcontent').hide();
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_front_rim_content').show();
+
+        jQuery('.allback').hide();
+        jQuery('.backprofile').show();
+
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(2).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_4').addClass('active');
+
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(2).addClass('active');
+       
+        jQuery('.tyreselection .selectiondata').text(jQuery('#frontWidthLabel').text()+' / '+jQuery('#frontHeightLabel').text());
+
+    });
+
+      $('#categoryid').change(function(){
+       var categoryid =$(this).val();
+        jQuery.ajax({
+            url: getCategoryWidthUrl,
+            type: 'POST',
+            data: {
+                format: 'json',
+                categoryid: categoryid,
+            },
+            error: function () {
+                alert("Error");
+            },
+            success: function (data) {
+                if (data.status == 'SUCCESS') {
+                   jQuery('#tyre_finder_modal_wrapper .tyre_finder_allcontent').remove();
+                   jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_front_width_content"></ul>');
+                   jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_front_width_content').html(data.response);
+                   jQuery('.tyre_finder_modal_rear_width_wrapper').html(data.rearresponse);
+                }
+            }
+        });
+
+        resetFinderSearchForm(); // Reset search form
+
+     });
+
+    $(document).on("click",".reartyrelink",function() {
+        jQuery('.searchloader').show();
+        jQuery('.tyre_finder_allcontent').hide();
+        jQuery('.tyre_finder_modal_rear_width_content,.tyre_finder_modal_rear_height_content,.tyre_finder_modal_rear_rim_content').remove();
+        jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_rear_width_content"></ul>');
+        jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_rear_width_content').append(jQuery('.tyre_finder_modal_rear_width_wrapper').html());
+        jQuery('.tyre_finder_modal_rear_width_content').show();
+
+        jQuery('.allback').hide();
+        jQuery('.backfromrim').show();
+
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(0).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_1').addClass('active');
+
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(0).addClass('active');
+        jQuery('.selectiontitle').text('Front Tyre Selection: ');
+        jQuery('.rear-tyre-selection').show();
+        jQuery('.searchloader').hide();
+    });
+
+    // Search by vehicle start
+      var vehicle_finder_modal_options = {
+        type: 'popup',
+        responsive: true,
+        innerScroll: true,
+        buttons: [{
+            text: $.mage.__('Close'),
+            class: 'tyreSearchwrapper',
+            click: function () {
+                this.closeModal();
+            }
+        }],
+        opened: function($Event) {
+            $(".modal-footer").hide();
+        }
+    };
+
+    var vehicle_finder_modal = modal(vehicle_finder_modal_options, $('#vehicle_finder_modal'));
+    $("#vehicle_make").on('click',function(){
+        $("#vehicle_finder_modal").modal("openModal");
+    });
+    //  Search by vehicle end
+
+
+    $(".nav-item").on('click',function(){
+        $('.nav-item').removeClass('size');
+        $('.nav-item').removeClass('vehicle');
+        $('.nav-link').removeClass('active');
+
+        $(this).find('.nav-link').addClass('active');
+
+        if($(this).hasClass('sizetab')){
+            $('.nav-item').addClass('size');
+        }else{
+            $('.nav-item').addClass('vehicle');
+        }
+    });
+
+});   
+
+
+//  Search by Size Start
+function getheight(widthValue,label,type)
+{
+    jQuery("#frontWidthLabel-hidden").val(widthValue);
+    jQuery("#frontWidthLabel").text(label);
+    jQuery('.searchloader').show();
+    jQuery.ajax({
+        url: getHeightUrl,
+        type: 'POST',
+        data: {
+            format: 'json',
+            type: type,
+            width: widthValue,
+        },
+        error: function () {
+            alert("Error");
+        },
+        success: function (data) {
+            if (data.status == 'SUCCESS') {
+                        jQuery('.tyre_finder_allcontent').hide();
+                        jQuery('#tyre_finder_modal_wrapper ul.tyre_finder_modal_front_height_content').remove();
+                        jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_front_height_content"></ul>');
+                        jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_front_height_content').html(data.response);
+                        jQuery('#frontHeightLabel').removeClass('disablesearchoption');
+
+                        jQuery('.allback').hide();
+                        jQuery('.backwidth').show();
+
+                        jQuery('.reset-size-selection').show();
+
+                        jQuery('.stepper li').removeClass('active');
+                        jQuery('.stepper li').eq(1).addClass('active');
+
+                        jQuery('.tyreValue .tvalue_1').text(label);
+                        jQuery('.tyreValue .valuetxt').removeClass('active');
+                        jQuery('.tyreValue .tvalue_2').addClass('active');
+                        jQuery('.tyreValue .tvalue_3').addClass('active');
+
+                        jQuery('.tyretext .txtcolor').removeClass('active');
+                        jQuery('.tyretext .txtcolor').eq(1).addClass('active');
+                        
+                        var selectiondata=jQuery('#tyre_finder_modal .selectiondata').text();
+                        if(selectiondata != '') {
+                            jQuery('#tyre_finder_modal .selectiondata').text(jQuery('#tyre_finder_modal .selectiondata').text()+' / '+label);    
+                        }else{
+                            jQuery('#tyre_finder_modal .selectiondata').text(label);    
+                        }
+
+                        jQuery('.searchloader').hide();
+                        
+            }
+        },
+    });
+}
+
+function getRearheight(rearwidthValue,label,type)
+{
+
+    jQuery("#rearWidthLabel-hidden").val(rearwidthValue);
+    jQuery("#rearWidthLabel-text").val(label);
+    jQuery('.searchloader').show();
+    jQuery.ajax({
+        url: getHeightUrl,
+        type: 'POST',
+        data: {
+            format: 'json',
+            type: type,
+            width: rearwidthValue,
+        },
+        error: function () {
+            alert("Error");
+        },
+        success: function (data) {
+            if (data.status == 'SUCCESS') {
+                        jQuery('.tyre_finder_allcontent').hide();
+                        jQuery('#tyre_finder_modal_wrapper ul.tyre_finder_modal_rear_height_content').remove();
+                        jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_rear_height_content"></ul>');
+                        jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_rear_height_content').html(data.response);
+                        jQuery('.allback').hide();
+                        jQuery('.rearbackwidth').show();
+
+                        jQuery('.stepper li').removeClass('active');
+                        jQuery('.stepper li').eq(1).addClass('active');
+
+                        jQuery('.tyreValue .tvalue_1').text(label);
+                        jQuery('.tyreValue .valuetxt').removeClass('active');
+                        jQuery('.tyreValue .tvalue_2').addClass('active');
+                        jQuery('.tyreValue .tvalue_3').addClass('active');
+
+                        jQuery('.tyretext .txtcolor').removeClass('active');
+                        jQuery('.tyretext .txtcolor').eq(1).addClass('active');
+                        var rearselectiondata=jQuery('.rearselectiondata').text();
+                        if(rearselectiondata != '') {
+                            jQuery('.rearselectiondata').text(jQuery('.rearselectiondata').text()+' / '+label);    
+                        }else{
+                            jQuery('.rearselectiondata').text(label);    
+                        }
+
+                        jQuery('.searchloader').hide();
+            }
+        },
+    });
+}
+
+function getrim(heightValue,label,type)
+{
+        jQuery("#frontHeightLabel-hidden").val(heightValue);
+        jQuery("#frontHeightLabel").text(label);
+        jQuery('.searchloader').show();
+        var widthValue = jQuery("#frontWidthLabel-hidden").val();
+
+         jQuery.ajax({
+            url: getRimUrl,
+            type: 'POST',
+            data: {
+                format: 'json',
+                type: type,
+                width: widthValue,
+                height: heightValue,
+            },
+            error: function () {
+                alert("Error");
+            },
+            success: function (data) {
+                if (data.status == 'SUCCESS') {
+                           jQuery('.tyre_finder_allcontent').hide();
+                           jQuery('#tyre_finder_modal_wrapper ul.tyre_finder_modal_front_rim_content').remove();
+                           jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_front_rim_content"></ul>');
+                           jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_front_rim_content').html(data.response);
+
+                           jQuery('#frontRimLabel').removeClass('disablesearchoption');
+
+                           jQuery('.allback').hide();
+                           jQuery('.backprofile').show();
+
+                           jQuery('.stepper li').removeClass('active');
+                           jQuery('.stepper li').eq(2).addClass('active');
+
+                           jQuery('.tyreValue .tvalue_3').text(label);
+                           jQuery('.tyreValue .valuetxt').removeClass('active');
+                           jQuery('.tyreValue .tvalue_4').addClass('active');
+
+                           jQuery('.tyretext .txtcolor').removeClass('active');
+                           jQuery('.tyretext .txtcolor').eq(2).addClass('active');
+                           var selectiondata=jQuery('.selectiondata').text();
+                            if(selectiondata != '') {
+                                jQuery('#tyre_finder_modal .selectiondata').text(jQuery('#tyre_finder_modal .selectiondata').text()+' / '+label);    
+                            }else{
+                                jQuery('#tyre_finder_modal .selectiondata').text(label);    
+                            }
+
+                            jQuery('.searchloader').hide();
+                           
+                }
+            },
+        });
+}
+
+function getRearrim(rearheightValue,label,type)
+{
+        jQuery("#rearHeightLabel-hidden").val(rearheightValue);
+        jQuery("#rearHeightLabel-text").val(label);
+        jQuery('.searchloader').show();
+        var rearwidthValue = jQuery("#rearWidthLabel-hidden").val();
+
+         jQuery.ajax({
+            url: getRimUrl,
+            type: 'POST',
+            data: {
+                format: 'json',
+                type: type,
+                width: rearwidthValue,
+                height: rearheightValue,
+            },
+            error: function () {
+                alert("Error");
+            },
+            success: function (data) {
+                if (data.status == 'SUCCESS') {
+                           jQuery('.tyre_finder_allcontent').hide();
+                           jQuery('#tyre_finder_modal_wrapper ul.tyre_finder_modal_rear_rim_content').remove();
+                           jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent  tyre_finder_modal_rear_rim_content"></ul>');
+                           jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_rear_rim_content').html(data.response);
+
+                           jQuery('.allback').hide();
+                           jQuery('.rearbackprofile').show();
+
+                           jQuery('.stepper li').removeClass('active');
+                           jQuery('.stepper li').eq(2).addClass('active');
+
+                           jQuery('.tyreValue .tvalue_3').text(label);
+                           jQuery('.tyreValue .valuetxt').removeClass('active');
+                           jQuery('.tyreValue .tvalue_4').addClass('active');
+
+                           jQuery('.tyretext .txtcolor').removeClass('active');
+                           jQuery('.tyretext .txtcolor').eq(2).addClass('active');
+                           var rearselectiondata=jQuery('.rearselectiondata').text();
+                            if(rearselectiondata != '') {
+                                jQuery('.rearselectiondata').text(jQuery('.rearselectiondata').text()+' / '+label);    
+                            }else{
+                                jQuery('.rearselectiondata').text(label);    
+                            }
+
+                            jQuery('.searchloader').hide();
+                }
+            },
+        });
+}
+
+function selectRim(rimValue,label)
+ {  
+    jQuery('.searchloader').show();
+    jQuery("#frontRimLabel-hidden").val(rimValue);
+    jQuery("#frontRimLabel").text(label);
+    jQuery('.tyre_finder_allcontent').hide();
+    jQuery('#tyre_finder_modal_wrapper ul.tyre_finder_modal_submittyre').remove();
+    jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent tyre_finder_modal_submittyre"></ul>');
+    jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_submittyre').html(jQuery('#tyre_finder_modal_front_submittyreselection').html());
+
+    jQuery('.allback').hide();
+    jQuery('.backrim').show();
+
+    jQuery('.stepper li').addClass('active');
+
+    jQuery('.tyreValue .tvalue_4').text('R'+label);
+    jQuery('.tyreValue .valuetxt').addClass('active');
+
+    jQuery('.tyretext .txtcolor').addClass('active');
+    var selectiondata=jQuery('#tyre_finder_modal .selectiondata').text();
+    if(selectiondata != '') {
+        jQuery('#tyre_finder_modal .selectiondata').text(jQuery('#tyre_finder_modal .selectiondata').text()+' R '+label);    
+    }else{
+        jQuery('#tyre_finder_modal .selectiondata').text(label);    
+    }
+    
+    if(jQuery('.rear-tyre-selection').is(':visible')) { 
+        var widthLabel = jQuery("#frontWidthLabel").text();
+        var profileLabel = jQuery("#frontHeightLabel").text();
+        jQuery('.selectiondata').text('');
+        jQuery(".selectiondata").text(widthLabel+' / '+profileLabel+' / '+label);       
+    }
+    
+    jQuery('.searchloader').hide();   
+}
+
+function selectRearRim(rimValue,label)
+ {
+    jQuery('.searchloader').show();
+    jQuery("#rearRimLabel-hidden").val(rimValue);
+    jQuery("#rearRimLabel-text").val(label);
+    jQuery('.tyre_finder_allcontent').hide();
+    jQuery('#tyre_finder_modal_wrapper ul.tyre_finder_modal_submittyre').remove();
+    jQuery('#tyre_finder_modal_wrapper').append('<ul class="tyre_finder_allcontent tyre_finder_modal_submittyre"></ul>');
+    jQuery('#tyre_finder_modal_wrapper .tyre_finder_modal_submittyre').html(jQuery('#tyre_finder_modal_rear_submittyreselection').html());
+
+    jQuery('.allback').hide();
+    jQuery('.rearbackrim').show();
+
+    jQuery('.stepper li').addClass('active');
+
+    jQuery('.tyreValue .tvalue_4').text('R'+label);
+    jQuery('.tyreValue .valuetxt').addClass('active');
+
+    jQuery('.tyretext .txtcolor').addClass('active');
+    var rearselectiondata=jQuery('.rearselectiondata').text();
+    if(rearselectiondata != '') {
+        jQuery('.rearselectiondata').text(jQuery('.rearselectiondata').text()+' R '+label);    
+    }else{
+        jQuery('.rearselectiondata').text(label);    
+    }
+    jQuery('.searchloader').hide();
+}
+
+function submitTyreSelection(){
+    jQuery('.searchloader').show();
+    jQuery('#finder-size-form').submit();
+}
+
+function resetFinderSearchForm(){
+    jQuery('.searchloader').show();
+    jQuery('#frontWidthLabel').text('Width');
+    jQuery('#frontWidthLabel-hidden').val('');
+
+    jQuery('#frontHeightLabel').text('Height');
+    jQuery('#frontHeightLabel-hidden').val('');
+
+    jQuery('#frontRimLabel').text('Rim');
+    jQuery('#frontRimLabel-hidden').val('');
+
+    jQuery('#rearWidthLabel-hidden').val('');
+    jQuery('#rearHeightLabel-hidden').val('');
+    jQuery('#rearRimLabel-hidden').val('');
+
+    jQuery('.searchloader').hide();
+}
+
+// Search by size popup end
+
+//  Search by Vehicle popup start
+function getmodel(value,label)
+{
+   jQuery("#vehicle_make").text(label);
+   jQuery("#vehicle_make_hidden").val(value);
+   jQuery('.searchloader').show();
+
+        jQuery.ajax({
+            type: 'POST',
+            url: getModelUrl,
+            data: "make=" + value,
+            success: function (data) {
+                   jQuery('.vehicle_finder_modal_allcontent').hide();
+                   jQuery('#vehicle_finder_modal_wrapper ul.vehicle_finder_modal_model_content').remove();
+                   jQuery('#vehicle_finder_modal_wrapper').append('<ul class="vehicle_finder_modal_allcontent  vehicle_finder_modal_model_content"></ul>');
+                   jQuery('#vehicle_finder_modal_wrapper .vehicle_finder_modal_model_content').html(data.response);
+
+                   jQuery('.vehicleallbackbutton').hide();
+                   jQuery('.vehiclebackmake').show();
+
+                    jQuery('.stepper li').removeClass('active');
+                    jQuery('.stepper li.model').addClass('active');
+
+                   jQuery('.reset-vehicle-selection').show();
+                    var vehicleselectiondata=jQuery('#vehicle_finder_modal .vehicleselectiondata').text();
+                    if(vehicleselectiondata != '') {
+                        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(jQuery('#vehicle_finder_modal .vehicleselectiondata').text()+' / '+label);    
+                    }else{
+                        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(label);    
+                    }
+
+                    jQuery('.searchloader').hide();
+            }
+        });
+}
+
+function getyear(value,label)
+{
+    var model = value;
+    var make = jQuery('#vehicle_make_hidden').val();
+    jQuery("#vehicle_model").text(label);
+    jQuery("#vehicle_model_hidden").val(value);
+    jQuery('.searchloader').show();
+
+        jQuery.ajax({
+            type: 'POST',
+            url: getyearUrl,
+            data: {make: make, model: model},
+            success: function (data) {
+                   jQuery('.vehicle_finder_modal_allcontent').hide();
+                   jQuery('#vehicle_finder_modal_wrapper ul.vehicle_finder_modal_year_content').remove();
+                   jQuery('#vehicle_finder_modal_wrapper').append('<ul class="vehicle_finder_modal_allcontent  vehicle_finder_modal_year_content"></ul>');
+                   jQuery('#vehicle_finder_modal_wrapper .vehicle_finder_modal_year_content').html(data.response);
+
+                   jQuery('.vehicleallbackbutton').hide();
+                   jQuery('.vehiclebackmodel').show();
+
+                    jQuery('.stepper li.model').removeClass('active');
+                    jQuery('.stepper li.year').addClass('active');                   
+
+                    var vehicleselectiondata=jQuery('#vehicle_finder_modal .vehicleselectiondata').text();
+                    if(vehicleselectiondata != '') {
+                        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(jQuery('#vehicle_finder_modal .vehicleselectiondata').text()+' / '+label);    
+                    }else{
+                        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(label);    
+                    }
+
+                    jQuery('.searchloader').hide();
+            }
+        });
+}
+
+var enginesTyre="";
+function getengine(value,label)
+{
+    var make = jQuery('#vehicle_make_hidden').val();
+    var model = jQuery('#vehicle_model_hidden').val();
+    var year = value;
+    jQuery('.searchloader').show();
+
+    jQuery("#vehicle_year").text(label);
+    jQuery("#vehicle_year_hidden").val(value);
+
+        jQuery.ajax({
+            type: 'POST',
+            url: getengineUrl,
+            data: {make: make, model: model,year: year},
+            success: function (data) {
+                   jQuery('.vehicle_finder_modal_allcontent').hide();
+                   jQuery('#vehicle_finder_modal_wrapper ul.vehicle_finder_modal_engine_content').remove();
+                   jQuery('#vehicle_finder_modal_wrapper').append('<ul class="vehicle_finder_modal_allcontent  vehicle_finder_modal_engine_content"></ul>');
+                   jQuery('#vehicle_finder_modal_wrapper .vehicle_finder_modal_engine_content').html(data.engineHtml);
+                   enginesTyre=data.enginesTyre;
+
+                   jQuery('.vehicleallbackbutton').hide();
+                   jQuery('.vehiclebackyear').show();
+
+                    jQuery('.stepper li.year').removeClass('active');
+                    jQuery('.stepper li.engine').addClass('active'); 
+
+                    var vehicleselectiondata=jQuery('#vehicle_finder_modal .vehicleselectiondata').text();
+                    if(vehicleselectiondata != '') {
+                        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(jQuery('#vehicle_finder_modal .vehicleselectiondata').text()+' / '+label);    
+                    }else{
+                        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(label);    
+                    }
+
+                    jQuery('.searchloader').hide();
+            }
+        });
+}
+function getenginetyre(value, label){
+    jQuery('#vehicle_engine_hidden').val(label);
+    jQuery('.searchloader').show();
+    var tyresize=enginesTyre[value];
+    jQuery('.vehicle_finder_modal_allcontent').hide();
+    jQuery('#vehicle_finder_modal_wrapper ul.vehicle_finder_modal_tyresize_content').remove();
+    jQuery('#vehicle_finder_modal_wrapper').append('<ul class="vehicle_finder_modal_allcontent  vehicle_finder_modal_tyresize_content"></ul>');
+    jQuery('#vehicle_finder_modal_wrapper .vehicle_finder_modal_tyresize_content').html(tyresize);
+
+    jQuery('.vehicleallbackbutton').hide();
+    jQuery('.vehiclebackengine').show();
+    var vehicleselectiondata=jQuery('#vehicle_finder_modal .vehicleselectiondata').text();
+    if(vehicleselectiondata != '') {
+        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(jQuery('#vehicle_finder_modal .vehicleselectiondata').text()+' / '+label);    
+    }else{
+        jQuery('#vehicle_finder_modal .vehicleselectiondata').text(label);    
+    }
+
+    jQuery('.searchloader').hide();
+}
+function showproduct(width, height, rim, rear_width, rear_height, rear_rim) {
+        jQuery('.searchloader').show();
+        jQuery("#frontWidthLabel-hidden").val(width);
+
+        jQuery("#frontHeightLabel-hidden").val(height);
+
+        jQuery("#frontRimLabel-hidden").val(rim);
+
+        if(rear_width != '')
+        {
+           jQuery("#rearWidthLabel-hidden").val(rear_width);
+        }
+
+        if(rear_height != '')
+        {
+           jQuery("#rearHeightLabel-hidden").val(rear_height);
+        }
+
+        if(rear_rim != '')
+        {
+              jQuery("#rearRimLabel-hidden").val(rear_rim);
+        }
+
+        jQuery('#finder-size-form').submit();
+        jQuery('.searchloader').hide();
+}
+function goback(contentname,backbutton,type,searchbytype){
+    jQuery('.searchloader').show();
+    jQuery('.tyre_finder_allcontent').hide();
+    jQuery('.'+contentname).show();
+
+    jQuery('.allback').hide();
+    jQuery('.'+backbutton).show();
+
+    console.log(searchbytype);
+    if(searchbytype == 'Width' && type != 'rear'){
+        jQuery('.allback').hide();
+    }
+
+    if(searchbytype == 'FrontRim'){
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(2).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_4').addClass('active');
+
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(2).addClass('active');
+       
+        var widthLabel = jQuery("#frontWidthLabel").text();
+        var profileLabel = jQuery("#frontHeightLabel").text();
+        jQuery(".data-selected").text(widthLabel+' / '+profileLabel);
+
+        jQuery('.rear-tyre-selection').hide();
+        jQuery('.rearselectiondata').text('');
+        
+       
+    }
+
+    if(searchbytype == 'Rim' || searchbytype == 'rearRim'){
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(2).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_4').addClass('active');
+
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(2).addClass('active');
+       
+        if(jQuery('.rear-tyre-selection').is(':visible')) { 
+            var rearselectiondata=jQuery('.rearselectiondata').text();
+                if(rearselectiondata != "") {
+                    var widthLabel = jQuery("#rearWidthLabel-text").val();
+                    var profileLabel = jQuery("#rearHeightLabel-text").val();
+                    jQuery(".rearselectiondata").text(widthLabel+' / '+profileLabel);
+                }else{
+                    jQuery("#rearwWidthLabel").hide();
+                    jQuery('.allback').hide();
+                    jQuery('.backrim').show();
+
+                }
+            }else{
+                var widthLabel = jQuery("#frontWidthLabel").text();
+                var profileLabel = jQuery("#frontHeightLabel").text();
+                jQuery(".data-selected").text(widthLabel+' / '+profileLabel);
+            }
+    }
+
+    if(searchbytype == 'Height' || searchbytype == 'rearHeight'){
+        jQuery('.stepper li').removeClass('active');
+        jQuery('.stepper li').eq(1).addClass('active');
+
+        jQuery('.tyreValue .valuetxt').removeClass('active');
+        jQuery('.tyreValue .tvalue_2').addClass('active');
+        jQuery('.tyreValue .tvalue_3').addClass('active');
+        jQuery('.tyretext .txtcolor').removeClass('active');
+        jQuery('.tyretext .txtcolor').eq(1).addClass('active');
+        if(jQuery('.rear-tyre-selection').is(':visible'))  {
+            var widthLabel = jQuery("#rearWidthLabel-text").val();
+            jQuery(".rearselectiondata").text(widthLabel);
+        }else{
+            var widthLabel = jQuery("#frontWidthLabel").text();
+            jQuery(".data-selected").text(widthLabel);
+        }
+    }
+
+    if(searchbytype == 'Width' || searchbytype == 'rearWidth'){
+      jQuery('.stepper li').removeClass('active');
+      jQuery('.stepper li').eq(0).addClass('active');
+
+      jQuery('.tyreValue .valuetxt').removeClass('active');
+      jQuery('.tyreValue .tvalue_1').addClass('active');
+
+      jQuery('.tyretext .txtcolor').removeClass('active');
+      jQuery('.tyretext .txtcolor').eq(0).addClass('active');
+      if(jQuery('.rear-tyre-selection').is(':visible'))  {
+            jQuery(".rearselectiondata").text('');
+        }else{
+            jQuery(".data-selected").text('');
+        }
+    }
+    if(searchbytype == 'Engine'){
+      alert('Test Dev');  
+      jQuery('.stepper li.Engine').removeClass('active');
+      jQuery('.stepper li.Year').addClass('active');        
+    }
+
+    if(searchbytype == 'Year'){
+      jQuery('.stepper li.Engine').removeClass('active');
+      jQuery('.stepper li.Make').addClass('active');          
+    }    
+
+    if(searchbytype == 'Model'){
+      jQuery('.stepper li.Engine').removeClass('active');
+      jQuery('.stepper li.Make').addClass('active');          
+    }    
+
+    if(searchbytype == 'Make'){
+      jQuery('.stepper li.Engine').removeClass('active');
+      jQuery('.stepper li.Make').addClass('active');          
+    }      
+
+    jQuery('.searchloader').hide();
+}
+function resetselection(){
+  jQuery('.searchloader').show();
+   jQuery('.tyre_finder_allcontent').hide();
+   jQuery('.tyre_finder_modal_front_width_content').show();
+
+   jQuery('.allback').hide();
+
+   jQuery('#frontWidthLabel').text('Width');
+   jQuery('#frontWidthLabel-hidden').val('');
+
+   jQuery('#frontHeightLabel').text('Height');
+   jQuery('#frontHeightLabel-hidden').val('');
+
+   jQuery('#frontRimLabel').text('Rim');
+   jQuery('#frontRimLabel-hidden').val('');
+
+   jQuery('.reset-size-selection').hide();
+   jQuery('.data-selected').text('');
+   jQuery('.tyreInfoLeft .tyreinfoResult .tyreselection .selectiontitle').text('Current Selection');
+   jQuery('.tyreInfoLeft .stepper li').removeClass('active');
+   jQuery('.tyreInfoLeft .stepper li:first').addClass('active');
+   jQuery('.tyreInfoLeft .tyreinfoResult .rear-tyre-selection .rearselectiondata').text('');
+   jQuery('.rear-tyre-selection').hide();
+   jQuery('.searchloader').hide();
+}
+ function vehcilegoback(contentname,backbutton,roundimage,searchbytype){
+    jQuery('.searchloader').show();
+    jQuery('.vehicle_finder_modal_allcontent').hide();
+    jQuery('.'+contentname).show();
+
+    jQuery('.vehicleallbackbutton').hide();
+    jQuery('.'+backbutton).show();
+    jQuery('.searchloader').hide();
+
+    var vehicle_make=jQuery('#vehicle_make').text();
+    var vehicle_model=jQuery('#vehicle_model').text();
+    var vehicle_year=jQuery('#vehicle_year').text();
+    
+    if(searchbytype == 'Engine') {
+      jQuery('#vehicle_finder_modal .vehicleselectiondata').text(vehicle_make+' / '+vehicle_model+' / '+vehicle_year);    
+      jQuery('.vehiclestepper li').removeClass('active');
+        jQuery('.vehiclestepper li').eq(3).addClass('active');
+    }
+
+    if(searchbytype == 'Year') {
+      jQuery('#vehicle_finder_modal .vehicleselectiondata').text(vehicle_make+' / '+vehicle_model);    
+      jQuery('.vehiclestepper li').removeClass('active');
+      jQuery('.vehiclestepper li').eq(2).addClass('active');
+    }
+
+    if(searchbytype == 'Model') {
+      jQuery('#vehicle_finder_modal .vehicleselectiondata').text(vehicle_make);    
+      jQuery('.vehiclestepper li').removeClass('active');
+       jQuery('.vehiclestepper li').eq(1).addClass('active');
+    }
+    if(searchbytype == 'Make') {
+      jQuery('#vehicle_finder_modal .vehicleselectiondata').text('');    
+      jQuery('.vehiclestepper li').removeClass('active');
+      jQuery('.vehiclestepper li').eq(0).addClass('active');
+    }
+    
+ }
+ function resetvehicleselection(){
+    jQuery('.searchloader').show();
+    jQuery('.vehicle_finder_modal_allcontent').hide();
+    jQuery('.vehicle_finder_modal_make_content').show();
+
+    jQuery('.vehicleallbackbutton').hide();
+
+    jQuery('#vehicle_make').text('Make');
+    jQuery('#vehicle_make_hidden').val('');
+
+    jQuery('#vehicle_model').text('Model');
+    jQuery('#vehicle_model-hidden').val('');
+
+    jQuery('#vehicle_year').text('Year');
+    jQuery('#vehicle_year-hidden').val('');
+
+    jQuery('.reset-vehicle-selection').hide();
+    jQuery('.reset-vehicle-selection').hide();
+    jQuery('.searchloader').hide();
+ }

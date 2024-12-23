@@ -1,45 +1,3 @@
-php bin/magento queue:consumers:start exportProcessor
-php bin/magento queue:consumers:start exportProcessor
-php bin/magento indexer:reindex
-php bin/magento c:c
-php bin/magento c:f
-clear
-clear
-php bin/magento catalog:image:resize
-ls
-unzip www.tyresvision.com.zip 
-ls
-ls
-clear
-clear
-ls
-ls
-mysql -u tyresvision -p tyresvision < tyresvision-15-9-2024.sql
-ls
-mysql -u tyresvision -p tyresvision < tyresvision-17-9-2024.sql
-ls
-ls
-php bin/magento i:rei
-clear
-ls
-php8.1 bin/magento i:rei
-php7.4 bin/magento i:rei
-php7.4 bin/magento c:f
-php7.4 bin/magento i:rei
-ls
-ls
-ls
-php bin/magento queue:consumers:start exportProcessor
-php7.4 bin/magento queue:consumers:start exportProcessor
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento c:c
-php7.4 bin/magento c:f
-clear
-clear
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento c:f
-php7.4 bin/magento c:f
 php7.4 bin/magento indexer:reindex
 ls
 php bin/magento c:f
@@ -498,3 +456,45 @@ ls
 php bin/magento indexer:reindex
 php7.4 bin/magento indexer:reindex
 php7.4 bin/magento indexer:reindex
+ls
+git status
+git branch
+git pull origin main
+git config pull.rebase true
+git pull origin main
+git status
+git clean -fd
+git status
+git pull origin main
+git stash
+git status
+git status
+git pull origin main
+git status
+ls
+php7.4 bin/magento queue:consumers:start exportProcessor
+php7.4 bin/magento queue:consumers:start exportProcessor
+ls
+php7.4 bin/magento indexer:reindex
+ls
+php7.4 bin/magento queue:consumers:start exportProcessor
+php7.4 bin/magento queue:consumers:start exportProcessor
+php7.4 bin/magento queue:consumers:start exportProcessor
+php7.4 bin/magento queue:consumers:start exportProcessor
+php7.4 bin/magento indexer:reindex
+ls
+php7.4 bin/magento queue:consumers:start exportProcessor
+ls
+php7.4 bin/magento indexer:reindex
+ls
+php7.4 bin/magento indexer:reindex
+ls
+php7.4 bin/magento indexer:reindex
+php7.4 bin/magento indexer:reindex
+ls
+grep -rl '283e0448b0f4df5d188af4fe457b1901' app
+php bin/magento c:f
+php7.3 bin/magento c:f
+ls
+grep -r "283e0448b0f4df5d188af4fe457b1901" app/
+grep -r "283e0448b0f4df5d188af4fe457b1901" app/

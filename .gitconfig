@@ -1,2 +1,5 @@
 [safe]
 	directory = /home/cloudpanel/htdocs/www.tyresvision.com
+[user]
+	email = vicky.hdit@gmail.com
+	name = Vicky

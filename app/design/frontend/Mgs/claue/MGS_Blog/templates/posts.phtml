@@ -12,7 +12,7 @@ $showThumbnail = $this->getConfig('general_settings/show_thumbnail');
         <?php foreach ($collection as $post): ?>
             <div class="blog-post post-item-info">
                 
-				<div class="post-image margin-bottom25 <?php if ($showThumbnail): ?>has-image<?php endif; ?>">
+				<div class="post-image <?php if ($showThumbnail): ?>has-image<?php endif; ?>">
 					<?php echo $helper->getImagePost($post); ?>
 					<div class="post-info">
 						<div>

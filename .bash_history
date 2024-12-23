@@ -5,6 +5,7 @@ php7.4 bin/magento c:f
 ls
 php bin/magento indexer:reindex
 php bin/magento c:c
+
 php bin/magento c:f
 ls
 php7.4  bin/magento indexer:reindex
@@ -498,3 +499,11 @@ php7.3 bin/magento c:f
 ls
 grep -r "283e0448b0f4df5d188af4fe457b1901" app/
 grep -r "283e0448b0f4df5d188af4fe457b1901" app/
+
+ls
+rm -rf pub/static/ generated/ var/cache/ var/page_cache/
+php7.3 bin/magento s:up
+php7.3 bin/magento setup:di:compile
+php7.3 bin/magento s:s:d -f
+php7.3 bin/magento c:c
+php7.3 bin/magento c:f

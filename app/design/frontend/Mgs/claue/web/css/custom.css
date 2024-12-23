@@ -6659,4 +6659,8 @@ display: none;
     .blog-sidebar .widget .widget-body {
     padding: 12px 10px;
 }
+.blog-sidebar .widget .widget-title h3 {
+    color: #fff;
+    font-size: 14px;
+}
 }

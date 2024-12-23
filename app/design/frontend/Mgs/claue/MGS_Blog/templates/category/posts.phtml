@@ -23,7 +23,7 @@ $categoryId = (int)$this->getRequest()->getParam('category_id', false);
         <?php foreach ($collection as $post): ?>
             <div class="blog-post post-item-info">
                 
-				<div class="post-image margin-bottom25 <?php if ($showThumbnail): ?>has-image<?php endif; ?>">
+				<div class="post-image <?php if ($showThumbnail): ?>has-image<?php endif; ?>">
 					<?php echo $helper->getImagePost($post); ?>
 					<div class="post-info">
 						<div>
@@ -82,3 +82,73 @@ $categoryId = (int)$this->getRequest()->getParam('category_id', false);
 		<div class="toolbar"><?php echo $block->getPagerHtml(); ?></div>
 	</div>
 <?php endif; ?>
+
+
+<style>
+.margin-bottom15{
+	margin-bottom: 15px;
+}
+	.blog-list .blog-post .post-image img.img-responsive {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+.blog-list .blog-post  .post-content p{
+	    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+	.blog-list .post-item-info {
+    margin-bottom: 20px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+.blog-list {
+    float: left;
+    width: 100%;
+}
+.post-image img.img-responsive {
+    width: 100%;
+}
+.post-info span.post-tags {
+    color: #1f45fc;
+}
+.blog-list .post-item-info .post-info a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-transform: capitalize;
+    color: #fff;
+}
+.post-info .create-post-time {
+    color: #FFF;
+}
+.blog-post-list .bottom-pagination {
+    width: 100%;
+    float: left;
+}
+
+.blog-list .post-item-info .post-content {
+    border-top: none !important;
+    margin-top: 0 !important;
+}
+
+@media only screen and (min-width: 767px) {
+	.blog-list .post-item-info {
+		width: 50%;
+		padding-left: 15px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.blog-list .post-item-info {
+		width: 100%;
+	}
+		.bottom-pagination .toolbar .pages .pagination {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+}
+</style>

@@ -44,3 +44,5 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
+.bash_history
+.gitconfig

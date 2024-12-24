@@ -69,6 +69,31 @@ class Stores extends \Magento\Framework\App\Action\Action
         $collection = $this->collectionFactory->create();
         $collection->addActiveFilter();
         $collection->setOrder('installer_sort_order','ASC');
+
+
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+		$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
+		$quoteItems = $cart->getQuote()->getItems();
+
+        $hasHankookProduct = false;
+
+        foreach ($quoteItems as $item) {
+            $product = $item->getProduct();
+            $brand = $product->getAttributeText('mgs_brand'); // Assuming 'manufacturer' is the attribute code for brand
+
+            if ($brand === 'Hankook') {
+                $hasHankookProduct = true;
+                break;
+            }
+        }
+
+        if($hasHankookProduct){
+            $hankookStoreIds = ['19','140'];
+            $collection->addFieldToFilter('stores_id', ['in' => $hankookStoreIds]);
+
+        }
+
+
         //$collection->getSelect()->group('store_id');
         $productId  = $this->getRequest()->getParam('product_id');
         $checkQuote = $this->getRequest()->getParam('quote');

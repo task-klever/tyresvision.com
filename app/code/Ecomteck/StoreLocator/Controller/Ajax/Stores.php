@@ -77,13 +77,15 @@ class Stores extends \Magento\Framework\App\Action\Action
 
         $hasHankookProduct = false;
 
-        foreach ($quoteItems as $item) {
-            $product = $item->getProduct();
-            $brand = $product->getAttributeText('mgs_brand'); // Assuming 'manufacturer' is the attribute code for brand
+        if (!empty($quoteItems)) {
+            foreach ($quoteItems as $item) {
+                $product = $item->getProduct();
+                $brand = $product->getAttributeText('mgs_brand'); // Assuming 'manufacturer' is the attribute code for brand
 
-            if ($brand === 'Hankook') {
-                $hasHankookProduct = true;
-                break;
+                if ($brand === 'Hankook') {
+                    $hasHankookProduct = true;
+                    break;
+                }
             }
         }
 

@@ -1,49 +1,3 @@
-php bin/magento indexer:reindex
-php bin/magento c:c
-php bin/magento c:f
-php7.3  bin/magento indexer:reindex
-php7.3 bin/magento c:c
-php7.3 bin/magento c:f
-ls
-ls
-php7.4 bin/magento queue:consumers:start exportProcessor
-php7.4 bin/magento queue:consumers:start exportProcessor
-php7.4 bin/magento queue:consumers:start exportProcessor
-ls
-php -v
-ls
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-php bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-ls
-php7.3  bin/magento indexer:reindex
-php7.3 bin/magento c:c
-php7.3 bin/magento c:f
-ls
-php bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-ls
-cd app/
-ls
-cd ..
-ls
-php7.3  bin/magento indexer:reindex
-php7.3 bin/magento c:c
-php7.3 bin/magento c:f
-ls
-php bin/magento i:status
-php7.3 bin/magento i:status
-php7.3 bin/magento i:catalog_product_flat
-php7.3 bin/magento i:rei catalog_product_flat
-php7.3 bin/magento i:rei catalog_category_product
-php bin/magento c:f
-php7.3 bin/magento c:f
-clear
-php7.3 bin/magento i:rei
-php7.3 bin/magento i:rei
-php7.3 bin/magento c:f
-php7.3 bin/magento c:c
 php7.3 bin/magento i:rei
 crontab -l
 php7.3 bin/magento cron:install
@@ -498,3 +452,49 @@ php7.3 bin/magento c:c
 php7.3 bin/magento s:s:d -f
 php7.3 bin/magento c:f
 php7.3 bin/magento c:c
+ls
+php7.4 bin/magento indexer:reindex
+php7.4 bin/magento indexer:reindex
+ls
+php7.4 bin/magento indexer:reindex
+php7.4 bin/magento c:c
+php7.4 bin/magento c:f
+clear
+clear
+ls
+git status
+git branch
+git pull origin main
+git add .bash_history 
+git commit -m "change in bash_history"
+git status
+git push origin main
+git pull origin main
+git status
+ls
+rm -rf pub/static/ generated/ var/cache/ var/page_cache/
+	php bin/magento s:up
+	php bin/magento setup:di:compile
+	php bin/magento s:s:d -f
+	php bin/magento c:c
+	php bin/magento c:f
+rm -rf pub/static/ generated/ var/cache/ var/page_cache/
+	php7.3 bin/magento s:up
+	php7.3 bin/magento setup:di:compile
+	php7.3 bin/magento s:s:d -f
+	php7.3 bin/magento c:c
+	php7.3 bin/magento c:f
+php7.4 bin/magento queue:consumers:start exportProcessor
+php7.4 bin/magento queue:consumers:start exportProcessor
+ls
+git status
+git branch
+git checkout -b task-installer
+git branch
+git status
+git add app/code/Ecomteck/StoreLocator/Controller/Ajax/Stores.php
+git commit -m 'solve installer not showing'
+git push origin task-installer
+git status
+ls
+ls

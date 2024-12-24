@@ -14,13 +14,34 @@ class MethodAvailable
     {
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$cart = $objectManager->get('\Magento\Checkout\Model\Cart'); 
-		$grandTotal = $cart->getQuote()->getGrandTotal();
-        foreach ($result as $key=>$_result) {
-			if($grandTotal < 500){
-				if ($_result->getCode() == "spotiipay") {
-					unset($result[$key]);
-				}
-			}
+
+        $quoteItems = $cart->getQuote()->getItems();
+
+        $hasHankookProduct = false;
+
+        foreach ($quoteItems as $item) {
+            $product = $item->getProduct();
+            $brand = $product->getAttributeText('mgs_brand'); // Assuming 'mgs_brand' is the attribute code for brand 
+
+            if ($brand === 'Hankook') {
+                $hasHankookProduct = true;
+                break;
+            }
+        }
+
+        if ($hasHankookProduct) {
+            foreach ($result as $key => $_result) {
+                if ($_result->getCode() !== "cashondelivery") {
+                    unset($result[$key]);
+                }
+            }
+        } else {
+            $grandTotal = $cart->getQuote()->getGrandTotal();
+            foreach ($result as $key => $_result) {
+                if ($grandTotal < 500 && $_result->getCode() == "spotiipay") {
+                    unset($result[$key]);
+                }
+            }
         }
         return $result;
     }

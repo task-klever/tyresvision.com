@@ -1,109 +1,3 @@
-php7.4 bin/magento indexer:reindex
-ls
-php bin/magento c:f
-php7.4 bin/magento c:f
-ls
-php bin/magento indexer:reindex
-php bin/magento c:c
-
-php bin/magento c:f
-ls
-php7.4  bin/magento indexer:reindex
-php7.4 bin/magento c:c
-php7.4 bin/magento c:f
-php7.4  bin/magento indexer:reindex
-php7.4 bin/magento c:c
-php7.4 bin/magento c:f
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento c:c
-php7.4 bin/magento c:f
-php7.4 bin/magento indexer:reindex
-ls
-php7.4 bin/magento c:c
-php7.4 bin/magento c:f
-php7.4 bin/magento i:rei
-clear
-php7.4 bin/magento i:rei
-php7.4 bin/magento c:c
-php7.4 bin/magento c:f
-clear
-php7.4 bin/magento i:rei
-ls
-ls
-ls
-service elasticsearch status
-ls
-php bin/magento c:f
-php 7.4 bin/magento c:f
-php7.4 bin/magento c:f
-service elasticsearch status
-php bin/magento i:rei
-clear
-ls
-cd app/code/
-ls
-cd ../..
-ls
-php7.4 bin/magento s:up
-		php7.4 bin/magento setup:di:compile
-		php7.4 bin/magento s:s:d -f
-		php7.4 bin/magento c:c
-		php7.4 bin/magento c:f
-php7.4 bin/magento s:up
-php bin/magento s:up
-		php bin/magento setup:di:compile
-		php bin/magento s:s:d -f
-		php bin/magento c:f
-php -
-php ---
-php -v
-ls
-clear
-php bin/magento s:up
-php7.4 bin/magento s:up
-ls
-clear
-php7.4 bin/magento s:up
-php bin/magento s:up
-php7.4 bin/magento s:up
-clear
-rm -rf pub/static/
-rm -rf generated/ var/cache/ var/page_cache
-php7.4 bin/magento s:up
-php7.3 bin/magento s:up
-php7.3 bin/magento s:s:d -f
-php7.3 bin/magento c:c
-php7.3 bin/magento c:f
-php --version
-clear
-ls
-clear
-php bin/magento --version
-php7.3 bin/magento --version
-clear
-ls
-ls
-php7.3  bin/magento indexer:reindex
-ls
-php7.4 bin/magento queue:consumers:start exportProcessor
-ls
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-ls
-php7.4 bin/magento indexer:reindex
-ls
-ls
-cd var/report/
-ls
-rm -rf &
-rm -rf *
-ls
-clear
-php bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-ls
 php bin/magento indexer:reindex
 php bin/magento c:c
 php bin/magento c:f
@@ -499,11 +393,108 @@ php7.3 bin/magento c:f
 ls
 grep -r "283e0448b0f4df5d188af4fe457b1901" app/
 grep -r "283e0448b0f4df5d188af4fe457b1901" app/
-
 ls
-rm -rf pub/static/ generated/ var/cache/ var/page_cache/
-php7.3 bin/magento s:up
-php7.3 bin/magento setup:di:compile
-php7.3 bin/magento s:s:d -f
-php7.3 bin/magento c:c
+git branch
+git pull origin main
+git status
+git status
+git add .
+git commit -m "Task Title: git ignore changes"
+git config --global user.email "vicky.hdit@gmail.com"
+git config --global user.name "Vicky"
+git commit -m "Task Title: git ignore changes"
+git push origin main
+git pull origin main
+git statsu
+git status
+git status
+git stash
+git pull origin main
+git config --global user.email "vicky.hdit@gmail.com"
+git config --global user.name "Vicky"
+git pull origin main
+git status
+ls
+php bin/magento c:f
 php7.3 bin/magento c:f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:f
+grep -r "blog-post post-item-info" app/
+php bin/magento deploy:mode:show
+php7.3 bin/magento deploy:mode:show
+clear
+git status
+git ignore changes
+git rebase --continue
+git checkout -b task-ignore
+git branch
+git status
+git add .
+git commit -m "ignore this files"
+git push origin task-ignore
+git status
+git checkout main
+git branch
+git pull origin main
+rm -fr ".git/rebase-merge"
+git pull origin main
+git config --global user.email "vicky.hdit@gmail.com"
+git config --global user.name "Vicky"
+git pull origin main
+git status
+git checkout task-ignore
+git branch
+git add .
+git commit -m "modify gitignore"
+git push origin main
+git pull origin main
+git rebase --abort
+git status
+git branch
+git pull origin main
+git config --global user.email "vicky.hdit@gmail.com"
+git config --global user.name "Your Name"
+git config --global user.name "Vicky"
+git pull origin main
+git status
+git add .
+git commit -m "git config change"
+git push origin main
+git push origin main --force
+git pull origin main
+ls
+php7.3 bin/magento s:s:d -f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c
+ls
+git status
+git status
+git pull origin main
+git add .
+git commit -m "bash history"
+git push origin main
+git rebase --continue
+git fetch origin
+git fetch origin main
+git pull --rebase origin main
+git pull --rebase origin main
+git status
+git rm .bash_history
+git status
+git pull --rebase origin main
+git rebase --continue
+git status
+git rebase --continue
+git add .bash_history
+git rebase --continue
+git push origin main
+php bin/magento c:f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c
+git pull origin main
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c
+php7.3 bin/magento s:s:d -f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c

@@ -36,6 +36,7 @@ atlassian*
 !/pub/media/.htaccess
 /pub/static/*
 !/pub/static/.htaccess
+!/pub/media/home
 
 /var/*
 !/var/.htaccess

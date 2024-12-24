@@ -1,34 +1,3 @@
-php7.3 bin/magento s:s:d -f
-php7.3 bin/magento c:c
-php7.3 bin/magento c:f
-php --version
-clear
-ls
-clear
-php bin/magento --version
-php7.3 bin/magento --version
-clear
-ls
-ls
-php7.3  bin/magento indexer:reindex
-ls
-php7.4 bin/magento queue:consumers:start exportProcessor
-ls
-php7.4 bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-ls
-php7.4 bin/magento indexer:reindex
-ls
-ls
-cd var/report/
-ls
-rm -rf &
-rm -rf *
-ls
-clear
-php bin/magento indexer:reindex
-php7.4 bin/magento indexer:reindex
-ls
 php bin/magento indexer:reindex
 php bin/magento c:c
 php bin/magento c:f
@@ -495,6 +464,37 @@ git push origin main
 git push origin main --force
 git pull origin main
 ls
+php7.3 bin/magento s:s:d -f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c
+ls
+git status
+git status
+git pull origin main
+git add .
+git commit -m "bash history"
+git push origin main
+git rebase --continue
+git fetch origin
+git fetch origin main
+git pull --rebase origin main
+git pull --rebase origin main
+git status
+git rm .bash_history
+git status
+git pull --rebase origin main
+git rebase --continue
+git status
+git rebase --continue
+git add .bash_history
+git rebase --continue
+git push origin main
+php bin/magento c:f
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c
+git pull origin main
+php7.3 bin/magento c:f
+php7.3 bin/magento c:c
 php7.3 bin/magento s:s:d -f
 php7.3 bin/magento c:f
 php7.3 bin/magento c:c

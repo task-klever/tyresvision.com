@@ -95,7 +95,7 @@ class Posts extends \Magento\Framework\View\Element\Template
 
     protected function _prepareLayout()
     {
-        $pageTitle = $this->getConfig('general_settings/title');
+        $pageTitle = $this->getConfig('general_settings/meta_keywords');
         $metaKeywords = $this->getConfig('general_settings/meta_keywords');
         $metaDescription = $this->getConfig('general_settings/meta_description');
         $this->_addBreadcrumbs();

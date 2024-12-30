@@ -14,6 +14,8 @@
  $request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
  $coreRegistry = $objectManager->get('Magento\Framework\Registry');
 
+ $blogHelper = $objectManager->get('MGS\Blog\Helper\Data');
+
 
 $cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
 $title = '';
@@ -61,7 +63,30 @@ if ($request->getFullActionName() == 'blog_post_view') {
 
 <?php
 
-} elseif ($request->getFullActionName() == 'catalog_category_view') {
+}elseif($request->getFullActionName() == 'blog_index_index'){
+
+	$h1String = $blogHelper->getConfig('general_settings/title');
+	?>
+
+
+	<div class="page-title-wrapper<?php /* @escapeNotVerified */ echo $cssClass; ?>" <?php if($image != ""): ?>style="background-image: url('<?php echo $image; ?>');"<?php endif ?>>
+		<div class="container">
+			
+				<h1 class="page-header"
+					<?php if ($block->getId()): ?> id="<?php /* @escapeNotVerified */ echo $block->getId();?>" <?php endif; ?>
+					<?php if ($block->getAddBaseAttributeAria()): ?>
+						aria-labelledby="<?php /* @escapeNotVerified */ echo $block->getAddBaseAttributeAria(); ?>"
+					<?php endif; ?>>
+					<?php /* @escapeNotVerified */ echo $h1String ?>
+				</h1>
+			
+			
+		</div>
+	</div>
+
+    <?php
+
+}elseif ($request->getFullActionName() == 'catalog_category_view') {
     $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
     if ($category->getCategoryPageTitle()) {
         $h1firstText = $category->getCategoryPageTitle();

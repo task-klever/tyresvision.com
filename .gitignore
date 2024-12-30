@@ -38,6 +38,8 @@ atlassian*
 !/pub/static/.htaccess
 !/pub/media/home
 
+/app/etc/config.php
+
 /var/*
 !/var/.htaccess
 /vendor/*

@@ -265,7 +265,7 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         }
     }
 	
-	public function getRecommendedProducts(){
+	public function getRecommendedProductsBKP(){
 		$productIds = $this->_productCollection->getAllIds();
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$productStatus = $objectManager->get('Magento\Catalog\Model\Product\Attribute\Source\Status');
@@ -292,6 +292,39 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
 		/* end bundle price sort */ 		
 		//echo '<pre>';print_r($recomendedSortByPrice);die;
 		return $recomendedSortByPrice;	
+	}
+
+    public function getRecommendedProducts()
+    {
+		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $topProductIds = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('hdwebconfig/general/top_product_ids');
+        if($topProductIds && $topProductIds != ''){
+            $productIds = explode(',', $topProductIds);
+            $productStatus = $objectManager->get('Magento\Catalog\Model\Product\Attribute\Source\Status');
+            $productVisibility = $objectManager->get('Magento\Catalog\Model\Product\Visibility');
+            $listingHelper   = $objectManager->create('Hdweb\Tyrefinder\Helper\Productlisting');
+            $collection = $this->productCollectionFactory->create()
+                ->addAttributeToSelect('*')
+                ->addAttributeToFilter('status', ['in' => $productStatus->getVisibleStatusIds()])
+                ->setVisibility($productVisibility->getVisibleInSiteIds())
+                ->addFieldToFilter('entity_id', array('in' => $productIds));
+                //->setPageSize(4);
+            $recomendedSortByPrice = array();	
+            foreach ($collection as $recomendedProduct) {
+                $set4price=$listingHelper->getSet4price($recomendedProduct);
+                $set4price = str_replace("AED","",$set4price); 
+                $set4priceFinal = str_replace(",","",$set4price);
+                $recomendedSortByPrice[] = array('id' => $recomendedProduct->getId(), 'sortby_price' => $set4priceFinal);
+            }
+            /* start price sort */ 
+            array_multisort(array_map(function($element) {
+                return $element['sortby_price'];
+            }, $recomendedSortByPrice), SORT_ASC, $recomendedSortByPrice);
+            /* end price sort */
+            return $recomendedSortByPrice;	
+        }else{
+            return [];
+        }
 	}
 
 }

@@ -265,7 +265,7 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         }
     }
 	
-	public function getRecommendedProductsBKP(){
+	public function getRecommendedProducts(){
 		$productIds = $this->_productCollection->getAllIds();
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 		$productStatus = $objectManager->get('Magento\Catalog\Model\Product\Attribute\Source\Status');
@@ -294,7 +294,7 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
 		return $recomendedSortByPrice;	
 	}
 
-    public function getRecommendedProducts()
+    public function getRecommendedProductsBKP()
     {
 		$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $topProductIds = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('hdwebconfig/general/top_product_ids');

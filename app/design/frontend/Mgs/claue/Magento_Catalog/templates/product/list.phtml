@@ -1108,7 +1108,7 @@ $colClass = $themeHelper->convertColClass($colCheck, 'col');
 $listingHelper = $this->helper('Hdweb\Tyrefinder\Helper\Productlisting');
 $isBundle = $block->isBundle(); //0;
 $bundleCollection = $this->getBundleCollection();
-//$recommendedCollection = array(); //$this->getRecommendedProducts();
+//$recommendedCollection = array(); //$this->getRecommendedProducts(); 
 $recommendedCollection = $this->getRecommendedProducts();
 
 //$current_category_pr = $category->getId();
@@ -1121,12 +1121,6 @@ $not_tyre = 0;
 // $logger->info("Info=-".count($bundleCollection) );
 $requestHttp = $objectManager->get('Magento\Framework\App\Request\Http');
 $widthParam = $requestHttp->getParam('width');
-$brandParam = $requestHttp->getParam('mgs_brand');
-$offersParam = $requestHttp->getParam('offers');
-$offersParam = $requestHttp->getParam('offers');
-$yearParam = $requestHttp->getParam('year');
-$originParam = $requestHttp->getParam('manufacturer');
-$patternParam = $requestHttp->getParam('pattern');
 $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
 ?>
 <?php if ($isWholeSaleCustomer) : ?>
@@ -1209,21 +1203,11 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
     ?>
 
     <?php if (!$isBundle) {
-        $firstProduct = $_productCollection->getFirstItem();
-        $firstProductPartsCat = $firstProduct->getResource()->getAttribute('parts_category')->getFrontend()->getValue($firstProduct);
         /*  Simple Prodcut listing start */ ?>
         <div class="products 01 wrapper <?php echo $viewMode; ?> products-<?php echo $viewMode; ?>" id="product-wrapper">
             <?php $iterator = 1; ?>
             <?php /* Recommended List */ ?>
-            <?php if (
-                !isset($widthParam) &&
-                !isset($brandParam) &&
-                !isset($offersParam) &&
-                !isset($yearParam) &&
-                !isset($originParam) &&
-                !isset($patternParam) &&
-                $firstProductPartsCat == 'Car Tyres'
-            ) { ?>
+            <?php //if (isset($widthParam) && !empty($widthParam)) { ?>
                 <?php $RecommendedCounter = 0; ?>
                 <ol class="recommended products list items product-items regular-product-list <?php if ($block->getMode() == 'grid') : ?>row<?php endif ?> <?php echo 'row-' . $arrColClass[0] ?>">
 
@@ -1669,7 +1653,7 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
                         <?php endforeach ?>
                     <?php endif ?>
                 </ol>
-            <?php } ?>
+            <?php // } ?>
             <?php /* End Recommended List*/ ?>
             <ol class="products list items product-items regular-product-list <?php if ($block->getMode() == 'grid') : ?>row<?php endif ?> <?php echo 'row-' . $arrColClass[0] ?>">
 

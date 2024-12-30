@@ -21,10 +21,7 @@
                 <field id="brand_cat_id" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Brand Category Id</label>
                 </field>
-                <field id="top_product_ids" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Top Product Ids</label>
-                    <comment>Enter Top Product IDs, separated by commas.</comment>
-                </field>
+                
             </group>
         </section>
     </system>

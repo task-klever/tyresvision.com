@@ -55,6 +55,11 @@
         font-size: 12px;
         line-height: 20px;
     }
+    .fitted-balanced-uae {
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+    }
 
     .block.filter .block-content.filter-content .filter-options-item .filter-options-content ol.items .item .count {
         opacity: 0
@@ -576,7 +581,7 @@
             margin: 0 0px !important;
         }
 
-        .fitted-balanced {
+        .fitted-balanced,.fitted-balanced-uae {
             font-size: 8px;
         }
 
@@ -1024,6 +1029,17 @@
             font-size: 2.5vw;
         }
     }
+    @media screen and (max-width: 375px) {
+        .fitted-balanced {
+            margin-bottom: -25px !important;
+        }
+    }
+
+    @media  screen and (max-width: 359px) {
+        .fitted-balanced {
+            margin-bottom: -7px !important;
+        }
+    }
 </style>
 <?php
 /**
@@ -1092,7 +1108,8 @@ $colClass = $themeHelper->convertColClass($colCheck, 'col');
 $listingHelper = $this->helper('Hdweb\Tyrefinder\Helper\Productlisting');
 $isBundle = $block->isBundle(); //0;
 $bundleCollection = $this->getBundleCollection();
-$recommendedCollection = array(); //$this->getRecommendedProducts();
+//$recommendedCollection = array(); //$this->getRecommendedProducts();
+$recommendedCollection = $this->getRecommendedProducts();
 
 //$current_category_pr = $category->getId();
 $not_tyre = 0;
@@ -1104,6 +1121,12 @@ $not_tyre = 0;
 // $logger->info("Info=-".count($bundleCollection) );
 $requestHttp = $objectManager->get('Magento\Framework\App\Request\Http');
 $widthParam = $requestHttp->getParam('width');
+$brandParam = $requestHttp->getParam('mgs_brand');
+$offersParam = $requestHttp->getParam('offers');
+$offersParam = $requestHttp->getParam('offers');
+$yearParam = $requestHttp->getParam('year');
+$originParam = $requestHttp->getParam('manufacturer');
+$patternParam = $requestHttp->getParam('pattern');
 $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
 ?>
 <?php if ($isWholeSaleCustomer) : ?>
@@ -1186,11 +1209,21 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
     ?>
 
     <?php if (!$isBundle) {
+        $firstProduct = $_productCollection->getFirstItem();
+        $firstProductPartsCat = $firstProduct->getResource()->getAttribute('parts_category')->getFrontend()->getValue($firstProduct);
         /*  Simple Prodcut listing start */ ?>
         <div class="products 01 wrapper <?php echo $viewMode; ?> products-<?php echo $viewMode; ?>" id="product-wrapper">
             <?php $iterator = 1; ?>
             <?php /* Recommended List */ ?>
-            <?php if (isset($widthParam) && !empty($widthParam)) { ?>
+            <?php if (
+                !isset($widthParam) &&
+                !isset($brandParam) &&
+                !isset($offersParam) &&
+                !isset($yearParam) &&
+                !isset($originParam) &&
+                !isset($patternParam) &&
+                $firstProductPartsCat == 'Car Tyres'
+            ) { ?>
                 <?php $RecommendedCounter = 0; ?>
                 <ol class="recommended products list items product-items regular-product-list <?php if ($block->getMode() == 'grid') : ?>row<?php endif ?> <?php echo 'row-' . $arrColClass[0] ?>">
 
@@ -1424,6 +1457,9 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
                                                     <?php endif; ?>
                                                 <?php endif; ?>
                                             </span>
+                                            <?php if ($partsCat == 'Car Tyres') : ?>
+                                                <span class="fitted-balanced-uae"><?php echo __('(UAE only)'); ?></span>
+                                            <?php endif; ?>
                                             <span class="single-tyre-price"><?php echo $set1price; ?></span>
                                             <?php if ($partsCat == 'Motorcycle Tyres') : ?>
                                                 <div class="setfourprice"><span><?php echo __('Set of 1: ') . $set1price; ?></span></div>
@@ -1879,6 +1915,9 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </span>
+                                    <?php if ($partsCat == 'Car Tyres') : ?>
+                                        <span class="fitted-balanced-uae"><?php echo __('(UAE only)'); ?></span>
+                                    <?php endif; ?>
                                     <?php if ($isWholeSaleCustomer && $wholeSaleOnlyPrice < $regularOnlyPrice) : ?>
                                         <div class="wholesale-price-wrapper">
                                             <span class="single-tyre-price regular-customer-price"><?php echo $regularCustomerPrice; ?></span>
@@ -2351,6 +2390,9 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </span>
+                                    <?php if ($frontPartsCat == 'Car Tyres') : ?>
+                                        <span class="fitted-balanced-uae"><?php echo __('(UAE only)'); ?></span>
+                                    <?php endif; ?>
                                     <?php if ($isWholeSaleCustomer && $wholeSaleOnlyPriceFront < $regularOnlyPriceFront) : ?>
                                         <div class="wholesale-price-wrapper">
                                             <span class="single-tyre-price regular-customer-price"><?php echo $regularCustomerPriceFront; ?></span>
@@ -2511,6 +2553,9 @@ $isWholeSaleCustomer = $listingHelper->isWholeSaleCustomer();
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </span>
+                                    <?php if ($rearPartsCat == 'Car Tyres') : ?>
+                                        <span class="fitted-balanced-uae"><?php echo __('(UAE only)'); ?></span>
+                                    <?php endif; ?>
                                     <?php if ($isWholeSaleCustomer && $wholeSaleOnlyPriceRear < $regularOnlyPriceRear) : ?>
                                         <div class="wholesale-price-wrapper">
                                             <span class="single-tyre-price regular-customer-price"><?php echo $regularCustomerPriceRear; ?></span>

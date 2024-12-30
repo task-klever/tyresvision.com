@@ -44,7 +44,7 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="meta_keywords" type="textarea" translate="label comment" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="90">
-                    <label>Meta Keywords</label>
+                    <label>Meta Title</label>
                 </field>
                 <field id="meta_description" type="textarea" translate="label comment" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="100">
                     <label>Meta Description</label>

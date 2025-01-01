@@ -7710,11 +7710,22 @@ form.payments > .fieldset legend + br {
 }
 .opc-block-summary .table-totals tr td {
   text-align: right;
-  padding-left: 20px;
+  padding-left: 10px;
   width: 1%;
   font-size: 14px;
   color: #272727;
 }
+
+@media  screen and (max-width: 767px) {
+  .opc-block-summary .table-totals tr td {
+  padding-left: 0px;
+}
+}
+
+
+
+
+
 .opc-block-summary .table-totals tr.totals.sub th,
 .opc-block-summary .table-totals tr.totals.sub td {
   font-size: 16px;

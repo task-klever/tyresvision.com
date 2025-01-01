@@ -3112,7 +3112,8 @@ img.brand-slider-home {
     }
 
     .opc-block-summary .table-totals tr.totals.grand th strong, .opc-block-summary .table-totals tr.totals.grand td strong, .opc-block-summary .table-totals tr th, .opc-block-summary .table-totals tr th, .opc-block-summary .table-totals tr.totals.sub th, .opc-block-summary .table-totals tr.totals.sub td, .opc-block-summary .table-totals tr th strong, .opc-block-summary .table-totals tr th .label {
-        font-size: 14px;
+        font-size: 13px;
+        text-wrap: nowrap;
     }
 
     #onestepcheckout-page .breadcrumbs {
@@ -5159,7 +5160,7 @@ div#bh-sl-map-container {
 }
 
 .opc-block-summary .table-totals tr td {
-    width: 50%;
+    width: 38%;
 }
 
 .block-customer-login, .block-new-customer, .form-password_forget, .form-create-account {

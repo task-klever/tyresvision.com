@@ -276,8 +276,9 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
 			->addAttributeToFilter('status', ['in' => $productStatus->getVisibleStatusIds()])
 			->setVisibility($productVisibility->getVisibleInSiteIds())
             ->addFieldToFilter('entity_id', array('in' => $productIds))
-            ->addFieldToFilter('isrecomended', 1);
-			//->setPageSize(4);
+            ->addFieldToFilter('isrecomended', 1)
+			->setOrder('price', 'asc')
+			->setPageSize(4);
 		$recomendedSortByPrice = array();	
 		foreach ($collection as $recomendedProduct) {
 			$set4price=$listingHelper->getSet4price($recomendedProduct);

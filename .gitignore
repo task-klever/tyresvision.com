@@ -37,7 +37,6 @@ atlassian*
 /pub/static/*
 !/pub/static/.htaccess
 !/pub/media/home
-
 /app/etc/config.php
 
 /var/*

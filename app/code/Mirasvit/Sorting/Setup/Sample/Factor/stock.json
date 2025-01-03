@@ -1,8 +1,0 @@
-{
-    "name": "Out of Stock",
-    "type": "stock",
-    "is_active": true,
-    "is_global": true,
-    "weight": 60,
-    "config_serialized": []
-}
